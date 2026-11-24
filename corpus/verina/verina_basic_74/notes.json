@@ -1,0 +1,11 @@
+{
+  "id": "verina_basic_74",
+  "stated": "none",
+  "dropped": [
+    "forall k < a.size, result >= a[k] (needs a quantifier over elements)",
+    "exists k < a.size, result = a[k] (needs an existential over elements)"
+  ],
+  "weakened": [],
+  "verdict": "certified at full",
+  "remarks": "The precondition a.size > 0 is the requires the port already has; the whole postcondition is quantified."
+}

@@ -1,0 +1,24 @@
+{
+  "design_sha256": "fe5dc13698a26a11dad5027fba1ed5ff9f6600283f62d10c379c97a6d0c744ca",
+  "files": {
+    "docs/evaluation/AMENDMENTS.md": "30b46522428db474204f23c0b7445af61c7d9eb0c1a7f336b78af2cd7d2632c2",
+    "docs/evaluation/DESIGN.md": "fe5dc13698a26a11dad5027fba1ed5ff9f6600283f62d10c379c97a6d0c744ca",
+    "docs/evaluation/PLAN.md": "b9aba4c73505d212f8d0791a73a97ba045d94bb129d646302795eae991dbc6ac",
+    "pfc2_eval/__init__.py": "3b2dbb4cc623eb99b04d0220770562539a7bb3ca87cc50383a2ae7e6d91a953b",
+    "pfc2_eval/__main__.py": "84f49f2d52e07c0183fe10b43708bbff4656865039ad7f136d0c6b409d19ca93",
+    "pfc2_eval/adapter.py": "85170270d0e4621273330c0991c888b92bbf317db02f6a8a8a693807f4e19d8c",
+    "pfc2_eval/build.py": "b796744ff26f0d481b58ba87a435777d630bcff74e27f8a0da97a429810d693c",
+    "pfc2_eval/campaign.py": "67f002078acb913252d6d9d5275e2790f171093621e4a881ad91d18ce53ebe1d",
+    "pfc2_eval/cli.py": "37429dea05ab17300fd7ffcfe748c933a7c5592f1e46c4c2dcaf04a0d781e505",
+    "pfc2_eval/evidence.py": "d8ab9ce68acee3d65ad9b9065dfcbd78bd5ed9ec355206391ec79bbbd1874e14",
+    "pfc2_eval/generate.py": "0dbcd723a35261aa729ac13d4d234e2ef411b498125172c46a666da76cec302a",
+    "pfc2_eval/heldout.py": "22666630e8036e9b84fe6e9ba145292925dd401120cab1a5bd130e5d14ab262d",
+    "pfc2_eval/hosts.py": "67a2d778d8f8237a51a078fe430944c683197c9eeae95e8147ccbaa53369f0ec",
+    "pfc2_eval/interpret.py": "40020a13bf36fc178c6125de0e972f31f12f004491dcfdede447d83a0103c738",
+    "pfc2_eval/selfcheck.py": "5b2ffcfd577ec3e38e92c9de8b2f09da601aa9fadfc15efd63cf24bf72cea06d",
+    "pfc2_eval/stats.py": "8d4885025a029ccfb085dfe3ac88576eb91ff9b28d410c89ab919aabd353edbb",
+    "validation/freeze/CANDIDATE.json": "132b7b2deaa305a89f4306bec12abe4a0a585c5e25c15b9e5b3c2735a0e8998c",
+    "validation/freeze/baseline.sha256": "ed0f23dc78bb7e7e73452f7143a7729c48e3ee895da342fc1cc98589b25d1681",
+    "validation/freeze/protected.sha256": "b65f0bc9810bc10ac0301e107f2d38337f3ba37b2f9f273664ccc1e3a58ea719"
+  }
+}

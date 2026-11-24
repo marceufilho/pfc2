@@ -1,0 +1,52 @@
+{
+  "comment": "Generated from the task's test.json by corpus/verina-notes/interface.py: one case per test.",
+  "functions": {
+    "cubeSurfaceArea": {
+      "result": "long",
+      "parameters": "long size",
+      "call": "cubeSurfaceArea(size)"
+    }
+  },
+  "cases": [
+    {
+      "name": "case_0",
+      "function": "cubeSurfaceArea",
+      "inputs": {
+        "size": 3
+      },
+      "expected": "found == 54"
+    },
+    {
+      "name": "case_1",
+      "function": "cubeSurfaceArea",
+      "inputs": {
+        "size": 1
+      },
+      "expected": "found == 6"
+    },
+    {
+      "name": "case_2",
+      "function": "cubeSurfaceArea",
+      "inputs": {
+        "size": 10
+      },
+      "expected": "found == 600"
+    },
+    {
+      "name": "case_3",
+      "function": "cubeSurfaceArea",
+      "inputs": {
+        "size": 5
+      },
+      "expected": "found == 150"
+    },
+    {
+      "name": "case_4",
+      "function": "cubeSurfaceArea",
+      "inputs": {
+        "size": 2
+      },
+      "expected": "found == 24"
+    }
+  ]
+}

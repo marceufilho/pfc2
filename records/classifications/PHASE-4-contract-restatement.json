@@ -1,0 +1,399 @@
+{
+  "classified_by": "AI assistant (Claude Code); author's review pending",
+  "definition": {
+    "restates": "the ensures is (nearly) the same expression or the same case analysis as the function body, so proving it says little beyond 'the code equals itself'",
+    "partly": "some clauses restate the body, others state an independent property; also chosen when unsure",
+    "independent": "the contract states a property in different terms from how the body computes it (a bound, a relation between inputs and result, an invariant of the result), so a wrong implementation of the same shape would be refused"
+  },
+  "scope": "The contract of each unit's single ported function, read from the port with its contract. Loop invariants are not part of the classified contract. Classification by reading only; no mutant or solver run was made for this file.",
+  "source_of_the_29": "corpus/verina/<unit>/notes.json, field \"stated\" == \"all\" (30 units), minus verina_basic_107, whose notes.json verdict is \"refused-failed\" and which therefore has no subsumption assertions; the remaining 29 match the `all` row (29 units) of the table 'Subsumption, by how much of the specification could be written' in docs/evaluation/reports/PHASE-4.md. That the excluded unit is verina_basic_107 is inferred from its verdict (the other 29 are certified), not read from a list of the 29.",
+  "notes": [
+    "'restates' does not mean the proof is empty: memory safety, definedness and (at level full) overflow are still proved, and a mutant of the body is still refused; it means the functional ensures adds no specification independent of the code.",
+    "Several 'restates' units are that way because Verina's own postcondition is the same expression as its reference implementation (e.g. basic_5, basic_12, basic_7), not because the port weakened it.",
+    "verina_basic_98/99 and verina_basic_78 are the borderline cases; with a laxer reading 98/99 would be 'independent' and 78 'restates'."
+  ],
+  "summary": {
+    "verina": {
+      "restates": 14,
+      "partly": 7,
+      "independent": 8
+    },
+    "exercism": {
+      "restates": 3,
+      "partly": 0,
+      "independent": 0
+    }
+  },
+  "criteria_origin": {
+    "classified_by": "AI assistant (Claude Code); author's review pending",
+    "added": "2026-11-23, post hoc; by reading only (no solver or mutant run)",
+    "applies_to": "the 17 units whose class is 'restates'; the other 15 units have no origin field",
+    "question": "Was restating the body avoidable? Where the requirement itself is the expression, a contract cannot do better than repeat it; where another property could have been written, repeating the body was a choice.",
+    "sources_read": "Verina: corpus/upstream/verina/datasets/verina/<unit>/description.txt and the precondition and postcondition blocks of task.lean. Exercism: corpus/upstream/exercism-c/exercises/practice/<unit>/.docs/instructions.md and introduction.md. Beside the port with its contract.",
+    "definitional": "The upstream requirement is itself the same expression or the same case analysis as the contract (a product, a formula the task names, an element at an index, an equality or parity test, a swap, a rule given as its cases), and no property in other terms that PFC2 can write is named by upstream or known for the function. origin_evidence quotes the upstream sentence or postcondition.",
+    "copy": "A property in other terms was available and PFC2 can write it (a bound plus membership for a minimum, non-negativity plus 'one of x and -x' for an absolute value, a loop related to a closed form), and the contract repeats the body all the same. origin_evidence names the property. This holds whether or not upstream's own postcondition has the body's shape; upstream_requirement_shape says which.",
+    "unclear": "Neither holds cleanly: upstream states the requirement in terms PFC2 cannot write and the nearest expressible form is not clearly independent, or part of the contract has no written upstream requirement.",
+    "precedence": "'copy' is decided first: if an independent, expressible property can be named, the unit is 'copy' even when upstream's postcondition is the same case analysis. In that case the restatement was inherited from upstream's specification rather than introduced by the port; summary_origin.sensitivity gives the counts under the opposite precedence.",
+    "upstream_requirement_shape": "'same expression or case analysis': upstream's formal postcondition (Verina) or description (Exercism) has the shape of the body; 'other terms': it does not; 'partly stated upstream': part of the contract has no upstream text.",
+    "limits": "A judgement about what else could have been written is a judgement: 'no other property is known' is not a proof that none exists. Ports were written from the description with the Lean file closed and sealed before the contracts, so the body's shape was fixed when the contract was written."
+  },
+  "summary_origin": {
+    "verina": {
+      "definitional": 10,
+      "copy": 3,
+      "unclear": 1
+    },
+    "exercism": {
+      "definitional": 2,
+      "copy": 0,
+      "unclear": 1
+    },
+    "all": {
+      "definitional": 12,
+      "copy": 3,
+      "unclear": 2
+    },
+    "sensitivity": "Under the other precedence (an upstream formal statement of the same shape makes the unit definitional, whatever else could have been written) verina_basic_50, verina_basic_76 and verina_basic_7 move from copy to definitional: 15 definitional, 0 copy, 2 unclear."
+  },
+  "units": [
+    {
+      "stratum": "verina",
+      "unit": "verina_advanced_41",
+      "file": "corpus/verina/verina_advanced_41/port.c",
+      "class": "independent",
+      "contract": "ensures(result >= a && result >= b && result >= c)\nensures(result == a || result == b || result == c)",
+      "body_core": "long best = a; if (b > best) { best = b; } if (c > best) { best = c; } return best;",
+      "reason": "The body is a running maximum; the contract is the characterisation 'an upper bound of the three that is one of them', which never mentions the comparisons the body makes."
+    },
+    {
+      "stratum": "verina",
+      "unit": "verina_advanced_72",
+      "file": "corpus/verina/verina_advanced_72/port.c",
+      "class": "partly",
+      "contract": "requires(0 <= n)\nensures(result == 0 || result == 2 || result == 3 || result == 5 || result == 7)\nensures(result != 0 || n == 0 || (n % 2 != 0 && n % 3 != 0 && n % 5 != 0 && n % 7 != 0))\nensures(result == 0 || (n != 0 && n % result == 0))\nensures(result == 0 || ((result <= 2 || n % 2 != 0) && (result <= 3 || n % 3 != 0) && (result <= 5 || n % 5 != 0) && (result <= 7 || n % 7 != 0)))",
+      "body_core": "if (n == 0) { return 0; } if (n % 2 == 0) { return 2; } if (n % 3 == 0) { return 3; } if (n % 5 == 0) { return 5; } if (n % 7 == 0) { return 7; } return 0;",
+      "reason": "The 'result is 0 only when n is 0 or none of the four divides' clause mirrors the first and last branches with the same n % p tests; the 'n % result == 0' and the minimality clause state divisor and smallest independently of the order of the cascade (testing 3 before 2 would be refused). Mixed, and the quantifier is unfolded over the same four literals the body tests."
+    },
+    {
+      "stratum": "verina",
+      "unit": "verina_basic_1",
+      "file": "corpus/verina/verina_basic_1/port.c",
+      "class": "restates",
+      "contract": "ensures(!((a < 0 && b > 0) || (a > 0 && b < 0)) || result == 1)\nensures(((a < 0 && b > 0) || (a > 0 && b < 0)) || result == 0)",
+      "body_core": "if ((a < 0 && b > 0) || (a > 0 && b < 0)) { return 1; } return 0;",
+      "reason": "The two ensures are the body's condition, verbatim, implying 1 and its negation implying 0.",
+      "origin": "definitional",
+      "upstream_requirement_shape": "same expression or case analysis",
+      "origin_evidence": "description.txt: \"return true if one integer is positive and the other is negative\"; Lean postcondition: \"(((a < 0 ∧ b > 0) ∨ (a > 0 ∧ b < 0)) → result) ∧ (¬((a < 0 ∧ b > 0) ∨ (a > 0 ∧ b < 0)) → ¬result)\". The contract is that postcondition. Verina's reference code is `a * b < 0`, the same predicate as a product, which is not a different property."
+    },
+    {
+      "stratum": "verina",
+      "unit": "verina_basic_100",
+      "file": "corpus/verina/verina_basic_100/port.c",
+      "class": "independent",
+      "contract": "ensures(result / 3 == x && result / 3 * 3 == result)",
+      "body_core": "if (x == 0) { return 0; } return x + 2 * x;",
+      "reason": "The body computes x + 2 * x with a zero case; the contract states the inverse relation (result / 3 == x and result is a multiple of 3) and has neither the case split nor the sum."
+    },
+    {
+      "stratum": "verina",
+      "unit": "verina_basic_101",
+      "file": "corpus/verina/verina_basic_101/port.c",
+      "class": "independent",
+      "contract": "ensures(result / 3 == x && result / 3 * 3 == result)",
+      "body_core": "long twice = 2 * x; return twice + x;",
+      "reason": "The body doubles and adds; the contract states the inverse relation result / 3 == x with exact divisibility, in different terms."
+    },
+    {
+      "stratum": "verina",
+      "unit": "verina_basic_11",
+      "file": "corpus/verina/verina_basic_11/port.c",
+      "class": "partly",
+      "contract": "requires(n >= 0)\nensures(0 <= result && result < 10)\nensures(result == n % 10)",
+      "body_core": "return n % 10;",
+      "reason": "'result == n % 10' is the return expression verbatim; '0 <= result && result < 10' is an independent range property (which needs n >= 0)."
+    },
+    {
+      "stratum": "verina",
+      "unit": "verina_basic_12",
+      "file": "corpus/verina/verina_basic_12/port.c",
+      "class": "restates",
+      "contract": "requires(size >= 0)\nensures(result == 6 * size * size)",
+      "body_core": "return 6 * size * size;",
+      "reason": "The ensures is the return expression verbatim.",
+      "origin": "definitional",
+      "upstream_requirement_shape": "same expression or case analysis",
+      "origin_evidence": "description.txt: \"compute the surface area using the standard formula for a cube\"; Lean postcondition: \"result - 6 * size * size = 0 ∧ 6 * size * size - result = 0\". The requirement is the formula."
+    },
+    {
+      "stratum": "verina",
+      "unit": "verina_basic_26",
+      "file": "corpus/verina/verina_basic_26/port.c",
+      "class": "restates",
+      "contract": "ensures((result == 1 && n % 2 == 0) || (result == 0 && n % 2 != 0))",
+      "body_core": "if (n % 2 == 0) { return 1; } return 0;",
+      "reason": "Same test n % 2 == 0 and the same two outcomes as the body's if.",
+      "origin": "definitional",
+      "upstream_requirement_shape": "same expression or case analysis",
+      "origin_evidence": "description.txt: \"Returns true if the input number is even. Returns false if the input number is odd.\"; Lean postcondition: \"(result → n % 2 = 0) ∧ (¬ result → n % 2 ≠ 0)\". Evenness is n % 2 = 0."
+    },
+    {
+      "stratum": "verina",
+      "unit": "verina_basic_3",
+      "file": "corpus/verina/verina_basic_3/port.c",
+      "class": "restates",
+      "contract": "ensures((result == 1 && n % 11 == 0) || (result == 0 && n % 11 != 0))",
+      "body_core": "if (n % 11 == 0) { return 1; } return 0;",
+      "reason": "Same test n % 11 == 0 and the same two outcomes as the body's if (the notes call it the closed form of Verina's existential, but that closed form is the body).",
+      "origin": "unclear",
+      "upstream_requirement_shape": "other terms",
+      "origin_evidence": "Lean postcondition: \"(result → (∃ k : Int, n = 11 * k)) ∧ (¬ result → (∀ k : Int, ¬ n = 11 * k))\": upstream states divisibility through a quantifier, in other terms than the body's n % 11 == 0, but PFC2 has no quantifier. The nearest statement it can write, `n / 11 * 11 == n` for the witness, is the same one-operation fact from the other side (compare verina_basic_98, classed 'partly' for that reason). Neither 'nothing else was available' nor 'a clearly independent property was passed over'."
+    },
+    {
+      "stratum": "verina",
+      "unit": "verina_basic_4",
+      "file": "corpus/verina/verina_basic_4/port.c",
+      "class": "restates",
+      "contract": "requires(1 <= k && k <= arr_len)\nensures(result == arr[k - 1])",
+      "body_core": "return arr[k - 1];",
+      "reason": "The ensures is the return expression verbatim; the only independent content is the bounds proof from the requires, which is not the ensures.",
+      "origin": "definitional",
+      "upstream_requirement_shape": "same expression or case analysis",
+      "origin_evidence": "description.txt: \"Returns the element at the kth position in the array\" (1-based); Lean postcondition: \"arr.any (fun x => x = result ∧ x = arr[k - 1]!)\". The requirement is result = arr[k - 1]; the membership part follows from it."
+    },
+    {
+      "stratum": "verina",
+      "unit": "verina_basic_43",
+      "file": "corpus/verina/verina_basic_43/port.c",
+      "class": "independent",
+      "contract": "requires(n >= 0)\nensures(15 * result == n * (2 * n + 1) * (7 + 24 * n * n * n - 12 * n * n - 14 * n))",
+      "body_core": "long odd = 2 * i + 1; sum += odd * odd * odd * odd;",
+      "reason": "The body is a loop that accumulates fourth powers; the contract is a closed-form polynomial identity, proved through an invariant. A wrong summand would be refused."
+    },
+    {
+      "stratum": "verina",
+      "unit": "verina_basic_5",
+      "file": "corpus/verina/verina_basic_5/port.c",
+      "class": "restates",
+      "contract": "ensures(result == a * b)",
+      "body_core": "return a * b;",
+      "reason": "The ensures is the return expression verbatim.",
+      "origin": "definitional",
+      "upstream_requirement_shape": "same expression or case analysis",
+      "origin_evidence": "description.txt: \"Returns the product of the two input integers (a * b).\"; Lean postcondition: \"result - a * b = 0 ∧ a * b - result = 0\"."
+    },
+    {
+      "stratum": "verina",
+      "unit": "verina_basic_50",
+      "file": "corpus/verina/verina_basic_50/port.c",
+      "class": "restates",
+      "contract": "ensures((x < 0 || x == result) && (x >= 0 || x + result == 0))",
+      "body_core": "if (x < 0) { return -x; } return x;",
+      "reason": "Same case split on x < 0 with the same two results; 'x + result == 0' is only 'result == -x' rearranged.",
+      "origin": "copy",
+      "upstream_requirement_shape": "same expression or case analysis",
+      "origin_evidence": "Independent property available: `result >= 0 && (result == x || result + x == 0)` (description.txt speaks of \"the non-negative value of a given integer\"), which has no case split on the sign of x. The contract instead repeats the body's split. The split is also upstream's: Lean postcondition \"(x ≥ 0 → x = result) ∧ (x < 0 → x + result = 0)\"; the contract copied it."
+    },
+    {
+      "stratum": "verina",
+      "unit": "verina_basic_53",
+      "file": "corpus/verina/verina_basic_53/port.c",
+      "class": "independent",
+      "contract": "requires(N >= 0)\nensures(2 * result == N * (N + 1))",
+      "body_core": "for (long i = 1; i <= N; i++) ... { sum += i; }",
+      "reason": "The body sums in a loop; the contract is Gauss's closed form 2 * result == N * (N + 1), proved through an invariant."
+    },
+    {
+      "stratum": "verina",
+      "unit": "verina_basic_55",
+      "file": "corpus/verina/verina_basic_55/port.c",
+      "class": "restates",
+      "contract": "ensures((a != b || result == 1) && (a == b || result == 0))",
+      "body_core": "if (a == b) { return 1; } return 0;",
+      "reason": "Same test a == b and the same two outcomes as the body's if.",
+      "origin": "definitional",
+      "upstream_requirement_shape": "same expression or case analysis",
+      "origin_evidence": "description.txt: \"Returns true if a equals b. Returns false if a does not equal b.\"; Lean postcondition: \"(a = b → result = true) ∧ (a ≠ b → result = false)\"."
+    },
+    {
+      "stratum": "verina",
+      "unit": "verina_basic_59",
+      "file": "corpus/verina/verina_basic_59/port.c",
+      "class": "partly",
+      "contract": "requires(out_cap >= 2)\nensures(out[0] == 2 * x && out[1] == 2 * out[0])",
+      "body_core": "out[0] = 2 * x; out[1] = 4 * x;",
+      "reason": "'out[0] == 2 * x' is the first assignment verbatim; 'out[1] == 2 * out[0]' relates the two outputs instead of repeating 4 * x, a small independent step."
+    },
+    {
+      "stratum": "verina",
+      "unit": "verina_basic_6",
+      "file": "corpus/verina/verina_basic_6/port.c",
+      "class": "independent",
+      "contract": "ensures(result <= a && result <= b && result <= c)\nensures(result == a || result == b || result == c)",
+      "body_core": "long min = a; if (b < min) { min = b; } if (c < min) { min = c; } return min;",
+      "reason": "The body is a running minimum; the contract is 'a lower bound of the three that is one of them', without the body's comparisons."
+    },
+    {
+      "stratum": "verina",
+      "unit": "verina_basic_65",
+      "file": "corpus/verina/verina_basic_65/port.c",
+      "class": "independent",
+      "contract": "requires(N >= 0)\nensures(0 <= result && result * result <= N && N < (result + 1) * (result + 1))",
+      "body_core": "while ((r + 1) * (r + 1) <= N) invariant(0 <= r && r * r <= N) { r++; }",
+      "reason": "The body searches linearly; the contract is the defining property of the integer square root (result^2 <= N < (result+1)^2). The upper half coincides with the negated loop condition, but the lower half needs the invariant."
+    },
+    {
+      "stratum": "verina",
+      "unit": "verina_basic_7",
+      "file": "corpus/verina/verina_basic_7/port.c",
+      "class": "restates",
+      "contract": "requires(n >= 0)\nensures(result == (n * (2 * n - 1) * (2 * n + 1)) / 3)",
+      "body_core": "return (n * (2 * n - 1) * (2 * n + 1)) / 3;",
+      "reason": "The ensures is the return expression verbatim; that the formula equals the sum of squares of the first n odd numbers is not stated anywhere.",
+      "origin": "copy",
+      "upstream_requirement_shape": "same expression or case analysis",
+      "origin_evidence": "Independent property available: description.txt asks for \"the sum of the squares of the first n odd natural numbers\", which Verina's reference code computes with a loop; a loop body with the closed form as its ensures (as in verina_basic_43 and verina_basic_53, classed 'independent') relates two different things. The port returns the closed form and the ensures is the same closed form, so the sum is stated nowhere. Upstream's formal postcondition is the formula too: \"result - (n * (2 * n - 1) * (2 * n + 1)) / 3 = 0 ∧ ...\"; the description says \"The result should match the formula\"."
+    },
+    {
+      "stratum": "verina",
+      "unit": "verina_basic_76",
+      "file": "corpus/verina/verina_basic_76/port.c",
+      "class": "restates",
+      "contract": "ensures(x > y || result == x)\nensures(x <= y || result == y)",
+      "body_core": "if (x <= y) { return x; } return y;",
+      "reason": "The two ensures are the body's two branches: x <= y gives x, otherwise y. Compare verina_basic_8, the same function with a property contract.",
+      "origin": "copy",
+      "upstream_requirement_shape": "same expression or case analysis",
+      "origin_evidence": "Independent property available: `result <= x && result <= y && (result == x || result == y)`, the contract written for the same function in verina_basic_8 (classed 'independent'). The contract instead repeats the body's two branches. The branches are also upstream's: Lean postcondition \"(x ≤ y → result = x) ∧ (x > y → result = y)\"; description.txt: \"Returns x if x is less than or equal to y. Returns y if x is greater than y.\""
+    },
+    {
+      "stratum": "verina",
+      "unit": "verina_basic_78",
+      "file": "corpus/verina/verina_basic_78/port.c",
+      "class": "partly",
+      "contract": "requires(out_cap >= 2)\nensures(out[0] == x + y && out[1] + y == x)",
+      "body_core": "out[0] = x + y; out[1] = x - y;",
+      "reason": "'out[0] == x + y' is the first assignment verbatim; 'out[1] + y == x' is the second one rearranged (an inverse relation rather than the same expression). Chosen 'partly' rather than 'restates' because one clause is not textually the body, though it carries almost no extra content."
+    },
+    {
+      "stratum": "verina",
+      "unit": "verina_basic_8",
+      "file": "corpus/verina/verina_basic_8/port.c",
+      "class": "independent",
+      "contract": "ensures(result <= a && result <= b)\nensures(result == a || result == b)",
+      "body_core": "if (a <= b) { return a; } return b;",
+      "reason": "The body branches on a <= b; the contract says 'not above either and equal to one of them', without the body's test."
+    },
+    {
+      "stratum": "verina",
+      "unit": "verina_basic_81",
+      "file": "corpus/verina/verina_basic_81/port.c",
+      "class": "partly",
+      "contract": "requires(x >= 0)\nrequires(y >= 0)\nrequires(out_cap >= 2)\nensures(y != 0 || (out[0] == x && out[1] == 0))\nensures(y == 0 || (out[1] * y + out[0] == x && 0 <= out[0] && out[0] < y && 0 <= out[1]))",
+      "body_core": "if (y == 0) { out[0] = x; out[1] = 0; return 0; } out[0] = x % y; out[1] = x / y;",
+      "reason": "The y == 0 clause repeats that branch verbatim; the y != 0 clause is the division theorem (q * y + r == x, 0 <= r < y), stated without % or /, which swapped outputs or a wrong operator would fail."
+    },
+    {
+      "stratum": "verina",
+      "unit": "verina_basic_91",
+      "file": "corpus/verina/verina_basic_91/port.c",
+      "class": "restates",
+      "contract": "requires(out_cap >= 2)\nensures(out[0] == Y && out[1] == X)\nensures(X == Y || (out[0] != X && out[1] != Y))",
+      "body_core": "out[0] = Y; out[1] = X;",
+      "reason": "The first ensures is the two assignments verbatim; the second (outputs differ from the inputs when X != Y) follows from the first and adds nothing.",
+      "origin": "definitional",
+      "upstream_requirement_shape": "same expression or case analysis",
+      "origin_evidence": "description.txt: \"return a pair where the first element is the second input value and the second element is the first input value\"; Lean postcondition: \"result.fst = Y ∧ result.snd = X ∧ (X ≠ Y → result.fst ≠ X ∧ result.snd ≠ Y)\". The contract is that postcondition, redundant clause included."
+    },
+    {
+      "stratum": "verina",
+      "unit": "verina_basic_92",
+      "file": "corpus/verina/verina_basic_92/port.c",
+      "class": "restates",
+      "contract": "requires(out_cap >= 2)\nensures(out[0] == Y && out[1] == X)\nensures(X == Y || (out[0] != X && out[1] != Y))",
+      "body_core": "out[0] = Y; out[1] = X;",
+      "reason": "As verina_basic_91: the port swaps by plain assignment (not arithmetically) and the ensures repeats the two assignments; the second clause follows from the first.",
+      "origin": "definitional",
+      "upstream_requirement_shape": "same expression or case analysis",
+      "origin_evidence": "description.txt: \"The first element is equal to Y. The second element is equal to X.\"; Lean postcondition: \"result.1 = Y ∧ result.2 = X ∧ (X ≠ Y → result.fst ≠ X ∧ result.snd ≠ Y)\". Verina's reference code swaps arithmetically; the requirement does not."
+    },
+    {
+      "stratum": "verina",
+      "unit": "verina_basic_93",
+      "file": "corpus/verina/verina_basic_93/port.c",
+      "class": "restates",
+      "contract": "requires(out_cap >= 2)\nensures(out[0] == Y && out[1] == X)\nensures(X == Y || (out[0] != X && out[1] != Y))",
+      "body_core": "out[0] = Y; out[1] = X;",
+      "reason": "As verina_basic_91: the ensures repeats the two assignments; the second clause follows from the first.",
+      "origin": "definitional",
+      "upstream_requirement_shape": "same expression or case analysis",
+      "origin_evidence": "description.txt: \"newX is equal to the original Y. newY is equal to the original X.\"; Lean postcondition: \"result.fst = Y ∧ result.snd = X ∧ (X ≠ Y → result.fst ≠ X ∧ result.snd ≠ Y)\". Verina's reference code swaps with xor; the description says the problem does not specify \"any particular method to achieve the swap\"."
+    },
+    {
+      "stratum": "verina",
+      "unit": "verina_basic_96",
+      "file": "corpus/verina/verina_basic_96/port.c",
+      "class": "restates",
+      "contract": "requires(out_cap >= 2)\nensures(out[0] == Y && out[1] == X)\nensures(X == Y || (out[0] != X && out[1] != Y))",
+      "body_core": "out[0] = Y; out[1] = X;",
+      "reason": "As verina_basic_91: the ensures repeats the two assignments; the second clause follows from the first.",
+      "origin": "definitional",
+      "upstream_requirement_shape": "same expression or case analysis",
+      "origin_evidence": "description.txt: \"The first element is equal to Y. The second element is equal to X.\"; Lean postcondition: \"result.1 = Y ∧ result.2 = X ∧ (X ≠ Y → result.fst ≠ X ∧ result.snd ≠ Y)\"."
+    },
+    {
+      "stratum": "verina",
+      "unit": "verina_basic_98",
+      "file": "corpus/verina/verina_basic_98/port.c",
+      "class": "partly",
+      "contract": "ensures(result / 3 == x && result / 3 * 3 == result)",
+      "body_core": "return 3 * x;",
+      "reason": "Not textually the body: the contract is the inverse relation result / 3 == x with exact divisibility. But body and contract are the same one-operation fact seen from the other side, so it is weaker evidence of independence than verina_basic_100/101, where the body computes differently; unsure, hence 'partly'."
+    },
+    {
+      "stratum": "verina",
+      "unit": "verina_basic_99",
+      "file": "corpus/verina/verina_basic_99/port.c",
+      "class": "partly",
+      "contract": "ensures(result / 3 == x && result / 3 * 3 == result)",
+      "body_core": "return 3 * x;",
+      "reason": "Same as verina_basic_98: inverse relation of a one-multiplication body; unsure, hence 'partly'."
+    },
+    {
+      "stratum": "exercism",
+      "unit": "leap",
+      "file": "corpus/exercism/leap/port.c",
+      "class": "restates",
+      "contract": "ensures(result == ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0))",
+      "body_core": "if (year % 4 == 0) { if (year % 400 == 0) { return 1; } if (year % 100 == 0) { return 0; } return 1; } return 0;",
+      "reason": "The ensures is the leap-year rule as one Boolean expression over the same three tests (year % 4, % 100, % 400) the body branches on; only the nesting differs (the body tests 400 before 100). A swapped branch would be refused, but the contract is the textbook form of the body.",
+      "origin": "definitional",
+      "upstream_requirement_shape": "same expression or case analysis",
+      "origin_evidence": ".docs/introduction.md: \"A leap year (in the Gregorian calendar) occurs: In every year that is evenly divisible by 4. Unless the year is evenly divisible by 100, in which case it's only a leap year if the year is also evenly divisible by 400.\" (.docs/instructions.md only says \"determine whether a given year is a leap year\".) The rule is the three divisibility tests; the ensures writes them as one Boolean expression where the body nests ifs."
+    },
+    {
+      "stratum": "exercism",
+      "unit": "resistor-color-duo",
+      "file": "corpus/exercism/resistor-color-duo/port.c",
+      "class": "restates",
+      "contract": "requires(2 <= n && 0 <= colors[0] && colors[0] <= 9 && 0 <= colors[1] && colors[1] <= 9)\nensures(result == colors[0] * 10 + colors[1])",
+      "body_core": "return (colors[0] * 10 + colors[1]);",
+      "reason": "The ensures is the return expression verbatim; the requires only makes the two reads and the arithmetic safe.",
+      "origin": "definitional",
+      "upstream_requirement_shape": "same expression or case analysis",
+      "origin_evidence": ".docs/instructions.md: \"each color maps to a single number. For example, if they printed a brown band (value 1) followed by a green band (value 5), it would translate to the number 15.\" and \"output a two digit number\". With the colours arriving as their numbers, the requirement is colors[0] * 10 + colors[1]."
+    },
+    {
+      "stratum": "exercism",
+      "unit": "queen-attack",
+      "file": "corpus/exercism/queen-attack/port.c",
+      "class": "restates",
+      "contract": "requires(0 <= white_row && white_row <= 255 && 0 <= white_column && white_column <= 255)\nrequires(0 <= black_row && black_row <= 255 && 0 <= black_column && black_column <= 255)\nensures(!((white_column == black_column && white_row == black_row) || white_row >= ROW_COUNT || white_column >= COLUMN_COUNT || black_row >= ROW_COUNT || black_column >= COLUMN_COUNT) || result == INVALID_POSITION)\nensures(((white_column == black_column && white_row == black_row) || white_row >= ROW_COUNT || white_column >= COLUMN_COUNT || black_row >= ROW_COUNT || black_column >= COLUMN_COUNT) || !(white_column == black_column || white_row == black_row || white_row - black_row == white_column - black_column || white_row - black_row == black_column - white_column) || result == CAN_ATTACK)\nensures(((white_column == black_column && white_row == black_row) || white_row >= ROW_COUNT || white_column >= COLUMN_COUNT || black_row >= ROW_COUNT || black_column >= COLUMN_COUNT) || (white_column == black_column || white_row == black_row || white_row - black_row == white_column - black_column || white_row - black_row == black_column - white_column) || result == CAN_NOT_ATTACK)",
+      "body_core": "if ((white_column == black_column && white_row == black_row) || white_row >= ROW_COUNT || white_column >= COLUMN_COUNT || black_row >= ROW_COUNT || black_column >= COLUMN_COUNT) { return INVALID_POSITION; } if (white_column == black_column || white_row == black_row || (white_row - black_row == white_column - black_column) || (white_row - black_row == black_column - white_column)) { return CAN_ATTACK; } return CAN_NOT_ATTACK;",
+      "reason": "The three ensures are the body's two if conditions copied verbatim, one clause per return, in the same order of cases.",
+      "origin": "unclear",
+      "upstream_requirement_shape": "partly stated upstream",
+      "origin_evidence": "Two parts. The attack rule is definitional: .docs/instructions.md: \"a queen can attack pieces which are on the same row, column, or diagonal\", which is the four comparisons. The INVALID_POSITION case is not in the description at all (it says only \"A chessboard can be represented by an 8 by 8 array\"); same square and off-board positions are fixed by the upstream tests and the reference solution, and the contract takes that condition from the code. For that half there is no written requirement to compare with, so it cannot be called definitional, and no independent property is named either. corpus/shared-error-notes shows this boundary condition changed in code and contract together without either study measure noticing."
+    }
+  ]
+}

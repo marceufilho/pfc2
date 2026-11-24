@@ -1,0 +1,11 @@
+{
+  "id": "verina_basic_41",
+  "stated": "part",
+  "dropped": [
+    "result -> all elements pairwise equal (Pairwise)",
+    "not result -> some element differs from the first (any)"
+  ],
+  "weakened": [],
+  "verdict": "certified at full",
+  "remarks": "requires(a_len > 0) added: Verina's own precondition. Result is 0 or 1. The port's summary comment also covers the empty array, which the precondition excludes."
+}

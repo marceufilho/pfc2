@@ -1,0 +1,259 @@
+{
+ "warning": "The AI assistant's labels. The rater does not open this file; it is read by second-rater-score.",
+ "seed": 20261123,
+ "generator": "tools/author_review.py second-rater-sheet",
+ "sources": {
+  "docs/evaluation/reports/PHASE-4-contract-restatement.json": "efed0f157ed4dea3bff327c8d75bf87bad9eaec3da3eb0927dec9d87fc45239c"
+ },
+ "labelled_by": "AI assistant (Claude Code); author's review pending",
+ "allowed_answers": {
+  "contract-binary": [
+   "restates",
+   "different",
+   "unclear"
+  ]
+ },
+ "mapping": {
+  "assistant class -> comparable": {
+   "restates": "restates",
+   "partly": "different",
+   "independent": "different"
+  }
+ },
+ "composition": {
+  "verina": {
+   "independent": 8,
+   "partly": 7,
+   "restates": 14
+  },
+  "exercism": {
+   "restates": 3
+  }
+ },
+ "items": {
+  "U01": {
+   "kind": "contract-binary",
+   "stratum": "verina",
+   "unit": "verina_basic_11",
+   "label": "partly",
+   "comparable": "different"
+  },
+  "U02": {
+   "kind": "contract-binary",
+   "stratum": "verina",
+   "unit": "verina_basic_101",
+   "label": "independent",
+   "comparable": "different"
+  },
+  "U03": {
+   "kind": "contract-binary",
+   "stratum": "verina",
+   "unit": "verina_basic_91",
+   "label": "restates",
+   "comparable": "restates"
+  },
+  "U04": {
+   "kind": "contract-binary",
+   "stratum": "verina",
+   "unit": "verina_basic_96",
+   "label": "restates",
+   "comparable": "restates"
+  },
+  "U05": {
+   "kind": "contract-binary",
+   "stratum": "verina",
+   "unit": "verina_basic_6",
+   "label": "independent",
+   "comparable": "different"
+  },
+  "U06": {
+   "kind": "contract-binary",
+   "stratum": "verina",
+   "unit": "verina_basic_81",
+   "label": "partly",
+   "comparable": "different"
+  },
+  "U07": {
+   "kind": "contract-binary",
+   "stratum": "verina",
+   "unit": "verina_advanced_41",
+   "label": "independent",
+   "comparable": "different"
+  },
+  "U08": {
+   "kind": "contract-binary",
+   "stratum": "verina",
+   "unit": "verina_basic_8",
+   "label": "independent",
+   "comparable": "different"
+  },
+  "U09": {
+   "kind": "contract-binary",
+   "stratum": "verina",
+   "unit": "verina_basic_93",
+   "label": "restates",
+   "comparable": "restates"
+  },
+  "U10": {
+   "kind": "contract-binary",
+   "stratum": "exercism",
+   "unit": "resistor-color-duo",
+   "label": "restates",
+   "comparable": "restates"
+  },
+  "U11": {
+   "kind": "contract-binary",
+   "stratum": "verina",
+   "unit": "verina_basic_50",
+   "label": "restates",
+   "comparable": "restates"
+  },
+  "U12": {
+   "kind": "contract-binary",
+   "stratum": "verina",
+   "unit": "verina_basic_3",
+   "label": "restates",
+   "comparable": "restates"
+  },
+  "U13": {
+   "kind": "contract-binary",
+   "stratum": "verina",
+   "unit": "verina_advanced_72",
+   "label": "partly",
+   "comparable": "different"
+  },
+  "U14": {
+   "kind": "contract-binary",
+   "stratum": "verina",
+   "unit": "verina_basic_55",
+   "label": "restates",
+   "comparable": "restates"
+  },
+  "U15": {
+   "kind": "contract-binary",
+   "stratum": "verina",
+   "unit": "verina_basic_26",
+   "label": "restates",
+   "comparable": "restates"
+  },
+  "U16": {
+   "kind": "contract-binary",
+   "stratum": "verina",
+   "unit": "verina_basic_92",
+   "label": "restates",
+   "comparable": "restates"
+  },
+  "U17": {
+   "kind": "contract-binary",
+   "stratum": "verina",
+   "unit": "verina_basic_65",
+   "label": "independent",
+   "comparable": "different"
+  },
+  "U18": {
+   "kind": "contract-binary",
+   "stratum": "verina",
+   "unit": "verina_basic_53",
+   "label": "independent",
+   "comparable": "different"
+  },
+  "U19": {
+   "kind": "contract-binary",
+   "stratum": "verina",
+   "unit": "verina_basic_76",
+   "label": "restates",
+   "comparable": "restates"
+  },
+  "U20": {
+   "kind": "contract-binary",
+   "stratum": "verina",
+   "unit": "verina_basic_5",
+   "label": "restates",
+   "comparable": "restates"
+  },
+  "U21": {
+   "kind": "contract-binary",
+   "stratum": "verina",
+   "unit": "verina_basic_100",
+   "label": "independent",
+   "comparable": "different"
+  },
+  "U22": {
+   "kind": "contract-binary",
+   "stratum": "exercism",
+   "unit": "leap",
+   "label": "restates",
+   "comparable": "restates"
+  },
+  "U23": {
+   "kind": "contract-binary",
+   "stratum": "verina",
+   "unit": "verina_basic_59",
+   "label": "partly",
+   "comparable": "different"
+  },
+  "U24": {
+   "kind": "contract-binary",
+   "stratum": "verina",
+   "unit": "verina_basic_98",
+   "label": "partly",
+   "comparable": "different"
+  },
+  "U25": {
+   "kind": "contract-binary",
+   "stratum": "verina",
+   "unit": "verina_basic_99",
+   "label": "partly",
+   "comparable": "different"
+  },
+  "U26": {
+   "kind": "contract-binary",
+   "stratum": "exercism",
+   "unit": "queen-attack",
+   "label": "restates",
+   "comparable": "restates"
+  },
+  "U27": {
+   "kind": "contract-binary",
+   "stratum": "verina",
+   "unit": "verina_basic_1",
+   "label": "restates",
+   "comparable": "restates"
+  },
+  "U28": {
+   "kind": "contract-binary",
+   "stratum": "verina",
+   "unit": "verina_basic_43",
+   "label": "independent",
+   "comparable": "different"
+  },
+  "U29": {
+   "kind": "contract-binary",
+   "stratum": "verina",
+   "unit": "verina_basic_7",
+   "label": "restates",
+   "comparable": "restates"
+  },
+  "U30": {
+   "kind": "contract-binary",
+   "stratum": "verina",
+   "unit": "verina_basic_12",
+   "label": "restates",
+   "comparable": "restates"
+  },
+  "U31": {
+   "kind": "contract-binary",
+   "stratum": "verina",
+   "unit": "verina_basic_4",
+   "label": "restates",
+   "comparable": "restates"
+  },
+  "U32": {
+   "kind": "contract-binary",
+   "stratum": "verina",
+   "unit": "verina_basic_78",
+   "label": "partly",
+   "comparable": "different"
+  }
+ }
+}

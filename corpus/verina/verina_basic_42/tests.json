@@ -1,0 +1,125 @@
+{
+  "comment": "Generated from the task's test.json by corpus/verina-notes/interface.py: one case per test.",
+  "functions": {
+    "countDigits": {
+      "result": "long",
+      "parameters": "long s_len, const char s[s_len]",
+      "call": "countDigits(s_len, s)"
+    }
+  },
+  "cases": [
+    {
+      "name": "case_0",
+      "function": "countDigits",
+      "inputs": {
+        "s_len": 9,
+        "s": [
+          49,
+          50,
+          51,
+          97,
+          98,
+          99,
+          52,
+          53,
+          54
+        ]
+      },
+      "expected": "found == 6"
+    },
+    {
+      "name": "case_1",
+      "function": "countDigits",
+      "inputs": {
+        "s_len": 15,
+        "s": [
+          110,
+          111,
+          32,
+          100,
+          105,
+          103,
+          105,
+          116,
+          115,
+          32,
+          104,
+          101,
+          114,
+          101,
+          33
+        ]
+      },
+      "expected": "found == 0"
+    },
+    {
+      "name": "case_2",
+      "function": "countDigits",
+      "inputs": {
+        "s_len": 10,
+        "s": [
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          48
+        ]
+      },
+      "expected": "found == 10"
+    },
+    {
+      "name": "case_3",
+      "function": "countDigits",
+      "inputs": {
+        "s_len": 0,
+        "s": []
+      },
+      "expected": "found == 0"
+    },
+    {
+      "name": "case_4",
+      "function": "countDigits",
+      "inputs": {
+        "s_len": 6,
+        "s": [
+          97,
+          49,
+          98,
+          50,
+          99,
+          51
+        ]
+      },
+      "expected": "found == 3"
+    },
+    {
+      "name": "case_5",
+      "function": "countDigits",
+      "inputs": {
+        "s_len": 1,
+        "s": [
+          48
+        ]
+      },
+      "expected": "found == 1"
+    },
+    {
+      "name": "case_6",
+      "function": "countDigits",
+      "inputs": {
+        "s_len": 3,
+        "s": [
+          97,
+          98,
+          99
+        ]
+      },
+      "expected": "found == 0"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+ "id": "verina_basic_49",
+ "stated": "part",
+ "dropped": [
+  "postcond some: no odd element before idx",
+  "postcond none: no odd element at all"
+ ],
+ "weakened": [],
+ "verdict": "certified at full",
+ "remarks": ""
+}

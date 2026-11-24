@@ -1,0 +1,1 @@
+{"id": "verina_basic_100", "rules": ["P1"], "requires": [], "fixes": 0, "remarks": "Follows the description's two cases (0, otherwise x + 2 * x)."}

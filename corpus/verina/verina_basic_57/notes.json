@@ -1,0 +1,10 @@
+{
+ "id": "verina_basic_57",
+ "stated": "none",
+ "dropped": [
+  "postcond: result = foldl count of elements below threshold (both conjuncts)"
+ ],
+ "weakened": [],
+ "verdict": "certified at full",
+ "remarks": "Only the Nat result being non-negative is stated."
+}

@@ -1,0 +1,1 @@
+{"id": "verina_advanced_66", "rules": ["P2", "P3", "P4"], "requires": ["out_cap >= words_str_len"], "fixes": 0, "remarks": ""}

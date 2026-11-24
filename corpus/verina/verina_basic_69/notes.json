@@ -1,0 +1,13 @@
+{
+ "id": "verina_basic_69",
+ "stated": "part",
+ "dropped": [
+  "precond: e occurs in a (existential)",
+  "postcond: no element before result equals e"
+ ],
+ "weakened": [
+  "result < a.size and a[result] = e are stated as result <= a_len and (result == a_len || a[result] == e): the strict bound holds only under the precondition, which is an existential and cannot be stated"
+ ],
+ "verdict": "certified at full",
+ "remarks": "The array length being non-negative is written as a requires because the checker does not assume it for a length parameter named X_len (it does for other names)."
+}

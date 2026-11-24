@@ -1,0 +1,11 @@
+{
+ "id": "verina_advanced_64",
+ "stated": "none",
+ "dropped": [
+  "each result element equals the element at the same index of lst filtered by x != target (filter, quantifier)",
+  "the result has the filtered list's length (count)"
+ ],
+ "weakened": [],
+ "verdict": "certified at full",
+ "remarks": "Precondition is True. Stated: target >= 0 (Nat) and the consequence 0 <= result <= length. The length parameters are named X_len, which the checker reads in the older spelling without assuming 0 <= X_len; requires(0 <= X_len) states it (a list length is a Nat)."
+}

@@ -1,0 +1,29 @@
+{
+  "by_operator": {
+    "dropped/not-refuted/admitted": 322,
+    "literal-false/false/refused": 305,
+    "literal-false/not-refuted/admitted": 25,
+    "literal-false/not-refuted/refused": 134,
+    "off-by-one/false/refused": 406,
+    "off-by-one/not-refuted/admitted": 40,
+    "off-by-one/not-refuted/refused": 179,
+    "reversed/false/refused": 408,
+    "reversed/not-refuted/admitted": 37,
+    "reversed/not-refuted/refused": 180,
+    "wrong-variable/false/refused": 170,
+    "wrong-variable/not-refuted/admitted": 16,
+    "wrong-variable/not-refuted/refused": 96
+  },
+  "false_admitted": 0,
+  "false_candidates": 1289,
+  "not_refuted_admitted": 440,
+  "not_refuted_refused": 589,
+  "passed": true,
+  "programs": {
+    "no loop": 60,
+    "not certified": 16,
+    "used": 200
+  },
+  "unparseable": 0,
+  "unsound": []
+}

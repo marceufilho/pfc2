@@ -1,0 +1,146 @@
+{
+  "comment": "Generated from the task's test.json by corpus/verina-notes/interface.py: one case per test.",
+  "functions": {
+    "isSublist": {
+      "result": "long",
+      "parameters": "long sub_len, const long sub[sub_len], long main_len, const long main[main_len]",
+      "call": "isSublist(sub_len, sub, main_len, main)"
+    }
+  },
+  "cases": [
+    {
+      "name": "case_0",
+      "function": "isSublist",
+      "inputs": {
+        "sub_len": 2,
+        "sub": [
+          1,
+          2
+        ],
+        "main_len": 4,
+        "main": [
+          3,
+          1,
+          2,
+          4
+        ]
+      },
+      "expected": "found == 1"
+    },
+    {
+      "name": "case_1",
+      "function": "isSublist",
+      "inputs": {
+        "sub_len": 2,
+        "sub": [
+          2,
+          3
+        ],
+        "main_len": 4,
+        "main": [
+          3,
+          1,
+          2,
+          4
+        ]
+      },
+      "expected": "found == 0"
+    },
+    {
+      "name": "case_2",
+      "function": "isSublist",
+      "inputs": {
+        "sub_len": 2,
+        "sub": [
+          3,
+          1
+        ],
+        "main_len": 4,
+        "main": [
+          3,
+          1,
+          2,
+          4
+        ]
+      },
+      "expected": "found == 1"
+    },
+    {
+      "name": "case_3",
+      "function": "isSublist",
+      "inputs": {
+        "sub_len": 1,
+        "sub": [
+          4
+        ],
+        "main_len": 4,
+        "main": [
+          3,
+          1,
+          2,
+          4
+        ]
+      },
+      "expected": "found == 1"
+    },
+    {
+      "name": "case_4",
+      "function": "isSublist",
+      "inputs": {
+        "sub_len": 1,
+        "sub": [
+          5
+        ],
+        "main_len": 4,
+        "main": [
+          3,
+          1,
+          2,
+          4
+        ]
+      },
+      "expected": "found == 0"
+    },
+    {
+      "name": "case_5",
+      "function": "isSublist",
+      "inputs": {
+        "sub_len": 0,
+        "sub": [],
+        "main_len": 4,
+        "main": [
+          3,
+          1,
+          2,
+          4
+        ]
+      },
+      "expected": "found == 1"
+    },
+    {
+      "name": "case_6",
+      "function": "isSublist",
+      "inputs": {
+        "sub_len": 2,
+        "sub": [
+          1,
+          2
+        ],
+        "main_len": 0,
+        "main": []
+      },
+      "expected": "found == 0"
+    },
+    {
+      "name": "case_7",
+      "function": "isSublist",
+      "inputs": {
+        "sub_len": 0,
+        "sub": [],
+        "main_len": 0,
+        "main": []
+      },
+      "expected": "found == 1"
+    }
+  ]
+}

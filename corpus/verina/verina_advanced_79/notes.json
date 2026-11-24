@@ -1,0 +1,12 @@
+{
+  "id": "verina_advanced_79",
+  "stated": "part",
+  "dropped": [
+    "none case: no pair sums to target (Pairwise, quantifier)",
+    "some case: no valid pair with a smaller first index (quantifier)",
+    "some case: j is the smallest partner of i (quantifier)"
+  ],
+  "weakened": [],
+  "verdict": "certified at memory",
+  "remarks": ""
+}

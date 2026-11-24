@@ -1,0 +1,106 @@
+{
+  "comment": "Generated from the task's test.json by corpus/verina-notes/interface.py: one case per test.",
+  "functions": {
+    "UpdateElements": {
+      "result": "long",
+      "parameters": "long a_len, const long a[a_len]",
+      "call": "UpdateElements(a_len, a, 32, out)",
+      "locals": "long out[32] = {0};"
+    }
+  },
+  "cases": [
+    {
+      "name": "case_0",
+      "function": "UpdateElements",
+      "inputs": {
+        "a_len": 9,
+        "a": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ]
+      },
+      "expected": "found == 9 && out[0] == 0 && out[1] == 1 && out[2] == 2 && out[3] == 3 && out[4] == 7 && out[5] == 5 && out[6] == 6 && out[7] == 516 && out[8] == 8"
+    },
+    {
+      "name": "case_1",
+      "function": "UpdateElements",
+      "inputs": {
+        "a_len": 8,
+        "a": [
+          10,
+          20,
+          30,
+          40,
+          50,
+          60,
+          70,
+          80
+        ]
+      },
+      "expected": "found == 8 && out[0] == 10 && out[1] == 20 && out[2] == 30 && out[3] == 40 && out[4] == 53 && out[5] == 60 && out[6] == 70 && out[7] == 516"
+    },
+    {
+      "name": "case_2",
+      "function": "UpdateElements",
+      "inputs": {
+        "a_len": 10,
+        "a": [
+          -1,
+          -2,
+          -3,
+          -4,
+          -5,
+          -6,
+          -7,
+          -8,
+          -9,
+          -10
+        ]
+      },
+      "expected": "found == 10 && out[0] == -1 && out[1] == -2 && out[2] == -3 && out[3] == -4 && out[4] == -2 && out[5] == -6 && out[6] == -7 && out[7] == 516 && out[8] == -9 && out[9] == -10"
+    },
+    {
+      "name": "case_3",
+      "function": "UpdateElements",
+      "inputs": {
+        "a_len": 8,
+        "a": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "expected": "found == 8 && out[0] == 0 && out[1] == 0 && out[2] == 0 && out[3] == 0 && out[4] == 3 && out[5] == 0 && out[6] == 0 && out[7] == 516"
+    },
+    {
+      "name": "case_4",
+      "function": "UpdateElements",
+      "inputs": {
+        "a_len": 8,
+        "a": [
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5
+        ]
+      },
+      "expected": "found == 8 && out[0] == 5 && out[1] == 5 && out[2] == 5 && out[3] == 5 && out[4] == 8 && out[5] == 5 && out[6] == 5 && out[7] == 516"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+ "id": "verina_basic_64",
+ "stated": "part",
+ "dropped": [
+  "postcond: result[atPos + i] = nl[i] for i < p",
+  "postcond: result[i] = oline[i] for i < atPos",
+  "postcond: result[atPos + p + i] = oline[atPos + i] for i < l - atPos"
+ ],
+ "weakened": [],
+ "verdict": "certified at full",
+ "remarks": ""
+}

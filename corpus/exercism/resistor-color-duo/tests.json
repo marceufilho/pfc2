@@ -1,0 +1,96 @@
+{
+ "comment": "Each case is one assertion of the upstream test file, transcribed by hand: the inputs it passes and what it expects, stated on the port's interface. `found` is the value the function returns.",
+ "functions": {
+  "color_code": {
+   "result": "long",
+   "parameters": "long n, const int colors[n]",
+   "call": "duo_code(n, colors)"
+  }
+ },
+ "cases": [
+  {
+   "name": "brown_and_black",
+   "function": "color_code",
+   "inputs": {
+    "n": 2,
+    "colors": [
+     1,
+     0
+    ]
+   },
+   "expected": "found == 10"
+  },
+  {
+   "name": "blue_and_grey",
+   "function": "color_code",
+   "inputs": {
+    "n": 2,
+    "colors": [
+     6,
+     8
+    ]
+   },
+   "expected": "found == 68"
+  },
+  {
+   "name": "yellow_and_violet",
+   "function": "color_code",
+   "inputs": {
+    "n": 2,
+    "colors": [
+     4,
+     7
+    ]
+   },
+   "expected": "found == 47"
+  },
+  {
+   "name": "white_and_red",
+   "function": "color_code",
+   "inputs": {
+    "n": 2,
+    "colors": [
+     9,
+     2
+    ]
+   },
+   "expected": "found == 92"
+  },
+  {
+   "name": "orange_and_orange",
+   "function": "color_code",
+   "inputs": {
+    "n": 2,
+    "colors": [
+     3,
+     3
+    ]
+   },
+   "expected": "found == 33"
+  },
+  {
+   "name": "ignore_additional_colors",
+   "function": "color_code",
+   "inputs": {
+    "n": 2,
+    "colors": [
+     5,
+     1
+    ]
+   },
+   "expected": "found == 51"
+  },
+  {
+   "name": "black_and_brown_one_digit",
+   "function": "color_code",
+   "inputs": {
+    "n": 2,
+    "colors": [
+     0,
+     1
+    ]
+   },
+   "expected": "found == 1"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+  "id": "verina_basic_24",
+  "stated": "part",
+  "dropped": [
+    "precondition: a has an even element and an odd element (existentials)",
+    "postcondition: result = first even - first odd (existentials over indices with universal minimality)"
+  ],
+  "weakened": [],
+  "verdict": "certified at memory",
+  "remarks": "requires(a_len > 1) added: Verina's own precondition. The subtraction can overflow for allowed inputs."
+}

@@ -1,0 +1,60 @@
+/* Okabe–Ito colours of the paper (main.tex), as tokens for both themes. */
+:root {
+  --pfc-blue: #0072b2;
+  --pfc-verm: #d55e00;
+  --pfc-green: #009e73;
+  --pfc-orange: #e69f00;
+  --pfc-purple: #cc79a7;
+  --pfc-sky: #56b4e9;
+  --pfc-ok-bg: color-mix(in srgb, var(--pfc-green) 16%, transparent);
+  --pfc-bad-bg: color-mix(in srgb, var(--pfc-verm) 16%, transparent);
+  --pfc-warn-bg: color-mix(in srgb, var(--pfc-orange) 20%, transparent);
+  --pfc-border: var(--sl-color-gray-5);
+  --sl-content-width: 52rem;
+  --pfc-code-keyword: #6f42c1;
+  --pfc-code-number: #005cc5;
+  --pfc-code-string: #a31515;
+  --pfc-code-function: #0b5394;
+}
+:root[data-theme="dark"] {
+  --pfc-code-keyword: #c792ea;
+  --pfc-code-number: #82aaff;
+  --pfc-code-string: #f78c6c;
+  --pfc-code-function: #89ddff;
+}
+
+.pfc-note {
+  border-inline-start: 4px solid var(--pfc-orange);
+  background: var(--pfc-warn-bg);
+  padding: 0.6rem 0.9rem;
+  font-size: var(--sl-text-sm);
+  margin-block: 1rem;
+}
+.pfc-note.posthoc { border-color: var(--pfc-purple); background: color-mix(in srgb, var(--pfc-purple) 14%, transparent); }
+
+.pfc-table-wrap { overflow-x: auto; margin-block: 1rem; }
+.pfc-table { border-collapse: collapse; font-size: var(--sl-text-sm); width: 100%; display: table; }
+.pfc-table caption { caption-side: top; text-align: start; font-weight: 600; padding-block-end: 0.4rem; }
+.pfc-table th, .pfc-table td { padding: 0.3rem 0.6rem; border-block-end: 1px solid var(--pfc-border); text-align: start; vertical-align: top; }
+.pfc-table td.num, .pfc-table th.num { text-align: end; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.pfc-table tr.unmet td { background: var(--pfc-bad-bg); }
+.pfc-table tr.met td:last-child { color: var(--pfc-green); font-weight: 600; }
+.pfc-source { font-size: var(--sl-text-xs); color: var(--sl-color-gray-3); margin-block-start: 0.3rem; overflow-wrap: anywhere; }
+.pfc-source code { font-size: inherit; }
+
+.pfc-figure { margin-block: 1.5rem; }
+.pfc-figure figcaption { font-size: var(--sl-text-sm); color: var(--sl-color-gray-2); margin-block-start: 0.4rem; }
+.pfc-figure .controls { display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; font-size: var(--sl-text-sm); margin-block-end: 0.5rem; }
+.pfc-figure svg { max-width: 100%; height: auto; background: transparent; }
+.pfc-figure img { background: #fff; padding: 0.5rem; border-radius: 0.3rem; }
+
+.pfc-name { font-family: var(--sl-font-system); font-weight: 600; letter-spacing: 0.01em; }
+.pfc-math { font-family: "STIX Two Text", "Cambria Math", "Times New Roman", serif; white-space: nowrap; }
+.pfc-math code { font-size: 0.9em; }
+.pfc-caption { font-size: var(--sl-text-sm); margin-block-end: 0.5rem; }
+.pfc-scroll { overflow-x: auto; }
+.pfc-scroll + .pfc-scroll { margin-block-start: 0.8rem; }
+.pfc-references { font-size: var(--sl-text-sm); }
+.pfc-references li:target { background: var(--pfc-warn-bg); }
+.pfc-more { margin-block: 1rem; }
+.pfc-more summary { cursor: pointer; font-size: var(--sl-text-sm); }

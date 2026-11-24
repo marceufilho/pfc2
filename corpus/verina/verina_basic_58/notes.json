@@ -1,0 +1,10 @@
+{
+ "id": "verina_basic_58",
+ "stated": "part",
+ "dropped": [
+  "postcond: result[i] = 2 * s[i] for every i"
+ ],
+ "weakened": [],
+ "verdict": "certified at memory",
+ "remarks": "2 * s[i] can overflow."
+}

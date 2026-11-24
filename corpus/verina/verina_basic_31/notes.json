@@ -1,0 +1,10 @@
+{
+  "id": "verina_basic_31",
+  "stated": "part",
+  "dropped": [
+    "for every i: lowercase -> result[i] = s[i] - 32, otherwise result[i] = s[i] (quantifier)"
+  ],
+  "weakened": [],
+  "verdict": "certified at full",
+  "remarks": "Stated: result.length = s.length. requires(X_len >= 0) was added for the listed lengths: the `a[a_len]` spelling does not give the checker 0 <= length (a length is a Nat)."
+}

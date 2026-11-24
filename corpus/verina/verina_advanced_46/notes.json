@@ -1,0 +1,10 @@
+{
+  "id": "verina_advanced_46",
+  "stated": "none",
+  "dropped": [
+    "postcond: result is one of the subarray sums (empty one included) and the maximum (enumeration, sums)"
+  ],
+  "weakened": [],
+  "verdict": "certified at memory",
+  "remarks": "Only result >= 0 (the empty subarray's sum is a lower bound) is stated. current += numbers[i] can overflow, so its trap stays."
+}

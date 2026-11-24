@@ -1,0 +1,36 @@
+{
+  "compared": 1015,
+  "differing": [],
+  "passed": true,
+  "programs": {
+    "not certified": 17,
+    "used": 300
+  },
+  "rewriting_changed_behaviour": [],
+  "variants": {
+    "layout": {
+      "differs": 0,
+      "not applicable": 0,
+      "same": 300,
+      "variant not accepted by the front end": 0
+    },
+    "rename": {
+      "differs": 0,
+      "not applicable": 0,
+      "same": 300,
+      "variant not accepted by the front end": 0
+    },
+    "reorder": {
+      "differs": 0,
+      "not applicable": 139,
+      "same": 161,
+      "variant not accepted by the front end": 0
+    },
+    "swap": {
+      "differs": 0,
+      "not applicable": 46,
+      "same": 254,
+      "variant not accepted by the front end": 0
+    }
+  }
+}

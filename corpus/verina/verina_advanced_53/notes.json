@@ -1,0 +1,13 @@
+{
+ "id": "verina_advanced_53",
+ "stated": "part",
+ "dropped": [
+  "precondition: no repeated element (quantifier over pairs)",
+  "the list rotated by result is sorted (quantifier, rotation)",
+  "no smaller rotation is sorted (quantifier)",
+  "when result == -1 no rotation is sorted (quantifier)"
+ ],
+ "weakened": [],
+ "verdict": "certified at full",
+ "remarks": "Stated: length <= 1 gives 0; otherwise 0 <= result < length or result == -1."
+}

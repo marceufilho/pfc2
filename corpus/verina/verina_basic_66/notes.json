@@ -1,0 +1,10 @@
+{
+ "id": "verina_basic_66",
+ "stated": "none",
+ "dropped": [
+  "postcond: result <-> exists k, x = 2 * k"
+ ],
+ "weakened": [],
+ "verdict": "certified at full",
+ "remarks": "The Bool result is stated as its C encoding (0 or 1). The existential was not replaced by the equivalent x % 2 == 0."
+}

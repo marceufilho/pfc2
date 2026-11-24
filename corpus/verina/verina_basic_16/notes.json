@@ -1,0 +1,10 @@
+{
+  "id": "verina_basic_16",
+  "stated": "part",
+  "dropped": [
+    "every position holds newChar where s had oldChar and the original character elsewhere (quantifier)"
+  ],
+  "weakened": [],
+  "verdict": "refused-failed",
+  "remarks": "Refused on the conversion obligation of out[i] = newChar: newChar is a long on the interface and nothing bounds it to the range of char. A precondition CHAR_MIN <= newChar <= CHAR_MAX (the Char type of the parameter) would certify the unit; the protocol's list of allowed preconditions does not include it, so it was not added."
+}

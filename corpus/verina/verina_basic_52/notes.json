@@ -1,0 +1,11 @@
+{
+ "id": "verina_basic_52",
+ "stated": "none",
+ "dropped": [
+  "postcond: result sorted (Pairwise)",
+  "postcond: result is a permutation of a"
+ ],
+ "weakened": [],
+ "verdict": "certified at full",
+ "remarks": ""
+}

@@ -1,0 +1,10 @@
+{
+  "id": "verina_basic_39",
+  "stated": "part",
+  "dropped": [
+    "for every i: result[i] = l[(i - n + len) % len] (quantifier)"
+  ],
+  "weakened": [],
+  "verdict": "certified at memory",
+  "remarks": "Stated: result.length = l.length; n >= 0 (Nat, already in the port). The kept trap is i + shift, which overflows only for a length above LONG_MAX / 2; the checker has no bound on array lengths. requires(X_len >= 0) was added for the listed lengths: the `a[a_len]` spelling does not give the checker 0 <= length (a length is a Nat)."
+}

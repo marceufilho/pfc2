@@ -1,0 +1,10 @@
+{
+ "id": "verina_advanced_61",
+ "stated": "part",
+ "dropped": [
+  "each result[i] is the product of the elements before i times the product of those after i (quantifier over i, recursive product)"
+ ],
+ "weakened": [],
+ "verdict": "certified at memory",
+ "remarks": "Stated: the result has the input's length. The three multiplications can overflow for allowed inputs, so their traps stay. The length parameters are named X_len, which the checker reads in the older spelling without assuming 0 <= X_len; requires(0 <= X_len) states it (a list length is a Nat)."
+}

@@ -1,0 +1,100 @@
+{
+  "columns": [
+    {
+      "allowed": null,
+      "name": "program",
+      "nullable": false,
+      "type": "string"
+    },
+    {
+      "allowed": null,
+      "name": "family",
+      "nullable": false,
+      "type": "string"
+    },
+    {
+      "allowed": [
+        "N",
+        "I",
+        "B1",
+        "B2",
+        "L1",
+        "L2"
+      ],
+      "name": "condition",
+      "nullable": false,
+      "type": "string"
+    },
+    {
+      "allowed": null,
+      "name": "rounds_budget",
+      "nullable": true,
+      "type": "integer"
+    },
+    {
+      "allowed": null,
+      "name": "run",
+      "nullable": true,
+      "type": "integer"
+    },
+    {
+      "allowed": null,
+      "name": "success",
+      "nullable": false,
+      "type": "boolean"
+    },
+    {
+      "allowed": null,
+      "name": "status",
+      "nullable": false,
+      "type": "string"
+    },
+    {
+      "allowed": null,
+      "name": "loops",
+      "nullable": false,
+      "type": "integer"
+    },
+    {
+      "allowed": null,
+      "name": "candidates",
+      "nullable": true,
+      "type": "integer"
+    },
+    {
+      "allowed": null,
+      "name": "kept",
+      "nullable": true,
+      "type": "integer"
+    },
+    {
+      "allowed": null,
+      "name": "rounds",
+      "nullable": true,
+      "type": "integer"
+    },
+    {
+      "allowed": null,
+      "name": "attempts",
+      "nullable": true,
+      "type": "integer"
+    },
+    {
+      "allowed": null,
+      "name": "seconds",
+      "nullable": false,
+      "type": "number"
+    }
+  ],
+  "provenance": [
+    "experiment",
+    "evidence_dir",
+    "tag",
+    "commit",
+    "seed",
+    "timestamp",
+    "vc_model",
+    "solver_version",
+    "clang"
+  ]
+}

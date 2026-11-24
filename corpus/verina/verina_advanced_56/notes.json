@@ -1,0 +1,12 @@
+{
+ "id": "verina_advanced_56",
+ "stated": "part",
+ "dropped": [
+  "the non-zero elements keep their order (subsequence, recursive definition)",
+  "after the first zero every element is zero (quantifier)",
+  "the number of zeroes is unchanged (count)"
+ ],
+ "weakened": [],
+ "verdict": "certified at full",
+ "remarks": "Stated: the result has the input's length. The length parameters are named X_len, which the checker reads in the older spelling without assuming 0 <= X_len; requires(0 <= X_len) states it (a list length is a Nat)."
+}

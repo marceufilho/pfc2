@@ -1,0 +1,11 @@
+{
+  "agreement": {
+    "agree": 13936
+  },
+  "pairs": {
+    "z3 sat / cvc5 sat": 1906,
+    "z3 unsat / cvc5 unsat": 12030
+  },
+  "passed": true,
+  "queries": 13936
+}

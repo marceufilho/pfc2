@@ -1,0 +1,18 @@
+---
+import "../styles/playground.css";
+
+// The PFC2 checker, live in the page.
+interface Props {
+  program?: string;
+}
+const { program = "01_count/count" } = Astro.props;
+---
+
+<div class="pfc-playground not-content" data-program={program}>
+  <noscript>The playground needs JavaScript and WebAssembly. The rest of the site works without them.</noscript>
+</div>
+
+<script>
+  import { mount } from "../lib/playground";
+  document.querySelectorAll<HTMLElement>(".pfc-playground").forEach((element) => mount(element));
+</script>

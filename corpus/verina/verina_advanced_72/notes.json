@@ -1,0 +1,8 @@
+{
+ "id": "verina_advanced_72",
+ "stated": "all",
+ "dropped": [],
+ "weakened": [],
+ "verdict": "certified at full",
+ "remarks": "n >= 0 is the Nat type. The bounded quantifier (List.range result).all (x in [2,3,5,7] -> n % x != 0) is unfolded over the four literals, which is an equivalent statement."
+}

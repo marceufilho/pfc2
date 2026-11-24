@@ -1,0 +1,58 @@
+{
+  "comment": "Generated from the task's test.json by corpus/verina-notes/interface.py: one case per test.",
+  "functions": {
+    "SwapBitvectors": {
+      "result": "long",
+      "parameters": "long X, long Y",
+      "call": "SwapBitvectors(X, Y, 8, out)",
+      "locals": "long out[8] = {0};"
+    }
+  },
+  "cases": [
+    {
+      "name": "case_0",
+      "function": "SwapBitvectors",
+      "inputs": {
+        "X": 0,
+        "Y": 0
+      },
+      "expected": "out[0] == 0 && out[1] == 0"
+    },
+    {
+      "name": "case_1",
+      "function": "SwapBitvectors",
+      "inputs": {
+        "X": 5,
+        "Y": 10
+      },
+      "expected": "out[0] == 10 && out[1] == 5"
+    },
+    {
+      "name": "case_2",
+      "function": "SwapBitvectors",
+      "inputs": {
+        "X": 255,
+        "Y": 1
+      },
+      "expected": "out[0] == 1 && out[1] == 255"
+    },
+    {
+      "name": "case_3",
+      "function": "SwapBitvectors",
+      "inputs": {
+        "X": 128,
+        "Y": 64
+      },
+      "expected": "out[0] == 64 && out[1] == 128"
+    },
+    {
+      "name": "case_4",
+      "function": "SwapBitvectors",
+      "inputs": {
+        "X": 15,
+        "Y": 15
+      },
+      "expected": "out[0] == 15 && out[1] == 15"
+    }
+  ]
+}

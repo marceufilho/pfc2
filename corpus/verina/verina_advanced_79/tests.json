@@ -1,0 +1,84 @@
+{
+  "comment": "Generated from the task's test.json by corpus/verina-notes/interface.py: one case per test.",
+  "functions": {
+    "twoSum": {
+      "result": "long",
+      "parameters": "long nums_len, const long nums[nums_len], long target",
+      "call": "twoSum(nums_len, nums, target, 16, out)",
+      "locals": "long out[16] = {0};"
+    }
+  },
+  "cases": [
+    {
+      "name": "case_0",
+      "function": "twoSum",
+      "inputs": {
+        "nums_len": 4,
+        "nums": [
+          2,
+          7,
+          11,
+          15
+        ],
+        "target": 9
+      },
+      "expected": "out[0] == 1 && out[1] == 0 && out[2] == 1"
+    },
+    {
+      "name": "case_1",
+      "function": "twoSum",
+      "inputs": {
+        "nums_len": 3,
+        "nums": [
+          3,
+          2,
+          4
+        ],
+        "target": 6
+      },
+      "expected": "out[0] == 1 && out[1] == 1 && out[2] == 2"
+    },
+    {
+      "name": "case_2",
+      "function": "twoSum",
+      "inputs": {
+        "nums_len": 2,
+        "nums": [
+          3,
+          3
+        ],
+        "target": 6
+      },
+      "expected": "out[0] == 1 && out[1] == 0 && out[2] == 1"
+    },
+    {
+      "name": "case_3",
+      "function": "twoSum",
+      "inputs": {
+        "nums_len": 3,
+        "nums": [
+          1,
+          2,
+          3
+        ],
+        "target": 7
+      },
+      "expected": "out[0] == 0"
+    },
+    {
+      "name": "case_4",
+      "function": "twoSum",
+      "inputs": {
+        "nums_len": 4,
+        "nums": [
+          0,
+          4,
+          3,
+          0
+        ],
+        "target": 0
+      },
+      "expected": "out[0] == 1 && out[1] == 0 && out[2] == 3"
+    }
+  ]
+}

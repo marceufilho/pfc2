@@ -1,0 +1,79 @@
+{
+ "comment": "Generated from the task's test.json by corpus/verina-notes/interface.py: one case per test.",
+ "functions": {
+  "reverseString": {
+   "result": "long",
+   "parameters": "long s_len, const char s[s_len]",
+   "call": "reverseString(s_len, s, 16, out)",
+   "locals": "char out[16] = {0};"
+  }
+ },
+ "cases": [
+  {
+   "name": "case_0",
+   "function": "reverseString",
+   "inputs": {
+    "s_len": 5,
+    "s": [
+     104,
+     101,
+     108,
+     108,
+     111
+    ]
+   },
+   "expected": "found == 5 && out[0] == 111 && out[1] == 108 && out[2] == 108 && out[3] == 101 && out[4] == 104"
+  },
+  {
+   "name": "case_1",
+   "function": "reverseString",
+   "inputs": {
+    "s_len": 1,
+    "s": [
+     97
+    ]
+   },
+   "expected": "found == 1 && out[0] == 97"
+  },
+  {
+   "name": "case_2",
+   "function": "reverseString",
+   "inputs": {
+    "s_len": 0,
+    "s": []
+   },
+   "expected": "found == 0"
+  },
+  {
+   "name": "case_3",
+   "function": "reverseString",
+   "inputs": {
+    "s_len": 7,
+    "s": [
+     114,
+     97,
+     99,
+     101,
+     99,
+     97,
+     114
+    ]
+   },
+   "expected": "found == 7 && out[0] == 114 && out[1] == 97 && out[2] == 99 && out[3] == 101 && out[4] == 99 && out[5] == 97 && out[6] == 114"
+  },
+  {
+   "name": "case_4",
+   "function": "reverseString",
+   "inputs": {
+    "s_len": 4,
+    "s": [
+     76,
+     101,
+     97,
+     110
+    ]
+   },
+   "expected": "found == 4 && out[0] == 110 && out[1] == 97 && out[2] == 101 && out[3] == 76"
+  }
+ ]
+}

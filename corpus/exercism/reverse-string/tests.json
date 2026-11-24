@@ -1,0 +1,78 @@
+{
+ "comment": "Each case is one assertion of the upstream test file, transcribed by hand: the inputs it passes and what it expects, stated on the port's interface. `found` is the value the function returns.",
+ "functions": {
+  "reverse": {
+   "result": "long",
+   "parameters": "long n, const char value[n]",
+   "call": ""
+  }
+ },
+ "cases": [
+  {
+   "name": "an_empty_string",
+   "function": "reverse",
+   "inputs": {
+    "n": 0,
+    "value": ""
+   },
+   "expected": "out[0] == 0",
+   "locals": "char out[1] = {0};",
+   "call": "reverse_into(n, value, 1, out)"
+  },
+  {
+   "name": "a_word",
+   "function": "reverse",
+   "inputs": {
+    "n": 5,
+    "value": "robot"
+   },
+   "expected": "out[0] == 116 && out[1] == 111 && out[2] == 98 && out[3] == 111 && out[4] == 114 && out[5] == 0",
+   "locals": "char out[6] = {0};",
+   "call": "reverse_into(n, value, 6, out)"
+  },
+  {
+   "name": "a_capitalized_word",
+   "function": "reverse",
+   "inputs": {
+    "n": 5,
+    "value": "Ramen"
+   },
+   "expected": "out[0] == 110 && out[1] == 101 && out[2] == 109 && out[3] == 97 && out[4] == 82 && out[5] == 0",
+   "locals": "char out[6] = {0};",
+   "call": "reverse_into(n, value, 6, out)"
+  },
+  {
+   "name": "a_sentence_with_punctuation",
+   "function": "reverse",
+   "inputs": {
+    "n": 11,
+    "value": "I'm hungry!"
+   },
+   "expected": "out[0] == 33 && out[1] == 121 && out[2] == 114 && out[3] == 103 && out[4] == 110 && out[5] == 117 && out[6] == 104 && out[7] == 32 && out[8] == 109 && out[9] == 39 && out[10] == 73 && out[11] == 0",
+   "locals": "char out[12] = {0};",
+   "call": "reverse_into(n, value, 12, out)"
+  },
+  {
+   "name": "a_palindrome",
+   "function": "reverse",
+   "inputs": {
+    "n": 7,
+    "value": "racecar"
+   },
+   "expected": "out[0] == 114 && out[1] == 97 && out[2] == 99 && out[3] == 101 && out[4] == 99 && out[5] == 97 && out[6] == 114 && out[7] == 0",
+   "locals": "char out[8] = {0};",
+   "call": "reverse_into(n, value, 8, out)"
+  },
+  {
+   "name": "an_even_sized_word",
+   "function": "reverse",
+   "inputs": {
+    "n": 6,
+    "value": "drawer"
+   },
+   "expected": "out[0] == 114 && out[1] == 101 && out[2] == 119 && out[3] == 97 && out[4] == 114 && out[5] == 100 && out[6] == 0",
+   "locals": "char out[7] = {0};",
+   "call": "reverse_into(n, value, 7, out)"
+  }
+ ]
+}

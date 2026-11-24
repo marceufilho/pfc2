@@ -1,0 +1,10 @@
+{
+  "id": "verina_basic_82",
+  "stated": "part",
+  "dropped": [
+    "forall i < result.size, result[i] = a[i + 1] (needs a quantifier over elements)"
+  ],
+  "weakened": [],
+  "verdict": "certified at full",
+  "remarks": "The postcondition repeats the precondition a.size > 0; it is the existing requires."
+}

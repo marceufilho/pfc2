@@ -1,0 +1,11 @@
+{
+  "id": "verina_basic_83",
+  "stated": "part",
+  "dropped": [
+    "forall k < a.size, result[k] = a[k] (needs a quantifier over elements)",
+    "forall k < b.size, result[k + a.size] = b[k] (needs a quantifier over elements)"
+  ],
+  "weakened": [],
+  "verdict": "certified at full",
+  "remarks": "The length parameters are named X_len, a spelling for which PFC2 does not add 0 <= length by itself; the added requires states that the sizes are non-negative (they are Nat in Verina)."
+}

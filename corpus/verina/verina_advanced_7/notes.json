@@ -1,0 +1,11 @@
+{
+ "id": "verina_advanced_7",
+ "stated": "none",
+ "dropped": [
+  "precondition: every digit is 0 or 1 (quantifier)",
+  "result equals the fold acc * 2 + bit over the digits (recursive definition)"
+ ],
+ "weakened": [],
+ "verdict": "certified at memory",
+ "remarks": "Nothing of the specification is statable. result >= 0 (the Nat type) is not stated: it holds only under the dropped precondition. value * 2 + digit can overflow for allowed inputs. Verina writes the equality as two truncated Nat subtractions. The length parameters are named X_len, which the checker reads in the older spelling without assuming 0 <= X_len; requires(0 <= X_len) states it (a list length is a Nat)."
+}

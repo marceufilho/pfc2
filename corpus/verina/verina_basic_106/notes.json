@@ -1,0 +1,10 @@
+{
+  "id": "verina_basic_106",
+  "stated": "part",
+  "dropped": [
+    "result[i] = a[i] + b[i] for every i (quantifier)"
+  ],
+  "weakened": [],
+  "verdict": "certified at memory",
+  "remarks": ""
+}

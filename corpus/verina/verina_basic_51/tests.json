@@ -1,0 +1,89 @@
+{
+  "comment": "Generated from the task's test.json by corpus/verina-notes/interface.py: one case per test.",
+  "functions": {
+    "BinarySearch": {
+      "result": "long",
+      "parameters": "long a_len, const long a[a_len], long key",
+      "call": "BinarySearch(a_len, a, key)"
+    }
+  },
+  "cases": [
+    {
+      "name": "case_0",
+      "function": "BinarySearch",
+      "inputs": {
+        "a_len": 5,
+        "a": [
+          1,
+          3,
+          5,
+          7,
+          9
+        ],
+        "key": 5
+      },
+      "expected": "found == 2"
+    },
+    {
+      "name": "case_1",
+      "function": "BinarySearch",
+      "inputs": {
+        "a_len": 5,
+        "a": [
+          1,
+          3,
+          5,
+          7,
+          9
+        ],
+        "key": 6
+      },
+      "expected": "found == 3"
+    },
+    {
+      "name": "case_2",
+      "function": "BinarySearch",
+      "inputs": {
+        "a_len": 4,
+        "a": [
+          2,
+          4,
+          6,
+          8
+        ],
+        "key": 1
+      },
+      "expected": "found == 0"
+    },
+    {
+      "name": "case_3",
+      "function": "BinarySearch",
+      "inputs": {
+        "a_len": 4,
+        "a": [
+          2,
+          4,
+          6,
+          8
+        ],
+        "key": 10
+      },
+      "expected": "found == 4"
+    },
+    {
+      "name": "case_4",
+      "function": "BinarySearch",
+      "inputs": {
+        "a_len": 4,
+        "a": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "key": 1
+      },
+      "expected": "found == 0"
+    }
+  ]
+}

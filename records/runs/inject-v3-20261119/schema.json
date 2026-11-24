@@ -1,0 +1,76 @@
+{
+  "columns": [
+    {
+      "allowed": [
+        "program",
+        "candidate"
+      ],
+      "name": "row",
+      "nullable": false,
+      "type": "string"
+    },
+    {
+      "allowed": null,
+      "name": "program",
+      "nullable": false,
+      "type": "string"
+    },
+    {
+      "allowed": null,
+      "name": "status",
+      "nullable": true,
+      "type": "string"
+    },
+    {
+      "allowed": null,
+      "name": "loop",
+      "nullable": true,
+      "type": "integer"
+    },
+    {
+      "allowed": [
+        "literal-false",
+        "off-by-one",
+        "reversed",
+        "dropped",
+        "wrong-variable"
+      ],
+      "name": "operator",
+      "nullable": true,
+      "type": "string"
+    },
+    {
+      "allowed": null,
+      "name": "candidate",
+      "nullable": true,
+      "type": "string"
+    },
+    {
+      "allowed": [
+        "false",
+        "not-refuted",
+        "unparseable"
+      ],
+      "name": "class",
+      "nullable": true,
+      "type": "string"
+    },
+    {
+      "allowed": null,
+      "name": "admitted",
+      "nullable": true,
+      "type": "boolean"
+    }
+  ],
+  "provenance": [
+    "experiment",
+    "evidence_dir",
+    "tag",
+    "commit",
+    "seed",
+    "timestamp",
+    "vc_model",
+    "solver_version",
+    "clang"
+  ]
+}

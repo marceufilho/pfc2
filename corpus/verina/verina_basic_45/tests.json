@@ -1,0 +1,54 @@
+{
+  "comment": "Generated from the task's test.json by corpus/verina-notes/interface.py: one case per test.",
+  "functions": {
+    "findProduct": {
+      "result": "long",
+      "parameters": "long lst_len, const long lst[lst_len]",
+      "call": "findProduct(lst_len, lst)"
+    }
+  },
+  "cases": [
+    {
+      "name": "case_0",
+      "function": "findProduct",
+      "inputs": {
+        "lst_len": 4,
+        "lst": [
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "expected": "found == 6"
+    },
+    {
+      "name": "case_1",
+      "function": "findProduct",
+      "inputs": {
+        "lst_len": 4,
+        "lst": [
+          2,
+          4,
+          3,
+          6
+        ]
+      },
+      "expected": "found == 6"
+    },
+    {
+      "name": "case_2",
+      "function": "findProduct",
+      "inputs": {
+        "lst_len": 4,
+        "lst": [
+          1,
+          2,
+          5,
+          4
+        ]
+      },
+      "expected": "found == 2"
+    }
+  ]
+}

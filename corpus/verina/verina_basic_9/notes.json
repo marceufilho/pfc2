@@ -1,0 +1,10 @@
+{
+  "id": "verina_basic_9",
+  "stated": "none",
+  "dropped": [
+    "(exists i j, i < a.size and j < b.size and a[i] = b[j]) <-> result (an existential over elements; the whole postcondition)"
+  ],
+  "weakened": [],
+  "verdict": "certified at full",
+  "remarks": "Verina precondition (both arrays non-empty) stated as requires; result being 1 or 0 is the Bool interface."
+}

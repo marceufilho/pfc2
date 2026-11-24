@@ -1,0 +1,10 @@
+{
+  "compared": 132,
+  "differing": [],
+  "passed": true,
+  "programs": 132,
+  "verdicts": {
+    "certified": 115,
+    "refused": 17
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "id": "verina_advanced_43",
+  "stated": "part",
+  "dropped": [
+    "postcond: result is a product of a non-empty sublist and no such product is larger (sublists, fold)"
+  ],
+  "weakened": [],
+  "verdict": "refused-failed",
+  "remarks": "Stated: only the precondition nums != []. Refused at both levels because of the division product / closest_negative: with nums = [-1, 4611686018427387904, 2] the product is LONG_MIN without any overflow and the division by -1 is undefined in C; the mathematical answer 2^63 does not fit a long. A defect of the port's arithmetic range, not statable away without bounding values."
+}

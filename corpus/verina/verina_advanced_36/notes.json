@@ -1,0 +1,12 @@
+{
+  "id": "verina_advanced_36",
+  "stated": "part",
+  "dropped": [
+    "precond: some element occurs more than length/2 times (count)",
+    "postcond: count result > length/2",
+    "elements are Nats (quantifier over elements)"
+  ],
+  "weakened": [],
+  "verdict": "certified at full",
+  "remarks": "Stated: only the precondition xs.length > 0."
+}

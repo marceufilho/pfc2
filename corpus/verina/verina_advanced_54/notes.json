@@ -1,0 +1,13 @@
+{
+ "id": "verina_advanced_54",
+ "stated": "part",
+ "dropped": [
+  "precondition: every element is at most the length (quantifier)",
+  "precondition: no repeated element (quantifier over pairs)",
+  "result does not occur in nums (quantifier)",
+  "every other number of 0..n occurs in nums (quantifier)"
+ ],
+ "weakened": [],
+ "verdict": "refused-failed",
+ "remarks": "Stated: 0 <= result <= length (result in range (n + 1)). It is true under Verina's precondition but not provable: it follows from the dropped range and distinctness of the elements through the sum. Without that ensures the unit would be certified at memory (the sum can overflow). The length parameters are named X_len, which the checker reads in the older spelling without assuming 0 <= X_len; requires(0 <= X_len) states it (a list length is a Nat)."
+}

@@ -1,0 +1,12 @@
+{
+  "id": "verina_advanced_8",
+  "stated": "part",
+  "dropped": [
+    "result = -1 implies no start is valid (quantifier, fold)",
+    "result >= 0 implies the start is valid (fold over the circuit)",
+    "result >= 0 implies no smaller start is valid (quantifier, fold)"
+  ],
+  "weakened": [],
+  "verdict": "certified at memory",
+  "remarks": ""
+}

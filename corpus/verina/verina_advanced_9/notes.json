@@ -1,0 +1,10 @@
+{
+  "id": "verina_advanced_9",
+  "stated": "part",
+  "dropped": [
+    "result equals the number of x < n whose digit sum is divisible by d (count, recursive sumOfDigits)"
+  ],
+  "weakened": [],
+  "verdict": "certified at full",
+  "remarks": "The precondition d > 0 is stated. Of the postcondition only the range of a count over 0..n-1 is stated."
+}

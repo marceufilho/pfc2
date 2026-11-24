@@ -1,0 +1,586 @@
+{
+ "source": "exercism/c",
+ "commit": "1675b02c310198e9752e516ee1a2294b76a37f84",
+ "note": "Every practice exercise in lexicographic order. Classified by reading the reference solution under the rules of DESIGN.md section 6 as amended (AMENDMENTS 3, 6, 7). `fixes` counts changes made after a first failing run of the upstream tests.",
+ "units": [
+  {
+   "slug": "acronym",
+   "status": "pilot"
+  },
+  {
+   "slug": "all-your-base",
+   "status": "pilot"
+  },
+  {
+   "slug": "allergies",
+   "status": "pilot"
+  },
+  {
+   "slug": "anagram",
+   "status": "pilot"
+  },
+  {
+   "slug": "armstrong-numbers",
+   "status": "pilot"
+  },
+  {
+   "slug": "atbash-cipher",
+   "status": "pilot"
+  },
+  {
+   "slug": "beer-song",
+   "status": "pilot"
+  },
+  {
+   "slug": "binary",
+   "status": "pilot"
+  },
+  {
+   "slug": "binary-search",
+   "status": "pilot"
+  },
+  {
+   "slug": "binary-search-tree",
+   "status": "pilot"
+  },
+  {
+   "slug": "bob",
+   "status": "pilot"
+  },
+  {
+   "slug": "circular-buffer",
+   "status": "pilot"
+  },
+  {
+   "slug": "clock",
+   "status": "excluded",
+   "exclusion": "X6",
+   "reason": "sscanf and snprintf format the clock as text; struct holding a text array"
+  },
+  {
+   "slug": "collatz-conjecture",
+   "status": "ported",
+   "rules": [
+    "P1"
+   ],
+   "fixes": 0
+  },
+  {
+   "slug": "complex-numbers",
+   "status": "excluded",
+   "exclusion": "X1",
+   "reason": "double arithmetic; sqrt, exp, cos, sin"
+  },
+  {
+   "slug": "crypto-square",
+   "status": "excluded",
+   "exclusion": "X1",
+   "reason": "sqrt from <math.h>; also isalnum, outside P7"
+  },
+  {
+   "slug": "darts",
+   "status": "excluded",
+   "exclusion": "X1",
+   "reason": "float coordinates and sqrt"
+  },
+  {
+   "slug": "diamond",
+   "status": "excluded",
+   "exclusion": "X3",
+   "reason": "returns char **, an array of row pointers; allocation sized by an input value"
+  },
+  {
+   "slug": "difference-of-squares",
+   "status": "ported",
+   "rules": [
+    "P1"
+   ],
+   "fixes": 0
+  },
+  {
+   "slug": "dnd-character",
+   "status": "excluded",
+   "exclusion": "X1",
+   "reason": "floor of a double division; also rand"
+  },
+  {
+   "slug": "eliuds-eggs",
+   "status": "excluded",
+   "exclusion": "X5",
+   "reason": "& 1 and >> 1"
+  },
+  {
+   "slug": "etl",
+   "status": "excluded",
+   "exclusion": "X4",
+   "reason": "qsort with a comparison function pointer; structs holding strings"
+  },
+  {
+   "slug": "flower-field",
+   "status": "excluded",
+   "exclusion": "X3",
+   "reason": "takes and returns char **, arrays of row pointers"
+  },
+  {
+   "slug": "gigasecond",
+   "status": "excluded",
+   "exclusion": "X6",
+   "reason": "gmtime and strftime from <time.h>"
+  },
+  {
+   "slug": "grade-school",
+   "status": "excluded",
+   "exclusion": "X4",
+   "reason": "qsort with comparison function pointers; struct holding text arrays"
+  },
+  {
+   "slug": "grains",
+   "status": "excluded",
+   "exclusion": "X5",
+   "reason": "1 << (index - 1)"
+  },
+  {
+   "slug": "hamming",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P2",
+    "P7"
+   ],
+   "fixes": 0
+  },
+  {
+   "slug": "hello-world",
+   "status": "ported",
+   "rules": [
+    "P12"
+   ],
+   "fixes": 0
+  },
+  {
+   "slug": "high-scores",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P4"
+   ],
+   "fixes": 0
+  },
+  {
+   "slug": "intergalactic-transmission",
+   "status": "excluded",
+   "exclusion": "X5",
+   "reason": "shifts, masks and __builtin_popcount"
+  },
+  {
+   "slug": "isogram",
+   "status": "excluded",
+   "exclusion": "X5",
+   "reason": "bit set built with <<, & and |="
+  },
+  {
+   "slug": "kindergarten-garden",
+   "status": "excluded",
+   "exclusion": "X3",
+   "reason": "table of strings; strcmp, strchr, exit"
+  },
+  {
+   "slug": "knapsack",
+   "status": "excluded",
+   "exclusion": "X2",
+   "reason": "two-dimensional variable-length table sized by the maximum weight, an input value"
+  },
+  {
+   "slug": "largest-series-product",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P2",
+    "P6",
+    "P7",
+    "P13",
+    "P14"
+   ],
+   "fixes": 1
+  },
+  {
+   "slug": "leap",
+   "status": "ported",
+   "rules": [
+    "P1"
+   ],
+   "fixes": 0
+  },
+  {
+   "slug": "linked-list",
+   "status": "excluded",
+   "exclusion": "X3",
+   "reason": "heap nodes linked by pointers"
+  },
+  {
+   "slug": "list-ops",
+   "status": "excluded",
+   "exclusion": "X4",
+   "reason": "function pointer parameters"
+  },
+  {
+   "slug": "luhn",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P2",
+    "P6",
+    "P7",
+    "P13"
+   ],
+   "fixes": 0
+  },
+  {
+   "slug": "matching-brackets",
+   "status": "excluded",
+   "exclusion": "X4",
+   "reason": "recursion"
+  },
+  {
+   "slug": "meetup",
+   "status": "excluded",
+   "exclusion": "X6",
+   "reason": "mktime and localtime from <time.h>; strcmp over tables of strings"
+  },
+  {
+   "slug": "minesweeper",
+   "status": "excluded",
+   "exclusion": "X3",
+   "reason": "takes and returns char **, arrays of row pointers"
+  },
+  {
+   "slug": "nth-prime",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P14"
+   ],
+   "fixes": 0
+  },
+  {
+   "slug": "nucleotide-count",
+   "status": "excluded",
+   "exclusion": "X6",
+   "reason": "snprintf formats the counts as text"
+  },
+  {
+   "slug": "palindrome-products",
+   "status": "excluded",
+   "exclusion": "X4",
+   "reason": "recursion; heap linked lists; snprintf"
+  },
+  {
+   "slug": "pangram",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P2",
+    "P7",
+    "P13"
+   ],
+   "fixes": 0
+  },
+  {
+   "slug": "pascals-triangle",
+   "status": "excluded",
+   "exclusion": "X3",
+   "reason": "returns uint8_t **, an array of row pointers"
+  },
+  {
+   "slug": "perfect-numbers",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P5",
+    "P6",
+    "P14"
+   ],
+   "fixes": 0
+  },
+  {
+   "slug": "phone-number",
+   "status": "excluded",
+   "exclusion": "X6",
+   "reason": "strchr and strcpy, outside P7"
+  },
+  {
+   "slug": "pig-latin",
+   "status": "excluded",
+   "exclusion": "X6",
+   "reason": "strcpy, outside P7; string literals passed as arrays"
+  },
+  {
+   "slug": "prime-factors",
+   "status": "excluded",
+   "exclusion": "X1",
+   "reason": "loop bound sqrt(n) from <math.h>"
+  },
+  {
+   "slug": "protein-translation",
+   "status": "excluded",
+   "exclusion": "X3",
+   "reason": "table of structs holding strings; strncmp"
+  },
+  {
+   "slug": "pythagorean-triplet",
+   "status": "excluded",
+   "exclusion": "X2",
+   "reason": "result grown with realloc, not bounded by an input length"
+  },
+  {
+   "slug": "queen-attack",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P5"
+   ],
+   "fixes": 0
+  },
+  {
+   "slug": "rail-fence-cipher",
+   "status": "excluded",
+   "exclusion": "X6",
+   "reason": "strcpy, outside P7"
+  },
+  {
+   "slug": "raindrops",
+   "status": "excluded",
+   "exclusion": "X6",
+   "reason": "strcat and snprintf build the text"
+  },
+  {
+   "slug": "rational-numbers",
+   "status": "excluded",
+   "exclusion": "X1",
+   "reason": "float results; pow and nth root"
+  },
+  {
+   "slug": "react",
+   "status": "excluded",
+   "exclusion": "X4",
+   "reason": "callbacks through function pointers; heap graph"
+  },
+  {
+   "slug": "resistor-color",
+   "status": "excluded",
+   "exclusion": "X6",
+   "reason": "returns a pointer to a file-scope array"
+  },
+  {
+   "slug": "resistor-color-duo",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P5"
+   ],
+   "fixes": 0
+  },
+  {
+   "slug": "resistor-color-trio",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P3",
+    "P5",
+    "P9"
+   ],
+   "fixes": 0
+  },
+  {
+   "slug": "reverse-string",
+   "status": "ported",
+   "rules": [
+    "P2",
+    "P3",
+    "P7",
+    "P11"
+   ],
+   "fixes": 0
+  },
+  {
+   "slug": "rna-transcription",
+   "status": "ported",
+   "rules": [
+    "P2",
+    "P3",
+    "P6",
+    "P7"
+   ],
+   "fixes": 0
+  },
+  {
+   "slug": "robot-simulator",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P2",
+    "P3",
+    "P5",
+    "P6",
+    "P7",
+    "P14"
+   ],
+   "fixes": 0
+  },
+  {
+   "slug": "roman-numerals",
+   "status": "excluded",
+   "exclusion": "X3",
+   "reason": "table of structs holding strings; strncat"
+  },
+  {
+   "slug": "rotational-cipher",
+   "status": "excluded",
+   "exclusion": "X6",
+   "reason": "isupper, outside P7"
+  },
+  {
+   "slug": "run-length-encoding",
+   "status": "excluded",
+   "exclusion": "X6",
+   "reason": "snprintf formats the counts; log10 from <math.h>"
+  },
+  {
+   "slug": "saddle-points",
+   "status": "excluded",
+   "exclusion": "X2",
+   "reason": "result grown with realloc; two-dimensional array parameter"
+  },
+  {
+   "slug": "say",
+   "status": "excluded",
+   "exclusion": "X1",
+   "reason": "floor(log10) and pow on doubles; tables of strings"
+  },
+  {
+   "slug": "scrabble-score",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P2",
+    "P7",
+    "P11",
+    "P13",
+    "P14"
+   ],
+   "fixes": 0
+  },
+  {
+   "slug": "secret-handshake",
+   "status": "excluded",
+   "exclusion": "X5",
+   "reason": "bit tests with & and <<; table of strings"
+  },
+  {
+   "slug": "series",
+   "status": "excluded",
+   "exclusion": "X3",
+   "reason": "returns char **; snprintf"
+  },
+  {
+   "slug": "sieve",
+   "status": "excluded",
+   "exclusion": "X2",
+   "reason": "calloc sized by limit, an input value"
+  },
+  {
+   "slug": "space-age",
+   "status": "excluded",
+   "exclusion": "X1",
+   "reason": "float results"
+  },
+  {
+   "slug": "spiral-matrix",
+   "status": "excluded",
+   "exclusion": "X2",
+   "reason": "int ** matrix allocated from the size, an input value"
+  },
+  {
+   "slug": "square-root",
+   "status": "excluded",
+   "exclusion": "X5",
+   "reason": "shifts"
+  },
+  {
+   "slug": "sublist",
+   "status": "excluded",
+   "exclusion": "X6",
+   "reason": "memcmp, outside P7"
+  },
+  {
+   "slug": "sum-of-multiples",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P4"
+   ],
+   "fixes": 0
+  },
+  {
+   "slug": "triangle",
+   "status": "excluded",
+   "exclusion": "X1",
+   "reason": "double sides"
+  },
+  {
+   "slug": "two-bucket",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P3",
+    "P5",
+    "P6",
+    "P11",
+    "P14"
+   ],
+   "fixes": 0
+  },
+  {
+   "slug": "two-fer",
+   "status": "excluded",
+   "exclusion": "X6",
+   "reason": "snprintf builds the text"
+  },
+  {
+   "slug": "variable-length-quantity",
+   "status": "excluded",
+   "exclusion": "X5",
+   "reason": "shifts and masks"
+  },
+  {
+   "slug": "word-count",
+   "status": "excluded",
+   "exclusion": "X3",
+   "reason": "struct holding a text array; strtok, strcmp, strncpy"
+  },
+  {
+   "slug": "wordy",
+   "status": "excluded",
+   "exclusion": "X6",
+   "reason": "sscanf parses the numbers; strncmp"
+  },
+  {
+   "slug": "yacht",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P3",
+    "P5",
+    "P6",
+    "P14"
+   ],
+   "fixes": 0
+  },
+  {
+   "slug": "zebra-puzzle",
+   "status": "excluded",
+   "exclusion": "X6",
+   "reason": "five nested do loops with continue and a call in each condition; returns strings"
+  }
+ ]
+}

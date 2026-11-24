@@ -1,0 +1,85 @@
+{
+  "comment": "Generated from the task's test.json by corpus/verina-notes/interface.py: one case per test.",
+  "functions": {
+    "BubbleSort": {
+      "result": "long",
+      "parameters": "long a_len, const long a[a_len]",
+      "call": "BubbleSort(a_len, a, 16, out)",
+      "locals": "long out[16] = {0};"
+    }
+  },
+  "cases": [
+    {
+      "name": "case_0",
+      "function": "BubbleSort",
+      "inputs": {
+        "a_len": 5,
+        "a": [
+          5,
+          4,
+          3,
+          2,
+          1
+        ]
+      },
+      "expected": "found == 5 && out[0] == 1 && out[1] == 2 && out[2] == 3 && out[3] == 4 && out[4] == 5"
+    },
+    {
+      "name": "case_1",
+      "function": "BubbleSort",
+      "inputs": {
+        "a_len": 5,
+        "a": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "expected": "found == 5 && out[0] == 1 && out[1] == 2 && out[2] == 3 && out[3] == 4 && out[4] == 5"
+    },
+    {
+      "name": "case_2",
+      "function": "BubbleSort",
+      "inputs": {
+        "a_len": 5,
+        "a": [
+          3,
+          1,
+          2,
+          1,
+          5
+        ]
+      },
+      "expected": "found == 5 && out[0] == 1 && out[1] == 1 && out[2] == 2 && out[3] == 3 && out[4] == 5"
+    },
+    {
+      "name": "case_3",
+      "function": "BubbleSort",
+      "inputs": {
+        "a_len": 1,
+        "a": [
+          10
+        ]
+      },
+      "expected": "found == 1 && out[0] == 10"
+    },
+    {
+      "name": "case_4",
+      "function": "BubbleSort",
+      "inputs": {
+        "a_len": 6,
+        "a": [
+          4,
+          4,
+          4,
+          2,
+          2,
+          8
+        ]
+      },
+      "expected": "found == 6 && out[0] == 2 && out[1] == 2 && out[2] == 4 && out[3] == 4 && out[4] == 4 && out[5] == 8"
+    }
+  ]
+}

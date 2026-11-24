@@ -1,0 +1,1 @@
+{"id": "verina_advanced_12", "rules": ["P1", "P4", "P5"], "requires": ["out_cap >= 2"], "fixes": 0, "remarks": "The description says both 'return -1' and 'none' when there is no duplicate; the generated interface and tests use the Option form (out[0] == 0), which the port follows."}

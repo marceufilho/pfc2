@@ -1,0 +1,13 @@
+{
+ "id": "verina_advanced_57",
+ "stated": "part",
+ "dropped": [
+  "precondition: no repeated element in nums1 and in nums2 (quantifier over pairs)",
+  "precondition: every element of nums1 occurs in nums2 (quantifier, membership)",
+  "each result[i] is the first greater element to the right of nums1[i] in nums2, or -1 (quantifier over i, search)",
+  "every result element is -1 or occurs in nums2 (quantifier, membership)"
+ ],
+ "weakened": [],
+ "verdict": "certified at memory",
+ "remarks": "Stated: the result has the length of nums1. One trap stays: j + 1 in the scan after the position of nums1[i] overflows only when nums2_len is LONG_MAX, which the contract cannot exclude without bounding a length. The length parameters are named X_len, which the checker reads in the older spelling without assuming 0 <= X_len; requires(0 <= X_len) states it (a list length is a Nat)."
+}

@@ -1,0 +1,41 @@
+{
+ "reader": "the author",
+ "date": "2026-11-23",
+ "statement": "The author states that he filled ANSWERS.json himself, reading only SHEET.md. No answer was written or chosen by the assistant.",
+ "independent_of_project": false,
+ "prior_context": "The author knew the aggregate results and had judged nine of the units before (U06, U10, U11, U14, U17, U22, U23, U25, U26).",
+ "answers_sha256": "2bcc800c2ab658b55f06a0aa972f2e4021fc555663c9665822495faed9731a59",
+ "score": {
+  "all": {
+   "agreement": 27,
+   "n": 32,
+   "kappa": 0.692
+  },
+  "not_seen_before": {
+   "agreement": 19,
+   "n": 23,
+   "kappa": 0.657
+  }
+ },
+ "restates_by_reading": {
+  "verina": {
+   "author": 9,
+   "first_reading": 14,
+   "of": 29
+  },
+  "exercism": {
+   "author": 3,
+   "first_reading": 3,
+   "of": 3
+  }
+ },
+ "disagreements": "five, all in one direction: the author read 'different' where the first reading had 'restates' (verina_basic_50, 91, 92, 93, 96)",
+ "scored_by": "tools/author_review.py second-rater-score; the not-seen-before figures were computed from the same files",
+ "reasons": "REASONS.md: the author's reason for each answer, sent after scoring; two close calls (U11, U32) named by him",
+ "sensitivity_close_calls_as_restates": {
+  "agreement": 27,
+  "n": 32,
+  "kappa": 0.69,
+  "verina_restates_author": 11
+ }
+}

@@ -1,0 +1,8 @@
+{
+  "id": "verina_basic_99",
+  "stated": "all",
+  "dropped": [],
+  "weakened": [],
+  "verdict": "certified at memory",
+  "remarks": "3 * x overflows for allowed x (Verina uses Int), so full is not expected."
+}

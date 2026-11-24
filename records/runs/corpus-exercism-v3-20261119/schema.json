@@ -1,0 +1,133 @@
+{
+  "columns": [
+    {
+      "allowed": [
+        "unit",
+        "mutant",
+        "assertion"
+      ],
+      "name": "row",
+      "nullable": false,
+      "type": "string"
+    },
+    {
+      "allowed": null,
+      "name": "unit",
+      "nullable": false,
+      "type": "string"
+    },
+    {
+      "allowed": null,
+      "name": "level",
+      "nullable": true,
+      "type": "string"
+    },
+    {
+      "allowed": null,
+      "name": "upstream_tests",
+      "nullable": true,
+      "type": "integer"
+    },
+    {
+      "allowed": [
+        "pass",
+        "fail",
+        "crash"
+      ],
+      "name": "tests_on_port",
+      "nullable": true,
+      "type": "string"
+    },
+    {
+      "allowed": [
+        "pass",
+        "fail",
+        "crash"
+      ],
+      "name": "tests_on_certified",
+      "nullable": true,
+      "type": "string"
+    },
+    {
+      "allowed": null,
+      "name": "code_lines",
+      "nullable": true,
+      "type": "integer"
+    },
+    {
+      "allowed": null,
+      "name": "clause_lines",
+      "nullable": true,
+      "type": "integer"
+    },
+    {
+      "allowed": null,
+      "name": "mutant",
+      "nullable": true,
+      "type": "string"
+    },
+    {
+      "allowed": null,
+      "name": "operator",
+      "nullable": true,
+      "type": "string"
+    },
+    {
+      "allowed": null,
+      "name": "line",
+      "nullable": true,
+      "type": "integer"
+    },
+    {
+      "allowed": [
+        "pass",
+        "fail",
+        "crash"
+      ],
+      "name": "tests",
+      "nullable": true,
+      "type": "string"
+    },
+    {
+      "allowed": [
+        "certified",
+        "refused-failed",
+        "refused-inconclusive",
+        "rejected",
+        "not-judged"
+      ],
+      "name": "proof",
+      "nullable": true,
+      "type": "string"
+    },
+    {
+      "allowed": null,
+      "name": "case",
+      "nullable": true,
+      "type": "string"
+    },
+    {
+      "allowed": [
+        "subsumed",
+        "not-subsumed",
+        "inexpressible",
+        "error",
+        "not-judged"
+      ],
+      "name": "subsumption",
+      "nullable": true,
+      "type": "string"
+    }
+  ],
+  "provenance": [
+    "experiment",
+    "evidence_dir",
+    "tag",
+    "commit",
+    "seed",
+    "timestamp",
+    "vc_model",
+    "solver_version",
+    "clang"
+  ]
+}

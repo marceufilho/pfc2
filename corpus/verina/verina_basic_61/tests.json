@@ -1,0 +1,81 @@
+{
+  "comment": "Generated from the task's test.json by corpus/verina-notes/interface.py: one case per test.",
+  "functions": {
+    "allDigits": {
+      "result": "long",
+      "parameters": "long s_len, const char s[s_len]",
+      "call": "allDigits(s_len, s)"
+    }
+  },
+  "cases": [
+    {
+      "name": "case_0",
+      "function": "allDigits",
+      "inputs": {
+        "s_len": 6,
+        "s": [
+          49,
+          50,
+          51,
+          52,
+          53,
+          54
+        ]
+      },
+      "expected": "found == 1"
+    },
+    {
+      "name": "case_1",
+      "function": "allDigits",
+      "inputs": {
+        "s_len": 6,
+        "s": [
+          49,
+          50,
+          51,
+          97,
+          53,
+          54
+        ]
+      },
+      "expected": "found == 0"
+    },
+    {
+      "name": "case_2",
+      "function": "allDigits",
+      "inputs": {
+        "s_len": 0,
+        "s": []
+      },
+      "expected": "found == 1"
+    },
+    {
+      "name": "case_3",
+      "function": "allDigits",
+      "inputs": {
+        "s_len": 3,
+        "s": [
+          48,
+          48,
+          55
+        ]
+      },
+      "expected": "found == 1"
+    },
+    {
+      "name": "case_4",
+      "function": "allDigits",
+      "inputs": {
+        "s_len": 5,
+        "s": [
+          57,
+          56,
+          32,
+          55,
+          54
+        ]
+      },
+      "expected": "found == 0"
+    }
+  ]
+}

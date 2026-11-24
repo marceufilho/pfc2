@@ -1,0 +1,8 @@
+{
+  "id": "verina_basic_93",
+  "stated": "all",
+  "dropped": [],
+  "weakened": [],
+  "verdict": "certified at full",
+  "remarks": "The UInt8 range of X and Y is a type in Verina, not a precondition; it is not written as a requires."
+}

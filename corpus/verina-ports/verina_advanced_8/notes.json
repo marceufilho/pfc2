@@ -1,0 +1,1 @@
+{"id": "verina_advanced_8", "rules": ["P1", "P4"], "requires": ["gas_len == cost_len"], "fixes": 0, "remarks": "The usual one-pass greedy solution; the description's non-empty input is not needed by the code."}

@@ -1,0 +1,152 @@
+{
+ "comment": "Generated from the task's test.json by corpus/verina-notes/interface.py: one case per test.",
+ "functions": {
+  "nextGreaterElement": {
+   "result": "long",
+   "parameters": "long nums1_len, const long nums1[nums1_len], long nums2_len, const long nums2[nums2_len]",
+   "call": "nextGreaterElement(nums1_len, nums1, nums2_len, nums2, 16, out)",
+   "locals": "long out[16] = {0};"
+  }
+ },
+ "cases": [
+  {
+   "name": "case_0",
+   "function": "nextGreaterElement",
+   "inputs": {
+    "nums1_len": 3,
+    "nums1": [
+     4,
+     1,
+     2
+    ],
+    "nums2_len": 4,
+    "nums2": [
+     1,
+     3,
+     4,
+     2
+    ]
+   },
+   "expected": "found == 3 && out[0] == -1 && out[1] == 3 && out[2] == -1"
+  },
+  {
+   "name": "case_1",
+   "function": "nextGreaterElement",
+   "inputs": {
+    "nums1_len": 2,
+    "nums1": [
+     2,
+     4
+    ],
+    "nums2_len": 4,
+    "nums2": [
+     1,
+     2,
+     3,
+     4
+    ]
+   },
+   "expected": "found == 2 && out[0] == 3 && out[1] == -1"
+  },
+  {
+   "name": "case_2",
+   "function": "nextGreaterElement",
+   "inputs": {
+    "nums1_len": 1,
+    "nums1": [
+     1
+    ],
+    "nums2_len": 2,
+    "nums2": [
+     1,
+     2
+    ]
+   },
+   "expected": "found == 1 && out[0] == 2"
+  },
+  {
+   "name": "case_3",
+   "function": "nextGreaterElement",
+   "inputs": {
+    "nums1_len": 1,
+    "nums1": [
+     5
+    ],
+    "nums2_len": 5,
+    "nums2": [
+     5,
+     4,
+     3,
+     2,
+     1
+    ]
+   },
+   "expected": "found == 1 && out[0] == -1"
+  },
+  {
+   "name": "case_4",
+   "function": "nextGreaterElement",
+   "inputs": {
+    "nums1_len": 5,
+    "nums1": [
+     1,
+     3,
+     5,
+     2,
+     4
+    ],
+    "nums2_len": 6,
+    "nums2": [
+     6,
+     5,
+     4,
+     3,
+     2,
+     1
+    ]
+   },
+   "expected": "found == 5 && out[0] == -1 && out[1] == -1 && out[2] == -1 && out[3] == -1 && out[4] == -1"
+  },
+  {
+   "name": "case_5",
+   "function": "nextGreaterElement",
+   "inputs": {
+    "nums1_len": 3,
+    "nums1": [
+     1,
+     2,
+     3
+    ],
+    "nums2_len": 4,
+    "nums2": [
+     3,
+     2,
+     1,
+     4
+    ]
+   },
+   "expected": "found == 3 && out[0] == 4 && out[1] == 4 && out[2] == 4"
+  },
+  {
+   "name": "case_6",
+   "function": "nextGreaterElement",
+   "inputs": {
+    "nums1_len": 4,
+    "nums1": [
+     4,
+     3,
+     2,
+     1
+    ],
+    "nums2_len": 4,
+    "nums2": [
+     4,
+     3,
+     2,
+     1
+    ]
+   },
+   "expected": "found == 4 && out[0] == -1 && out[1] == -1 && out[2] == -1 && out[3] == -1"
+  }
+ ]
+}

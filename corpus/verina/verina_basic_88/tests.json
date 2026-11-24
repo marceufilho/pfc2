@@ -1,0 +1,73 @@
+{
+  "comment": "Generated from the task's test.json by corpus/verina-notes/interface.py: one case per test.",
+  "functions": {
+    "ToArray": {
+      "result": "long",
+      "parameters": "long xs_len, const long xs[xs_len]",
+      "call": "ToArray(xs_len, xs, 16, out)",
+      "locals": "long out[16] = {0};"
+    }
+  },
+  "cases": [
+    {
+      "name": "case_0",
+      "function": "ToArray",
+      "inputs": {
+        "xs_len": 3,
+        "xs": [
+          1,
+          2,
+          3
+        ]
+      },
+      "expected": "found == 3 && out[0] == 1 && out[1] == 2 && out[2] == 3"
+    },
+    {
+      "name": "case_1",
+      "function": "ToArray",
+      "inputs": {
+        "xs_len": 0,
+        "xs": []
+      },
+      "expected": "found == 0"
+    },
+    {
+      "name": "case_2",
+      "function": "ToArray",
+      "inputs": {
+        "xs_len": 3,
+        "xs": [
+          0,
+          -1,
+          5
+        ]
+      },
+      "expected": "found == 3 && out[0] == 0 && out[1] == -1 && out[2] == 5"
+    },
+    {
+      "name": "case_3",
+      "function": "ToArray",
+      "inputs": {
+        "xs_len": 1,
+        "xs": [
+          7
+        ]
+      },
+      "expected": "found == 1 && out[0] == 7"
+    },
+    {
+      "name": "case_4",
+      "function": "ToArray",
+      "inputs": {
+        "xs_len": 4,
+        "xs": [
+          100,
+          200,
+          300,
+          400
+        ]
+      },
+      "expected": "found == 4 && out[0] == 100 && out[1] == 200 && out[2] == 300 && out[3] == 400"
+    }
+  ]
+}

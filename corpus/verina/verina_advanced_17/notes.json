@@ -1,0 +1,11 @@
+{
+  "id": "verina_advanced_17",
+  "stated": "none",
+  "dropped": [
+    "postcond: List.Pairwise (<=) result",
+    "postcond: List.isPerm l result"
+  ],
+  "weakened": [],
+  "verdict": "certified at full",
+  "remarks": "Only result == l_len, a consequence of isPerm, is stated."
+}

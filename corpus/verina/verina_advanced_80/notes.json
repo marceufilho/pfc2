@@ -1,0 +1,13 @@
+{
+  "id": "verina_advanced_80",
+  "stated": "part",
+  "dropped": [
+    "precondition: some pair sums to target (existential)",
+    "precondition: exactly one such pair (count)"
+  ],
+  "weakened": [
+    "result.size = 2 is stated as result == 2 || result == 0, and the properties of the two indices are stated under result == 2: the port returns 0 when no pair exists, which only the dropped precondition excludes"
+  ],
+  "verdict": "certified at memory",
+  "remarks": ""
+}

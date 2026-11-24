@@ -1,0 +1,1 @@
+{"id": "verina_basic_102", "rules": ["P1", "P4", "P5"], "requires": ["out_cap >= 2"], "fixes": 0, "remarks": "When no pair exists (excluded by the description) out is left untouched."}

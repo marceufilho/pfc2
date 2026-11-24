@@ -1,0 +1,11 @@
+{
+ "id": "verina_advanced_63",
+ "stated": "none",
+ "dropped": [
+  "precondition: nums is sorted (quantifier over pairs)",
+  "result equals the number of distinct elements (eraseDups, a count)"
+ ],
+ "weakened": [],
+ "verdict": "certified at full",
+ "remarks": "Only consequences are stated: 0 <= result <= length, and result >= 1 for a non-empty list. Verina writes the equality as two truncated subtractions on Nat (result - m = 0 and m <= result). The length parameters are named X_len, which the checker reads in the older spelling without assuming 0 <= X_len; requires(0 <= X_len) states it (a list length is a Nat)."
+}

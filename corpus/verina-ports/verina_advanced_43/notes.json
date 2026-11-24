@@ -1,0 +1,1 @@
+{"id": "verina_advanced_43", "rules": ["P1", "P4"], "requires": [], "fixes": 0, "remarks": "No requires: the code reads no element outside a loop, and returns 0 for an empty list (outside the description's inputs). The product can overflow for large inputs; nothing bounds it."}

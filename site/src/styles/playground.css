@@ -1,0 +1,41 @@
+/* Shared by the pfc playground and the PFC2 playground. */
+.pfc-playground { border: 1px solid var(--pfc-border); border-radius: 0.5rem; margin-block: 1.25rem; font-size: var(--sl-text-sm); overflow: hidden; }
+.pfc-playground .bar { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; padding: 0.5rem 0.75rem; background: var(--sl-color-gray-6); border-block-end: 1px solid var(--pfc-border); }
+.pfc-playground select, .pfc-playground button, .pfc-playground input { font: inherit; padding: 0.25rem 0.5rem; border: 1px solid var(--sl-color-gray-4); border-radius: 0.3rem; background: var(--sl-color-bg); color: var(--sl-color-text); max-width: 100%; }
+.pfc-playground button { cursor: pointer; }
+.pfc-playground button.primary { background: var(--pfc-blue); color: #fff; border-color: var(--pfc-blue); font-weight: 600; }
+.pfc-playground button:disabled { opacity: 0.6; cursor: progress; }
+.pfc-playground label { display: inline-flex; gap: 0.25rem; align-items: center; }
+.pfc-playground .panes { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+.pfc-playground.compact .panes, .pfc-playground .panes.single { grid-template-columns: minmax(0, 1fr); }
+@media (max-width: 60rem) { .pfc-playground .panes { grid-template-columns: minmax(0, 1fr); } }
+.pfc-playground .editor { border-inline-end: 1px solid var(--pfc-border); min-width: 0; }
+.pfc-playground .cm-editor { max-height: 34rem; font-size: 0.82rem; }
+.pfc-playground.compact .cm-editor { max-height: 20rem; }
+.pfc-playground .cm-editor.cm-focused { outline: none; }
+.pfc-playground .out { min-width: 0; display: flex; flex-direction: column; }
+.pfc-playground .tabs { display: flex; flex-wrap: wrap; border-block-end: 1px solid var(--pfc-border); }
+.pfc-playground .tabs button { border: 0; border-radius: 0; background: none; padding: 0.4rem 0.7rem; border-block-end: 2px solid transparent; }
+.pfc-playground .tabs button[aria-selected="true"] { border-block-end-color: var(--pfc-blue); font-weight: 600; }
+.pfc-playground .body { padding: 0.6rem 0.75rem; overflow: auto; max-height: 34rem; }
+.pfc-playground.compact .body { max-height: 22rem; }
+.pfc-playground .chips { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-block-end: 0.6rem; }
+.pfc-playground .chip { padding: 0.1rem 0.5rem; border-radius: 1rem; border: 1px solid var(--pfc-border); }
+.pfc-playground .chip.ok, .pfc-playground .status.proved, .pfc-playground .status.sat { background: var(--pfc-ok-bg); }
+.pfc-playground .chip.bad, .pfc-playground .status.failed, .pfc-playground .status.unsat { background: var(--pfc-bad-bg); }
+.pfc-playground .chip.warn, .pfc-playground .status.timeout, .pfc-playground .status.unknown, .pfc-playground .status.error { background: var(--pfc-warn-bg); }
+.pfc-playground .status { padding: 0 0.4rem; border-radius: 0.25rem; font-weight: 600; }
+.pfc-playground table { border-collapse: collapse; width: 100%; }
+.pfc-playground th, .pfc-playground td { text-align: start; padding: 0.2rem 0.5rem 0.2rem 0; border-block-end: 1px solid var(--pfc-border); vertical-align: top; }
+.pfc-playground h4 { margin: 0.8rem 0 0.3rem; font-size: 1em; }
+.pfc-playground .loc { background: none; border: 0; padding: 0; color: var(--sl-color-text-accent); text-decoration: underline; font-family: var(--sl-font-mono); }
+.pfc-playground pre { margin: 0; font-size: 0.8rem; line-height: 1.45; white-space: pre; }
+.pfc-playground pre .trap { background: var(--pfc-warn-bg); }
+.pfc-playground pre .proved, .pfc-playground pre .add { background: var(--pfc-ok-bg); }
+.pfc-playground pre .entry { background: color-mix(in srgb, var(--pfc-sky) 22%, transparent); }
+.pfc-playground pre .del { background: var(--pfc-bad-bg); }
+.pfc-playground pre span { display: block; padding-inline: 0.25rem; }
+.pfc-playground .model { font-family: var(--sl-font-mono); font-size: 0.78rem; color: var(--sl-color-gray-2); }
+.pfc-playground .foot { padding: 0.45rem 0.75rem; border-block-start: 1px solid var(--pfc-border); background: var(--pfc-warn-bg); font-size: var(--sl-text-xs); }
+.pfc-playground .diag { background: var(--pfc-bad-bg); padding: 0.5rem 0.75rem; border-radius: 0.3rem; }
+.pfc-playground .muted { color: var(--sl-color-gray-3); }

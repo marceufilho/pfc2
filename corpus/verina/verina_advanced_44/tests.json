@@ -1,0 +1,127 @@
+{
+  "comment": "Generated from the task's test.json by corpus/verina-notes/interface.py: one case per test.",
+  "functions": {
+    "maxSubarraySumDivisibleByK": {
+      "result": "long",
+      "parameters": "long arr_len, const long arr[arr_len], long k",
+      "call": "maxSubarraySumDivisibleByK(arr_len, arr, k)"
+    }
+  },
+  "cases": [
+    {
+      "name": "case_0",
+      "function": "maxSubarraySumDivisibleByK",
+      "inputs": {
+        "arr_len": 5,
+        "arr": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "k": 2
+      },
+      "expected": "found == 14"
+    },
+    {
+      "name": "case_1",
+      "function": "maxSubarraySumDivisibleByK",
+      "inputs": {
+        "arr_len": 5,
+        "arr": [
+          1,
+          -2,
+          3,
+          -4,
+          5
+        ],
+        "k": 3
+      },
+      "expected": "found == 4"
+    },
+    {
+      "name": "case_2",
+      "function": "maxSubarraySumDivisibleByK",
+      "inputs": {
+        "arr_len": 0,
+        "arr": [],
+        "k": 5
+      },
+      "expected": "found == 0"
+    },
+    {
+      "name": "case_3",
+      "function": "maxSubarraySumDivisibleByK",
+      "inputs": {
+        "arr_len": 4,
+        "arr": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "k": 1
+      },
+      "expected": "found == 10"
+    },
+    {
+      "name": "case_4",
+      "function": "maxSubarraySumDivisibleByK",
+      "inputs": {
+        "arr_len": 4,
+        "arr": [
+          -2,
+          7,
+          1,
+          3
+        ],
+        "k": 2
+      },
+      "expected": "found == 9"
+    },
+    {
+      "name": "case_5",
+      "function": "maxSubarraySumDivisibleByK",
+      "inputs": {
+        "arr_len": 3,
+        "arr": [
+          -100,
+          0,
+          1
+        ],
+        "k": 5
+      },
+      "expected": "found == 0"
+    },
+    {
+      "name": "case_6",
+      "function": "maxSubarraySumDivisibleByK",
+      "inputs": {
+        "arr_len": 5,
+        "arr": [
+          1999,
+          1,
+          -1023,
+          12351,
+          -9999
+        ],
+        "k": 2
+      },
+      "expected": "found == 13328"
+    },
+    {
+      "name": "case_7",
+      "function": "maxSubarraySumDivisibleByK",
+      "inputs": {
+        "arr_len": 2,
+        "arr": [
+          -5,
+          -5
+        ],
+        "k": 2
+      },
+      "expected": "found == -10"
+    }
+  ]
+}

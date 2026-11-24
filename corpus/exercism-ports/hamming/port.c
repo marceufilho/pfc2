@@ -1,0 +1,20 @@
+#include "pfc.h"
+
+/* Hamming distance of two strands, or -1 when their lengths differ. The strings arrive with their lengths
+ * (P2, P7 for strlen); upstream's test for NULL stays in the host glue. */
+long hamming_distance(long n, const char lhs[n], long m, const char rhs[m])
+{
+    long count = -1;
+
+    if (n == m) {
+        count = 0;
+        long length = n;
+
+        for (long i = 0; i < length; ++i) {
+            if (lhs[i] != rhs[i]) {
+                ++count;
+            }
+        }
+    }
+    return count;
+}

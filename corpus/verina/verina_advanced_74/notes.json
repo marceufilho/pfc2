@@ -1,0 +1,11 @@
+{
+ "id": "verina_advanced_74",
+ "stated": "part",
+ "dropped": [
+  "precondition: every element is in 1..100 (quantifier)",
+  "result equals the sum over all subarrays of the squared distinct count (folds, recursive definitions)"
+ ],
+ "weakened": [],
+ "verdict": "certified at full",
+ "remarks": "Stated: 1 <= length <= 100 and result >= 0. In task.lean the function takes no precondition proof; the postcondition repeats the precondition as the hypothesis of an implication."
+}

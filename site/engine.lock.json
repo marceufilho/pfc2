@@ -1,0 +1,20 @@
+{
+  "comment": "Runtime of the browser engine. Wheels are downloaded by scripts/fetch-engine.mjs and verified by digest; z3-solver and pycparser are the versions pinned in uv.lock.",
+  "pyodide": "314.0.8",
+  "wheels": [
+    {
+      "name": "pycparser",
+      "version": "3.12",
+      "file": "pycparser-3.12-py3-none-any.whl",
+      "url": "https://files.pythonhosted.org/packages/b6/ae/315bbeee126a769cbde43cf4908acb4b40408d8bf8bbf334dd7368d8dadf/pycparser-3.12-py3-none-any.whl",
+      "sha256": "a076f3f489b39b43ed13563a1dafe42447445bec2e294154ec5c57fcdda4c85e"
+    },
+    {
+      "name": "z3-solver",
+      "version": "5.3.3.0",
+      "file": "z3_solver-5.3.3.0-py3-none-pyemscripten_2026_0_wasm32.whl",
+      "url": "https://files.pythonhosted.org/packages/be/0d/39cfeb73dafdc22000e5e915abe7d1e3f238710a32f0531b23b77f80608a/z3_solver-5.3.3.0-py3-none-pyemscripten_2026_0_wasm32.whl",
+      "sha256": "9381d9516345f53b21a8f4df243c5d608e9625aac658c3fb3975457bad260f60"
+    }
+  ]
+}

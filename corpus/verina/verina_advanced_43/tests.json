@@ -1,0 +1,78 @@
+{
+  "comment": "Generated from the task's test.json by corpus/verina-notes/interface.py: one case per test.",
+  "functions": {
+    "maxStrength": {
+      "result": "long",
+      "parameters": "long nums_len, const long nums[nums_len]",
+      "call": "maxStrength(nums_len, nums)"
+    }
+  },
+  "cases": [
+    {
+      "name": "case_0",
+      "function": "maxStrength",
+      "inputs": {
+        "nums_len": 1,
+        "nums": [
+          -2
+        ]
+      },
+      "expected": "found == -2"
+    },
+    {
+      "name": "case_1",
+      "function": "maxStrength",
+      "inputs": {
+        "nums_len": 6,
+        "nums": [
+          3,
+          -1,
+          -5,
+          2,
+          5,
+          -9
+        ]
+      },
+      "expected": "found == 1350"
+    },
+    {
+      "name": "case_2",
+      "function": "maxStrength",
+      "inputs": {
+        "nums_len": 3,
+        "nums": [
+          -4,
+          -5,
+          -4
+        ]
+      },
+      "expected": "found == 20"
+    },
+    {
+      "name": "case_3",
+      "function": "maxStrength",
+      "inputs": {
+        "nums_len": 3,
+        "nums": [
+          0,
+          -3,
+          4
+        ]
+      },
+      "expected": "found == 4"
+    },
+    {
+      "name": "case_4",
+      "function": "maxStrength",
+      "inputs": {
+        "nums_len": 3,
+        "nums": [
+          1,
+          -1,
+          -1
+        ]
+      },
+      "expected": "found == 1"
+    }
+  ]
+}

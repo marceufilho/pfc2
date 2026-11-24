@@ -1,0 +1,10 @@
+{
+  "id": "verina_basic_32",
+  "stated": "part",
+  "dropped": [
+    "result[i + 1] = a[i + 1] for i < result.size - 2 (all over a range)"
+  ],
+  "weakened": [],
+  "verdict": "certified at full",
+  "remarks": "Stated: a.size > 0, result.size = a.size, result[0] = a[a.size - 1], result[result.size - 1] = a[0]. requires(separated(out, a)) added: the proof needs it."
+}

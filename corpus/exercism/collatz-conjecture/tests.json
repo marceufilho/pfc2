@@ -1,0 +1,60 @@
+{
+ "comment": "Each case is one assertion of the upstream test file, transcribed by hand: the inputs it passes and what it expects, stated on the port's interface. `found` is the value the function returns.",
+ "functions": {
+  "steps": {
+   "result": "long",
+   "parameters": "long start",
+   "call": "collatz_steps(start)"
+  }
+ },
+ "cases": [
+  {
+   "name": "zero_steps_for_one",
+   "function": "steps",
+   "inputs": {
+    "start": 1
+   },
+   "expected": "found == 0"
+  },
+  {
+   "name": "divide_if_even",
+   "function": "steps",
+   "inputs": {
+    "start": 16
+   },
+   "expected": "found == 4"
+  },
+  {
+   "name": "even_and_odd_steps",
+   "function": "steps",
+   "inputs": {
+    "start": 12
+   },
+   "expected": "found == 9"
+  },
+  {
+   "name": "large_number_of_even_and_odd_steps",
+   "function": "steps",
+   "inputs": {
+    "start": 1000000
+   },
+   "expected": "found == 152"
+  },
+  {
+   "name": "zero_is_an_error",
+   "function": "steps",
+   "inputs": {
+    "start": 0
+   },
+   "expected": "found == -1"
+  },
+  {
+   "name": "negative_value_is_an_error",
+   "function": "steps",
+   "inputs": {
+    "start": -15
+   },
+   "expected": "found == -1"
+  }
+ ]
+}

@@ -1,0 +1,10 @@
+{
+  "id": "verina_basic_14",
+  "stated": "none",
+  "dropped": [
+    "result is true exactly when some character is 'z' or 'Z' (existential)"
+  ],
+  "weakened": [],
+  "verdict": "certified at full",
+  "remarks": "Only the Bool range of the result is stated."
+}

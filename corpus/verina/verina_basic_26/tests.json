@@ -1,0 +1,52 @@
+{
+  "comment": "Generated from the task's test.json by corpus/verina-notes/interface.py: one case per test.",
+  "functions": {
+    "isEven": {
+      "result": "long",
+      "parameters": "long n",
+      "call": "isEven(n)"
+    }
+  },
+  "cases": [
+    {
+      "name": "case_0",
+      "function": "isEven",
+      "inputs": {
+        "n": 4
+      },
+      "expected": "found == 1"
+    },
+    {
+      "name": "case_1",
+      "function": "isEven",
+      "inputs": {
+        "n": 7
+      },
+      "expected": "found == 0"
+    },
+    {
+      "name": "case_2",
+      "function": "isEven",
+      "inputs": {
+        "n": 0
+      },
+      "expected": "found == 1"
+    },
+    {
+      "name": "case_3",
+      "function": "isEven",
+      "inputs": {
+        "n": -2
+      },
+      "expected": "found == 1"
+    },
+    {
+      "name": "case_4",
+      "function": "isEven",
+      "inputs": {
+        "n": -3
+      },
+      "expected": "found == 0"
+    }
+  ]
+}

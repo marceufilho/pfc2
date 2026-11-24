@@ -1,0 +1,8 @@
+[
+  {"path": "midpoint/midpoint_wrong.c", "refused": {"kind": "overflow", "line": 8}},
+  {"path": "midpoint/midpoint.c", "level": "full", "guards": 1},
+  {"path": "lock/lock.c", "level": "full", "guards": 4, "laws": 2, "openers": ["3141"]},
+  {"path": "lock/lock_without_invariant.c", "refused": {"kind": "postcondition", "line": 22}},
+  {"path": "wrong/lock_copy_paste.c", "refused": {"kind": "postcondition", "line": 13},
+   "openers": ["3140", "3141", "3142", "3143", "3144", "3145", "3146", "3147", "3148", "3149"]}
+]

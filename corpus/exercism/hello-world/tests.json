@@ -1,0 +1,10 @@
+{
+ "comment": "Each case is one assertion of the upstream test file, transcribed by hand: the inputs it passes and what it expects, stated on the port's interface. `found` is the value the function returns.",
+ "functions": {},
+ "cases": [
+  {
+   "name": "say_hi",
+   "inexpressible": "compares the text \"Hello, World!\", which the host glue holds; the port returns its number (P12)"
+  }
+ ]
+}

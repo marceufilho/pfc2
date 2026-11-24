@@ -1,0 +1,10 @@
+{
+ "id": "verina_basic_68",
+ "stated": "part",
+ "dropped": [
+  "postcond: no element before result equals e"
+ ],
+ "weakened": [],
+ "verdict": "certified at full",
+ "remarks": "The array length being non-negative is written as a requires because the checker does not assume it for a length parameter named X_len (it does for other names)."
+}

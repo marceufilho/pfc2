@@ -1,0 +1,12 @@
+{
+ "id": "verina_basic_60",
+ "stated": "none",
+ "dropped": [
+  "postcond: every element of result is even",
+  "postcond: result is a sublist of arr",
+  "postcond: result.size = countP isEven arr"
+ ],
+ "weakened": [],
+ "verdict": "certified at full",
+ "remarks": ""
+}

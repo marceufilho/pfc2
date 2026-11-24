@@ -1,0 +1,78 @@
+{
+ "comment": "Each case is one assertion of the upstream test file, transcribed by hand: the inputs it passes and what it expects, stated on the port's interface. `found` is the value the function returns.",
+ "functions": {
+  "to_rna": {
+   "result": "long",
+   "parameters": "long n, const char dna[n]",
+   "call": ""
+  }
+ },
+ "cases": [
+  {
+   "name": "empty_rna_sequence",
+   "function": "to_rna",
+   "inputs": {
+    "n": 0,
+    "dna": ""
+   },
+   "expected": "found == 1 && 1 == 1",
+   "locals": "char rna[1] = {0};",
+   "call": "transcribe(n, dna, 1, rna)"
+  },
+  {
+   "name": "rna_complement_of_cytosine_is_guanine",
+   "function": "to_rna",
+   "inputs": {
+    "n": 1,
+    "dna": "C"
+   },
+   "expected": "found == 1 && rna[0] == 71",
+   "locals": "char rna[2] = {0};",
+   "call": "transcribe(n, dna, 2, rna)"
+  },
+  {
+   "name": "rna_complement_of_guanine_is_cytosine",
+   "function": "to_rna",
+   "inputs": {
+    "n": 1,
+    "dna": "G"
+   },
+   "expected": "found == 1 && rna[0] == 67",
+   "locals": "char rna[2] = {0};",
+   "call": "transcribe(n, dna, 2, rna)"
+  },
+  {
+   "name": "rna_complement_of_thymine_is_adenine",
+   "function": "to_rna",
+   "inputs": {
+    "n": 1,
+    "dna": "T"
+   },
+   "expected": "found == 1 && rna[0] == 65",
+   "locals": "char rna[2] = {0};",
+   "call": "transcribe(n, dna, 2, rna)"
+  },
+  {
+   "name": "rna_complement_of_adenine_is_uracil",
+   "function": "to_rna",
+   "inputs": {
+    "n": 1,
+    "dna": "A"
+   },
+   "expected": "found == 1 && rna[0] == 85",
+   "locals": "char rna[2] = {0};",
+   "call": "transcribe(n, dna, 2, rna)"
+  },
+  {
+   "name": "rna_complement",
+   "function": "to_rna",
+   "inputs": {
+    "n": 12,
+    "dna": "ACGTGGTCTTAA"
+   },
+   "expected": "found == 1 && rna[0] == 85 && rna[1] == 71 && rna[2] == 67 && rna[3] == 65 && rna[4] == 67 && rna[5] == 67 && rna[6] == 65 && rna[7] == 71 && rna[8] == 65 && rna[9] == 65 && rna[10] == 85 && rna[11] == 85",
+   "locals": "char rna[13] = {0};",
+   "call": "transcribe(n, dna, 13, rna)"
+  }
+ ]
+}

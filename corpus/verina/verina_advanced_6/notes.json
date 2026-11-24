@@ -1,0 +1,10 @@
+{
+ "id": "verina_advanced_6",
+ "stated": "none",
+ "dropped": [
+  "result is true exactly when each of a, e, i, o, u occurs in the normalised string (existential over positions)"
+ ],
+ "weakened": [],
+ "verdict": "certified at full",
+ "remarks": "Precondition is True. Only the Bool interface (result is 0 or 1) is stated. The length parameters are named X_len, which the checker reads in the older spelling without assuming 0 <= X_len; requires(0 <= X_len) states it (a list length is a Nat)."
+}

@@ -1,0 +1,11 @@
+{
+  "id": "verina_basic_87",
+  "stated": "none",
+  "dropped": [
+    "List.Pairwise (<=) result (needs a quantifier over pairs of elements)",
+    "List.isPerm a result (a permutation)"
+  ],
+  "weakened": [],
+  "verdict": "certified at full",
+  "remarks": "Only result == a_len is stated: it is a consequence of the dropped permutation, not a conjunct of the postcondition."
+}

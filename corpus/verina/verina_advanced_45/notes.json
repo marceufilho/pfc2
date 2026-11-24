@@ -1,0 +1,10 @@
+{
+  "id": "verina_advanced_45",
+  "stated": "part",
+  "dropped": [
+    "postcond (non-empty list): result is a subarray sum and the maximum (enumeration, sums)"
+  ],
+  "weakened": [],
+  "verdict": "certified at memory",
+  "remarks": "Stated: xs = [] -> result = 0. current += xs[i] can overflow, so its trap stays. requires(xs_len >= 0) was added: with the parameter spelled X_len the checker does not assume 0 <= length (docs/02-language.md says the declaration states it); reported as outside the protocol's list unless a length counts as a Nat."
+}

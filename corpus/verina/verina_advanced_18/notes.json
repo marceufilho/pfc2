@@ -1,0 +1,10 @@
+{
+  "id": "verina_advanced_18",
+  "stated": "none",
+  "dropped": [
+    "postcond: n equals the fold of digit^countDigits over the decimal string (recursive)"
+  ],
+  "weakened": [],
+  "verdict": "certified at memory",
+  "remarks": "requires(n >= 0): n is a Nat. The sum of digit powers can exceed LONG_MAX for 19-digit n (for example 8999999999999999999), so two overflow traps stay."
+}

@@ -1,0 +1,87 @@
+{
+  "comment": "Generated from the task's test.json by corpus/verina-notes/interface.py: one case per test.",
+  "functions": {
+    "topKFrequent": {
+      "result": "long",
+      "parameters": "long nums_len, const long nums[nums_len], long k",
+      "call": "topKFrequent(nums_len, nums, k, 16, out)",
+      "locals": "long out[16] = {0};"
+    }
+  },
+  "cases": [
+    {
+      "name": "case_0",
+      "function": "topKFrequent",
+      "inputs": {
+        "nums_len": 6,
+        "nums": [
+          1,
+          1,
+          1,
+          2,
+          2,
+          3
+        ],
+        "k": 2
+      },
+      "expected": "found == 2 && out[0] == 1 && out[1] == 2"
+    },
+    {
+      "name": "case_1",
+      "function": "topKFrequent",
+      "inputs": {
+        "nums_len": 7,
+        "nums": [
+          4,
+          1,
+          -1,
+          2,
+          -1,
+          2,
+          3
+        ],
+        "k": 2
+      },
+      "expected": "found == 2 && out[0] == -1 && out[1] == 2"
+    },
+    {
+      "name": "case_2",
+      "function": "topKFrequent",
+      "inputs": {
+        "nums_len": 1,
+        "nums": [
+          5
+        ],
+        "k": 1
+      },
+      "expected": "found == 1 && out[0] == 5"
+    },
+    {
+      "name": "case_3",
+      "function": "topKFrequent",
+      "inputs": {
+        "nums_len": 6,
+        "nums": [
+          7,
+          7,
+          7,
+          8,
+          8,
+          9
+        ],
+        "k": 1
+      },
+      "expected": "found == 1 && out[0] == 7"
+    },
+    {
+      "name": "case_4",
+      "function": "topKFrequent",
+      "inputs": {
+        "nums_len": 0,
+        "nums": [],
+        "k": 0
+      },
+      "expected": "found == 0"
+    }
+  ]
+}

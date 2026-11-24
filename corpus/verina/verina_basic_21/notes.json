@@ -1,0 +1,10 @@
+{
+  "id": "verina_basic_21",
+  "stated": "none",
+  "dropped": [
+    "result <-> exists i, sub = (main.drop i).take sub.length (existential, list equality)"
+  ],
+  "weakened": [],
+  "verdict": "certified at memory",
+  "remarks": "Stated only: result is 0 or 1, and two consequences (empty sub -> 1; sub longer than main -> 0). The kept trap is start + sub_len, which overflows only for main_len == LONG_MAX; the checker has no bound on array lengths. requires(X_len >= 0) was added for the listed lengths: the `a[a_len]` spelling does not give the checker 0 <= length (a length is a Nat)."
+}

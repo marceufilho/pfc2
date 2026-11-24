@@ -1,0 +1,24 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.env
+.env.*
+dist/
+build/
+out/
+*.egg-info/
+node_modules/
+site/.astro/
+site/dist/
+site/public/engine/wheels/
+site/public/engine/pyodide/
+site/public/engine/engine.lock.json
+site/test-results/
+site/playwright-report/
+
+# Upstream checkouts, fetched at the commits named in the README; never committed here.
+corpus/upstream/exercism-c/
+corpus/upstream/verina/

@@ -1,0 +1,10 @@
+{
+  "id": "verina_basic_23",
+  "stated": "part",
+  "dropped": [
+    "result + min(a) = max(a) (folds over the array)"
+  ],
+  "weakened": [],
+  "verdict": "certified at memory",
+  "remarks": "Precondition a.size > 0 is stated (already in the port). Only the consequence result >= 0 is stated for the postcondition. highest - lowest can overflow for allowed inputs."
+}

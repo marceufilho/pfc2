@@ -1,0 +1,76 @@
+{
+  "comment": "Generated from the task's test.json by corpus/verina-notes/interface.py: one case per test.",
+  "functions": {
+    "maxOfList": {
+      "result": "long",
+      "parameters": "long lst_len, const long lst[lst_len]",
+      "call": "maxOfList(lst_len, lst)"
+    }
+  },
+  "cases": [
+    {
+      "name": "case_0",
+      "function": "maxOfList",
+      "inputs": {
+        "lst_len": 3,
+        "lst": [
+          1,
+          2,
+          3
+        ]
+      },
+      "expected": "found == 3"
+    },
+    {
+      "name": "case_1",
+      "function": "maxOfList",
+      "inputs": {
+        "lst_len": 3,
+        "lst": [
+          5,
+          5,
+          5
+        ]
+      },
+      "expected": "found == 5"
+    },
+    {
+      "name": "case_2",
+      "function": "maxOfList",
+      "inputs": {
+        "lst_len": 3,
+        "lst": [
+          10,
+          1,
+          9
+        ]
+      },
+      "expected": "found == 10"
+    },
+    {
+      "name": "case_3",
+      "function": "maxOfList",
+      "inputs": {
+        "lst_len": 1,
+        "lst": [
+          7
+        ]
+      },
+      "expected": "found == 7"
+    },
+    {
+      "name": "case_4",
+      "function": "maxOfList",
+      "inputs": {
+        "lst_len": 4,
+        "lst": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "expected": "found == 0"
+    }
+  ]
+}

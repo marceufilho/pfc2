@@ -1,0 +1,11 @@
+{
+  "id": "verina_advanced_21",
+  "stated": "part",
+  "dropped": [
+    "postcond: result -> s = reverse s (quantifier over positions); only the pair s[0], s[s_len-1] is stated",
+    "postcond: not result -> s != reverse s"
+  ],
+  "weakened": [],
+  "verdict": "certified at full",
+  "remarks": "Stated: not result -> s is not empty. requires(s_len >= 0) was added: with the parameter spelled X_len the checker does not assume 0 <= length (docs/02-language.md says the declaration states it); reported as outside the protocol's list unless a length counts as a Nat."
+}

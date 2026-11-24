@@ -1,0 +1,1 @@
+{"id": "verina_basic_22", "rules": ["P1", "P3", "P4"], "requires": ["out_cap >= a_len + b_len"], "fixes": 0, "remarks": "Two helpers (membership, sorted insertion without duplicates); the helper insertSorted needs room for one more element."}

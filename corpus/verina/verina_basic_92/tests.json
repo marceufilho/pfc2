@@ -1,0 +1,58 @@
+{
+  "comment": "Generated from the task's test.json by corpus/verina-notes/interface.py: one case per test.",
+  "functions": {
+    "SwapArithmetic": {
+      "result": "long",
+      "parameters": "long X, long Y",
+      "call": "SwapArithmetic(X, Y, 8, out)",
+      "locals": "long out[8] = {0};"
+    }
+  },
+  "cases": [
+    {
+      "name": "case_0",
+      "function": "SwapArithmetic",
+      "inputs": {
+        "X": 3,
+        "Y": 4
+      },
+      "expected": "out[0] == 4 && out[1] == 3"
+    },
+    {
+      "name": "case_1",
+      "function": "SwapArithmetic",
+      "inputs": {
+        "X": -1,
+        "Y": 10
+      },
+      "expected": "out[0] == 10 && out[1] == -1"
+    },
+    {
+      "name": "case_2",
+      "function": "SwapArithmetic",
+      "inputs": {
+        "X": 0,
+        "Y": 0
+      },
+      "expected": "out[0] == 0 && out[1] == 0"
+    },
+    {
+      "name": "case_3",
+      "function": "SwapArithmetic",
+      "inputs": {
+        "X": 100,
+        "Y": 50
+      },
+      "expected": "out[0] == 50 && out[1] == 100"
+    },
+    {
+      "name": "case_4",
+      "function": "SwapArithmetic",
+      "inputs": {
+        "X": -5,
+        "Y": -10
+      },
+      "expected": "out[0] == -10 && out[1] == -5"
+    }
+  ]
+}

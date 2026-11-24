@@ -1,0 +1,10 @@
+{
+  "id": "verina_basic_10",
+  "stated": "part",
+  "dropped": [
+    "result is true exactly when n > a[i] for every i (quantifier)"
+  ],
+  "weakened": [],
+  "verdict": "certified at full",
+  "remarks": "Only the precondition a.size > 0 and the Bool range of the result are stated."
+}

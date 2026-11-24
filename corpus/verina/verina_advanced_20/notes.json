@@ -1,0 +1,11 @@
+{
+  "id": "verina_advanced_20",
+  "stated": "part",
+  "dropped": [
+    "postcond: exists i, |n| / 10^i % 10 = 8 (existential), in both directions",
+    "postcond: result -> (n % 8 = 0 or ...) (needs the existential)"
+  ],
+  "weakened": [],
+  "verdict": "certified at full",
+  "remarks": "Stated: n % 8 == 0 -> result."
+}

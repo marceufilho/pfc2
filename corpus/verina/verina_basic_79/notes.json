@@ -1,0 +1,13 @@
+{
+  "id": "verina_basic_79",
+  "stated": "part",
+  "dropped": [
+    "forall i < x, a[i] <= m (needs a quantifier over elements)",
+    "exists i < x, a[i] = m (needs an existential over elements)",
+    "forall i, x <= i < p -> a[i] <= m (needs a quantifier over elements)",
+    "in the last disjunct, the conjunct forall i, x <= i < a.size -> a[i] <= m (needs a quantifier over elements); the rest of the disjunction is stated"
+  ],
+  "weakened": [],
+  "verdict": "certified at full",
+  "remarks": ""
+}

@@ -1,0 +1,106 @@
+{
+  "comment": "Generated from the task's test.json by corpus/verina-notes/interface.py: one case per test.",
+  "functions": {
+    "arrayProduct": {
+      "result": "long",
+      "parameters": "long a_len, const long a[a_len], long b_len, const long b[b_len]",
+      "call": "arrayProduct(a_len, a, b_len, b, 16, out)",
+      "locals": "long out[16] = {0};"
+    }
+  },
+  "cases": [
+    {
+      "name": "case_0",
+      "function": "arrayProduct",
+      "inputs": {
+        "a_len": 3,
+        "a": [
+          1,
+          2,
+          3
+        ],
+        "b_len": 3,
+        "b": [
+          4,
+          5,
+          6
+        ]
+      },
+      "expected": "found == 3 && out[0] == 4 && out[1] == 10 && out[2] == 18"
+    },
+    {
+      "name": "case_1",
+      "function": "arrayProduct",
+      "inputs": {
+        "a_len": 3,
+        "a": [
+          0,
+          0,
+          0
+        ],
+        "b_len": 3,
+        "b": [
+          1,
+          2,
+          3
+        ]
+      },
+      "expected": "found == 3 && out[0] == 0 && out[1] == 0 && out[2] == 0"
+    },
+    {
+      "name": "case_2",
+      "function": "arrayProduct",
+      "inputs": {
+        "a_len": 3,
+        "a": [
+          -1,
+          2,
+          -3
+        ],
+        "b_len": 3,
+        "b": [
+          3,
+          -4,
+          5
+        ]
+      },
+      "expected": "found == 3 && out[0] == -3 && out[1] == -8 && out[2] == -15"
+    },
+    {
+      "name": "case_3",
+      "function": "arrayProduct",
+      "inputs": {
+        "a_len": 1,
+        "a": [
+          2
+        ],
+        "b_len": 1,
+        "b": [
+          10
+        ]
+      },
+      "expected": "found == 1 && out[0] == 20"
+    },
+    {
+      "name": "case_4",
+      "function": "arrayProduct",
+      "inputs": {
+        "a_len": 4,
+        "a": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "b_len": 4,
+        "b": [
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      "expected": "found == 4 && out[0] == 2 && out[1] == 4 && out[2] == 6 && out[3] == 8"
+    }
+  ]
+}

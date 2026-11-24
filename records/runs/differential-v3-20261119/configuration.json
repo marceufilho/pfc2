@@ -1,0 +1,27 @@
+{
+  "experiment": "differential",
+  "provenance": {
+    "clang": "Ubuntu clang version 19.1.1 (1ubuntu1~24.04.2)",
+    "commit": null,
+    "experiment": "differential",
+    "seed": 100000,
+    "solver_version": "5.3.3.0",
+    "tag": null,
+    "timestamp": "2026-11-19T07:29:32+00:00",
+    "vc_model": "vc-v4: mathematical integers on defined C executions; target limits not instantiated; shared typed memory; typed reads are representable; substantive obligations; entry consistency"
+  },
+  "settings": {
+    "candidate": "pfc2-v3",
+    "candidate_intact": true,
+    "candidate_protected_sha256": "115f5ad6dbdb0c48c71bbf72678c84b2eb89fba0220c026039f7db6cc835b6ee",
+    "cases": 100,
+    "compiler": "clang-19",
+    "fuel": 200000,
+    "generator": "pfc2-eval-generator-v1",
+    "judging_seconds": 600,
+    "programs": 1000,
+    "seed": 100000,
+    "smt_encoding": "z3-int-shared-memory-v2; C division truncates to zero; division by zero totalized to 0",
+    "workers": 10
+  }
+}

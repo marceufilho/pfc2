@@ -1,0 +1,104 @@
+{
+  "comment": "Generated from the task's test.json by corpus/verina-notes/interface.py: one case per test.",
+  "functions": {
+    "trapRainWater": {
+      "result": "long",
+      "parameters": "long height_len, const long height[height_len]",
+      "call": "trapRainWater(height_len, height)"
+    }
+  },
+  "cases": [
+    {
+      "name": "case_0",
+      "function": "trapRainWater",
+      "inputs": {
+        "height_len": 12,
+        "height": [
+          0,
+          1,
+          0,
+          2,
+          1,
+          0,
+          1,
+          3,
+          2,
+          1,
+          2,
+          1
+        ]
+      },
+      "expected": "found == 6"
+    },
+    {
+      "name": "case_1",
+      "function": "trapRainWater",
+      "inputs": {
+        "height_len": 6,
+        "height": [
+          4,
+          2,
+          0,
+          3,
+          2,
+          5
+        ]
+      },
+      "expected": "found == 9"
+    },
+    {
+      "name": "case_2",
+      "function": "trapRainWater",
+      "inputs": {
+        "height_len": 3,
+        "height": [
+          1,
+          0,
+          2
+        ]
+      },
+      "expected": "found == 1"
+    },
+    {
+      "name": "case_3",
+      "function": "trapRainWater",
+      "inputs": {
+        "height_len": 6,
+        "height": [
+          3,
+          0,
+          1,
+          3,
+          0,
+          5
+        ]
+      },
+      "expected": "found == 8"
+    },
+    {
+      "name": "case_4",
+      "function": "trapRainWater",
+      "inputs": {
+        "height_len": 6,
+        "height": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "expected": "found == 0"
+    },
+    {
+      "name": "case_5",
+      "function": "trapRainWater",
+      "inputs": {
+        "height_len": 0,
+        "height": []
+      },
+      "expected": "found == 0"
+    }
+  ]
+}

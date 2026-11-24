@@ -1,0 +1,13 @@
+{
+  "id": "verina_basic_22",
+  "stated": "none",
+  "dropped": [
+    "every result element is in exactly one of a, b (quantifier, membership)",
+    "result sorted (Pairwise)",
+    "result has no duplicates (Nodup)",
+    "each element of a / of b is in the result iff absent from the other array (quantifier, membership)"
+  ],
+  "weakened": [],
+  "verdict": "certified at full",
+  "remarks": "Only memory safety and 0 <= result <= a_len + b_len are proved; helper contracts added on contains and insertSorted. requires(X_len >= 0) was added for the listed lengths: the `a[a_len]` spelling does not give the checker 0 <= length (a length is a Nat)."
+}

@@ -1,0 +1,12 @@
+{
+ "id": "verina_advanced_5",
+ "stated": "part",
+ "dropped": [
+  "precondition: every digit of l1 and l2 is below 10 (quantifier over elements)",
+  "listToNat result = listToNat l1 + listToNat l2 (recursive definition)",
+  "every digit of the result is below 10 (quantifier over elements)"
+ ],
+ "weakened": [],
+ "verdict": "refused-failed",
+ "remarks": "Stated: both lists non-empty, no leading zero in each input (last element non-zero or length 1), and the result's last digit is non-zero unless both inputs and the result are [0]. Not certifiable: without the digit bound, which needs a quantifier, the carry can stay positive for many iterations, so the index of out and the ensures are not provable (and are false for inputs the stated contract allows). No invariant can repair this."
+}

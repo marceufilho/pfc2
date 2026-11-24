@@ -1,0 +1,8 @@
+{
+  "id": "verina_basic_43",
+  "stated": "all",
+  "dropped": [],
+  "weakened": [],
+  "verdict": "certified at memory",
+  "remarks": "requires(n >= 0) added (n is a Nat). The closed form 15 * result == n * (2n + 1) * (7 + 24n^3 - 12n^2 - 14n) is stated and proved through the same loop invariant in i. The sum overflows for large n, so the trap on sum += ... stays."
+}

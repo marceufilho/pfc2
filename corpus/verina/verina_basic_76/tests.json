@@ -1,0 +1,57 @@
+{
+  "comment": "Generated from the task's test.json by corpus/verina-notes/interface.py: one case per test.",
+  "functions": {
+    "myMin": {
+      "result": "long",
+      "parameters": "long x, long y",
+      "call": "myMin(x, y)"
+    }
+  },
+  "cases": [
+    {
+      "name": "case_0",
+      "function": "myMin",
+      "inputs": {
+        "x": 3,
+        "y": 5
+      },
+      "expected": "found == 3"
+    },
+    {
+      "name": "case_1",
+      "function": "myMin",
+      "inputs": {
+        "x": 10,
+        "y": 7
+      },
+      "expected": "found == 7"
+    },
+    {
+      "name": "case_2",
+      "function": "myMin",
+      "inputs": {
+        "x": 4,
+        "y": 4
+      },
+      "expected": "found == 4"
+    },
+    {
+      "name": "case_3",
+      "function": "myMin",
+      "inputs": {
+        "x": -5,
+        "y": 0
+      },
+      "expected": "found == -5"
+    },
+    {
+      "name": "case_4",
+      "function": "myMin",
+      "inputs": {
+        "x": 0,
+        "y": -10
+      },
+      "expected": "found == -10"
+    }
+  ]
+}

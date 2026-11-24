@@ -1,0 +1,14 @@
+{
+  "id": "verina_basic_102",
+  "stated": "part",
+  "dropped": [
+    "precondition: some pair sums to target (not Pairwise, existential)",
+    "no valid pair with a smaller first index (quantifier)",
+    "j is the smallest partner of i (quantifier)"
+  ],
+  "weakened": [
+    "i < j, j < nums.size and nums[i] + nums[j] = target are not stated: they are statable about out[0], out[1], but false without the dropped precondition (when no pair exists the port leaves out untouched and returns the same value), so no ensures remains"
+  ],
+  "verdict": "certified at memory",
+  "remarks": "Certified with no ensures: see weakened."
+}

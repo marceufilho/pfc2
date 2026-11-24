@@ -1,0 +1,94 @@
+{
+  "comment": "Generated from the task's test.json by corpus/verina-notes/interface.py: one case per test.",
+  "functions": {
+    "findFirstRepeatedChar": {
+      "result": "long",
+      "parameters": "long s_len, const char s[s_len]",
+      "call": "findFirstRepeatedChar(s_len, s, 16, out)",
+      "locals": "long out[16] = {0};"
+    }
+  },
+  "cases": [
+    {
+      "name": "case_0",
+      "function": "findFirstRepeatedChar",
+      "inputs": {
+        "s_len": 4,
+        "s": [
+          97,
+          98,
+          99,
+          97
+        ]
+      },
+      "expected": "out[0] == 1 && out[1] == 97"
+    },
+    {
+      "name": "case_1",
+      "function": "findFirstRepeatedChar",
+      "inputs": {
+        "s_len": 6,
+        "s": [
+          97,
+          98,
+          99,
+          100,
+          101,
+          102
+        ]
+      },
+      "expected": "out[0] == 0"
+    },
+    {
+      "name": "case_2",
+      "function": "findFirstRepeatedChar",
+      "inputs": {
+        "s_len": 6,
+        "s": [
+          97,
+          97,
+          98,
+          98,
+          99,
+          99
+        ]
+      },
+      "expected": "out[0] == 1 && out[1] == 97"
+    },
+    {
+      "name": "case_3",
+      "function": "findFirstRepeatedChar",
+      "inputs": {
+        "s_len": 0,
+        "s": []
+      },
+      "expected": "out[0] == 0"
+    },
+    {
+      "name": "case_4",
+      "function": "findFirstRepeatedChar",
+      "inputs": {
+        "s_len": 4,
+        "s": [
+          97,
+          98,
+          98,
+          99
+        ]
+      },
+      "expected": "out[0] == 1 && out[1] == 98"
+    },
+    {
+      "name": "case_5",
+      "function": "findFirstRepeatedChar",
+      "inputs": {
+        "s_len": 2,
+        "s": [
+          65,
+          97
+        ]
+      },
+      "expected": "out[0] == 0"
+    }
+  ]
+}

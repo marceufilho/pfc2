@@ -1,0 +1,93 @@
+{
+  "comment": "Generated from the task's test.json by corpus/verina-notes/interface.py: one case per test.",
+  "functions": {
+    "task_code": {
+      "result": "long",
+      "parameters": "long sequence_len, const long sequence[sequence_len]",
+      "call": "task_code(sequence_len, sequence)"
+    }
+  },
+  "cases": [
+    {
+      "name": "case_0",
+      "function": "task_code",
+      "inputs": {
+        "sequence_len": 10,
+        "sequence": [
+          10,
+          -4,
+          3,
+          1,
+          5,
+          6,
+          -35,
+          12,
+          21,
+          -1
+        ]
+      },
+      "expected": "found == 33"
+    },
+    {
+      "name": "case_1",
+      "function": "task_code",
+      "inputs": {
+        "sequence_len": 10,
+        "sequence": [
+          2,
+          1,
+          -4,
+          3,
+          4,
+          -4,
+          6,
+          5,
+          -5,
+          1
+        ]
+      },
+      "expected": "found == 14"
+    },
+    {
+      "name": "case_2",
+      "function": "task_code",
+      "inputs": {
+        "sequence_len": 5,
+        "sequence": [
+          -1,
+          -2,
+          -3,
+          -4,
+          -5
+        ]
+      },
+      "expected": "found == -1"
+    },
+    {
+      "name": "case_3",
+      "function": "task_code",
+      "inputs": {
+        "sequence_len": 1,
+        "sequence": [
+          7
+        ]
+      },
+      "expected": "found == 7"
+    },
+    {
+      "name": "case_4",
+      "function": "task_code",
+      "inputs": {
+        "sequence_len": 5,
+        "sequence": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "expected": "found == 15"
+    }
+  ]
+}

@@ -1,0 +1,1658 @@
+{
+  "source": "https://gitlab.com/sosy-lab/benchmarking/sv-benchmarks",
+  "commit": "d36a1c91fd9d21b0b6c89809dee4808828beb74b",
+  "tasks": [
+    {
+      "task": "brs1",
+      "family": "array-fpi",
+      "upstream": "c/array-fpi/brs1.c",
+      "upstream_sha256": "34069800a3680052d40196d8ccc0749dfeb0bf73b3c16285a28594c0e0bc18f9",
+      "function": "brs1",
+      "rules": [
+        "H1",
+        "H2",
+        "H3",
+        "H5",
+        "H6",
+        "H7",
+        "H8"
+      ],
+      "assertions_dropped": [
+        "__VERIFIER_assert(sum[0] <= N);"
+      ],
+      "assertions_kept": 0,
+      "sha256": "81b5c07f23753ad9f2a6c9785e9bac1a0a6053b1abfef342ac91d193d9dd3900"
+    },
+    {
+      "task": "brs2",
+      "family": "array-fpi",
+      "upstream": "c/array-fpi/brs2.c",
+      "upstream_sha256": "30180066c5725dc94ea393a55a2d66ea1ca92a9775abb8c7c7f396606c36295e",
+      "function": "brs2",
+      "rules": [
+        "H1",
+        "H2",
+        "H3",
+        "H5",
+        "H6",
+        "H7",
+        "H8"
+      ],
+      "assertions_dropped": [
+        "__VERIFIER_assert(sum[0] <= 2*N);"
+      ],
+      "assertions_kept": 0,
+      "sha256": "1a625b3f1b5554e1ca4489fc9b930499be4e593f187198517def7d3d9210d446"
+    },
+    {
+      "task": "brs3",
+      "family": "array-fpi",
+      "upstream": "c/array-fpi/brs3.c",
+      "upstream_sha256": "b8694b571ef32d3ce32849c6c22b879af189af086cf770708f41a832549c3f83",
+      "function": "brs3",
+      "rules": [
+        "H1",
+        "H2",
+        "H3",
+        "H5",
+        "H6",
+        "H7",
+        "H8"
+      ],
+      "assertions_dropped": [
+        "__VERIFIER_assert(sum[0] <= 3*N);"
+      ],
+      "assertions_kept": 0,
+      "sha256": "91cf6db883a4291663eaafc2ff217932ab6fb2b84c90c5c66818b216f87cea71"
+    },
+    {
+      "task": "brs4",
+      "family": "array-fpi",
+      "upstream": "c/array-fpi/brs4.c",
+      "upstream_sha256": "fcc9b5a9dfab3ae02793f8406257095966cd6e722eafa07da25373e6661135bb",
+      "function": "brs4",
+      "rules": [
+        "H1",
+        "H2",
+        "H3",
+        "H5",
+        "H6",
+        "H7",
+        "H8"
+      ],
+      "assertions_dropped": [
+        "__VERIFIER_assert(sum[0] <= 4*N);"
+      ],
+      "assertions_kept": 0,
+      "sha256": "81cafdac476a2bd9c4b82af58f275dc29675644f835f35be813db6169cf49215"
+    },
+    {
+      "task": "brs5",
+      "family": "array-fpi",
+      "upstream": "c/array-fpi/brs5.c",
+      "upstream_sha256": "ac77c8af304465c78cb42c2adbafc17790f7b484465d1f5078283d2c705d44c9",
+      "function": "brs5",
+      "rules": [
+        "H1",
+        "H2",
+        "H3",
+        "H5",
+        "H6",
+        "H7",
+        "H8"
+      ],
+      "assertions_dropped": [
+        "__VERIFIER_assert(sum[0] <= 5*N);"
+      ],
+      "assertions_kept": 0,
+      "sha256": "b92dc2a704541581a6aeba25e87cb0eb9f5d5cc7a6accb1c0c780eb9cffc6ada"
+    },
+    {
+      "task": "conda",
+      "family": "array-fpi",
+      "upstream": "c/array-fpi/conda.c",
+      "upstream_sha256": "783e30b99a655a22a916cc3511dca0e5b0828314d6f73cb7220a88f1858acdd9",
+      "function": "conda",
+      "rules": [
+        "H1",
+        "H2",
+        "H3",
+        "H5",
+        "H6",
+        "H7",
+        "H8"
+      ],
+      "assertions_dropped": [
+        "__VERIFIER_assert(sum[0] == 2*N);"
+      ],
+      "assertions_kept": 0,
+      "sha256": "5f17caf85504c31165255cdc3f92853314cf2e5ee8abe27425875c2f3897d477"
+    },
+    {
+      "task": "condg",
+      "family": "array-fpi",
+      "upstream": "c/array-fpi/condg.c",
+      "upstream_sha256": "5b9831e087db8f5087e1311f412870f450c78ee88e3efc51e15b86bec6f801b6",
+      "function": "condg",
+      "rules": [
+        "H1",
+        "H2",
+        "H3",
+        "H5",
+        "H6",
+        "H7",
+        "H8"
+      ],
+      "assertions_dropped": [
+        "__VERIFIER_assert(a[i] == 0);"
+      ],
+      "assertions_kept": 0,
+      "sha256": "54331be063ff5f0104e7d1160e039951c26e78db4f7ff11ebeae75d0c1fa48c1"
+    },
+    {
+      "task": "condm",
+      "family": "array-fpi",
+      "upstream": "c/array-fpi/condm.c",
+      "upstream_sha256": "4319689e76b206f64325c06775c778daa669a30f8e64e6c13c889afbb233e8ec",
+      "function": "condm",
+      "rules": [
+        "H1",
+        "H2",
+        "H3",
+        "H5",
+        "H6",
+        "H7",
+        "H8"
+      ],
+      "assertions_dropped": [
+        "__VERIFIER_assert(a[i] % 2 == N % 2);"
+      ],
+      "assertions_kept": 0,
+      "sha256": "790e917d083fa062a8879b1c2d829f198ef97e6cdbdd8dea79ec0cc7260550ff"
+    },
+    {
+      "task": "condn",
+      "family": "array-fpi",
+      "upstream": "c/array-fpi/condn.c",
+      "upstream_sha256": "2d4606c110c8953ea231794b4a9b8611fa82b457f0870bd8b1768fb00d07df19",
+      "excluded": "H4 cannot be applied: a nondeterministic value is drawn inside a loop, which no single parameter stands for"
+    },
+    {
+      "task": "eqn1",
+      "family": "array-fpi",
+      "upstream": "c/array-fpi/eqn1.c",
+      "upstream_sha256": "724d1e893488190a3230d8a5cd30b4603eaf3d67c83f1a0d3e0eca5763e51538",
+      "function": "eqn1",
+      "rules": [
+        "H1",
+        "H2",
+        "H3",
+        "H5",
+        "H6",
+        "H7",
+        "H8"
+      ],
+      "assertions_dropped": [
+        "__VERIFIER_assert(b[i] == i*i + i + 1);"
+      ],
+      "assertions_kept": 0,
+      "sha256": "5e8bf447190672db1ced51027c7a0a2036e9cc00734e1b13ece039f2c1f7d805"
+    },
+    {
+      "task": "eqn2",
+      "family": "array-fpi",
+      "upstream": "c/array-fpi/eqn2.c",
+      "upstream_sha256": "26d6a035864a0b8020285ad5a808325583b1c0452209a23ee2103e97cebc9ddc",
+      "function": "eqn2",
+      "rules": [
+        "H1",
+        "H2",
+        "H3",
+        "H5",
+        "H6",
+        "H7",
+        "H8"
+      ],
+      "assertions_dropped": [
+        "__VERIFIER_assert(b[i] == 2*i*i + 2*i + 1);"
+      ],
+      "assertions_kept": 0,
+      "sha256": "287eff331d5b79814b541a06a21ef4e7e1cc308ae0313b0238aff4c400c0e259"
+    },
+    {
+      "task": "eqn3",
+      "family": "array-fpi",
+      "upstream": "c/array-fpi/eqn3.c",
+      "upstream_sha256": "9c69bdc1f97dcc856aa0b15360fcd8a212963949c3063772376c1e0f2bff5493",
+      "function": "eqn3",
+      "rules": [
+        "H1",
+        "H2",
+        "H3",
+        "H5",
+        "H6",
+        "H7",
+        "H8"
+      ],
+      "assertions_dropped": [
+        "__VERIFIER_assert(b[i] == 3*i*i + 3*i + 1);"
+      ],
+      "assertions_kept": 0,
+      "sha256": "1b7cc7623ae8f2e56da54463be27acec5fa0005522b34b17409d295719c18969"
+    },
+    {
+      "task": "eqn4",
+      "family": "array-fpi",
+      "upstream": "c/array-fpi/eqn4.c",
+      "upstream_sha256": "164d68bbf275ceacc7768dc94d1b4f80585d2f6a9468306a52c47e3367569f1b",
+      "function": "eqn4",
+      "rules": [
+        "H1",
+        "H2",
+        "H3",
+        "H5",
+        "H6",
+        "H7",
+        "H8"
+      ],
+      "assertions_dropped": [
+        "__VERIFIER_assert(b[i] == 4*i*i + 4*i + 1);"
+      ],
+      "assertions_kept": 0,
+      "sha256": "d20c3706c81f11d68ce66c88394d7dda921aed7f2350cf782f1ad60489706283"
+    },
+    {
+      "task": "eqn5",
+      "family": "array-fpi",
+      "upstream": "c/array-fpi/eqn5.c",
+      "upstream_sha256": "05a369211f35853fabb0c9679f5a303bf312e4708f951d1bd1b8c158eba6eeb0",
+      "function": "eqn5",
+      "rules": [
+        "H1",
+        "H2",
+        "H3",
+        "H5",
+        "H6",
+        "H7",
+        "H8"
+      ],
+      "assertions_dropped": [
+        "__VERIFIER_assert(b[i] == 5*i*i + 5*i + 1);"
+      ],
+      "assertions_kept": 0,
+      "sha256": "25aece7a1243e6220f960bd0de26407fc0f9b785d99c09b784b70ce70b35095d"
+    },
+    {
+      "task": "ifcomp",
+      "family": "array-fpi",
+      "upstream": "c/array-fpi/ifcomp.c",
+      "upstream_sha256": "65daf23229a033c4e7e7054714cd86578cd9f7d0002fc02a5663b1987cb978c0",
+      "function": "ifcomp",
+      "rules": [
+        "H1",
+        "H2",
+        "H3",
+        "H5",
+        "H6",
+        "H7",
+        "H8"
+      ],
+      "assertions_dropped": [
+        "__VERIFIER_assert(c[i] == i*i*i);"
+      ],
+      "assertions_kept": 0,
+      "sha256": "4150a75dcd1de214341ddcc34b5dbf8e4e317a840cc3e28ce6b75bd8b3271cc3"
+    },
+    {
+      "task": "ifeqn1",
+      "family": "array-fpi",
+      "upstream": "c/array-fpi/ifeqn1.c",
+      "upstream_sha256": "8b427ef4be4b265d4691c1449cb2255088be4ea4a8217b49df4af027165c62b5",
+      "function": "ifeqn1",
+      "rules": [
+        "H1",
+        "H2",
+        "H3",
+        "H5",
+        "H6",
+        "H7",
+        "H8"
+      ],
+      "assertions_dropped": [
+        "__VERIFIER_assert(b[i] == i*i + i + 1);"
+      ],
+      "assertions_kept": 0,
+      "sha256": "5fa5d326b31d369d437ccf82c817cce4997c7062d203f8aaedcf316635fdcb9d"
+    },
+    {
+      "task": "ifeqn2",
+      "family": "array-fpi",
+      "upstream": "c/array-fpi/ifeqn2.c",
+      "upstream_sha256": "20a52972311d8b99a9be94123b25b417c9b46ce523168e2e982e812293d82221",
+      "function": "ifeqn2",
+      "rules": [
+        "H1",
+        "H2",
+        "H3",
+        "H5",
+        "H6",
+        "H7",
+        "H8"
+      ],
+      "assertions_dropped": [
+        "__VERIFIER_assert(b[i] == 2*i*i + 2*i + 1);"
+      ],
+      "assertions_kept": 0,
+      "sha256": "7ba1193180d0472fe1b35b5dcc7a420b1c367b6259d43a8a8c473863d9349e79"
+    },
+    {
+      "task": "ifeqn3",
+      "family": "array-fpi",
+      "upstream": "c/array-fpi/ifeqn3.c",
+      "upstream_sha256": "4b452a6472828e2b36746f1155616354ef68fa75ccdc1b4794b2cad20d64f2f2",
+      "function": "ifeqn3",
+      "rules": [
+        "H1",
+        "H2",
+        "H3",
+        "H5",
+        "H6",
+        "H7",
+        "H8"
+      ],
+      "assertions_dropped": [
+        "__VERIFIER_assert(b[i] == 3*i*i + 3*i + 1);"
+      ],
+      "assertions_kept": 0,
+      "sha256": "8d7c61fbaa804c97eac584b16062050aa0377b6d767d12cd78be0bd47c3f2925"
+    },
+    {
+      "task": "ifeqn4",
+      "family": "array-fpi",
+      "upstream": "c/array-fpi/ifeqn4.c",
+      "upstream_sha256": "66864f229f5683bd2fa41f9582b93a186283aae576f6f7b59a85ea9e0cda72df",
+      "function": "ifeqn4",
+      "rules": [
+        "H1",
+        "H2",
+        "H3",
+        "H5",
+        "H6",
+        "H7",
+        "H8"
+      ],
+      "assertions_dropped": [
+        "__VERIFIER_assert(b[i] == 4*i*i + 4*i + 1);"
+      ],
+      "assertions_kept": 0,
+      "sha256": "8e572af2506c74c55e610ba1a750af405eb152554b1524acd4d86b1e607774aa"
+    },
+    {
+      "task": "ifeqn5",
+      "family": "array-fpi",
+      "upstream": "c/array-fpi/ifeqn5.c",
+      "upstream_sha256": "82d9c237238999273b130903e082043f8839d22e295fa9cbc5f6c9a0ce8a1db4",
+      "function": "ifeqn5",
+      "rules": [
+        "H1",
+        "H2",
+        "H3",
+        "H5",
+        "H6",
+        "H7",
+        "H8"
+      ],
+      "assertions_dropped": [
+        "__VERIFIER_assert(b[i] == 5*i*i + 5*i + 1);"
+      ],
+      "assertions_kept": 0,
+      "sha256": "791e5ffd6d3d970683bc49de88c5916fb4f3ba4ce69d6e1a8b4c0bb264e9e6c6"
+    },
+    {
+      "task": "ifncomp",
+      "family": "array-fpi",
+      "upstream": "c/array-fpi/ifncomp.c",
+      "upstream_sha256": "241cd88e05d01855b0f3c427ee2e8e66eeb09216513bffa5ac9d6275715fe8db",
+      "function": "ifncomp",
+      "rules": [
+        "H1",
+        "H2",
+        "H3",
+        "H5",
+        "H6",
+        "H7",
+        "H8"
+      ],
+      "assertions_dropped": [
+        "__VERIFIER_assert(c[i] == N + i*i*i);"
+      ],
+      "assertions_kept": 0,
+      "sha256": "6bb86cf47f9e08da8a54ff3c43bb600ae794f086ba954e942b8eb236583b500a"
+    },
+    {
+      "task": "indp2",
+      "family": "array-fpi",
+      "upstream": "c/array-fpi/indp2.c",
+      "upstream_sha256": "1b0278816c1a4d2087b5ad78d86f72be39508d9aadede4a4b81b747f654ef0dc",
+      "function": "indp2",
+      "rules": [
+        "H1",
+        "H2",
+        "H3",
+        "H5",
+        "H6",
+        "H7",
+        "H8"
+      ],
+      "assertions_dropped": [
+        "__VERIFIER_assert(a[i]==0);"
+      ],
+      "assertions_kept": 0,
+      "sha256": "08c6e09dce95d7dfdf362dabc48ac14fde2055759bb82d8f30f44c79d48ebafc"
+    },
+    {
+      "task": "indp3",
+      "family": "array-fpi",
+      "upstream": "c/array-fpi/indp3.c",
+      "upstream_sha256": "d4cb5707b5413a2d128e043a08e664526da17a3eb3b61d94a40aaace5e4de934",
+      "function": "indp3",
+      "rules": [
+        "H1",
+        "H2",
+        "H3",
+        "H5",
+        "H6",
+        "H7",
+        "H8"
+      ],
+      "assertions_dropped": [
+        "__VERIFIER_assert(a[i]==i*i);"
+      ],
+      "assertions_kept": 0,
+      "sha256": "9223b932436607f3000aed9d78a01d44ba60639421f2d94430de1b43454547ea"
+    },
+    {
+      "task": "indp4",
+      "family": "array-fpi",
+      "upstream": "c/array-fpi/indp4.c",
+      "upstream_sha256": "fc53dbe1687629766938475ec4fd7f5363d5b5a7f0a23a0aa6e9d629db6cf0dc",
+      "function": "indp4",
+      "rules": [
+        "H1",
+        "H2",
+        "H3",
+        "H5",
+        "H6",
+        "H7",
+        "H8"
+      ],
+      "assertions_dropped": [
+        "__VERIFIER_assert(a[i]==i*i+1);"
+      ],
+      "assertions_kept": 0,
+      "sha256": "182fe952854d5ae072374021be7de9b00fb6117350877eb4e6deb550602552a0"
+    },
+    {
+      "task": "indp5",
+      "family": "array-fpi",
+      "upstream": "c/array-fpi/indp5.c",
+      "upstream_sha256": "5af8bf4eef5b2950bb23102c84c8ea20bd69ba32ac4c266a63052d4a7913cf80",
+      "function": "indp5",
+      "rules": [
+        "H1",
+        "H2",
+        "H3",
+        "H5",
+        "H6",
+        "H7",
+        "H8"
+      ],
+      "assertions_dropped": [
+        "__VERIFIER_assert(sum[0] == N);"
+      ],
+      "assertions_kept": 0,
+      "sha256": "04c877656976896b28b11515e9d8703a3848942afdf5578ce3913cd736b0c2b2"
+    },
+    {
+      "task": "modn",
+      "family": "array-fpi",
+      "upstream": "c/array-fpi/modn.c",
+      "upstream_sha256": "68b115c23885247701dbd86f2c6b480a595d0ee56686e014cba2eab6e015b839",
+      "function": "modn",
+      "rules": [
+        "H1",
+        "H2",
+        "H3",
+        "H5",
+        "H6",
+        "H7",
+        "H8"
+      ],
+      "assertions_dropped": [
+        "__VERIFIER_assert(a[i] == 0);"
+      ],
+      "assertions_kept": 0,
+      "sha256": "423533b1d14471613fb78ad63f01ec4b052b8817e1e15f8b2c50630f537d1df4"
+    },
+    {
+      "task": "modp",
+      "family": "array-fpi",
+      "upstream": "c/array-fpi/modp.c",
+      "upstream_sha256": "7c81ff2a9aef6f4241942fae7516322a4f4adc7cd291830c60a3111235185a6f",
+      "function": "modp",
+      "rules": [
+        "H1",
+        "H2",
+        "H3",
+        "H5",
+        "H6",
+        "H7",
+        "H8"
+      ],
+      "assertions_dropped": [
+        "__VERIFIER_assert(a[i] % N == 0);"
+      ],
+      "assertions_kept": 0,
+      "sha256": "e6da3c2bf2957061b3a33dc96949dc7cd3c3c038ba455fff5615a382314da2a9"
+    },
+    {
+      "task": "mods",
+      "family": "array-fpi",
+      "upstream": "c/array-fpi/mods.c",
+      "upstream_sha256": "c3fd2a9bff8fc9003435336540f103a9dc3a40917570a4f7e0153b862f1d5330",
+      "function": "mods",
+      "rules": [
+        "H1",
+        "H2",
+        "H3",
+        "H5",
+        "H6",
+        "H7",
+        "H8"
+      ],
+      "assertions_dropped": [
+        "__VERIFIER_assert(a[i] == 0);"
+      ],
+      "assertions_kept": 0,
+      "sha256": "a64b62c3bbd9f9ecf42607710f975eecee042caf960afd5147a5836d1ab8cfcd"
+    },
+    {
+      "task": "ms1",
+      "family": "array-fpi",
+      "upstream": "c/array-fpi/ms1.c",
+      "upstream_sha256": "ffa1b8a10110b710fc7fdc0d4de5ca4da8df23bf518eb0adebe78b8f86c20596",
+      "function": "ms1",
+      "rules": [
+        "H1",
+        "H2",
+        "H3",
+        "H5",
+        "H6",
+        "H7",
+        "H8"
+      ],
+      "assertions_dropped": [
+        "__VERIFIER_assert(sum[0] == 0);"
+      ],
+      "assertions_kept": 0,
+      "sha256": "aa4faa170c1e548f43f158f867cc53896a6ae2e7d562cbe5883ebb7493d01fee"
+    },
+    {
+      "task": "ms2",
+      "family": "array-fpi",
+      "upstream": "c/array-fpi/ms2.c",
+      "upstream_sha256": "d7244189d1000d047487d8f61e9e6c82c9b4a2d73e7d1ef8dd1a00c1da06af73",
+      "function": "ms2",
+      "rules": [
+        "H1",
+        "H2",
+        "H3",
+        "H5",
+        "H6",
+        "H7",
+        "H8"
+      ],
+      "assertions_dropped": [
+        "__VERIFIER_assert(sum[0] <= N);"
+      ],
+      "assertions_kept": 0,
+      "sha256": "d78ae741df4f19f1042a9a9f9334b553fc200864bec000bf285b293e2dfdb3ac"
+    },
+    {
+      "task": "ms3",
+      "family": "array-fpi",
+      "upstream": "c/array-fpi/ms3.c",
+      "upstream_sha256": "fae30a0c103e8987a54549f9cb95ffd9cf183b31f9b53f7efc1f0fd558c4b321",
+      "function": "ms3",
+      "rules": [
+        "H1",
+        "H2",
+        "H3",
+        "H5",
+        "H6",
+        "H7",
+        "H8"
+      ],
+      "assertions_dropped": [
+        "__VERIFIER_assert(sum[0] <= 2*N);"
+      ],
+      "assertions_kept": 0,
+      "sha256": "4a2d27237f21fe162a22b8591e51a10253fe043785923a493240e325e7452de8"
+    },
+    {
+      "task": "ms4",
+      "family": "array-fpi",
+      "upstream": "c/array-fpi/ms4.c",
+      "upstream_sha256": "19f9ec3006be79eebe2f0e30de11f1018481dd2ad5b58a44e6cf2d05e8f2fed8",
+      "function": "ms4",
+      "rules": [
+        "H1",
+        "H2",
+        "H3",
+        "H5",
+        "H6",
+        "H7",
+        "H8"
+      ],
+      "assertions_dropped": [
+        "__VERIFIER_assert(sum[0] <= 3*N);"
+      ],
+      "assertions_kept": 0,
+      "sha256": "85f98015de4ab34a94e2761aba787469fca9c6db868d39241f9005401fa41963"
+    },
+    {
+      "task": "ms5",
+      "family": "array-fpi",
+      "upstream": "c/array-fpi/ms5.c",
+      "upstream_sha256": "518c4fd2f1fe6410bce6c4938d32f9f3c7ce89f642094114a338568248bcc8e8",
+      "function": "ms5",
+      "rules": [
+        "H1",
+        "H2",
+        "H3",
+        "H5",
+        "H6",
+        "H7",
+        "H8"
+      ],
+      "assertions_dropped": [
+        "__VERIFIER_assert(sum[0] <= 4*N);"
+      ],
+      "assertions_kept": 0,
+      "sha256": "cd3bd50ffffe1573f22df3ef7b11261a7649f48ecaa59b0b27e4a0222b7d9b00"
+    },
+    {
+      "task": "ncomp",
+      "family": "array-fpi",
+      "upstream": "c/array-fpi/ncomp.c",
+      "upstream_sha256": "eb877835fa8da8badea04d6be1b3dac61122294fde0e5d112e9c1418b6f463ba",
+      "function": "ncomp",
+      "rules": [
+        "H1",
+        "H2",
+        "H3",
+        "H5",
+        "H6",
+        "H7",
+        "H8"
+      ],
+      "assertions_dropped": [
+        "__VERIFIER_assert(c[i] == N + i*i*i);"
+      ],
+      "assertions_kept": 0,
+      "sha256": "43263a0a0f1056c5fbb67d669c9313349211e235fb005b9721d1782892acc9d0"
+    },
+    {
+      "task": "nsqm-if",
+      "family": "array-fpi",
+      "upstream": "c/array-fpi/nsqm-if.c",
+      "upstream_sha256": "5e6652c90f3043a93bfbaa8056790fe07c2a2725ac6fe86b0b4562b0983d42c6",
+      "function": "nsqm_if",
+      "rules": [
+        "H1",
+        "H2",
+        "H3",
+        "H5",
+        "H6",
+        "H7",
+        "H8"
+      ],
+      "assertions_dropped": [
+        "__VERIFIER_assert(a[i] == N + (i+1)*(i+1));"
+      ],
+      "assertions_kept": 0,
+      "sha256": "97a2cadfdb17f210d2eb8bf3b3248e79c00a2591030a4bcadc14761559ac7bc7"
+    },
+    {
+      "task": "nsqm",
+      "family": "array-fpi",
+      "upstream": "c/array-fpi/nsqm.c",
+      "upstream_sha256": "f1f75856a6ccef84bc4b89182dfa280d50de27f88038c232abe7102a86aa1ab4",
+      "function": "nsqm",
+      "rules": [
+        "H1",
+        "H2",
+        "H3",
+        "H5",
+        "H6",
+        "H7",
+        "H8"
+      ],
+      "assertions_dropped": [
+        "__VERIFIER_assert(a[i] == N + (i+1)*(i+1));"
+      ],
+      "assertions_kept": 0,
+      "sha256": "821892b03cc8a38d3ae608b74df5a7dff82a430d6f080f325e4b5c62b224d94b"
+    },
+    {
+      "task": "pcomp",
+      "family": "array-fpi",
+      "upstream": "c/array-fpi/pcomp.c",
+      "upstream_sha256": "55dd0e9862b12ea1dd0000cd7e2a74d92dfa91ae094869fc140c4c7351b63622",
+      "function": "pcomp",
+      "rules": [
+        "H1",
+        "H2",
+        "H3",
+        "H5",
+        "H6",
+        "H7",
+        "H8"
+      ],
+      "assertions_dropped": [
+        "__VERIFIER_assert(c[i] == i*i*i);"
+      ],
+      "assertions_kept": 0,
+      "sha256": "e42e3848173e9436caf9938fb8040d57d6a3ca7fc786b7f01ff24d68aea20f59"
+    },
+    {
+      "task": "res1",
+      "family": "array-fpi",
+      "upstream": "c/array-fpi/res1.c",
+      "upstream_sha256": "589e1884bbbe4ca0fb2b17c273e77849d2c481eb08b6c4d23a845be9dad7b23f",
+      "function": "res1",
+      "rules": [
+        "H1",
+        "H2",
+        "H3",
+        "H5",
+        "H6",
+        "H7",
+        "H8"
+      ],
+      "assertions_dropped": [
+        "__VERIFIER_assert(sum[0] <= 2*N);"
+      ],
+      "assertions_kept": 0,
+      "sha256": "d2495af880111f4ef2d36bbeb369cd19dd67dbacef8e41231dd354a6f37d577f"
+    },
+    {
+      "task": "res1o",
+      "family": "array-fpi",
+      "upstream": "c/array-fpi/res1o.c",
+      "upstream_sha256": "9cafb89f06253fd224e1419e2fbf8b6e772eddda48fee9d7ce506ccb1e4277a9",
+      "function": "res1o",
+      "rules": [
+        "H1",
+        "H2",
+        "H3",
+        "H5",
+        "H6",
+        "H7",
+        "H8"
+      ],
+      "assertions_dropped": [
+        "__VERIFIER_assert(sum[0] <= 2*N);"
+      ],
+      "assertions_kept": 0,
+      "sha256": "06ad1c0f4544bf1d0a376139e030b283306084861ae1816ec49cfd643f161326"
+    },
+    {
+      "task": "res2",
+      "family": "array-fpi",
+      "upstream": "c/array-fpi/res2.c",
+      "upstream_sha256": "1685ce2038e72a21839e24d7eaee2d89c7a9ef1814a295bd65006c44b4a9bb44",
+      "function": "res2",
+      "rules": [
+        "H1",
+        "H2",
+        "H3",
+        "H5",
+        "H6",
+        "H7",
+        "H8"
+      ],
+      "assertions_dropped": [
+        "__VERIFIER_assert(sum[0] <= 3*N);"
+      ],
+      "assertions_kept": 0,
+      "sha256": "dc87b5346eff78a4042907437b7848f1b796b9150162890aacd969775e2d9723"
+    },
+    {
+      "task": "res2o",
+      "family": "array-fpi",
+      "upstream": "c/array-fpi/res2o.c",
+      "upstream_sha256": "87442310ce74e0b89c96ce947cc91b627f06b922756440cc838528028c53c634",
+      "function": "res2o",
+      "rules": [
+        "H1",
+        "H2",
+        "H3",
+        "H5",
+        "H6",
+        "H7",
+        "H8"
+      ],
+      "assertions_dropped": [
+        "__VERIFIER_assert(sum[0] <= 3*N);"
+      ],
+      "assertions_kept": 0,
+      "sha256": "b3bc0e9fdee04608cb760187d1b14b2c5f846da0b1479fd3cd295e19216ebe18"
+    },
+    {
+      "task": "s12if",
+      "family": "array-fpi",
+      "upstream": "c/array-fpi/s12if.c",
+      "upstream_sha256": "80a98ad62434768a8644c444a26454ff10b87b6cb0868db2c3b64fcc0fc7c8c2",
+      "function": "s12if",
+      "rules": [
+        "H1",
+        "H2",
+        "H3",
+        "H5",
+        "H6",
+        "H7",
+        "H8"
+      ],
+      "assertions_dropped": [
+        "__VERIFIER_assert(sum[0] == 2*N);"
+      ],
+      "assertions_kept": 0,
+      "sha256": "cf2d800f807f245f183951b2e107f58d40d226f6eb06be1574c949a60781eef4"
+    },
+    {
+      "task": "s1if",
+      "family": "array-fpi",
+      "upstream": "c/array-fpi/s1if.c",
+      "upstream_sha256": "8526a32b1a6bc55e512fe35a208706df86834ab752e7e65f8b8b05fbcb9f37c2",
+      "function": "s1if",
+      "rules": [
+        "H1",
+        "H2",
+        "H3",
+        "H5",
+        "H6",
+        "H7",
+        "H8"
+      ],
+      "assertions_dropped": [
+        "__VERIFIER_assert(sum[0] == N);"
+      ],
+      "assertions_kept": 0,
+      "sha256": "e1ac76ca24d86c38a4ca4a61630710147e509c2bb5491a2012e009a15f1170fa"
+    },
+    {
+      "task": "s1lif",
+      "family": "array-fpi",
+      "upstream": "c/array-fpi/s1lif.c",
+      "upstream_sha256": "bbc7d7a675dc87e3e54a536095d28d5889397d04882c315e7b4a997134c79b79",
+      "function": "s1lif",
+      "rules": [
+        "H1",
+        "H2",
+        "H3",
+        "H5",
+        "H6",
+        "H7",
+        "H8"
+      ],
+      "assertions_dropped": [
+        "__VERIFIER_assert(sum[0] == 2*N);"
+      ],
+      "assertions_kept": 0,
+      "sha256": "c3b0f0b1ef530f3b5fba6df80815254a2926e6d3c8cac8e1c5106ac658894630"
+    },
+    {
+      "task": "s22if",
+      "family": "array-fpi",
+      "upstream": "c/array-fpi/s22if.c",
+      "upstream_sha256": "982db970d835b1e3eb16f607fac59cd133d46d36e84f1957310b3fdded7d449a",
+      "function": "s22if",
+      "rules": [
+        "H1",
+        "H2",
+        "H3",
+        "H5",
+        "H6",
+        "H7",
+        "H8"
+      ],
+      "assertions_dropped": [
+        "__VERIFIER_assert(sum[0] == 3*N);"
+      ],
+      "assertions_kept": 0,
+      "sha256": "86d69755763f2dd975d505725c7ead977a0dacd18ff752448852d1cdc68effae"
+    },
+    {
+      "task": "s2if",
+      "family": "array-fpi",
+      "upstream": "c/array-fpi/s2if.c",
+      "upstream_sha256": "3318a480b1e7d4e9375f2881ee6e074dc00cb9b590cfba785bd84a74dd65df7e",
+      "function": "s2if",
+      "rules": [
+        "H1",
+        "H2",
+        "H3",
+        "H5",
+        "H6",
+        "H7",
+        "H8"
+      ],
+      "assertions_dropped": [
+        "__VERIFIER_assert(sum[0] == 2*N);"
+      ],
+      "assertions_kept": 0,
+      "sha256": "2e07826d9aa4e93faddfdb591ec185948fc367f15092ee24d53d334581947c3c"
+    },
+    {
+      "task": "s2lif",
+      "family": "array-fpi",
+      "upstream": "c/array-fpi/s2lif.c",
+      "upstream_sha256": "99d056445fbf4cc4bd642211f7f31bcb87d77c6ec937cfa902d8915bee06d595",
+      "function": "s2lif",
+      "rules": [
+        "H1",
+        "H2",
+        "H3",
+        "H5",
+        "H6",
+        "H7",
+        "H8"
+      ],
+      "assertions_dropped": [
+        "__VERIFIER_assert(sum[0] == 3*N);"
+      ],
+      "assertions_kept": 0,
+      "sha256": "fcfa0940b361b600537ea4a62f7a25c6a8c47da8c9af9679e725856b924b9eb6"
+    },
+    {
+      "task": "s32if",
+      "family": "array-fpi",
+      "upstream": "c/array-fpi/s32if.c",
+      "upstream_sha256": "c8791e108593bafeb16de666d8f10ee5cf7093e2519993fe0458435a9bf49361",
+      "function": "s32if",
+      "rules": [
+        "H1",
+        "H2",
+        "H3",
+        "H5",
+        "H6",
+        "H7",
+        "H8"
+      ],
+      "assertions_dropped": [
+        "__VERIFIER_assert(sum[0] == 4*N);"
+      ],
+      "assertions_kept": 0,
+      "sha256": "07c3e3842bb3763c3cdec07bac3a3fd58c40fc1e3328c09f45e6d752bc9fb32a"
+    },
+    {
+      "task": "s3if",
+      "family": "array-fpi",
+      "upstream": "c/array-fpi/s3if.c",
+      "upstream_sha256": "0e05578d0e3ec42a4faf712f939eb1a39e7068331ee223f67ed09afd825a2c06",
+      "function": "s3if",
+      "rules": [
+        "H1",
+        "H2",
+        "H3",
+        "H5",
+        "H6",
+        "H7",
+        "H8"
+      ],
+      "assertions_dropped": [
+        "__VERIFIER_assert(sum[0] == 3*N);"
+      ],
+      "assertions_kept": 0,
+      "sha256": "0f5d58129c821b297bb7e294df07486070bdd2d271fcc4afe9bc2499cb560e8f"
+    },
+    {
+      "task": "s3lif",
+      "family": "array-fpi",
+      "upstream": "c/array-fpi/s3lif.c",
+      "upstream_sha256": "00b51a05fa0ca7d32cc632270520aaf308694d0e56fb8e30b3c51236b2c901c0",
+      "function": "s3lif",
+      "rules": [
+        "H1",
+        "H2",
+        "H3",
+        "H5",
+        "H6",
+        "H7",
+        "H8"
+      ],
+      "assertions_dropped": [
+        "__VERIFIER_assert(sum[0] == 4*N);"
+      ],
+      "assertions_kept": 0,
+      "sha256": "4af1dc2463d5cab9c51be5a9724f105e207f3149a9e7e46305f63002149b1186"
+    },
+    {
+      "task": "s42if",
+      "family": "array-fpi",
+      "upstream": "c/array-fpi/s42if.c",
+      "upstream_sha256": "2c054230597008d4af925fac89fcb807ac0c9d66b457dd5ca68d1d52ab4e92ab",
+      "function": "s42if",
+      "rules": [
+        "H1",
+        "H2",
+        "H3",
+        "H5",
+        "H6",
+        "H7",
+        "H8"
+      ],
+      "assertions_dropped": [
+        "__VERIFIER_assert(sum[0] == 5*N);"
+      ],
+      "assertions_kept": 0,
+      "sha256": "5eb815c7594c61ac8d4894339bd5bdf0b815b8a88cb8367b43dd7bfff914f528"
+    },
+    {
+      "task": "s4if",
+      "family": "array-fpi",
+      "upstream": "c/array-fpi/s4if.c",
+      "upstream_sha256": "04a79d893df7cc8df8bbaebd344a9997db9b5d2112f12e3f114c04e8165d085b",
+      "function": "s4if",
+      "rules": [
+        "H1",
+        "H2",
+        "H3",
+        "H5",
+        "H6",
+        "H7",
+        "H8"
+      ],
+      "assertions_dropped": [
+        "__VERIFIER_assert(sum[0] == 4*N);"
+      ],
+      "assertions_kept": 0,
+      "sha256": "7a97bd395a60afdb692dae82b7efe00369564a6dd807b77442e6bfb2d520ead0"
+    },
+    {
+      "task": "s4lif",
+      "family": "array-fpi",
+      "upstream": "c/array-fpi/s4lif.c",
+      "upstream_sha256": "7f774bd897ea597c961172f604c7172bb6fd9960badf43e03da7ff55ea7b1c89",
+      "function": "s4lif",
+      "rules": [
+        "H1",
+        "H2",
+        "H3",
+        "H5",
+        "H6",
+        "H7",
+        "H8"
+      ],
+      "assertions_dropped": [
+        "__VERIFIER_assert(sum[0] == 5*N);"
+      ],
+      "assertions_kept": 0,
+      "sha256": "0fbba175d5322a3b69c0d422774df6f13fbe2e6f29fa4daa5610c970a54dd148"
+    },
+    {
+      "task": "s52if",
+      "family": "array-fpi",
+      "upstream": "c/array-fpi/s52if.c",
+      "upstream_sha256": "e4dc09223e306a3a69d36db7e1f2d70d82826189a45f3d99f28d457ad23fe9bf",
+      "function": "s52if",
+      "rules": [
+        "H1",
+        "H2",
+        "H3",
+        "H5",
+        "H6",
+        "H7",
+        "H8"
+      ],
+      "assertions_dropped": [
+        "__VERIFIER_assert(sum[0] == 6*N);"
+      ],
+      "assertions_kept": 0,
+      "sha256": "fb77f75f37abb27f66b546d55a3d77e3e945bb96ef89756370d46aa8d05469a2"
+    },
+    {
+      "task": "s5if",
+      "family": "array-fpi",
+      "upstream": "c/array-fpi/s5if.c",
+      "upstream_sha256": "bf37c38612bb541f41947cd315b3d9b46f052f2542a8c20eb00d18a1b7800e67",
+      "function": "s5if",
+      "rules": [
+        "H1",
+        "H2",
+        "H3",
+        "H5",
+        "H6",
+        "H7",
+        "H8"
+      ],
+      "assertions_dropped": [
+        "__VERIFIER_assert(sum[0] == 5*N);"
+      ],
+      "assertions_kept": 0,
+      "sha256": "aa04de531236e1362336bf13f09a481a34182d93a1924e68d7a095f21bd8b0da"
+    },
+    {
+      "task": "s5lif",
+      "family": "array-fpi",
+      "upstream": "c/array-fpi/s5lif.c",
+      "upstream_sha256": "cebf7a7161c326023805bbaeb2b3760a84f72799bfad375556a4547ad592de6e",
+      "function": "s5lif",
+      "rules": [
+        "H1",
+        "H2",
+        "H3",
+        "H5",
+        "H6",
+        "H7",
+        "H8"
+      ],
+      "assertions_dropped": [
+        "__VERIFIER_assert(sum[0] == 6*N);"
+      ],
+      "assertions_kept": 0,
+      "sha256": "32674f092b1f708de0b58d0ca22761785bee4154b517a24b1634179eba22eef6"
+    },
+    {
+      "task": "sina1",
+      "family": "array-fpi",
+      "upstream": "c/array-fpi/sina1.c",
+      "upstream_sha256": "26d0e93eb87bd59b7116537514cab2dacd7a674ddd585a5c24cb376bc8105965",
+      "function": "sina1",
+      "rules": [
+        "H1",
+        "H2",
+        "H3",
+        "H5",
+        "H6",
+        "H7",
+        "H8"
+      ],
+      "assertions_dropped": [
+        "__VERIFIER_assert(a[i] == N);"
+      ],
+      "assertions_kept": 0,
+      "sha256": "10c2417de254ac63b3d49827f5f59cb701ab844dae277d6edded9b0563fd3893"
+    },
+    {
+      "task": "sina2",
+      "family": "array-fpi",
+      "upstream": "c/array-fpi/sina2.c",
+      "upstream_sha256": "a2ff45ae9a1a0304927fd3658f2ac5a1f563a9951ed201fb6ff9a6835d6ffa57",
+      "function": "sina2",
+      "rules": [
+        "H1",
+        "H2",
+        "H3",
+        "H5",
+        "H6",
+        "H7",
+        "H8"
+      ],
+      "assertions_dropped": [
+        "__VERIFIER_assert(a[i] == N + 1);"
+      ],
+      "assertions_kept": 0,
+      "sha256": "1d9426e92a69c51d9bb3b5c4e6c19780a2ef46e0dcb6a5ded630f82dad9db577"
+    },
+    {
+      "task": "sina3",
+      "family": "array-fpi",
+      "upstream": "c/array-fpi/sina3.c",
+      "upstream_sha256": "057be5d3303df138068dd6eaaf63516190a28af43d18240bd78ca5b7b6cb01fe",
+      "function": "sina3",
+      "rules": [
+        "H1",
+        "H2",
+        "H3",
+        "H5",
+        "H6",
+        "H7",
+        "H8"
+      ],
+      "assertions_dropped": [
+        "__VERIFIER_assert(a[i] == N + 1);"
+      ],
+      "assertions_kept": 0,
+      "sha256": "be497b3f3f5e70acf56c80ae544707721ec9edef6950c273eb86992674b6d6b5"
+    },
+    {
+      "task": "sina4",
+      "family": "array-fpi",
+      "upstream": "c/array-fpi/sina4.c",
+      "upstream_sha256": "ab3be145ef034df6e3cacdc2127c3b72e0f0567a9f619b62a88c96b2d15039ee",
+      "function": "sina4",
+      "rules": [
+        "H1",
+        "H2",
+        "H3",
+        "H5",
+        "H6",
+        "H7",
+        "H8"
+      ],
+      "assertions_dropped": [
+        "__VERIFIER_assert(b[i] == N + 2);"
+      ],
+      "assertions_kept": 0,
+      "sha256": "840a348bc7a6ca2a440afce4e3533c8738a361cbca913752f5cb82a1b871b213"
+    },
+    {
+      "task": "sina5",
+      "family": "array-fpi",
+      "upstream": "c/array-fpi/sina5.c",
+      "upstream_sha256": "668b46cbf86bb9e40c403f31a2912de0575b388e7e31596e7760dfb2da314c2a",
+      "function": "sina5",
+      "rules": [
+        "H1",
+        "H2",
+        "H3",
+        "H5",
+        "H6",
+        "H7",
+        "H8"
+      ],
+      "assertions_dropped": [
+        "__VERIFIER_assert(a[i] == 2*N + 1);"
+      ],
+      "assertions_kept": 0,
+      "sha256": "96b0bef3419a1889ec297b96b6075938ed8eec56a122bd3131f9aa63219273c2"
+    },
+    {
+      "task": "sqm-if",
+      "family": "array-fpi",
+      "upstream": "c/array-fpi/sqm-if.c",
+      "upstream_sha256": "93dea38c76cb42037d71129d716c827129112fd606674cf64c1e7ef9c50a8a66",
+      "function": "sqm_if",
+      "rules": [
+        "H1",
+        "H2",
+        "H3",
+        "H5",
+        "H6",
+        "H7",
+        "H8"
+      ],
+      "assertions_dropped": [
+        "__VERIFIER_assert(a[i] == (i+1)*(i+1));"
+      ],
+      "assertions_kept": 0,
+      "sha256": "d7cf42a4890843b18a22c5fb6ac2f10a3cdd60f42308c81df90a1894cab91ba4"
+    },
+    {
+      "task": "sqm",
+      "family": "array-fpi",
+      "upstream": "c/array-fpi/sqm.c",
+      "upstream_sha256": "7d1b42590342d67f161bb7573e13020f50def585ea5b8bda4278e9ecf5b649a0",
+      "function": "sqm",
+      "rules": [
+        "H1",
+        "H2",
+        "H3",
+        "H5",
+        "H6",
+        "H7",
+        "H8"
+      ],
+      "assertions_dropped": [
+        "__VERIFIER_assert(a[i] == (i+1)*(i+1));"
+      ],
+      "assertions_kept": 0,
+      "sha256": "3b6a17f98e09181c2d8fc0e5c57d3650562d92e51f371736882b9eee39057789"
+    },
+    {
+      "task": "ss1",
+      "family": "array-fpi",
+      "upstream": "c/array-fpi/ss1.c",
+      "upstream_sha256": "06feaf395541f2d8bbd3e17ddec2e8c622ee9c50b738c110d1371c85675eb4c0",
+      "function": "ss1",
+      "rules": [
+        "H1",
+        "H2",
+        "H3",
+        "H5",
+        "H6",
+        "H7",
+        "H8"
+      ],
+      "assertions_dropped": [
+        "__VERIFIER_assert(sum[0] == (long long)N*(N+2));"
+      ],
+      "assertions_kept": 0,
+      "sha256": "2cc3bb22f221ce23dc2dee065ad227e44bc1b3b5f5813d1c15d25cc6667cc4af"
+    },
+    {
+      "task": "ss2",
+      "family": "array-fpi",
+      "upstream": "c/array-fpi/ss2.c",
+      "upstream_sha256": "471e00f8b51c2ae5b0f10c59e90da7ffed79c1a24bbad0f757bdfafdae1cdd3f",
+      "function": "ss2",
+      "rules": [
+        "H1",
+        "H2",
+        "H3",
+        "H5",
+        "H6",
+        "H7",
+        "H8"
+      ],
+      "assertions_dropped": [
+        "__VERIFIER_assert(a[i] == (long long)N*(N+2));"
+      ],
+      "assertions_kept": 0,
+      "sha256": "597e7041d96c4f553a2146d27622cbfb4f3d45e45487b5bd0f50f4070bc1f36b"
+    },
+    {
+      "task": "ss3",
+      "family": "array-fpi",
+      "upstream": "c/array-fpi/ss3.c",
+      "upstream_sha256": "3f7d819520ce073af5e1c0707b5fb027787c564b32446d4a2c8efd3dc74cc767",
+      "function": "ss3",
+      "rules": [
+        "H1",
+        "H2",
+        "H3",
+        "H5",
+        "H6",
+        "H7",
+        "H8"
+      ],
+      "assertions_dropped": [
+        "__VERIFIER_assert(sum[0] == (long long)N*(N+1));"
+      ],
+      "assertions_kept": 0,
+      "sha256": "c425265e8fa36788a59101c88d339949088e03074c6a4009dc2ffab4372a123c"
+    },
+    {
+      "task": "ss4",
+      "family": "array-fpi",
+      "upstream": "c/array-fpi/ss4.c",
+      "upstream_sha256": "88aec222da7137029fcaa6c1365fdd908e5c2efec408035b8ef5a2bad9c4cdf9",
+      "function": "ss4",
+      "rules": [
+        "H1",
+        "H2",
+        "H3",
+        "H5",
+        "H6",
+        "H7",
+        "H8"
+      ],
+      "assertions_dropped": [
+        "__VERIFIER_assert(sum[0] == (long long)N*(N+1));"
+      ],
+      "assertions_kept": 0,
+      "sha256": "00dcbdf69f8e52c97d7e422e370feb796f521e329b0a1b566475d5b762720df0"
+    },
+    {
+      "task": "ssina",
+      "family": "array-fpi",
+      "upstream": "c/array-fpi/ssina.c",
+      "upstream_sha256": "c81501c217fb8776e37e8571f0934f1e54723fc6b84e28344cc77081ba3334a5",
+      "function": "ssina",
+      "rules": [
+        "H1",
+        "H2",
+        "H3",
+        "H5",
+        "H6",
+        "H7",
+        "H8"
+      ],
+      "assertions_dropped": [
+        "__VERIFIER_assert(a[i] == (long long)(N+1) * (N+1));"
+      ],
+      "assertions_kept": 0,
+      "sha256": "4813fb300512a1691565cc59564f774854de39ca1169fd2217725f3ae9c1485a"
+    },
+    {
+      "task": "MADWiFi-encode_ie_ok",
+      "family": "loop-invgen",
+      "upstream": "c/loop-invgen/MADWiFi-encode_ie_ok.i",
+      "upstream_sha256": "0816346248b67d4ea9c17aaea510056f7cd51786d8081f1e3a68c606118ae1c9",
+      "excluded": "the task uses goto (excluded by the design)"
+    },
+    {
+      "task": "NetBSD_loop",
+      "family": "loop-invgen",
+      "upstream": "c/loop-invgen/NetBSD_loop.i",
+      "upstream_sha256": "b38f47c3dcd7731e15cfc2cee00261f352bac0ed4fe94aeeb81a5c76defb252d",
+      "excluded": "the task uses goto (excluded by the design)"
+    },
+    {
+      "task": "SpamAssassin-loop.i.v+cfa-reducer",
+      "family": "loop-invgen",
+      "upstream": "c/loop-invgen/SpamAssassin-loop.i.v+cfa-reducer.c",
+      "upstream_sha256": "8f0362e5bdd04ddb68671929eb7c82f3a55838c2357b753aa3b8d313416b3614",
+      "excluded": "the task uses goto (excluded by the design)"
+    },
+    {
+      "task": "SpamAssassin-loop",
+      "family": "loop-invgen",
+      "upstream": "c/loop-invgen/SpamAssassin-loop.i",
+      "upstream_sha256": "0ad27fb086e75bf8f5b08286d8e766d07abfe44ff39234568924cf55ade7a6d5",
+      "excluded": "the task uses goto (excluded by the design)"
+    },
+    {
+      "task": "apache-escape-absolute.i.v+cfa-reducer",
+      "family": "loop-invgen",
+      "upstream": "c/loop-invgen/apache-escape-absolute.i.v+cfa-reducer.c",
+      "upstream_sha256": "ce67d33baf8e2191d295422ec2c8649be746cd4f4f75c5de99bdc3950e33cc6c",
+      "excluded": "the task uses goto (excluded by the design)"
+    },
+    {
+      "task": "apache-escape-absolute",
+      "family": "loop-invgen",
+      "upstream": "c/loop-invgen/apache-escape-absolute.i",
+      "upstream_sha256": "b5097186312a07da16ab8fdeadf6c0d6b4634620407ae37986153d9e0823e6f5",
+      "excluded": "the task uses goto (excluded by the design)"
+    },
+    {
+      "task": "apache-get-tag.i.p+lhb-reducer",
+      "family": "loop-invgen",
+      "upstream": "c/loop-invgen/apache-get-tag.i.p+lhb-reducer.c",
+      "upstream_sha256": "39feee77bf576ea852c42114836a4ed3182237f56346991038306ebcfd74e257",
+      "excluded": "the task uses goto (excluded by the design)"
+    },
+    {
+      "task": "apache-get-tag.i.p+nlh-reducer",
+      "family": "loop-invgen",
+      "upstream": "c/loop-invgen/apache-get-tag.i.p+nlh-reducer.c",
+      "upstream_sha256": "f5182ada4c25502e8c117aae65840c303a96073ec563a87f29fad662bee2286b",
+      "excluded": "the task uses goto (excluded by the design)"
+    },
+    {
+      "task": "apache-get-tag.i.p+sep-reducer",
+      "family": "loop-invgen",
+      "upstream": "c/loop-invgen/apache-get-tag.i.p+sep-reducer.c",
+      "upstream_sha256": "5b8ad5d8740269626905d9d5a2468afdc53741ffbc53080bd6ac9ee1933c3998",
+      "excluded": "the task uses goto (excluded by the design)"
+    },
+    {
+      "task": "apache-get-tag.i.v+lhb-reducer",
+      "family": "loop-invgen",
+      "upstream": "c/loop-invgen/apache-get-tag.i.v+lhb-reducer.c",
+      "upstream_sha256": "133ba40f5b51c272364c51a4e246bcd97a40cd88b0bcd4bd92df8f8d6bb23a52",
+      "excluded": "the task uses goto (excluded by the design)"
+    },
+    {
+      "task": "apache-get-tag.i.v+nlh-reducer",
+      "family": "loop-invgen",
+      "upstream": "c/loop-invgen/apache-get-tag.i.v+nlh-reducer.c",
+      "upstream_sha256": "fc74ae7e31589f228260101e75826f872a5ff2be20b18370840af309ca05fc6e",
+      "excluded": "the task uses goto (excluded by the design)"
+    },
+    {
+      "task": "apache-get-tag",
+      "family": "loop-invgen",
+      "upstream": "c/loop-invgen/apache-get-tag.i",
+      "upstream_sha256": "ad8e21886f5f45a7c58400298498a881b4f628bf6fff913be81ab14cf250dd19",
+      "excluded": "the task uses goto (excluded by the design)"
+    },
+    {
+      "task": "down",
+      "family": "loop-invgen",
+      "upstream": "c/loop-invgen/down.i",
+      "upstream_sha256": "d487f6cb836d5c7294168f7ececc6a4515780c0860389f79570a9c0e20e7bcc0",
+      "rules": [
+        "H1",
+        "H4",
+        "H5",
+        "H8"
+      ],
+      "assertions_dropped": [],
+      "assertions_kept": 1,
+      "sha256": "6ba2723a606012d373f044f2751ed8b04659c0419f1b60207c17a6f9b5ba7943"
+    },
+    {
+      "task": "fragtest_simple",
+      "family": "loop-invgen",
+      "upstream": "c/loop-invgen/fragtest_simple.i",
+      "upstream_sha256": "be3b53cc5f9badbf5402cafcfa5766831674eb009261bc7c1bcbe9580aece38e",
+      "excluded": "H4 cannot be applied: a nondeterministic value is drawn inside a loop, which no single parameter stands for"
+    },
+    {
+      "task": "half_2",
+      "family": "loop-invgen",
+      "upstream": "c/loop-invgen/half_2.i",
+      "upstream_sha256": "0b362a98d328467ff4a069dbed2be3429090ca070e60d49c76297e4bb94402b7",
+      "rules": [
+        "H1",
+        "H2",
+        "H4",
+        "H5",
+        "H8"
+      ],
+      "assertions_dropped": [],
+      "assertions_kept": 1,
+      "sha256": "de3b2586a4c62b0fe04231e343987acded87c8dfe318adf103cc08e235981e84"
+    },
+    {
+      "task": "heapsort",
+      "family": "loop-invgen",
+      "upstream": "c/loop-invgen/heapsort.i",
+      "upstream_sha256": "8e7c8e5dc2a9e8f11b25d1bb9948f05f37b9553e3dc9f8bd8213088dea43cb37",
+      "excluded": "H4 cannot be applied: a nondeterministic value is drawn inside a loop, which no single parameter stands for"
+    },
+    {
+      "task": "id_build.i.p+nlh-reducer",
+      "family": "loop-invgen",
+      "upstream": "c/loop-invgen/id_build.i.p+nlh-reducer.c",
+      "upstream_sha256": "bc897f414e0a05ffd4da5dfbe75d0cb0f250cea1356c39694412a6f55b10a7b1",
+      "excluded": "the task uses goto (excluded by the design)"
+    },
+    {
+      "task": "id_build.i.p+sep-reducer",
+      "family": "loop-invgen",
+      "upstream": "c/loop-invgen/id_build.i.p+sep-reducer.c",
+      "upstream_sha256": "f68564f44f9631930b25a13255f1efcd8f237d0da80cb5fdaa485133dbd9dd9f",
+      "excluded": "the task uses goto (excluded by the design)"
+    },
+    {
+      "task": "id_build.i.v+lhb-reducer",
+      "family": "loop-invgen",
+      "upstream": "c/loop-invgen/id_build.i.v+lhb-reducer.c",
+      "upstream_sha256": "2f03a9521f9986f7627623e3bf6c079dbfbe3dc9d9c229ed8d14a2828a7d6850",
+      "excluded": "the task uses goto (excluded by the design)"
+    },
+    {
+      "task": "id_build",
+      "family": "loop-invgen",
+      "upstream": "c/loop-invgen/id_build.i",
+      "upstream_sha256": "2c4c8975bee6324b0c0486aa99ba8be369d6762a33e8dd5b012191d5fa43c106",
+      "rules": [
+        "H1",
+        "H4",
+        "H5",
+        "H8"
+      ],
+      "assertions_dropped": [],
+      "assertions_kept": 2,
+      "sha256": "0e8ebe6494233a692d12a1743df73063661046aa7a296c544b5ba76d2f306aad"
+    },
+    {
+      "task": "large_const",
+      "family": "loop-invgen",
+      "upstream": "c/loop-invgen/large_const.i",
+      "upstream_sha256": "142d17131671d2eab991ea08656e3b8bfe555dee984fe7672c9a027e971df0f8",
+      "excluded": "H4 cannot be applied: a nondeterministic value is drawn inside a loop, which no single parameter stands for"
+    },
+    {
+      "task": "nest-if3",
+      "family": "loop-invgen",
+      "upstream": "c/loop-invgen/nest-if3.i",
+      "upstream_sha256": "ff6ed2162f27809b742c891ab6e2d783f8472921e0d39d2ecd3fd1d3f6661283",
+      "excluded": "H4 cannot be applied: a nondeterministic value is drawn inside a loop, which no single parameter stands for"
+    },
+    {
+      "task": "nested6",
+      "family": "loop-invgen",
+      "upstream": "c/loop-invgen/nested6.i",
+      "upstream_sha256": "327b0d5e70f014fe291a4771fe2bbb17cb1148e77fe8f6a261d10a47df8adacc",
+      "excluded": "the task uses goto (excluded by the design)"
+    },
+    {
+      "task": "nested9",
+      "family": "loop-invgen",
+      "upstream": "c/loop-invgen/nested9.i",
+      "upstream_sha256": "f3ca1fd1ad8fdbcd9efe7b99bc6e3715231417d253ce4ee9bba3d5969472333a",
+      "excluded": "the task uses goto (excluded by the design)"
+    },
+    {
+      "task": "sendmail-close-angle",
+      "family": "loop-invgen",
+      "upstream": "c/loop-invgen/sendmail-close-angle.i",
+      "upstream_sha256": "4be4b344509b887bc91f2389f98de1e4ff745494aee0f078864fd49e79b0b4b8",
+      "excluded": "the task uses goto (excluded by the design)"
+    },
+    {
+      "task": "seq-3",
+      "family": "loop-invgen",
+      "upstream": "c/loop-invgen/seq-3.i",
+      "upstream_sha256": "6c770a3141edeab927df0da4e8c2152e1fb2e87b0c43a352500a7e3d3cff4533",
+      "rules": [
+        "H1",
+        "H2",
+        "H4",
+        "H5",
+        "H8"
+      ],
+      "assertions_dropped": [],
+      "assertions_kept": 1,
+      "sha256": "e527943acda3cd5ed08585b0911efa43315283dd38a6b2e3183c7de3fb72e9c6"
+    },
+    {
+      "task": "string_concat-noarr",
+      "family": "loop-invgen",
+      "upstream": "c/loop-invgen/string_concat-noarr.i",
+      "upstream_sha256": "30a4b942034eaa47a8fcc8fdf4549d1d63a9a60d59b585da2a353c9626604750",
+      "excluded": "the task uses goto (excluded by the design)"
+    },
+    {
+      "task": "up",
+      "family": "loop-invgen",
+      "upstream": "c/loop-invgen/up.i",
+      "upstream_sha256": "ff5c10c83c8d29dcc2c2798035fa2754df224d2313ad9c91b6ee5bb6ca3d9a9f",
+      "rules": [
+        "H1",
+        "H4",
+        "H5",
+        "H8"
+      ],
+      "assertions_dropped": [],
+      "assertions_kept": 1,
+      "sha256": "53632ac04fff4a9f782c88477c6053c8317c412abc857b4fc18798f879e7537a"
+    }
+  ]
+}

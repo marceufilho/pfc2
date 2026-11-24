@@ -1,0 +1,10 @@
+{
+  "id": "verina_basic_44",
+  "stated": "none",
+  "dropped": [
+    "result <-> every odd index holds an odd element (quantifier)"
+  ],
+  "weakened": [],
+  "verdict": "certified at memory",
+  "remarks": "Only result being 0 or 1 is stated. The kept trap is i += 2, which overflows only for a_len == LONG_MAX; the checker has no bound on array lengths."
+}

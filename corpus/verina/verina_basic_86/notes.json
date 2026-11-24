@@ -1,0 +1,10 @@
+{
+  "id": "verina_basic_86",
+  "stated": "part",
+  "dropped": [
+    "forall i < a.size, result[i] = a[(i + offset) % a.size] (needs a quantifier over elements)"
+  ],
+  "weakened": [],
+  "verdict": "certified at memory",
+  "remarks": "i + offset overflows for allowed offsets (Verina uses Int), so full is not expected."
+}

@@ -1,0 +1,1 @@
+{"id": "verina_advanced_58", "rules": ["P1"], "requires": [], "fixes": 0, "remarks": "The usual table of the first n ugly numbers would need n cells, which the description does not bound; the integers are tested one by one instead."}

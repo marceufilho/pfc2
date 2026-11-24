@@ -1,0 +1,72 @@
+{
+  "experiment": "corpus",
+  "provenance": {
+    "clang": "Ubuntu clang version 19.1.1 (1ubuntu1~24.04.2)",
+    "commit": null,
+    "experiment": "corpus",
+    "seed": null,
+    "solver_version": "5.3.3.0",
+    "tag": null,
+    "timestamp": "2026-11-19T08:32:38+00:00",
+    "vc_model": "vc-v4: mathematical integers on defined C executions; target limits not instantiated; shared typed memory; typed reads are representable; substantive obligations; entry consistency"
+  },
+  "settings": {
+    "budget_seconds": 600.0,
+    "candidate": "pfc2-v3",
+    "candidate_intact": true,
+    "candidate_protected_sha256": "115f5ad6dbdb0c48c71bbf72678c84b2eb89fba0220c026039f7db6cc835b6ee",
+    "compiler": "clang-19",
+    "laws_beside": "declarations",
+    "ports_checked_against": "corpus/exercism-ports",
+    "review_sample": [
+      "difference-of-squares",
+      "hamming",
+      "leap",
+      "perfect-numbers",
+      "yacht"
+    ],
+    "seed": null,
+    "selection": {
+      "candidates": 73,
+      "excluded": {
+        "X1": 9,
+        "X2": 5,
+        "X3": 10,
+        "X4": 6,
+        "X5": 7,
+        "X6": 15
+      },
+      "fixes": 1,
+      "pilot": 12,
+      "ported": 21,
+      "ported_registered_rules": 9,
+      "ported_without_p14": 14
+    },
+    "smt_encoding": "z3-int-shared-memory-v2; C division truncates to zero; division by zero totalized to 0",
+    "units": [
+      "collatz-conjecture",
+      "difference-of-squares",
+      "hamming",
+      "hello-world",
+      "high-scores",
+      "largest-series-product",
+      "leap",
+      "luhn",
+      "nth-prime",
+      "pangram",
+      "perfect-numbers",
+      "queen-attack",
+      "resistor-color-duo",
+      "resistor-color-trio",
+      "reverse-string",
+      "rna-transcription",
+      "robot-simulator",
+      "scrabble-score",
+      "sum-of-multiples",
+      "two-bucket",
+      "yacht"
+    ],
+    "upstream": "practice",
+    "workers": 6
+  }
+}

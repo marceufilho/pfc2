@@ -1,0 +1,13 @@
+{
+  "files": {
+    "COMPLETE": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "configuration.json": "41cae4db2a5b85ee1c09ffdabfb7ec9521ae7052518093d244d3be324ea22fd4",
+    "environment.json": "956f1d7f444e8e4ec2c0b2a2de48aca22e60b1822f76ca8f962658e6631a196b",
+    "observations.jsonl": "72798c43f1acf72eabfca81736bdefd3402d3db73bc16b4cd2f70d6f03ab634e",
+    "raw/programs/rows.jsonl": "58b894198982bbb9a799f2ab055fb02c28b93f39ceccd1f9a185451e8cc4514e",
+    "schema.json": "8aaf06e42b741a5b37c23a7ead9da253c25338021ac58677621e80babc19e902",
+    "summary.json": "5d26510e749d680dd0d4aef3ab3d9a39752338ee0676a694fa9f2929d1d3e7ee",
+    "tables.md": "466a4bffab19697986cc5fc0ed6a410f27f99911f6a03641084f59de615f7330"
+  },
+  "schema_version": "pfc-eval-evidence-v1"
+}

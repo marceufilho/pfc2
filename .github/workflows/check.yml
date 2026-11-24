@@ -1,0 +1,22 @@
+name: Check
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - name: clang-19
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y clang-19
+      - run: uv sync --locked
+      - run: make check

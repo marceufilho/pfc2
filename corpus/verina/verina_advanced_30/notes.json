@@ -1,0 +1,11 @@
+{
+  "id": "verina_advanced_30",
+  "stated": "part",
+  "dropped": [
+    "postcond case 2: a maximal streak of exactly that length exists (existential, quantifier)",
+    "postcond case 3: no longer streak exists (quantifier)"
+  ],
+  "weakened": [],
+  "verdict": "certified at full",
+  "remarks": "Stated: nums = [] -> result = 0; additionally 0 <= result <= nums_len. requires(nums_len >= 0) was added: with the parameter spelled X_len the checker does not assume 0 <= length (docs/02-language.md says the declaration states it); reported as outside the protocol's list unless a length counts as a Nat."
+}

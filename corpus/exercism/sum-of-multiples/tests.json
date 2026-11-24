@@ -1,0 +1,221 @@
+{
+ "comment": "Each case is one assertion of the upstream test file, transcribed by hand: the inputs it passes and what it expects, stated on the port's interface. `found` is the value the function returns.",
+ "functions": {
+  "sum": {
+   "result": "long",
+   "parameters": "long n, const long factors[n], long limit",
+   "call": "multiples_sum(n, factors, limit)"
+  }
+ },
+ "cases": [
+  {
+   "name": "no_multiples_within_limit",
+   "function": "sum",
+   "inputs": {
+    "n": 2,
+    "factors": [
+     3,
+     5
+    ],
+    "limit": 1
+   },
+   "expected": "found == 0"
+  },
+  {
+   "name": "one_factor_has_multiples_within_limit",
+   "function": "sum",
+   "inputs": {
+    "n": 2,
+    "factors": [
+     3,
+     5
+    ],
+    "limit": 4
+   },
+   "expected": "found == 3"
+  },
+  {
+   "name": "more_than_one_multiple_within_limit",
+   "function": "sum",
+   "inputs": {
+    "n": 1,
+    "factors": [
+     3
+    ],
+    "limit": 7
+   },
+   "expected": "found == 9"
+  },
+  {
+   "name": "more_than_one_factor_with_multiples_within_limit",
+   "function": "sum",
+   "inputs": {
+    "n": 2,
+    "factors": [
+     3,
+     5
+    ],
+    "limit": 10
+   },
+   "expected": "found == 23"
+  },
+  {
+   "name": "each_multiple_is_only_counted_once",
+   "function": "sum",
+   "inputs": {
+    "n": 2,
+    "factors": [
+     3,
+     5
+    ],
+    "limit": 100
+   },
+   "expected": "found == 2318"
+  },
+  {
+   "name": "a_much_larger_limit",
+   "function": "sum",
+   "inputs": {
+    "n": 2,
+    "factors": [
+     3,
+     5
+    ],
+    "limit": 1000
+   },
+   "expected": "found == 233168"
+  },
+  {
+   "name": "three_factors",
+   "function": "sum",
+   "inputs": {
+    "n": 3,
+    "factors": [
+     7,
+     13,
+     17
+    ],
+    "limit": 20
+   },
+   "expected": "found == 51"
+  },
+  {
+   "name": "factors_not_relatively_prime",
+   "function": "sum",
+   "inputs": {
+    "n": 2,
+    "factors": [
+     4,
+     6
+    ],
+    "limit": 15
+   },
+   "expected": "found == 30"
+  },
+  {
+   "name": "some_pairs_of_factors_relatively_prime_and_some_not",
+   "function": "sum",
+   "inputs": {
+    "n": 3,
+    "factors": [
+     5,
+     6,
+     8
+    ],
+    "limit": 150
+   },
+   "expected": "found == 4419"
+  },
+  {
+   "name": "one_factor_is_a_multiple_of_another",
+   "function": "sum",
+   "inputs": {
+    "n": 2,
+    "factors": [
+     5,
+     25
+    ],
+    "limit": 51
+   },
+   "expected": "found == 275"
+  },
+  {
+   "name": "much_larger_factors",
+   "function": "sum",
+   "inputs": {
+    "n": 2,
+    "factors": [
+     43,
+     47
+    ],
+    "limit": 10000
+   },
+   "expected": "found == 2203160"
+  },
+  {
+   "name": "all_numbers_are_multiples_of_1",
+   "function": "sum",
+   "inputs": {
+    "n": 1,
+    "factors": [
+     1
+    ],
+    "limit": 100
+   },
+   "expected": "found == 4950"
+  },
+  {
+   "name": "no_factors_means_an_empty_sum",
+   "function": "sum",
+   "inputs": {
+    "n": 1,
+    "factors": [
+     0
+    ],
+    "limit": 10000
+   },
+   "expected": "found == 0"
+  },
+  {
+   "name": "the_only_multiple_of_0_is_0",
+   "function": "sum",
+   "inputs": {
+    "n": 1,
+    "factors": [
+     0
+    ],
+    "limit": 1
+   },
+   "expected": "found == 0"
+  },
+  {
+   "name": "the_factor_0_does_not_affect_the_sum_of_multiples_of_other_factors",
+   "function": "sum",
+   "inputs": {
+    "n": 2,
+    "factors": [
+     3,
+     0
+    ],
+    "limit": 4
+   },
+   "expected": "found == 3"
+  },
+  {
+   "name": "solutions_using_include_exclude_must_extend_to_cardinality_greater_than_3",
+   "function": "sum",
+   "inputs": {
+    "n": 5,
+    "factors": [
+     2,
+     3,
+     5,
+     7,
+     11
+    ],
+    "limit": 10000
+   },
+   "expected": "found == 39614537"
+  }
+ ]
+}

@@ -1,0 +1,10 @@
+{
+  "id": "verina_basic_20",
+  "stated": "none",
+  "dropped": [
+    "result = product of arr.eraseDups (eraseDups and a fold: recursive definition)"
+  ],
+  "weakened": [],
+  "verdict": "certified at memory",
+  "remarks": "Only the empty-array consequence (result == 1) is stated. The product can overflow for allowed inputs. requires(X_len >= 0) was added for the listed lengths: the `a[a_len]` spelling does not give the checker 0 <= length (a length is a Nat)."
+}

@@ -1,0 +1,4 @@
+two numbers, one per line:
+sum 17
+product 60
+quotient 2

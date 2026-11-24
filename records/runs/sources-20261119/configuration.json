@@ -1,0 +1,37 @@
+{
+  "experiment": "sources",
+  "provenance": {
+    "clang": "Ubuntu clang version 19.1.1 (1ubuntu1~24.04.2)",
+    "commit": null,
+    "experiment": "sources",
+    "seed": 100000,
+    "solver_version": "5.3.3.0",
+    "tag": null,
+    "timestamp": "2026-11-19T16:18:11+00:00",
+    "vc_model": "vc-v4: mathematical integers on defined C executions; target limits not instantiated; shared typed memory; typed reads are representable; substantive obligations; entry consistency"
+  },
+  "settings": {
+    "attempts": 5,
+    "candidate": "pfc2-v3",
+    "candidate_intact": true,
+    "candidate_protected_sha256": "115f5ad6dbdb0c48c71bbf72678c84b2eb89fba0220c026039f7db6cc835b6ee",
+    "chunk": 24,
+    "compiler": "clang-19",
+    "draws": 20000,
+    "family_b1": "`x <= t` and `t <= x` for each scalar x in scope and each t among the other scalars in scope, 0, 1 and the integer literals of the function",
+    "family_b2": "over the scalars observed at the loop head on accepted inputs: `x == c`; `x == y + c` (|c| <= 8); `c <= x`, `x <= c` for an observed extreme with |c| <= 8; `x <= y + c` for the largest observed difference c in {-1, 0, 1}; `x == y + z`; `x == m * y + c` for m in {-2, -1, 2} and |c| <= 8; at most 60 per loop",
+    "inputs": 200,
+    "instruction_sha256": "ab210b7afad356751c8775b7a95e9017d8da3e23868cb63e89819fef207febd3",
+    "level": "memory",
+    "live": true,
+    "model": "gpt-6-astra",
+    "model_workers": 4,
+    "programs": 72,
+    "rounds": 5,
+    "rounds_sensitivity": 50,
+    "runs": 5,
+    "seed": 100000,
+    "smt_encoding": "z3-int-shared-memory-v2; C division truncates to zero; division by zero totalized to 0",
+    "workers": 3
+  }
+}

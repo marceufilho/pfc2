@@ -1,0 +1,13 @@
+{
+  "comment": "Hand-derived. Array: 8 elements, a[i] = 100 + i. safe: [x, y, stdout]. trap: [x, y] must stop at an overflow trap. kept: overflow traps that stay; guards: bounds/division checks, all removed.",
+  "p01_mul": {"kept": 1, "guards": 2, "safe": [[3, 5, "103"], [0, -9, "100"]], "trap": [[3, 4611686018427387904]]},
+  "p02_add": {"kept": 1, "guards": 2, "safe": [[3, 5, "103"], [7, -1, "107"]], "trap": [[3, 4611686018427387904]]},
+  "p03_sub": {"kept": 2, "guards": 2, "safe": [[3, 5, "103"], [2, 4611686018427387904, "102"]], "trap": [[3, 4611686018427387905], [1, -9223372036854775808]]},
+  "p04_neg": {"kept": 1, "guards": 1, "safe": [[3, 5, "103"], [4, 9223372036854775807, "104"]], "trap": [[3, -9223372036854775808]]},
+  "p05_loop": {"kept": 1, "guards": 2, "safe": [[3, 5, "107"]], "trap": [[3, 4611686018427387904]]},
+  "p06_call": {"kept": 1, "guards": 2, "safe": [[3, 5, "103"]], "trap": [[3, -4611686018427387905]]},
+  "p07_global": {"kept": 1, "guards": 2, "safe": [[3, 5, "103"]], "trap": [[3, 4611686018427387904]]},
+  "p08_write": {"kept": 1, "guards": 3, "safe": [[3, 5, "7"]], "trap": [[3, 4611686018427387904]]},
+  "p09_division": {"kept": 1, "guards": 3, "safe": [[3, 5, "103"]], "trap": [[3, 4611686018427387904]]},
+  "p10_two_products": {"kept": 2, "guards": 1, "safe": [[3, 5, "103"], [6, -3037000499, "106"]], "trap": [[3, 4294967296]]}
+}

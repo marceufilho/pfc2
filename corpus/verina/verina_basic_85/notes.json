@@ -1,0 +1,10 @@
+{
+  "id": "verina_basic_85",
+  "stated": "part",
+  "dropped": [
+    "forall i < a.size, result[i] = a[a.size - 1 - i] (needs a quantifier over elements)"
+  ],
+  "weakened": [],
+  "verdict": "certified at full",
+  "remarks": ""
+}

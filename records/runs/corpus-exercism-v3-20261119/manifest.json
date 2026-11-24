@@ -1,0 +1,33 @@
+{
+  "files": {
+    "COMPLETE": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "configuration.json": "a8ed679cda4f3ab530d5875eb6df164a8fe1e1718184d80db27e682dbe6834c5",
+    "environment.json": "956f1d7f444e8e4ec2c0b2a2de48aca22e60b1822f76ca8f962658e6631a196b",
+    "observations.jsonl": "8f813b72582010b3c614cae4cbe3972bb0369f502b4d822313a0686c0d6cf47d",
+    "raw/collatz-conjecture/rows.jsonl": "f1341ff4115388087d22be3738634df059d757be89bddeb35d3904bcd11d4a05",
+    "raw/difference-of-squares/rows.jsonl": "1fd1b3fd8d8c4c53a12861526fa3148595d38ff98197966ca508be9a03b7e3e7",
+    "raw/hamming/rows.jsonl": "d24753d8888bd6de830e45b51fe5e93cda38ee60313f2e6d4806eae4608d0471",
+    "raw/hello-world/rows.jsonl": "19984f11801c3976bce7e5605f4a1e46343ef03748c93314e83a6b15930b19cb",
+    "raw/high-scores/rows.jsonl": "052908dc2debc602e6440bc406aa6c4c14cfdc8b2e2e3683e3489a6aa1b85db7",
+    "raw/largest-series-product/rows.jsonl": "58b0afb92f15d97f4863cf305f2d61d42741b563bea2b484f1ad7e9fef3af4d4",
+    "raw/leap/rows.jsonl": "10aef857d46df092abc1a9c30cb8d5346e89e9cf40885d995d6f46a4b43c3f6d",
+    "raw/luhn/rows.jsonl": "4961c4478ce726469e797d1be70eb12d550b8a64611e0a6e2755c9ec9b80881c",
+    "raw/nth-prime/rows.jsonl": "913fc3e2800572d78e71b367d17b3ab36c5e4fe0c16e605e33c73034ccabca88",
+    "raw/pangram/rows.jsonl": "1786707eed993b35e873adebb7516eee8a7219d2ec21a2e633b0ad3e9ed462dd",
+    "raw/perfect-numbers/rows.jsonl": "5db86e2ffed02ed7f61400a243235394b058369aeaf90bcc96bcdd0f859cb45b",
+    "raw/queen-attack/rows.jsonl": "8e3e61e415836f3195f9fbeccdbc4d85f08d4d8575e1885e2f60b0ff4633137c",
+    "raw/resistor-color-duo/rows.jsonl": "2fbab65f7d3f27dacf6b7badd0b6abed866981b6fadd723f91ab39a3bad3776d",
+    "raw/resistor-color-trio/rows.jsonl": "beaa96a85f0a500b0932e192e7b7c497d98dcebc328970a8104288b314676400",
+    "raw/reverse-string/rows.jsonl": "84087019271484317772a757091e48ea4bd3f30c12fcbc58c4f338ed81a18252",
+    "raw/rna-transcription/rows.jsonl": "c14098c0036bb03ad7fde0316d667943cfe36ea416388cb5a5e47c0dd73db259",
+    "raw/robot-simulator/rows.jsonl": "f11c862cd9a97a13de5d72545cea435446e898a412195fe30ad8a0aeed05b5bc",
+    "raw/scrabble-score/rows.jsonl": "a452eea833a2ab181251d339dbab7d8dc0f7dc0591336cf1c6393c642b923af2",
+    "raw/sum-of-multiples/rows.jsonl": "b65ca52fff2fde5a7436d9176c41d2042b5f06bc449249e07dc1232a34710eeb",
+    "raw/two-bucket/rows.jsonl": "15cd84c24a7f88f9fd6349ba4439e7c0e9453c8d6ad1df29e0cbd024e552f3f4",
+    "raw/yacht/rows.jsonl": "aafdb693804dd1d21d052dfc26978330555937521c5b38db06a6d4012406aff9",
+    "schema.json": "fbb716e1e183577ca9f31660e6568b13e31a1fddb69ddb56dd0a23fcae94abc2",
+    "summary.json": "978f5b4ad147c458110aedda3250613263c025dbdc2fb49ec3eeed7861ecec90",
+    "tables.md": "a051cbd0f35710928fbd6b3ab59ba105a476cb2652e67159e6be75ae5c4f3da2"
+  },
+  "schema_version": "pfc-eval-evidence-v1"
+}

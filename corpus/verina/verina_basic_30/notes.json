@@ -1,0 +1,11 @@
+{
+  "id": "verina_basic_30",
+  "stated": "part",
+  "dropped": [
+    "precondition: every b[i] != 0 (quantifier)",
+    "result[i] = a[i] % b[i] for every i (quantifier)"
+  ],
+  "weakened": [],
+  "verdict": "refused-failed",
+  "remarks": "Stated: a.size = b.size, a.size > 0 (added, Verina's own), result.size = a.size. The division obligation of a[i] % b[i] cannot be proved because the precondition that makes it safe needs a quantifier; LONG_MIN % -1 is also possible for the allowed inputs. Everything else is proved (16 of 17)."
+}

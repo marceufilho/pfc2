@@ -1,0 +1,10 @@
+{
+ "id": "verina_advanced_59",
+ "stated": "none",
+ "dropped": [
+  "result is true exactly when the lower-cased alphanumeric characters read the same in both directions (filter, map, reverse)"
+ ],
+ "weakened": [],
+ "verdict": "certified at full",
+ "remarks": "Precondition is True. Only the Bool interface (result is 0 or 1) is stated. The length parameters are named X_len, which the checker reads in the older spelling without assuming 0 <= X_len; requires(0 <= X_len) states it (a list length is a Nat)."
+}

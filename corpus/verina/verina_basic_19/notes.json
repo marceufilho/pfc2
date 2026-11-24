@@ -1,0 +1,10 @@
+{
+  "id": "verina_basic_19",
+  "stated": "none",
+  "dropped": [
+    "result is true exactly when a[i] <= a[i + 1] for every i (quantifier)"
+  ],
+  "weakened": [],
+  "verdict": "certified at full",
+  "remarks": "Only the Bool range of the result is stated."
+}

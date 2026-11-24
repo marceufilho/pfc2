@@ -1,0 +1,10 @@
+{
+  "id": "verina_advanced_14",
+  "stated": "none",
+  "dropped": [
+    "postcond: result <-> exists m, n = 4^m (existential, power)"
+  ],
+  "weakened": [],
+  "verdict": "certified at full",
+  "remarks": "requires(n >= 0): n is a Nat. The 0/1 ensures is the Bool encoding."
+}

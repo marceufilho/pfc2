@@ -1,0 +1,125 @@
+{
+  "comment": "Generated from the task's test.json by corpus/verina-notes/interface.py: one case per test.",
+  "functions": {
+    "findSmallest": {
+      "result": "long",
+      "parameters": "long s_len, const long s[s_len]",
+      "call": "findSmallest(s_len, s, 32, out)",
+      "locals": "long out[32] = {0};"
+    }
+  },
+  "cases": [
+    {
+      "name": "case_0",
+      "function": "findSmallest",
+      "inputs": {
+        "s_len": 11,
+        "s": [
+          3,
+          1,
+          4,
+          1,
+          5,
+          9,
+          2,
+          6,
+          5,
+          3,
+          5
+        ]
+      },
+      "expected": "out[0] == 1 && out[1] == 1"
+    },
+    {
+      "name": "case_1",
+      "function": "findSmallest",
+      "inputs": {
+        "s_len": 6,
+        "s": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "expected": "out[0] == 1 && out[1] == 0"
+    },
+    {
+      "name": "case_2",
+      "function": "findSmallest",
+      "inputs": {
+        "s_len": 1,
+        "s": [
+          1
+        ]
+      },
+      "expected": "out[0] == 1 && out[1] == 1"
+    },
+    {
+      "name": "case_3",
+      "function": "findSmallest",
+      "inputs": {
+        "s_len": 3,
+        "s": [
+          10,
+          10,
+          10
+        ]
+      },
+      "expected": "out[0] == 1 && out[1] == 10"
+    },
+    {
+      "name": "case_4",
+      "function": "findSmallest",
+      "inputs": {
+        "s_len": 8,
+        "s": [
+          3,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          1
+        ]
+      },
+      "expected": "out[0] == 1 && out[1] == 1"
+    },
+    {
+      "name": "case_5",
+      "function": "findSmallest",
+      "inputs": {
+        "s_len": 1,
+        "s": [
+          0
+        ]
+      },
+      "expected": "out[0] == 1 && out[1] == 0"
+    },
+    {
+      "name": "case_6",
+      "function": "findSmallest",
+      "inputs": {
+        "s_len": 3,
+        "s": [
+          100,
+          99,
+          98
+        ]
+      },
+      "expected": "out[0] == 1 && out[1] == 98"
+    },
+    {
+      "name": "case_7",
+      "function": "findSmallest",
+      "inputs": {
+        "s_len": 0,
+        "s": []
+      },
+      "expected": "out[0] == 0"
+    }
+  ]
+}

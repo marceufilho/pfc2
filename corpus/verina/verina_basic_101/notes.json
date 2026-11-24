@@ -1,0 +1,8 @@
+{
+  "id": "verina_basic_101",
+  "stated": "all",
+  "dropped": [],
+  "weakened": [],
+  "verdict": "certified at memory",
+  "remarks": "result = 3 * x exactly, so C's truncating division and Lean's agree here."
+}

@@ -1,0 +1,1 @@
+{"id": "verina_advanced_28", "rules": ["P1", "P4"], "requires": [], "fixes": 0, "remarks": "Membership is a linear search over the input instead of a hash set, which would need storage the description does not bound."}

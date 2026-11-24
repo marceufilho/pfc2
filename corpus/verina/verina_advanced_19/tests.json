@@ -1,0 +1,157 @@
+{
+  "comment": "Generated from the task's test.json by corpus/verina-notes/interface.py: one case per test.",
+  "functions": {
+    "isCleanPalindrome": {
+      "result": "long",
+      "parameters": "long s_len, const char s[s_len]",
+      "call": "isCleanPalindrome(s_len, s)"
+    }
+  },
+  "cases": [
+    {
+      "name": "case_0",
+      "function": "isCleanPalindrome",
+      "inputs": {
+        "s_len": 30,
+        "s": [
+          65,
+          32,
+          109,
+          97,
+          110,
+          44,
+          32,
+          97,
+          32,
+          112,
+          108,
+          97,
+          110,
+          44,
+          32,
+          97,
+          32,
+          99,
+          97,
+          110,
+          97,
+          108,
+          44,
+          32,
+          80,
+          97,
+          110,
+          97,
+          109,
+          97
+        ]
+      },
+      "expected": "found == 1"
+    },
+    {
+      "name": "case_1",
+      "function": "isCleanPalindrome",
+      "inputs": {
+        "s_len": 18,
+        "s": [
+          78,
+          111,
+          32,
+          108,
+          101,
+          109,
+          111,
+          110,
+          44,
+          32,
+          110,
+          111,
+          32,
+          109,
+          101,
+          108,
+          111,
+          110
+        ]
+      },
+      "expected": "found == 1"
+    },
+    {
+      "name": "case_2",
+      "function": "isCleanPalindrome",
+      "inputs": {
+        "s_len": 6,
+        "s": [
+          79,
+          112,
+          101,
+          110,
+          65,
+          73
+        ]
+      },
+      "expected": "found == 0"
+    },
+    {
+      "name": "case_3",
+      "function": "isCleanPalindrome",
+      "inputs": {
+        "s_len": 28,
+        "s": [
+          87,
+          97,
+          115,
+          32,
+          105,
+          116,
+          32,
+          97,
+          32,
+          99,
+          97,
+          114,
+          32,
+          111,
+          114,
+          32,
+          97,
+          32,
+          99,
+          97,
+          116,
+          32,
+          73,
+          32,
+          115,
+          97,
+          119,
+          63
+        ]
+      },
+      "expected": "found == 1"
+    },
+    {
+      "name": "case_4",
+      "function": "isCleanPalindrome",
+      "inputs": {
+        "s_len": 13,
+        "s": [
+          72,
+          101,
+          108,
+          108,
+          111,
+          44,
+          32,
+          87,
+          111,
+          114,
+          108,
+          100,
+          33
+        ]
+      },
+      "expected": "found == 0"
+    }
+  ]
+}

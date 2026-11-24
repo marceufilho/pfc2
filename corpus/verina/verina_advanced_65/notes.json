@@ -1,0 +1,10 @@
+{
+ "id": "verina_advanced_65",
+ "stated": "part",
+ "dropped": [
+  "result equals the reversed input, element by element (quantifier)"
+ ],
+ "weakened": [],
+ "verdict": "certified at full",
+ "remarks": "Stated: equal lengths, and the two ends of the reversal (out[0] == s[n-1], out[n-1] == s[0]), which needs separated(out, s). The length parameters are named X_len, which the checker reads in the older spelling without assuming 0 <= X_len; requires(0 <= X_len) states it (a list length is a Nat)."
+}

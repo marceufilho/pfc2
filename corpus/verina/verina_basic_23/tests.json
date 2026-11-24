@@ -1,0 +1,102 @@
+{
+  "comment": "Generated from the task's test.json by corpus/verina-notes/interface.py: one case per test.",
+  "functions": {
+    "differenceMinMax": {
+      "result": "long",
+      "parameters": "long a_len, const long a[a_len]",
+      "call": "differenceMinMax(a_len, a)"
+    }
+  },
+  "cases": [
+    {
+      "name": "case_0",
+      "function": "differenceMinMax",
+      "inputs": {
+        "a_len": 11,
+        "a": [
+          3,
+          1,
+          4,
+          1,
+          5,
+          9,
+          2,
+          6,
+          5,
+          3,
+          5
+        ]
+      },
+      "expected": "found == 8"
+    },
+    {
+      "name": "case_1",
+      "function": "differenceMinMax",
+      "inputs": {
+        "a_len": 5,
+        "a": [
+          10,
+          20,
+          30,
+          40,
+          50
+        ]
+      },
+      "expected": "found == 40"
+    },
+    {
+      "name": "case_2",
+      "function": "differenceMinMax",
+      "inputs": {
+        "a_len": 5,
+        "a": [
+          -10,
+          -20,
+          -30,
+          -40,
+          -50
+        ]
+      },
+      "expected": "found == 40"
+    },
+    {
+      "name": "case_3",
+      "function": "differenceMinMax",
+      "inputs": {
+        "a_len": 1,
+        "a": [
+          7
+        ]
+      },
+      "expected": "found == 0"
+    },
+    {
+      "name": "case_4",
+      "function": "differenceMinMax",
+      "inputs": {
+        "a_len": 4,
+        "a": [
+          5,
+          5,
+          5,
+          5
+        ]
+      },
+      "expected": "found == 0"
+    },
+    {
+      "name": "case_5",
+      "function": "differenceMinMax",
+      "inputs": {
+        "a_len": 4,
+        "a": [
+          1,
+          -1,
+          2,
+          -2
+        ]
+      },
+      "expected": "found == 4"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+ "id": "verina_basic_51",
+ "stated": "part",
+ "dropped": [
+  "precond: a sorted (Pairwise)",
+  "postcond: every element before result is < key",
+  "postcond: every element from result on is >= key"
+ ],
+ "weakened": [],
+ "verdict": "certified at full",
+ "remarks": "The array length being non-negative is written as a requires because the checker does not assume it for a length parameter named X_len (it does for other names)."
+}

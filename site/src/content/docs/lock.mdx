@@ -1,0 +1,59 @@
+---
+title: A lock with one combination
+description: A four-key lock. PFC2 proves that 3 1 4 1 opens it and that nothing else does, for every possible input.
+---
+
+import Lock from "../../components/Lock.astro";
+
+Four keys. Find the combination, or read it in the program.
+
+<Lock />
+
+## What is proved
+
+The lock is one C function, `opens`. Its contract says two things about the result: if the lock opens, the keys
+were 3 1 4 1; and if the keys are 3 1 4 1, it opens. Two laws restate that for a caller:
+
+```c
+law the_combination_opens(void)
+{
+    long keys[4] = {3, 1, 4, 1};
+    assert(opens(4, keys) == 1);
+}
+
+law only_one_combination(long n where(n == 4), const long keys[n])
+{
+    assert(opens(n, keys) == 0 || (keys[0] == 3 && keys[1] == 1 && keys[2] == 4 && keys[3] == 1));
+}
+```
+
+A test can show the first law: press 3 1 4 1 and watch it open. No test suite shows the second. There are 10,000
+digit combinations, and the keys are `long` values, so there are 2^256 inputs. PFC2 proves the law for all of them
+at once.
+
+## Who wrote the proof
+
+The body is a loop with a counter that a wrong key resets. To connect that counter to the four keys the prover
+needs a loop invariant. Nobody wrote it by hand: the invariant in the file was proposed by a language model, and
+PFC2 admitted it at the first attempt because it could prove it. Without the invariant the same file is refused.
+A wrong proposal would simply have been refused too: the model is not trusted, the checker is.
+
+## The sloppy lock
+
+Press **Use the sloppy lock**. The last comparison now reads `keys[1]` again instead of `keys[3]`, a copy-and-paste
+slip. 3 1 4 1 still opens it and 0 0 0 0 still does not, so the obvious tests pass. PFC2 refuses the file: it
+cannot prove that an open lock means the fourth key was 1. Press **Try all 10,000** to see the ten combinations
+that open it.
+
+## What is real here
+
+- The verdicts were computed by the PFC2 checker when this site was built; the link beside each opens the same
+  file in the [playground](../playground/), where your browser runs the checker again.
+- Whether your keys open the lock is not decided by JavaScript. It is looked up in the list produced by compiling
+  the program and running it on all 10,000 digit combinations: the certified C for the proved lock, and the
+  source compiled as plain C for the sloppy one, because a refused program releases no C.
+- The contract is the claim, and it is written by a person. PFC2 proves the code against it; it does not know
+  whether 3 1 4 1 is the combination you wanted.
+
+PFC2 is a research prototype and is not the compiler evaluated in the thesis it grew from
+([PFC and PFC2](../docs/10-pfc-and-pfc2/)).

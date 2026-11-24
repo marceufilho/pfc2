@@ -1,0 +1,160 @@
+{
+  "comment": "Generated from the task's test.json by corpus/verina-notes/interface.py: one case per test.",
+  "functions": {
+    "hasCommonElement": {
+      "result": "long",
+      "parameters": "long a_len, const long a[a_len], long b_len, const long b[b_len]",
+      "call": "hasCommonElement(a_len, a, b_len, b)"
+    }
+  },
+  "cases": [
+    {
+      "name": "case_0",
+      "function": "hasCommonElement",
+      "inputs": {
+        "a_len": 3,
+        "a": [
+          1,
+          2,
+          3
+        ],
+        "b_len": 3,
+        "b": [
+          4,
+          5,
+          6
+        ]
+      },
+      "expected": "found == 0"
+    },
+    {
+      "name": "case_1",
+      "function": "hasCommonElement",
+      "inputs": {
+        "a_len": 3,
+        "a": [
+          1,
+          2,
+          3
+        ],
+        "b_len": 3,
+        "b": [
+          3,
+          4,
+          5
+        ]
+      },
+      "expected": "found == 1"
+    },
+    {
+      "name": "case_2",
+      "function": "hasCommonElement",
+      "inputs": {
+        "a_len": 3,
+        "a": [
+          7,
+          8,
+          9
+        ],
+        "b_len": 3,
+        "b": [
+          10,
+          11,
+          7
+        ]
+      },
+      "expected": "found == 1"
+    },
+    {
+      "name": "case_3",
+      "function": "hasCommonElement",
+      "inputs": {
+        "a_len": 4,
+        "a": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "b_len": 4,
+        "b": [
+          5,
+          6,
+          7,
+          8
+        ]
+      },
+      "expected": "found == 0"
+    },
+    {
+      "name": "case_4",
+      "function": "hasCommonElement",
+      "inputs": {
+        "a_len": 4,
+        "a": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "b_len": 3,
+        "b": [
+          4,
+          5,
+          6
+        ]
+      },
+      "expected": "found == 1"
+    },
+    {
+      "name": "case_5",
+      "function": "hasCommonElement",
+      "inputs": {
+        "a_len": 3,
+        "a": [
+          1,
+          1,
+          1
+        ],
+        "b_len": 3,
+        "b": [
+          1,
+          2,
+          1
+        ]
+      },
+      "expected": "found == 1"
+    },
+    {
+      "name": "case_6",
+      "function": "hasCommonElement",
+      "inputs": {
+        "a_len": 1,
+        "a": [
+          0
+        ],
+        "b_len": 1,
+        "b": [
+          0
+        ]
+      },
+      "expected": "found == 1"
+    },
+    {
+      "name": "case_7",
+      "function": "hasCommonElement",
+      "inputs": {
+        "a_len": 1,
+        "a": [
+          0
+        ],
+        "b_len": 2,
+        "b": [
+          -1,
+          1
+        ]
+      },
+      "expected": "found == 0"
+    }
+  ]
+}

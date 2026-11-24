@@ -1,0 +1,1 @@
+{"id": "verina_basic_99", "rules": ["P1"], "requires": [], "fixes": 0, "remarks": "The note says the reference uses two branches (x < 18 or not) that both give 3*x; the description does not say what the branches compute, so the port is the direct product."}

@@ -1,0 +1,11 @@
+{
+  "id": "verina_advanced_75",
+  "stated": "part",
+  "dropped": [
+    "postcondition: result is the sum of some non-empty contiguous subarray (existential over subarrays, sum)",
+    "postcondition: every non-empty contiguous subarray sum is <= result (universal over subarrays, sum)"
+  ],
+  "weakened": [],
+  "verdict": "certified at memory",
+  "remarks": ""
+}

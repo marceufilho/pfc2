@@ -1,0 +1,33 @@
+{
+  "cases": {
+    "agree": 95995,
+    "certified-unsafe": 0,
+    "differ": 0,
+    "failed": 0,
+    "missing-trap": 0,
+    "trapped-as-required": 5503,
+    "unscored": 2
+  },
+  "cases_by_level": {
+    "full:agree": 6521,
+    "full:trapped-as-required": 279,
+    "memory:agree": 89474,
+    "memory:trapped-as-required": 5224,
+    "memory:unscored": 2
+  },
+  "certified_full": 68,
+  "certified_memory": 947,
+  "e1_compared_cases": 95995,
+  "e8_trap_cases": 5503,
+  "e9_not_reproduced": 0,
+  "e9_replayed": 947,
+  "passed": true,
+  "powered": true,
+  "programs": 1000,
+  "programs_with_a_failing_case": [],
+  "refusals": {
+    "bounds": 53
+  },
+  "upper_bound_95_per_case_not_independent": 3.120668295097939e-05,
+  "upper_bound_95_per_program": 0.0031583937995557365
+}

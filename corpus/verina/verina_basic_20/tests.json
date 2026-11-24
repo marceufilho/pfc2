@@ -1,0 +1,104 @@
+{
+  "comment": "Generated from the task's test.json by corpus/verina-notes/interface.py: one case per test.",
+  "functions": {
+    "uniqueProduct": {
+      "result": "long",
+      "parameters": "long arr_len, const long arr[arr_len]",
+      "call": "uniqueProduct(arr_len, arr)"
+    }
+  },
+  "cases": [
+    {
+      "name": "case_0",
+      "function": "uniqueProduct",
+      "inputs": {
+        "arr_len": 4,
+        "arr": [
+          2,
+          3,
+          2,
+          4
+        ]
+      },
+      "expected": "found == 24"
+    },
+    {
+      "name": "case_1",
+      "function": "uniqueProduct",
+      "inputs": {
+        "arr_len": 4,
+        "arr": [
+          5,
+          5,
+          5,
+          5
+        ]
+      },
+      "expected": "found == 5"
+    },
+    {
+      "name": "case_2",
+      "function": "uniqueProduct",
+      "inputs": {
+        "arr_len": 0,
+        "arr": []
+      },
+      "expected": "found == 1"
+    },
+    {
+      "name": "case_3",
+      "function": "uniqueProduct",
+      "inputs": {
+        "arr_len": 3,
+        "arr": [
+          1,
+          2,
+          3
+        ]
+      },
+      "expected": "found == 6"
+    },
+    {
+      "name": "case_4",
+      "function": "uniqueProduct",
+      "inputs": {
+        "arr_len": 3,
+        "arr": [
+          0,
+          2,
+          3
+        ]
+      },
+      "expected": "found == 0"
+    },
+    {
+      "name": "case_5",
+      "function": "uniqueProduct",
+      "inputs": {
+        "arr_len": 4,
+        "arr": [
+          -1,
+          -2,
+          -1,
+          -3
+        ]
+      },
+      "expected": "found == -6"
+    },
+    {
+      "name": "case_6",
+      "function": "uniqueProduct",
+      "inputs": {
+        "arr_len": 5,
+        "arr": [
+          10,
+          10,
+          20,
+          20,
+          30
+        ]
+      },
+      "expected": "found == 6000"
+    }
+  ]
+}

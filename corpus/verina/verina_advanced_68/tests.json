@@ -1,0 +1,153 @@
+{
+ "comment": "Generated from the task's test.json by corpus/verina-notes/interface.py: one case per test.",
+ "functions": {
+  "runLengthEncoder": {
+   "result": "long",
+   "parameters": "long input_len, const char input[input_len]",
+   "call": "runLengthEncoder(input_len, input, 64, out)",
+   "locals": "char out[64] = {0};"
+  }
+ },
+ "cases": [
+  {
+   "name": "case_0",
+   "function": "runLengthEncoder",
+   "inputs": {
+    "input_len": 8,
+    "input": [
+     97,
+     97,
+     97,
+     98,
+     98,
+     98,
+     99,
+     99
+    ]
+   },
+   "expected": "found == 6 && out[0] == 97 && out[1] == 51 && out[2] == 98 && out[3] == 51 && out[4] == 99 && out[5] == 50"
+  },
+  {
+   "name": "case_1",
+   "function": "runLengthEncoder",
+   "inputs": {
+    "input_len": 9,
+    "input": [
+     33,
+     33,
+     33,
+     36,
+     36,
+     36,
+     37,
+     37,
+     37
+    ]
+   },
+   "expected": "found == 6 && out[0] == 33 && out[1] == 51 && out[2] == 36 && out[3] == 51 && out[4] == 37 && out[5] == 51"
+  },
+  {
+   "name": "case_2",
+   "function": "runLengthEncoder",
+   "inputs": {
+    "input_len": 5,
+    "input": [
+     97,
+     97,
+     97,
+     97,
+     97
+    ]
+   },
+   "expected": "found == 2 && out[0] == 97 && out[1] == 53"
+  },
+  {
+   "name": "case_3",
+   "function": "runLengthEncoder",
+   "inputs": {
+    "input_len": 4,
+    "input": [
+     97,
+     98,
+     99,
+     100
+    ]
+   },
+   "expected": "found == 8 && out[0] == 97 && out[1] == 49 && out[2] == 98 && out[3] == 49 && out[4] == 99 && out[5] == 49 && out[6] == 100 && out[7] == 49"
+  },
+  {
+   "name": "case_4",
+   "function": "runLengthEncoder",
+   "inputs": {
+    "input_len": 0,
+    "input": []
+   },
+   "expected": "found == 0"
+  },
+  {
+   "name": "case_5",
+   "function": "runLengthEncoder",
+   "inputs": {
+    "input_len": 5,
+    "input": [
+     65,
+     97,
+     65,
+     66,
+     98
+    ]
+   },
+   "expected": "found == 10 && out[0] == 65 && out[1] == 49 && out[2] == 97 && out[3] == 49 && out[4] == 65 && out[5] == 49 && out[6] == 66 && out[7] == 49 && out[8] == 98 && out[9] == 49"
+  },
+  {
+   "name": "case_6",
+   "function": "runLengthEncoder",
+   "inputs": {
+    "input_len": 17,
+    "input": [
+     119,
+     119,
+     119,
+     119,
+     119,
+     119,
+     119,
+     119,
+     119,
+     119,
+     119,
+     119,
+     119,
+     119,
+     119,
+     119,
+     119
+    ]
+   },
+   "expected": "found == 3 && out[0] == 119 && out[1] == 49 && out[2] == 55"
+  },
+  {
+   "name": "case_7",
+   "function": "runLengthEncoder",
+   "inputs": {
+    "input_len": 1,
+    "input": [
+     97
+    ]
+   },
+   "expected": "found == 2 && out[0] == 97 && out[1] == 49"
+  },
+  {
+   "name": "case_8",
+   "function": "runLengthEncoder",
+   "inputs": {
+    "input_len": 2,
+    "input": [
+     32,
+     32
+    ]
+   },
+   "expected": "found == 2 && out[0] == 32 && out[1] == 50"
+  }
+ ]
+}

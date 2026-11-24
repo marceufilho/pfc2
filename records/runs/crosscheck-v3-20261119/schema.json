@@ -1,0 +1,67 @@
+{
+  "columns": [
+    {
+      "allowed": null,
+      "name": "program",
+      "nullable": false,
+      "type": "string"
+    },
+    {
+      "allowed": null,
+      "name": "query",
+      "nullable": false,
+      "type": "string"
+    },
+    {
+      "allowed": null,
+      "name": "kind",
+      "nullable": false,
+      "type": "string"
+    },
+    {
+      "allowed": [
+        "unsat",
+        "sat",
+        "unknown",
+        "timeout",
+        "error"
+      ],
+      "name": "z3",
+      "nullable": false,
+      "type": "string"
+    },
+    {
+      "allowed": [
+        "unsat",
+        "sat",
+        "unknown",
+        "timeout",
+        "error"
+      ],
+      "name": "cvc5",
+      "nullable": false,
+      "type": "string"
+    },
+    {
+      "allowed": [
+        "agree",
+        "disagree",
+        "inconclusive"
+      ],
+      "name": "agreement",
+      "nullable": false,
+      "type": "string"
+    }
+  ],
+  "provenance": [
+    "experiment",
+    "evidence_dir",
+    "tag",
+    "commit",
+    "seed",
+    "timestamp",
+    "vc_model",
+    "solver_version",
+    "clang"
+  ]
+}

@@ -1,0 +1,1 @@
+{"id": "verina_advanced_11", "rules": ["P1", "P4"], "requires": [], "fixes": 0, "remarks": "The description's result is ambiguous when -1 itself is the majority element; the port returns -1 either way."}

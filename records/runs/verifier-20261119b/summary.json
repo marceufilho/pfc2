@@ -1,0 +1,116 @@
+{
+  "by_class": {
+    "assert": {
+      "agree-open": 0,
+      "agree-proved": 34,
+      "disagreement": 0,
+      "pfc2-only": 0,
+      "wp-only": 0,
+      "wp-open": 0
+    },
+    "bounds": {
+      "agree-open": 0,
+      "agree-proved": 26,
+      "disagreement": 0,
+      "pfc2-only": 2,
+      "wp-only": 0,
+      "wp-open": 1
+    },
+    "call-precondition": {
+      "agree-open": 0,
+      "agree-proved": 36,
+      "disagreement": 0,
+      "pfc2-only": 0,
+      "wp-only": 0,
+      "wp-open": 0
+    },
+    "conversion": {
+      "agree-open": 0,
+      "agree-proved": 1,
+      "disagreement": 0,
+      "pfc2-only": 0,
+      "wp-only": 0,
+      "wp-open": 0
+    },
+    "division": {
+      "agree-open": 0,
+      "agree-proved": 3,
+      "disagreement": 0,
+      "pfc2-only": 6,
+      "wp-only": 0,
+      "wp-open": 0
+    },
+    "entry": {
+      "agree-open": 0,
+      "agree-proved": 30,
+      "disagreement": 0,
+      "pfc2-only": 0,
+      "wp-only": 0,
+      "wp-open": 0
+    },
+    "overflow": {
+      "agree-open": 8,
+      "agree-proved": 35,
+      "disagreement": 0,
+      "pfc2-only": 3,
+      "wp-only": 0,
+      "wp-open": 0
+    },
+    "postcondition": {
+      "agree-open": 0,
+      "agree-proved": 22,
+      "disagreement": 0,
+      "pfc2-only": 0,
+      "wp-only": 0,
+      "wp-open": 1
+    },
+    "preservation": {
+      "agree-open": 0,
+      "agree-proved": 30,
+      "disagreement": 0,
+      "pfc2-only": 0,
+      "wp-only": 0,
+      "wp-open": 0
+    }
+  },
+  "by_corpus": {
+    "examples": {
+      "agree-open": 2,
+      "agree-proved": 165,
+      "disagreement": 0,
+      "pfc2-only": 11,
+      "wp-only": 0,
+      "wp-open": 1
+    },
+    "thesis-derived": {
+      "agree-open": 6,
+      "agree-proved": 52,
+      "disagreement": 0,
+      "pfc2-only": 0,
+      "wp-only": 0,
+      "wp-open": 1
+    }
+  },
+  "cases": 29,
+  "cases_compared": 29,
+  "cases_in_error": [],
+  "cells": 238,
+  "cells_compared": 227,
+  "controls": 6,
+  "controls_detected": 6,
+  "controls_missed": [],
+  "criterion": "0 disagreements, every case compared, every control detected",
+  "disagreements": [],
+  "outcomes": {
+    "agree-open": 8,
+    "agree-proved": 217,
+    "disagreement": 0,
+    "pfc2-only": 11,
+    "wp-only": 0,
+    "wp-open": 2
+  },
+  "passed": true,
+  "pfc2_obligations": 504,
+  "wp_goals": 869,
+  "wp_goals_valid": 843
+}

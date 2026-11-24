@@ -1,0 +1,10 @@
+{
+  "id": "verina_basic_17",
+  "stated": "part",
+  "dropped": [
+    "every uppercase character is shifted by 32 and every other character is unchanged (quantifier)"
+  ],
+  "weakened": [],
+  "verdict": "certified at full",
+  "remarks": ""
+}

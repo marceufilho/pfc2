@@ -1,0 +1,12 @@
+{
+  "id": "verina_basic_27",
+  "stated": "none",
+  "dropped": [
+    "some c: c occurs at least twice (count)",
+    "some c: no repeated character before the second occurrence (Pairwise, findIdx)",
+    "none: all characters pairwise distinct (Pairwise)"
+  ],
+  "weakened": [],
+  "verdict": "certified at full",
+  "remarks": "Only out[0] being 0 or 1 is stated."
+}

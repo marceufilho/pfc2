@@ -1,0 +1,11 @@
+{
+  "id": "verina_advanced_23",
+  "stated": "none",
+  "dropped": [
+    "postcond: exists x, pow 2 x = n (existential, recursive pow)",
+    "postcond: n > 0 when result (the code overwrites n; an ensures reads the final value and there is no old())"
+  ],
+  "weakened": [],
+  "verdict": "certified at full",
+  "remarks": "The 0/1 ensures is the Bool encoding."
+}

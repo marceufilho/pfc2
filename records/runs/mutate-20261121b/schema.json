@@ -1,0 +1,90 @@
+{
+  "columns": [
+    {
+      "allowed": null,
+      "name": "mutant",
+      "nullable": false,
+      "type": "string"
+    },
+    {
+      "allowed": null,
+      "name": "target",
+      "nullable": false,
+      "type": "string"
+    },
+    {
+      "allowed": [
+        "relational",
+        "arithmetic",
+        "boolean",
+        "constant",
+        "statement-deletion",
+        "return-replacement"
+      ],
+      "name": "operator",
+      "nullable": false,
+      "type": "string"
+    },
+    {
+      "allowed": null,
+      "name": "line",
+      "nullable": false,
+      "type": "integer"
+    },
+    {
+      "allowed": null,
+      "name": "original",
+      "nullable": false,
+      "type": "string"
+    },
+    {
+      "allowed": null,
+      "name": "replacement",
+      "nullable": false,
+      "type": "string"
+    },
+    {
+      "allowed": [
+        "killed by tests",
+        "killed by e1",
+        "timeout in tests",
+        "timeout in e1",
+        "memory limit in tests",
+        "memory limit in e1",
+        "survived"
+      ],
+      "name": "outcome",
+      "nullable": false,
+      "type": "string"
+    },
+    {
+      "allowed": null,
+      "name": "stopped_by",
+      "nullable": true,
+      "type": "string"
+    },
+    {
+      "allowed": null,
+      "name": "seconds",
+      "nullable": false,
+      "type": "number"
+    },
+    {
+      "allowed": null,
+      "name": "peak_rss_mb",
+      "nullable": true,
+      "type": "integer"
+    }
+  ],
+  "provenance": [
+    "experiment",
+    "evidence_dir",
+    "tag",
+    "commit",
+    "seed",
+    "timestamp",
+    "vc_model",
+    "solver_version",
+    "clang"
+  ]
+}

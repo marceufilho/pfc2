@@ -1,0 +1,1 @@
+{"id": "verina_basic_86", "rules": ["P1", "P3", "P4"], "requires": ["offset >= 0", "out_cap >= a_len"], "fixes": 0, "remarks": ""}

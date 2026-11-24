@@ -1,0 +1,64 @@
+---
+title: PFC2
+description: A small proved subset of C. Write ordinary C with contracts and laws; get C whose proved checks are gone, and a proof file you can replay.
+template: splash
+hero:
+  tagline: A small proved subset of C. State what your code must do; PFC2 proves it for every input and only then releases C without the checks it proved unnecessary.
+  actions:
+    - text: Try it in the browser
+      link: ./playground/
+      icon: right-arrow
+    - text: Take the tour
+      link: ./docs/01-tour/
+      variant: minimal
+    - text: A lock with one combination
+      link: ./lock/
+      variant: minimal
+    - text: A game you cannot win
+      link: ./game/
+      variant: minimal
+---
+
+import { Code } from "@astrojs/starlight/components";
+import Playground from "../../components/Playground.astro";
+import showcase from "../../../public/data/showcase.json";
+
+export const wrong = showcase.programs.find((p) => p.path === "midpoint/midpoint_wrong.c");
+export const right = showcase.programs.find((p) => p.path === "midpoint/midpoint.c");
+
+## One example
+
+The middle of a range, as every binary search computes it. This version passes any test you are likely to write:
+
+<Code code={wrong.source} lang="c" title="midpoint_wrong.c" />
+
+PFC2 refuses it: **{wrong.refusal[0].meaning}** at line {wrong.refusal[0].line}. It cannot prove
+<code>{wrong.refusal[0].goal}</code>, and the checker below shows inputs that break it, such as `lo = 1` with
+`hi` the largest `long`: the sum leaves the range before the division brings it back. A refused file releases
+no C.
+
+<Code code={right.source} lang="c" title="midpoint.c" />
+
+This one is certified: {right.proved} of {right.obligations} obligations proved, for every `lo` and `hi` the
+contract allows. The division check and the {right.overflow_removed} overflow checks are then removed from the
+released C, each with the proof that allows it. Both files are ordinary C for any compiler.
+
+The verdicts above were computed when this site was built. Run them yourself:
+
+<Playground program="showcase/midpoint/midpoint_wrong" />
+
+Then try [a lock with exactly one combination](./lock/), where the claim is one no test suite can show.
+
+## What you get
+
+- **A language that is still C.** Contracts on the signature, invariants on the loop, arrays that carry their
+  length, laws that are proved and never run. [Language](./docs/02-language/)
+- **Proofs you did not have to write.** Counter bounds are inferred; the rest can be written, supplied as data
+  or proposed by a language model, and is always checked. [Proofs](./docs/03-proofs/)
+- **Whole programs.** Globals, strings, console input and output, `main`. [Programs](./docs/04-programs/)
+- **A proof file, separate from the code,** that anyone can recompute offline.
+- **Proofs as you type** in your editor. [Editor](./docs/11-editor/)
+
+PFC2 is a research prototype. What it proves, what it trusts and what it has not been tested for are written
+down in [Limits](./docs/09-limits/); how it relates to the thesis compiler it grew from is in
+[PFC and PFC2](./docs/10-pfc-and-pfc2/).

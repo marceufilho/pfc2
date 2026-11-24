@@ -1,0 +1,10 @@
+{
+ "id": "verina_basic_61",
+ "stated": "none",
+ "dropped": [
+  "postcond: result <-> every character is a digit"
+ ],
+ "weakened": [],
+ "verdict": "certified at full",
+ "remarks": "The Bool result is stated as its C encoding (0 or 1). "
+}

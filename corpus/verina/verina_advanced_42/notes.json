@@ -1,0 +1,13 @@
+{
+  "id": "verina_advanced_42",
+  "stated": "part",
+  "dropped": [
+    "postcond: every later-minus-earlier difference <= result (Pairwise)",
+    "postcond: result = 0 -> length <= 1 or no profitable pair; and no profitable pair -> result = 0 (quantifiers)",
+    "postcond: result > 0 -> some pair achieves it (existential)",
+    "elements are Nats (quantifier over elements)"
+  ],
+  "weakened": [],
+  "verdict": "certified at memory",
+  "remarks": "Stated: length <= 1 -> result = 0, and result >= 0. prices[i] - lowest cannot overflow for Nat prices, but that precondition needs a quantifier, so the subtraction keeps its trap. requires(prices_len >= 0) was added: with the parameter spelled X_len the checker does not assume 0 <= length (docs/02-language.md says the declaration states it); reported as outside the protocol's list unless a length counts as a Nat."
+}

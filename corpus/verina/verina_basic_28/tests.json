@@ -1,0 +1,76 @@
+{
+  "comment": "Generated from the task's test.json by corpus/verina-notes/interface.py: one case per test.",
+  "functions": {
+    "isPrime": {
+      "result": "long",
+      "parameters": "long n",
+      "call": "isPrime(n)"
+    }
+  },
+  "cases": [
+    {
+      "name": "case_0",
+      "function": "isPrime",
+      "inputs": {
+        "n": 2
+      },
+      "expected": "found == 1"
+    },
+    {
+      "name": "case_1",
+      "function": "isPrime",
+      "inputs": {
+        "n": 3
+      },
+      "expected": "found == 1"
+    },
+    {
+      "name": "case_2",
+      "function": "isPrime",
+      "inputs": {
+        "n": 4
+      },
+      "expected": "found == 0"
+    },
+    {
+      "name": "case_3",
+      "function": "isPrime",
+      "inputs": {
+        "n": 5
+      },
+      "expected": "found == 1"
+    },
+    {
+      "name": "case_4",
+      "function": "isPrime",
+      "inputs": {
+        "n": 9
+      },
+      "expected": "found == 0"
+    },
+    {
+      "name": "case_5",
+      "function": "isPrime",
+      "inputs": {
+        "n": 11
+      },
+      "expected": "found == 1"
+    },
+    {
+      "name": "case_6",
+      "function": "isPrime",
+      "inputs": {
+        "n": 12
+      },
+      "expected": "found == 0"
+    },
+    {
+      "name": "case_7",
+      "function": "isPrime",
+      "inputs": {
+        "n": 13
+      },
+      "expected": "found == 1"
+    }
+  ]
+}

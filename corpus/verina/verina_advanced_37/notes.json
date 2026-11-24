@@ -1,0 +1,11 @@
+{
+  "id": "verina_advanced_37",
+  "stated": "part",
+  "dropped": [
+    "precond: some element occurs more than length/2 times (count)",
+    "postcond: count result > n/2 and every other element counts <= n/2"
+  ],
+  "weakened": [],
+  "verdict": "certified at full",
+  "remarks": "Stated: only the precondition nums.length > 0."
+}

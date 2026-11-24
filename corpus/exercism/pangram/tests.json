@@ -1,0 +1,111 @@
+{
+ "comment": "Each case is one assertion of the upstream test file, transcribed by hand: the inputs it passes and what it expects, stated on the port's interface. `found` is the value the function returns.",
+ "functions": {
+  "is_pangram": {
+   "result": "_Bool",
+   "parameters": "long n, const char sentence[n]",
+   "call": "pangram(n, sentence)"
+  }
+ },
+ "cases": [
+  {
+   "name": "null",
+   "function": "is_pangram",
+   "inputs": {
+    "n": 0,
+    "sentence": ""
+   },
+   "expected": "!found"
+  },
+  {
+   "name": "empty_sentence",
+   "function": "is_pangram",
+   "inputs": {
+    "n": 0,
+    "sentence": ""
+   },
+   "expected": "!found"
+  },
+  {
+   "name": "perfect_lower_case",
+   "function": "is_pangram",
+   "inputs": {
+    "n": 26,
+    "sentence": "abcdefghijklmnopqrstuvwxyz"
+   },
+   "expected": "found"
+  },
+  {
+   "name": "only_lower_case",
+   "function": "is_pangram",
+   "inputs": {
+    "n": 43,
+    "sentence": "the quick brown fox jumps over the lazy dog"
+   },
+   "expected": "found"
+  },
+  {
+   "name": "missing_the_letter_x",
+   "function": "is_pangram",
+   "inputs": {
+    "n": 59,
+    "sentence": "a quick movement of the enemy will jeopardize five gunboats"
+   },
+   "expected": "!found"
+  },
+  {
+   "name": "missing_the_letter_h",
+   "function": "is_pangram",
+   "inputs": {
+    "n": 38,
+    "sentence": "five boxing wizards jump quickly at it"
+   },
+   "expected": "!found"
+  },
+  {
+   "name": "with_underscores",
+   "function": "is_pangram",
+   "inputs": {
+    "n": 43,
+    "sentence": "the_quick_brown_fox_jumps_over_the_lazy_dog"
+   },
+   "expected": "found"
+  },
+  {
+   "name": "with_numbers",
+   "function": "is_pangram",
+   "inputs": {
+    "n": 48,
+    "sentence": "the 1 quick brown fox jumps over the 2 lazy dogs"
+   },
+   "expected": "found"
+  },
+  {
+   "name": "missing_letters_replaced_by_numbers",
+   "function": "is_pangram",
+   "inputs": {
+    "n": 43,
+    "sentence": "7h3 qu1ck brown fox jumps ov3r 7h3 lazy dog"
+   },
+   "expected": "!found"
+  },
+  {
+   "name": "mixed_case_and_punctuation",
+   "function": "is_pangram",
+   "inputs": {
+    "n": 40,
+    "sentence": "\"Five quacking Zephyrs jolt my wax bed.\""
+   },
+   "expected": "found"
+  },
+  {
+   "name": "a_m_and_a_m_are_26_different_characters_but_not_a_pangram",
+   "function": "is_pangram",
+   "inputs": {
+    "n": 27,
+    "sentence": "abcdefghijklm ABCDEFGHIJKLM"
+   },
+   "expected": "!found"
+  }
+ ]
+}

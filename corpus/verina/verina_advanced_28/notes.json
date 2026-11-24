@@ -1,0 +1,11 @@
+{
+  "id": "verina_advanced_28",
+  "stated": "part",
+  "dropped": [
+    "precond: List.Nodup nums",
+    "postcond: result is the maximal length of a consecutive sublist of the sorted list (mergeSort, quantifiers)"
+  ],
+  "weakened": [],
+  "verdict": "certified at memory",
+  "remarks": "Stated: nums = [] -> result = 0, and result >= 0 (Nat). nums[i] - 1 and nums[i] + length overflow at the ends of the long range, and length++ is bounded only under the dropped Nodup, so traps stay."
+}

@@ -1,0 +1,10 @@
+{
+  "id": "verina_advanced_22",
+  "stated": "none",
+  "dropped": [
+    "postcond: existence of a valid peak, two quantified monotonicity tests"
+  ],
+  "weakened": [],
+  "verdict": "certified at full",
+  "remarks": "The 0/1 ensures is the Bool encoding."
+}

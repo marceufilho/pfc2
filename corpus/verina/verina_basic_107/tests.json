@@ -1,0 +1,57 @@
+{
+  "comment": "Generated from the task's test.json by corpus/verina-notes/interface.py: one case per test.",
+  "functions": {
+    "ComputeAvg": {
+      "result": "long",
+      "parameters": "long a, long b",
+      "call": "ComputeAvg(a, b)"
+    }
+  },
+  "cases": [
+    {
+      "name": "case_0",
+      "function": "ComputeAvg",
+      "inputs": {
+        "a": 4,
+        "b": 6
+      },
+      "expected": "found == 5"
+    },
+    {
+      "name": "case_1",
+      "function": "ComputeAvg",
+      "inputs": {
+        "a": 3,
+        "b": 5
+      },
+      "expected": "found == 4"
+    },
+    {
+      "name": "case_2",
+      "function": "ComputeAvg",
+      "inputs": {
+        "a": 3,
+        "b": 4
+      },
+      "expected": "found == 3"
+    },
+    {
+      "name": "case_3",
+      "function": "ComputeAvg",
+      "inputs": {
+        "a": -3,
+        "b": 7
+      },
+      "expected": "found == 2"
+    },
+    {
+      "name": "case_4",
+      "function": "ComputeAvg",
+      "inputs": {
+        "a": -5,
+        "b": 5
+      },
+      "expected": "found == 0"
+    }
+  ]
+}

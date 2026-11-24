@@ -1,0 +1,50 @@
+---
+title: A game you cannot win
+description: Capture the flag, with a wall in the way. PFC2 proves the flag is out of reach; take the wall away and the proof fails.
+---
+
+import FlagGame from "../../components/FlagGame.astro";
+
+You are the blue dot. The flag is on the other side of a wall. Click the board and use the arrow keys (or the
+buttons) and try to reach it.
+
+<FlagGame />
+
+The program under the board is the whole game: there is nothing else. Toggle the wall and watch which lines
+change.
+
+## What is going on
+
+The rules of this game are a small C program, [`11_flag/flag`](../examples/#11_flagflag). It has three functions:
+`step_x` and `step_y` say where one move takes the player, and `play` runs a whole list of moves and returns 1 if
+the player ever stood on the flag. The program makes one claim about `play`:
+
+```c
+long play(long n, const long moves[n])
+    ensures(result == 0)
+```
+
+In words: **for every list of moves, of any length, the result is 0**. Nobody ever wins. PFC2 does not test this
+by trying moves. It proves it, once, for all of them: the loop keeps the player to the left of the wall
+(`x < WALL`), each step is proved to preserve that, and the flag is to the right.
+
+Press **Remove the wall**. The source changes in one line (`#define WALL 4` becomes a column that does not
+exist), and now the same claim is false. PFC2 notices: one of its obligations, "an iteration may break the loop
+invariant", can no longer be proved, and it refuses the program. A refused program releases no C. You can then
+walk to the flag, or press **Show a winning play**.
+
+## What is real here
+
+- The verdicts shown beside the board were computed by the PFC2 checker when this site was built. The link under
+  them opens the same program in the [playground](../playground/), where your browser runs the checker again.
+- Your moves are not decided by JavaScript. They are looked up in a table produced by compiling the program and
+  running it on every square and every move: the **certified C** when there is a wall, and the same source
+  compiled as ordinary C when there is not (PFC2 released nothing for that one).
+- "Show a winning play" was found by trying every square of the board without the wall. With the wall, the same
+  search finds nothing, as the proof says it must.
+
+## What the proof does not say
+
+It is a proof about the rules as written. A weaker claim would prove less; the wall could be drawn in one place
+and written in another. The board drawing, the key handling and this page are ordinary, unverified code: only the
+three C functions are proved. See [Limits](../docs/09-limits/).

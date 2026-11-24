@@ -1,0 +1,108 @@
+{
+  "comment": "Generated from the task's test.json by corpus/verina-notes/interface.py: one case per test.",
+  "functions": {
+    "isDivisibleBy11": {
+      "result": "long",
+      "parameters": "long n",
+      "call": "isDivisibleBy11(n)"
+    }
+  },
+  "cases": [
+    {
+      "name": "case_0",
+      "function": "isDivisibleBy11",
+      "inputs": {
+        "n": 0
+      },
+      "expected": "found == 1"
+    },
+    {
+      "name": "case_1",
+      "function": "isDivisibleBy11",
+      "inputs": {
+        "n": 11
+      },
+      "expected": "found == 1"
+    },
+    {
+      "name": "case_2",
+      "function": "isDivisibleBy11",
+      "inputs": {
+        "n": 22
+      },
+      "expected": "found == 1"
+    },
+    {
+      "name": "case_3",
+      "function": "isDivisibleBy11",
+      "inputs": {
+        "n": 23
+      },
+      "expected": "found == 0"
+    },
+    {
+      "name": "case_4",
+      "function": "isDivisibleBy11",
+      "inputs": {
+        "n": 33
+      },
+      "expected": "found == 1"
+    },
+    {
+      "name": "case_5",
+      "function": "isDivisibleBy11",
+      "inputs": {
+        "n": 44
+      },
+      "expected": "found == 1"
+    },
+    {
+      "name": "case_6",
+      "function": "isDivisibleBy11",
+      "inputs": {
+        "n": -11
+      },
+      "expected": "found == 1"
+    },
+    {
+      "name": "case_7",
+      "function": "isDivisibleBy11",
+      "inputs": {
+        "n": -22
+      },
+      "expected": "found == 1"
+    },
+    {
+      "name": "case_8",
+      "function": "isDivisibleBy11",
+      "inputs": {
+        "n": 1
+      },
+      "expected": "found == 0"
+    },
+    {
+      "name": "case_9",
+      "function": "isDivisibleBy11",
+      "inputs": {
+        "n": -1
+      },
+      "expected": "found == 0"
+    },
+    {
+      "name": "case_10",
+      "function": "isDivisibleBy11",
+      "inputs": {
+        "n": 121
+      },
+      "expected": "found == 1"
+    },
+    {
+      "name": "case_11",
+      "function": "isDivisibleBy11",
+      "inputs": {
+        "n": 123
+      },
+      "expected": "found == 0"
+    }
+  ]
+}

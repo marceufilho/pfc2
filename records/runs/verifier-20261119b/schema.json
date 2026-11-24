@@ -1,0 +1,105 @@
+{
+  "columns": [
+    {
+      "allowed": [
+        "cell",
+        "support",
+        "control",
+        "case"
+      ],
+      "name": "row",
+      "nullable": false,
+      "type": "string"
+    },
+    {
+      "allowed": null,
+      "name": "case",
+      "nullable": false,
+      "type": "string"
+    },
+    {
+      "allowed": null,
+      "name": "corpus",
+      "nullable": true,
+      "type": "string"
+    },
+    {
+      "allowed": null,
+      "name": "function",
+      "nullable": true,
+      "type": "string"
+    },
+    {
+      "allowed": null,
+      "name": "class",
+      "nullable": true,
+      "type": "string"
+    },
+    {
+      "allowed": null,
+      "name": "pfc2_total",
+      "nullable": true,
+      "type": "integer"
+    },
+    {
+      "allowed": null,
+      "name": "pfc2_proved",
+      "nullable": true,
+      "type": "integer"
+    },
+    {
+      "allowed": null,
+      "name": "wp_total",
+      "nullable": true,
+      "type": "integer"
+    },
+    {
+      "allowed": null,
+      "name": "wp_valid",
+      "nullable": true,
+      "type": "integer"
+    },
+    {
+      "allowed": null,
+      "name": "wp_smoke",
+      "nullable": true,
+      "type": "integer"
+    },
+    {
+      "allowed": [
+        "agree-proved",
+        "agree-open",
+        "wp-open",
+        "disagreement",
+        "pfc2-only",
+        "wp-only"
+      ],
+      "name": "outcome",
+      "nullable": true,
+      "type": "string"
+    },
+    {
+      "allowed": null,
+      "name": "status",
+      "nullable": true,
+      "type": "string"
+    },
+    {
+      "allowed": null,
+      "name": "detected",
+      "nullable": true,
+      "type": "boolean"
+    }
+  ],
+  "provenance": [
+    "experiment",
+    "evidence_dir",
+    "tag",
+    "commit",
+    "seed",
+    "timestamp",
+    "vc_model",
+    "solver_version",
+    "clang"
+  ]
+}

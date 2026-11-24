@@ -1,0 +1,123 @@
+{
+  "comment": "Generated from the task's test.json by corpus/verina-notes/interface.py: one case per test.",
+  "functions": {
+    "maxSubarraySum": {
+      "result": "long",
+      "parameters": "long numbers_len, const long numbers[numbers_len]",
+      "call": "maxSubarraySum(numbers_len, numbers)"
+    }
+  },
+  "cases": [
+    {
+      "name": "case_0",
+      "function": "maxSubarraySum",
+      "inputs": {
+        "numbers_len": 5,
+        "numbers": [
+          1,
+          2,
+          3,
+          -2,
+          5
+        ]
+      },
+      "expected": "found == 9"
+    },
+    {
+      "name": "case_1",
+      "function": "maxSubarraySum",
+      "inputs": {
+        "numbers_len": 8,
+        "numbers": [
+          -2,
+          -3,
+          4,
+          -1,
+          -2,
+          1,
+          5,
+          -3
+        ]
+      },
+      "expected": "found == 7"
+    },
+    {
+      "name": "case_2",
+      "function": "maxSubarraySum",
+      "inputs": {
+        "numbers_len": 4,
+        "numbers": [
+          -1,
+          -2,
+          -3,
+          -4
+        ]
+      },
+      "expected": "found == 0"
+    },
+    {
+      "name": "case_3",
+      "function": "maxSubarraySum",
+      "inputs": {
+        "numbers_len": 5,
+        "numbers": [
+          5,
+          -3,
+          2,
+          1,
+          -2
+        ]
+      },
+      "expected": "found == 5"
+    },
+    {
+      "name": "case_4",
+      "function": "maxSubarraySum",
+      "inputs": {
+        "numbers_len": 4,
+        "numbers": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "expected": "found == 0"
+    },
+    {
+      "name": "case_5",
+      "function": "maxSubarraySum",
+      "inputs": {
+        "numbers_len": 0,
+        "numbers": []
+      },
+      "expected": "found == 0"
+    },
+    {
+      "name": "case_6",
+      "function": "maxSubarraySum",
+      "inputs": {
+        "numbers_len": 1,
+        "numbers": [
+          10
+        ]
+      },
+      "expected": "found == 10"
+    },
+    {
+      "name": "case_7",
+      "function": "maxSubarraySum",
+      "inputs": {
+        "numbers_len": 5,
+        "numbers": [
+          -5,
+          8,
+          -3,
+          4,
+          -1
+        ]
+      },
+      "expected": "found == 9"
+    }
+  ]
+}

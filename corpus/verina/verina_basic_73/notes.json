@@ -1,0 +1,10 @@
+{
+  "id": "verina_basic_73",
+  "stated": "none",
+  "dropped": [
+    "result = true <-> forall n < length, s[n] = p[n] or p[n] = '?' (needs a quantifier over elements; the whole postcondition)"
+  ],
+  "weakened": [],
+  "verdict": "certified at full",
+  "remarks": "Verina precondition (equal lengths) stated as requires; result being 1 or 0 is the Bool interface."
+}

@@ -1,0 +1,60 @@
+{
+  "comment": "Generated from the task's test.json by corpus/verina-notes/interface.py: one case per test.",
+  "functions": {
+    "sumOfDigits": {
+      "result": "long",
+      "parameters": "long n",
+      "call": "sumOfDigits(n)"
+    }
+  },
+  "cases": [
+    {
+      "name": "case_0",
+      "function": "sumOfDigits",
+      "inputs": {
+        "n": 12345
+      },
+      "expected": "found == 15"
+    },
+    {
+      "name": "case_1",
+      "function": "sumOfDigits",
+      "inputs": {
+        "n": 0
+      },
+      "expected": "found == 0"
+    },
+    {
+      "name": "case_2",
+      "function": "sumOfDigits",
+      "inputs": {
+        "n": 987654321
+      },
+      "expected": "found == 45"
+    },
+    {
+      "name": "case_3",
+      "function": "sumOfDigits",
+      "inputs": {
+        "n": 11111
+      },
+      "expected": "found == 5"
+    },
+    {
+      "name": "case_4",
+      "function": "sumOfDigits",
+      "inputs": {
+        "n": 1001
+      },
+      "expected": "found == 2"
+    },
+    {
+      "name": "case_5",
+      "function": "sumOfDigits",
+      "inputs": {
+        "n": 9999
+      },
+      "expected": "found == 36"
+    }
+  ]
+}

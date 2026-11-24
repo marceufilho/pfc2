@@ -1,0 +1,10 @@
+{
+ "id": "verina_basic_47",
+ "stated": "part",
+ "dropped": [
+  "postcond: result = sumTo a a.size (recursive sum), both conjuncts"
+ ],
+ "weakened": [],
+ "verdict": "certified at memory",
+ "remarks": "Only the size precondition is stated. The sum can overflow."
+}

@@ -1,0 +1,341 @@
+{
+  "by_family": {
+    "array-multidimensional": {
+      "B1": {
+        "clopper_pearson": [
+          0.0,
+          0.1684
+        ],
+        "proportion": 0.0,
+        "successes": 0,
+        "trials": 20,
+        "wilson": [
+          0.0,
+          0.1611
+        ]
+      },
+      "B1 (50 rounds)": {
+        "clopper_pearson": [
+          0.3605,
+          0.8088
+        ],
+        "proportion": 0.6,
+        "successes": 12,
+        "trials": 20,
+        "wilson": [
+          0.3866,
+          0.7812
+        ]
+      },
+      "B2": {
+        "clopper_pearson": [
+          0.2306,
+          0.6847
+        ],
+        "proportion": 0.45,
+        "successes": 9,
+        "trials": 20,
+        "wilson": [
+          0.2582,
+          0.6579
+        ]
+      },
+      "B2 (50 rounds)": {
+        "clopper_pearson": [
+          0.4572,
+          0.8811
+        ],
+        "proportion": 0.7,
+        "successes": 14,
+        "trials": 20,
+        "wilson": [
+          0.481,
+          0.8545
+        ]
+      },
+      "I": {
+        "clopper_pearson": [
+          0.8316,
+          1.0
+        ],
+        "proportion": 1.0,
+        "successes": 20,
+        "trials": 20,
+        "wilson": [
+          0.8389,
+          1.0
+        ]
+      },
+      "L1": {
+        "clopper_pearson": null,
+        "proportion": null,
+        "successes": 0,
+        "trials": 0,
+        "wilson": null
+      },
+      "L2": {
+        "clopper_pearson": null,
+        "proportion": null,
+        "successes": 0,
+        "trials": 0,
+        "wilson": null
+      },
+      "N": {
+        "clopper_pearson": [
+          0.0,
+          0.1684
+        ],
+        "proportion": 0.0,
+        "successes": 0,
+        "trials": 20,
+        "wilson": [
+          0.0,
+          0.1611
+        ]
+      }
+    },
+    "array-tiling": {
+      "B1": {
+        "clopper_pearson": [
+          0.1023,
+          0.4841
+        ],
+        "proportion": 0.2609,
+        "successes": 6,
+        "trials": 23,
+        "wilson": [
+          0.1255,
+          0.4647
+        ]
+      },
+      "B1 (50 rounds)": {
+        "clopper_pearson": [
+          0.3449,
+          0.7681
+        ],
+        "proportion": 0.5652,
+        "successes": 13,
+        "trials": 23,
+        "wilson": [
+          0.3681,
+          0.7437
+        ]
+      },
+      "B2": {
+        "clopper_pearson": [
+          0.6641,
+          0.9722
+        ],
+        "proportion": 0.8696,
+        "successes": 20,
+        "trials": 23,
+        "wilson": [
+          0.6787,
+          0.9546
+        ]
+      },
+      "B2 (50 rounds)": {
+        "clopper_pearson": [
+          0.7196,
+          0.9893
+        ],
+        "proportion": 0.913,
+        "successes": 21,
+        "trials": 23,
+        "wilson": [
+          0.732,
+          0.9758
+        ]
+      },
+      "I": {
+        "clopper_pearson": [
+          0.8518,
+          1.0
+        ],
+        "proportion": 1.0,
+        "successes": 23,
+        "trials": 23,
+        "wilson": [
+          0.8569,
+          1.0
+        ]
+      },
+      "L1": {
+        "clopper_pearson": null,
+        "proportion": null,
+        "successes": 0,
+        "trials": 0,
+        "wilson": null
+      },
+      "L2": {
+        "clopper_pearson": null,
+        "proportion": null,
+        "successes": 0,
+        "trials": 0,
+        "wilson": null
+      },
+      "N": {
+        "clopper_pearson": [
+          0.0,
+          0.1482
+        ],
+        "proportion": 0.0,
+        "successes": 0,
+        "trials": 23,
+        "wilson": [
+          0.0,
+          0.1431
+        ]
+      }
+    }
+  },
+  "conditions": {
+    "B1": {
+      "clopper_pearson": [
+        0.053,
+        0.2793
+      ],
+      "proportion": 0.1395,
+      "successes": 6,
+      "trials": 43,
+      "wilson": [
+        0.0656,
+        0.2726
+      ]
+    },
+    "B1 (50 rounds)": {
+      "clopper_pearson": [
+        0.4213,
+        0.7299
+      ],
+      "proportion": 0.5814,
+      "successes": 25,
+      "trials": 43,
+      "wilson": [
+        0.4333,
+        0.7162
+      ]
+    },
+    "B2": {
+      "clopper_pearson": [
+        0.5146,
+        0.8092
+      ],
+      "proportion": 0.6744,
+      "successes": 29,
+      "trials": 43,
+      "wilson": [
+        0.5252,
+        0.7951
+      ]
+    },
+    "B2 (50 rounds)": {
+      "clopper_pearson": [
+        0.666,
+        0.9161
+      ],
+      "proportion": 0.814,
+      "successes": 35,
+      "trials": 43,
+      "wilson": [
+        0.6738,
+        0.9026
+      ]
+    },
+    "I": {
+      "clopper_pearson": [
+        0.9178,
+        1.0
+      ],
+      "proportion": 1.0,
+      "successes": 43,
+      "trials": 43,
+      "wilson": [
+        0.918,
+        1.0
+      ]
+    },
+    "L1": {
+      "clopper_pearson": null,
+      "proportion": null,
+      "successes": 0,
+      "trials": 0,
+      "wilson": null
+    },
+    "L2": {
+      "clopper_pearson": null,
+      "proportion": null,
+      "successes": 0,
+      "trials": 0,
+      "wilson": null
+    },
+    "N": {
+      "clopper_pearson": [
+        0.0,
+        0.0822
+      ],
+      "proportion": 0.0,
+      "successes": 0,
+      "trials": 43,
+      "wilson": [
+        0.0,
+        0.082
+      ]
+    }
+  },
+  "exploratory": {
+    "certified at least once, by condition": {
+      "B1": 6,
+      "B2": 29,
+      "I": 43,
+      "L1": 0,
+      "L2": 0,
+      "N": 0
+    },
+    "certified under exactly one condition": {
+      "B1": [],
+      "B2": [],
+      "I": [
+        "add_3_n_u",
+        "copy_partial_2_n_u",
+        "copy_partial_3_u",
+        "diff_3_n_u",
+        "init_3_u",
+        "init_4_n_u",
+        "init_non_constant_2_n_u",
+        "init_non_constant_3_u",
+        "max_3_n_u",
+        "min_3_n_u",
+        "rev_3_u",
+        "revcpyswp2",
+        "rewnifrev2",
+        "rewrev"
+      ],
+      "L1": [],
+      "L2": [],
+      "N": []
+    }
+  },
+  "model_ran": false,
+  "no_power_for_model_contrasts": true,
+  "passed": true,
+  "programs": 43,
+  "registered_contrasts": {
+    "I - N": {
+      "difference": 1.0,
+      "interval": [
+        1.0,
+        1.0
+      ],
+      "p_holm": 2.2737367544323206e-13,
+      "programs": 43,
+      "sign_test": {
+        "negative": 0,
+        "p": 2.2737367544323206e-13,
+        "positive": 43,
+        "ties": 0
+      },
+      "supported": true
+    }
+  }
+}

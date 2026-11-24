@@ -1,0 +1,1 @@
+X7: parameter type Array (Array Nat) is outside the interface mapping

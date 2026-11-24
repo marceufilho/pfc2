@@ -1,0 +1,120 @@
+{
+ "comment": "Generated from the task's test.json by corpus/verina-notes/interface.py: one case per test.",
+ "functions": {
+  "allVowels": {
+   "result": "long",
+   "parameters": "long s_len, const char s[s_len]",
+   "call": "allVowels(s_len, s)"
+  }
+ },
+ "cases": [
+  {
+   "name": "case_0",
+   "function": "allVowels",
+   "inputs": {
+    "s_len": 9,
+    "s": [
+     101,
+     100,
+     117,
+     99,
+     97,
+     116,
+     105,
+     111,
+     110
+    ]
+   },
+   "expected": "found == 1"
+  },
+  {
+   "name": "case_1",
+   "function": "allVowels",
+   "inputs": {
+    "s_len": 12,
+    "s": [
+     101,
+     100,
+     117,
+     99,
+     97,
+     116,
+     105,
+     111,
+     110,
+     49,
+     50,
+     51
+    ]
+   },
+   "expected": "found == 1"
+  },
+  {
+   "name": "case_2",
+   "function": "allVowels",
+   "inputs": {
+    "s_len": 5,
+    "s": [
+     65,
+     69,
+     73,
+     79,
+     85
+    ]
+   },
+   "expected": "found == 1"
+  },
+  {
+   "name": "case_3",
+   "function": "allVowels",
+   "inputs": {
+    "s_len": 5,
+    "s": [
+     104,
+     101,
+     108,
+     108,
+     111
+    ]
+   },
+   "expected": "found == 0"
+  },
+  {
+   "name": "case_4",
+   "function": "allVowels",
+   "inputs": {
+    "s_len": 0,
+    "s": []
+   },
+   "expected": "found == 0"
+  },
+  {
+   "name": "case_5",
+   "function": "allVowels",
+   "inputs": {
+    "s_len": 18,
+    "s": [
+     97,
+     112,
+     112,
+     108,
+     101,
+     32,
+     111,
+     114,
+     97,
+     110,
+     103,
+     101,
+     32,
+     117,
+     110,
+     105,
+     111,
+     110
+    ]
+   },
+   "expected": "found == 1"
+  }
+ ]
+}

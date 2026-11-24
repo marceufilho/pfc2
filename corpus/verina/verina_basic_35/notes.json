@@ -1,0 +1,12 @@
+{
+  "id": "verina_basic_35",
+  "stated": "none",
+  "dropped": [
+    "result is a permutation of arr",
+    "the prefix before the first zero equals the non-zero elements of arr in order (filter)",
+    "the rest equals the zero elements (filter)"
+  ],
+  "weakened": [],
+  "verdict": "certified at full",
+  "remarks": "Only the consequence result.size = arr.size is stated. requires(X_len >= 0) was added for the listed lengths: the `a[a_len]` spelling does not give the checker 0 <= length (a length is a Nat)."
+}

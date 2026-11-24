@@ -1,0 +1,13 @@
+{
+  "id": "verina_basic_89",
+  "stated": "none",
+  "dropped": [
+    "every element of result is in s (membership, a quantifier over elements)",
+    "every element of s is in result (membership)",
+    "every element of result has count 1 (a count)",
+    "Pairwise order condition on idxOf (a quantifier over pairs and a recursive definition)"
+  ],
+  "weakened": [],
+  "verdict": "certified at full",
+  "remarks": "The order conjunct reads (idx_result a < idx_result b) -> (idx_s a < idx_s b) over pairs already ordered in result."
+}

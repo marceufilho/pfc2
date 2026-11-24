@@ -1,0 +1,58 @@
+{
+  "comment": "Generated from the task's test.json by corpus/verina-notes/interface.py: one case per test.",
+  "functions": {
+    "SwapSimultaneous": {
+      "result": "long",
+      "parameters": "long X, long Y",
+      "call": "SwapSimultaneous(X, Y, 8, out)",
+      "locals": "long out[8] = {0};"
+    }
+  },
+  "cases": [
+    {
+      "name": "case_0",
+      "function": "SwapSimultaneous",
+      "inputs": {
+        "X": 3,
+        "Y": 4
+      },
+      "expected": "out[0] == 4 && out[1] == 3"
+    },
+    {
+      "name": "case_1",
+      "function": "SwapSimultaneous",
+      "inputs": {
+        "X": -10,
+        "Y": 20
+      },
+      "expected": "out[0] == 20 && out[1] == -10"
+    },
+    {
+      "name": "case_2",
+      "function": "SwapSimultaneous",
+      "inputs": {
+        "X": 0,
+        "Y": 0
+      },
+      "expected": "out[0] == 0 && out[1] == 0"
+    },
+    {
+      "name": "case_3",
+      "function": "SwapSimultaneous",
+      "inputs": {
+        "X": 123,
+        "Y": -456
+      },
+      "expected": "out[0] == -456 && out[1] == 123"
+    },
+    {
+      "name": "case_4",
+      "function": "SwapSimultaneous",
+      "inputs": {
+        "X": -1,
+        "Y": -2
+      },
+      "expected": "out[0] == -2 && out[1] == -1"
+    }
+  ]
+}

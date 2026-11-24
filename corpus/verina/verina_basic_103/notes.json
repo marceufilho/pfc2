@@ -1,0 +1,10 @@
+{
+  "id": "verina_basic_103",
+  "stated": "part",
+  "dropped": [
+    "every other element is unchanged (quantifier)"
+  ],
+  "weakened": [],
+  "verdict": "certified at memory",
+  "remarks": ""
+}

@@ -1,0 +1,82 @@
+{
+  "comment": "Generated from the task's test.json by corpus/verina-notes/interface.py: one case per test.",
+  "functions": {
+    "firstEvenOddDifference": {
+      "result": "long",
+      "parameters": "long a_len, const long a[a_len]",
+      "call": "firstEvenOddDifference(a_len, a)"
+    }
+  },
+  "cases": [
+    {
+      "name": "case_0",
+      "function": "firstEvenOddDifference",
+      "inputs": {
+        "a_len": 4,
+        "a": [
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "expected": "found == -1"
+    },
+    {
+      "name": "case_1",
+      "function": "firstEvenOddDifference",
+      "inputs": {
+        "a_len": 4,
+        "a": [
+          1,
+          4,
+          6,
+          8
+        ]
+      },
+      "expected": "found == 3"
+    },
+    {
+      "name": "case_2",
+      "function": "firstEvenOddDifference",
+      "inputs": {
+        "a_len": 4,
+        "a": [
+          7,
+          2,
+          9,
+          4
+        ]
+      },
+      "expected": "found == -5"
+    },
+    {
+      "name": "case_3",
+      "function": "firstEvenOddDifference",
+      "inputs": {
+        "a_len": 4,
+        "a": [
+          2,
+          2,
+          3,
+          3
+        ]
+      },
+      "expected": "found == -1"
+    },
+    {
+      "name": "case_4",
+      "function": "firstEvenOddDifference",
+      "inputs": {
+        "a_len": 4,
+        "a": [
+          1,
+          1,
+          2,
+          2
+        ]
+      },
+      "expected": "found == 1"
+    }
+  ]
+}

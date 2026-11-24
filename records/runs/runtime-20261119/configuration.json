@@ -1,0 +1,65 @@
+{
+  "experiment": "runtime",
+  "provenance": {
+    "clang": "Ubuntu clang version 19.1.1 (1ubuntu1~24.04.2)",
+    "commit": null,
+    "experiment": "runtime",
+    "seed": 100000,
+    "solver_version": "5.3.3.0",
+    "tag": null,
+    "timestamp": "2026-11-19T18:22:05+00:00",
+    "vc_model": "vc-v4: mathematical integers on defined C executions; target limits not instantiated; shared typed memory; typed reads are representable; substantive obligations; entry consistency"
+  },
+  "settings": {
+    "blocks": 3,
+    "candidate": "pfc2-v3",
+    "candidate_intact": true,
+    "candidate_protected_sha256": "115f5ad6dbdb0c48c71bbf72678c84b2eb89fba0220c026039f7db6cc835b6ee",
+    "compiler": "clang-19",
+    "conditions_at_start": {
+      "governor": "powersave",
+      "instruction_counter": null,
+      "load_average": [
+        10.74,
+        10.59,
+        10.64
+      ],
+      "processors": 12
+    },
+    "cpu": 11,
+    "elements": 16777216,
+    "label": "exploratory",
+    "level": "memory",
+    "programs": [
+      "thesis-sum",
+      "thesis-dot",
+      "thesis-saxpy",
+      "thesis-prefix_sum",
+      "thesis-matvec",
+      "thesis-binary_search",
+      "thesis-accumulate",
+      "thesis-copy",
+      "thesis-count",
+      "thesis-fill",
+      "thesis-find",
+      "thesis-replace",
+      "thesis-reverse",
+      "thesis-swap_ranges",
+      "example-fill",
+      "example-sum",
+      "example-binary_search",
+      "example-copy",
+      "example-play",
+      "example-handle",
+      "example-path_max",
+      "example-multiply",
+      "example-count_char",
+      "example-index_of",
+      "example-to_upper"
+    ],
+    "runs": 10,
+    "seed": 100000,
+    "smt_encoding": "z3-int-shared-memory-v2; C division truncates to zero; division by zero totalized to 0",
+    "warmups": 3
+  }
+}

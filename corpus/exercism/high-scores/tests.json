@@ -1,0 +1,196 @@
+{
+ "comment": "Each case is one assertion of the upstream test file, transcribed by hand: the inputs it passes and what it expects, stated on the port's interface. `found` is the value the function returns.",
+ "functions": {
+  "latest": {
+   "result": "long",
+   "parameters": "long n, const int scores[n]",
+   "call": "latest_score(n, scores)"
+  },
+  "personal_best": {
+   "result": "long",
+   "parameters": "long n, const int scores[n]",
+   "call": "best_score(n, scores)"
+  },
+  "top": {
+   "result": "long",
+   "parameters": "long n, const int scores[n]",
+   "call": "top_three(n, scores, 3, output)",
+   "locals": "int output[3] = {0, 0, 0};"
+  }
+ },
+ "cases": [
+  {
+   "name": "latest_score",
+   "function": "latest",
+   "inputs": {
+    "n": 4,
+    "scores": [
+     100,
+     0,
+     90,
+     30
+    ]
+   },
+   "expected": "found == 30"
+  },
+  {
+   "name": "personal_best",
+   "function": "personal_best",
+   "inputs": {
+    "n": 3,
+    "scores": [
+     40,
+     100,
+     70
+    ]
+   },
+   "expected": "found == 100"
+  },
+  {
+   "name": "personal_top_from_a_list_of_scores_length",
+   "function": "top",
+   "inputs": {
+    "n": 13,
+    "scores": [
+     10,
+     30,
+     90,
+     30,
+     100,
+     20,
+     10,
+     0,
+     30,
+     40,
+     40,
+     70,
+     70
+    ]
+   },
+   "expected": "found == 3"
+  },
+  {
+   "name": "personal_top_from_a_list_of_scores_scores",
+   "function": "top",
+   "inputs": {
+    "n": 13,
+    "scores": [
+     10,
+     30,
+     90,
+     30,
+     100,
+     20,
+     10,
+     0,
+     30,
+     40,
+     40,
+     70,
+     70
+    ]
+   },
+   "expected": "output[0] == 100 && output[1] == 90 && output[2] == 70"
+  },
+  {
+   "name": "personal_top_highest_to_lowest_length",
+   "function": "top",
+   "inputs": {
+    "n": 3,
+    "scores": [
+     20,
+     10,
+     30
+    ]
+   },
+   "expected": "found == 3"
+  },
+  {
+   "name": "personal_top_highest_to_lowest_scores",
+   "function": "top",
+   "inputs": {
+    "n": 3,
+    "scores": [
+     20,
+     10,
+     30
+    ]
+   },
+   "expected": "output[0] == 30 && output[1] == 20 && output[2] == 10"
+  },
+  {
+   "name": "personal_top_when_there_is_a_tie_length",
+   "function": "top",
+   "inputs": {
+    "n": 4,
+    "scores": [
+     40,
+     20,
+     40,
+     30
+    ]
+   },
+   "expected": "found == 3"
+  },
+  {
+   "name": "personal_top_when_there_is_a_tie_scores",
+   "function": "top",
+   "inputs": {
+    "n": 4,
+    "scores": [
+     40,
+     20,
+     40,
+     30
+    ]
+   },
+   "expected": "output[0] == 40 && output[1] == 40 && output[2] == 30"
+  },
+  {
+   "name": "personal_top_when_there_are_less_than_3_length",
+   "function": "top",
+   "inputs": {
+    "n": 2,
+    "scores": [
+     30,
+     70
+    ]
+   },
+   "expected": "found == 2"
+  },
+  {
+   "name": "personal_top_when_there_are_less_than_3_scores",
+   "function": "top",
+   "inputs": {
+    "n": 2,
+    "scores": [
+     30,
+     70
+    ]
+   },
+   "expected": "output[0] == 70 && output[1] == 30"
+  },
+  {
+   "name": "personal_top_when_there_is_only_one_length",
+   "function": "top",
+   "inputs": {
+    "n": 1,
+    "scores": [
+     40
+    ]
+   },
+   "expected": "found == 1"
+  },
+  {
+   "name": "personal_top_when_there_is_only_one_scores",
+   "function": "top",
+   "inputs": {
+    "n": 1,
+    "scores": [
+     40
+    ]
+   },
+   "expected": "output[0] == 40"
+  }
+ ]
+}

@@ -1,0 +1,73 @@
+{
+  "comment": "Generated from the task's test.json by corpus/verina-notes/interface.py: one case per test.",
+  "functions": {
+    "double_array_elements": {
+      "result": "long",
+      "parameters": "long s_len, const long s[s_len]",
+      "call": "double_array_elements(s_len, s, 16, out)",
+      "locals": "long out[16] = {0};"
+    }
+  },
+  "cases": [
+    {
+      "name": "case_0",
+      "function": "double_array_elements",
+      "inputs": {
+        "s_len": 0,
+        "s": []
+      },
+      "expected": "found == 0"
+    },
+    {
+      "name": "case_1",
+      "function": "double_array_elements",
+      "inputs": {
+        "s_len": 5,
+        "s": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "expected": "found == 5 && out[0] == 2 && out[1] == 4 && out[2] == 6 && out[3] == 8 && out[4] == 10"
+    },
+    {
+      "name": "case_2",
+      "function": "double_array_elements",
+      "inputs": {
+        "s_len": 3,
+        "s": [
+          0,
+          -1,
+          5
+        ]
+      },
+      "expected": "found == 3 && out[0] == 0 && out[1] == -2 && out[2] == 10"
+    },
+    {
+      "name": "case_3",
+      "function": "double_array_elements",
+      "inputs": {
+        "s_len": 1,
+        "s": [
+          100
+        ]
+      },
+      "expected": "found == 1 && out[0] == 200"
+    },
+    {
+      "name": "case_4",
+      "function": "double_array_elements",
+      "inputs": {
+        "s_len": 2,
+        "s": [
+          -3,
+          -4
+        ]
+      },
+      "expected": "found == 2 && out[0] == -6 && out[1] == -8"
+    }
+  ]
+}

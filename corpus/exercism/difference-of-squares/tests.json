@@ -1,0 +1,94 @@
+{
+ "comment": "Each case is one assertion of the upstream test file, transcribed by hand: the inputs it passes and what it expects, stated on the port's interface. `found` is the value the function returns.",
+ "functions": {
+  "square_of_sum": {
+   "result": "long",
+   "parameters": "long number",
+   "call": "sum_squared(number)"
+  },
+  "sum_of_squares": {
+   "result": "long",
+   "parameters": "long number",
+   "call": "squares_sum(number)"
+  },
+  "difference": {
+   "result": "long",
+   "parameters": "long number",
+   "call": "squares_difference(number)"
+  }
+ },
+ "cases": [
+  {
+   "name": "square_of_sum_1",
+   "function": "square_of_sum",
+   "inputs": {
+    "number": 1
+   },
+   "expected": "found == 1"
+  },
+  {
+   "name": "square_of_sum_5",
+   "function": "square_of_sum",
+   "inputs": {
+    "number": 5
+   },
+   "expected": "found == 225"
+  },
+  {
+   "name": "square_of_sum_100",
+   "function": "square_of_sum",
+   "inputs": {
+    "number": 100
+   },
+   "expected": "found == 25502500"
+  },
+  {
+   "name": "sum_of_squares_1",
+   "function": "sum_of_squares",
+   "inputs": {
+    "number": 1
+   },
+   "expected": "found == 1"
+  },
+  {
+   "name": "sum_of_squares_5",
+   "function": "sum_of_squares",
+   "inputs": {
+    "number": 5
+   },
+   "expected": "found == 55"
+  },
+  {
+   "name": "sum_of_squares_100",
+   "function": "sum_of_squares",
+   "inputs": {
+    "number": 100
+   },
+   "expected": "found == 338350"
+  },
+  {
+   "name": "difference_1",
+   "function": "difference",
+   "inputs": {
+    "number": 1
+   },
+   "expected": "found == 0"
+  },
+  {
+   "name": "difference_5",
+   "function": "difference",
+   "inputs": {
+    "number": 5
+   },
+   "expected": "found == 170"
+  },
+  {
+   "name": "difference_100",
+   "function": "difference",
+   "inputs": {
+    "number": 100
+   },
+   "expected": "found == 25164150"
+  }
+ ]
+}

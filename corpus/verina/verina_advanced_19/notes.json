@@ -1,0 +1,10 @@
+{
+  "id": "verina_advanced_19",
+  "stated": "none",
+  "dropped": [
+    "postcond: normalised string equals / differs from its reverse (recursive filter/map, list equality)"
+  ],
+  "weakened": [],
+  "verdict": "certified at full",
+  "remarks": "requires(s_len >= 0) was added: with the parameter spelled X_len the checker does not assume 0 <= length (docs/02-language.md says the declaration states it); reported as outside the protocol's list unless a length counts as a Nat."
+}

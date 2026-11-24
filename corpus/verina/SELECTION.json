@@ -1,0 +1,2051 @@
+{
+ "source": "sunblaze-ucb/verina",
+ "commit": "66b3ce5014edafb20cb26b87c681e7f31847249f",
+ "note": "Every task of datasets/verina in the order of its identifier (amendments 19 and 21). `stage` says whether the generator of the interface or the porting step excluded the task; `detail` is the reason as first written. `fixes` counts changes made after a first failing run of the generated tests.",
+ "units": [
+  {
+   "slug": "verina_advanced_1",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_advanced_10",
+   "status": "excluded",
+   "exclusion": "X7",
+   "detail": "X7: result type List (Nat \u00d7 Nat) is outside the interface mapping",
+   "stage": "interface"
+  },
+  {
+   "slug": "verina_advanced_11",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_advanced_12",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P4",
+    "P5"
+   ],
+   "fixes": 0,
+   "requires": [
+    "out_cap >= 2"
+   ]
+  },
+  {
+   "slug": "verina_advanced_13",
+   "status": "excluded",
+   "exclusion": "X7",
+   "detail": "X7: parameter type List (List Nat) is outside the interface mapping",
+   "stage": "interface"
+  },
+  {
+   "slug": "verina_advanced_14",
+   "status": "ported",
+   "rules": [
+    "P1"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_advanced_15",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_advanced_16",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P3",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": [
+    "out_cap >= xs_len"
+   ]
+  },
+  {
+   "slug": "verina_advanced_17",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P3",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": [
+    "out_cap >= l_len"
+   ]
+  },
+  {
+   "slug": "verina_advanced_18",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P9"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_advanced_19",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P2",
+    "P7",
+    "P13"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_advanced_2",
+   "status": "excluded",
+   "exclusion": "X8",
+   "detail": "X2: the algorithm needs a scratch table whose size grows with the input length (longest common subsequence: a row of b_len + 1 cells), and the description gives no bound on the input that would justify a local array of a literal length; without the table the direct implementation is recursive (X4)",
+   "stage": "port",
+   "rule_text": "X8: needs a scratch array whose length depends on the length of an input; PFC2 has no allocation and the generated interface passes no scratch buffer"
+  },
+  {
+   "slug": "verina_advanced_20",
+   "status": "ported",
+   "rules": [
+    "P1"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_advanced_21",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P2"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_advanced_22",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_advanced_23",
+   "status": "ported",
+   "rules": [
+    "P1"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_advanced_24",
+   "status": "excluded",
+   "exclusion": "X8",
+   "detail": "X2: the algorithm needs a scratch table whose size grows with the input length (longest increasing subsequence: one cell per element), and the description gives no bound on the input that would justify a local array of a literal length; without the table the direct implementation is recursive (X4)",
+   "stage": "port",
+   "rule_text": "X8: needs a scratch array whose length depends on the length of an input; PFC2 has no allocation and the generated interface passes no scratch buffer"
+  },
+  {
+   "slug": "verina_advanced_25",
+   "status": "excluded",
+   "exclusion": "X8",
+   "detail": "X2: the algorithm needs a scratch table whose size grows with the input length (longest increasing subsequence: one cell per element), and the description gives no bound on the input that would justify a local array of a literal length; without the table the direct implementation is recursive (X4)",
+   "stage": "port",
+   "rule_text": "X8: needs a scratch array whose length depends on the length of an input; PFC2 has no allocation and the generated interface passes no scratch buffer"
+  },
+  {
+   "slug": "verina_advanced_26",
+   "status": "excluded",
+   "exclusion": "X7",
+   "detail": "X7: result type List String is outside the interface mapping",
+   "stage": "interface"
+  },
+  {
+   "slug": "verina_advanced_27",
+   "status": "excluded",
+   "exclusion": "X8",
+   "detail": "X2: the algorithm needs a scratch table whose size grows with the input length (longest common subsequence with reconstruction: a table of (s1_len + 1) x (s2_len + 1) cells; out has room for the result only), and the description gives no bound on the input that would justify a local array of a literal length; without the table the direct implementation is recursive (X4)",
+   "stage": "port",
+   "rule_text": "X8: needs a scratch array whose length depends on the length of an input; PFC2 has no allocation and the generated interface passes no scratch buffer"
+  },
+  {
+   "slug": "verina_advanced_28",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_advanced_29",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_advanced_3",
+   "status": "excluded",
+   "exclusion": "X8",
+   "detail": "X2: the algorithm needs a scratch table whose size grows with the input length (longest common subsequence: a row of b_len + 1 cells), and the description gives no bound on the input that would justify a local array of a literal length; without the table the direct implementation is recursive (X4)",
+   "stage": "port",
+   "rule_text": "X8: needs a scratch array whose length depends on the length of an input; PFC2 has no allocation and the generated interface passes no scratch buffer"
+  },
+  {
+   "slug": "verina_advanced_30",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_advanced_31",
+   "status": "excluded",
+   "exclusion": "X8",
+   "detail": "X2: the algorithm needs a scratch table whose size grows with the input length (longest increasing subsequence: one cell per element), and the description gives no bound on the input that would justify a local array of a literal length; without the table the direct implementation is recursive (X4)",
+   "stage": "port",
+   "rule_text": "X8: needs a scratch array whose length depends on the length of an input; PFC2 has no allocation and the generated interface passes no scratch buffer"
+  },
+  {
+   "slug": "verina_advanced_32",
+   "status": "excluded",
+   "exclusion": "X8",
+   "detail": "X2: the algorithm needs a scratch table whose size grows with the input length (longest increasing subsequence: one cell per element), and the description gives no bound on the input that would justify a local array of a literal length; without the table the direct implementation is recursive (X4)",
+   "stage": "port",
+   "rule_text": "X8: needs a scratch array whose length depends on the length of an input; PFC2 has no allocation and the generated interface passes no scratch buffer"
+  },
+  {
+   "slug": "verina_advanced_33",
+   "status": "excluded",
+   "exclusion": "X8",
+   "detail": "X2: the algorithm needs a scratch table whose size grows with the input length (longest increasing subsequence: one cell per element), and the description gives no bound on the input that would justify a local array of a literal length; without the table the direct implementation is recursive (X4)",
+   "stage": "port",
+   "rule_text": "X8: needs a scratch array whose length depends on the length of an input; PFC2 has no allocation and the generated interface passes no scratch buffer"
+  },
+  {
+   "slug": "verina_advanced_34",
+   "status": "excluded",
+   "exclusion": "X8",
+   "detail": "X2: the algorithm needs a scratch table whose size grows with the input length (longest increasing subsequence: one cell per element), and the description gives no bound on the input that would justify a local array of a literal length; without the table the direct implementation is recursive (X4)",
+   "stage": "port",
+   "rule_text": "X8: needs a scratch array whose length depends on the length of an input; PFC2 has no allocation and the generated interface passes no scratch buffer"
+  },
+  {
+   "slug": "verina_advanced_35",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_advanced_36",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_advanced_37",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_advanced_38",
+   "status": "excluded",
+   "exclusion": "X7",
+   "detail": "X7: parameter type List (Prod Nat Nat) is outside the interface mapping",
+   "stage": "interface"
+  },
+  {
+   "slug": "verina_advanced_39",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": [
+    "lst_len > 0"
+   ]
+  },
+  {
+   "slug": "verina_advanced_4",
+   "status": "excluded",
+   "exclusion": "X8",
+   "detail": "X2: the algorithm needs a scratch table whose size grows with the input length (longest increasing subsequence: one cell per element), and the description gives no bound on the input that would justify a local array of a literal length; without the table the direct implementation is recursive (X4)",
+   "stage": "port",
+   "rule_text": "X8: needs a scratch array whose length depends on the length of an input; PFC2 has no allocation and the generated interface passes no scratch buffer"
+  },
+  {
+   "slug": "verina_advanced_40",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": [
+    "lst_len > 0"
+   ]
+  },
+  {
+   "slug": "verina_advanced_41",
+   "status": "ported",
+   "rules": [
+    "P1"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_advanced_42",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_advanced_43",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_advanced_44",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": [
+    "k > 0"
+   ]
+  },
+  {
+   "slug": "verina_advanced_45",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_advanced_46",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_advanced_47",
+   "status": "excluded",
+   "exclusion": "X7",
+   "detail": "X7: parameter type List (Prod Int Int) is outside the interface mapping",
+   "stage": "interface"
+  },
+  {
+   "slug": "verina_advanced_48",
+   "status": "excluded",
+   "exclusion": "X8",
+   "detail": "X4: the description asks for merge sort as a recursive divide and conquer, which is not a loop in disguise; the iterative bottom-up form would need a scratch buffer as long as the input, whose length the description does not bound (X2)",
+   "stage": "port",
+   "rule_text": "X8: needs a scratch array whose length depends on the length of an input; PFC2 has no allocation and the generated interface passes no scratch buffer"
+  },
+  {
+   "slug": "verina_advanced_49",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P3",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": [
+    "out_cap >= arr1_len + arr2_len"
+   ]
+  },
+  {
+   "slug": "verina_advanced_5",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P3",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": [
+    "out_cap > l1_len && out_cap > l2_len"
+   ]
+  },
+  {
+   "slug": "verina_advanced_50",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P3",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": [
+    "out_cap >= a1_len + a2_len"
+   ]
+  },
+  {
+   "slug": "verina_advanced_51",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P3",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": [
+    "out_cap >= a_len + b_len"
+   ]
+  },
+  {
+   "slug": "verina_advanced_52",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P4"
+   ],
+   "fixes": 1,
+   "requires": []
+  },
+  {
+   "slug": "verina_advanced_53",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_advanced_54",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_advanced_55",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_advanced_56",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P3",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": [
+    "out_cap >= xs_len"
+   ]
+  },
+  {
+   "slug": "verina_advanced_57",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P3",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": [
+    "out_cap >= nums1_len"
+   ]
+  },
+  {
+   "slug": "verina_advanced_58",
+   "status": "ported",
+   "rules": [
+    "P1"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_advanced_59",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P2",
+    "P7",
+    "P13"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_advanced_6",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P2"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_advanced_60",
+   "status": "excluded",
+   "exclusion": "X7",
+   "detail": "X7: result type (List Nat \u00d7 List Nat) is outside the interface mapping",
+   "stage": "interface"
+  },
+  {
+   "slug": "verina_advanced_61",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P3",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": [
+    "out_cap >= nums_len"
+   ]
+  },
+  {
+   "slug": "verina_advanced_62",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_advanced_63",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_advanced_64",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P3",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": [
+    "out_cap >= lst_len"
+   ]
+  },
+  {
+   "slug": "verina_advanced_65",
+   "status": "ported",
+   "rules": [
+    "P2",
+    "P3",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": [
+    "out_cap >= s_len"
+   ]
+  },
+  {
+   "slug": "verina_advanced_66",
+   "status": "ported",
+   "rules": [
+    "P2",
+    "P3",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": [
+    "out_cap >= words_str_len"
+   ]
+  },
+  {
+   "slug": "verina_advanced_67",
+   "status": "excluded",
+   "exclusion": "X7",
+   "detail": "X7: result type List (Char \u00d7 Nat) is outside the interface mapping",
+   "stage": "interface"
+  },
+  {
+   "slug": "verina_advanced_68",
+   "status": "ported",
+   "rules": [
+    "P2",
+    "P3",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": [
+    "out_cap >= 2 * input_len"
+   ]
+  },
+  {
+   "slug": "verina_advanced_69",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_advanced_7",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_advanced_70",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_advanced_71",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P2",
+    "P3",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": [
+    "out_cap >= s_len"
+   ]
+  },
+  {
+   "slug": "verina_advanced_72",
+   "status": "ported",
+   "rules": [
+    "P1"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_advanced_73",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_advanced_74",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_advanced_75",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": [
+    "sequence_len >= 1"
+   ]
+  },
+  {
+   "slug": "verina_advanced_76",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P3",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": [
+    "out_cap >= k"
+   ]
+  },
+  {
+   "slug": "verina_advanced_77",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_advanced_78",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P3",
+    "P4",
+    "P5"
+   ],
+   "fixes": 0,
+   "requires": [
+    "out_cap >= 2"
+   ]
+  },
+  {
+   "slug": "verina_advanced_79",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P3",
+    "P4",
+    "P5"
+   ],
+   "fixes": 0,
+   "requires": [
+    "out_cap >= 3"
+   ]
+  },
+  {
+   "slug": "verina_advanced_8",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": [
+    "gas_len == cost_len"
+   ]
+  },
+  {
+   "slug": "verina_advanced_80",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P3",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": [
+    "out_cap >= 2"
+   ]
+  },
+  {
+   "slug": "verina_advanced_81",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P3",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": [
+    "out_cap >= arr_len"
+   ]
+  },
+  {
+   "slug": "verina_advanced_9",
+   "status": "ported",
+   "rules": [
+    "P1"
+   ],
+   "fixes": 0,
+   "requires": [
+    "n >= 0",
+    "d > 0"
+   ]
+  },
+  {
+   "slug": "verina_basic_1",
+   "status": "ported",
+   "rules": [
+    "P1"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_basic_10",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_basic_100",
+   "status": "ported",
+   "rules": [
+    "P1"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_basic_101",
+   "status": "ported",
+   "rules": [
+    "P1"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_basic_102",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P4",
+    "P5"
+   ],
+   "fixes": 0,
+   "requires": [
+    "out_cap >= 2"
+   ]
+  },
+  {
+   "slug": "verina_basic_103",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P3",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": [
+    "a_len >= 8",
+    "out_cap >= a_len"
+   ]
+  },
+  {
+   "slug": "verina_basic_104",
+   "status": "excluded",
+   "exclusion": "X7",
+   "detail": "X7: parameter type Map Int Int is outside the interface mapping",
+   "stage": "interface"
+  },
+  {
+   "slug": "verina_basic_105",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P3",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": [
+    "out_cap >= a_len"
+   ]
+  },
+  {
+   "slug": "verina_basic_106",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P3",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": [
+    "a_len == b_len",
+    "out_cap >= a_len"
+   ]
+  },
+  {
+   "slug": "verina_basic_107",
+   "status": "ported",
+   "rules": [
+    "P1"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_basic_108",
+   "status": "excluded",
+   "exclusion": "X7",
+   "detail": "X7: result type (Array Int \u00d7 Bool) is outside the interface mapping",
+   "stage": "interface"
+  },
+  {
+   "slug": "verina_basic_11",
+   "status": "ported",
+   "rules": [
+    "P1"
+   ],
+   "fixes": 0,
+   "requires": [
+    "n >= 0"
+   ]
+  },
+  {
+   "slug": "verina_basic_12",
+   "status": "ported",
+   "rules": [
+    "P1"
+   ],
+   "fixes": 0,
+   "requires": [
+    "size >= 0"
+   ]
+  },
+  {
+   "slug": "verina_basic_13",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P3",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": [
+    "out_cap >= a_len"
+   ]
+  },
+  {
+   "slug": "verina_basic_14",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P2"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_basic_15",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_basic_16",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P2",
+    "P3"
+   ],
+   "fixes": 0,
+   "requires": [
+    "out_cap >= s_len"
+   ]
+  },
+  {
+   "slug": "verina_basic_17",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P2",
+    "P3",
+    "P7"
+   ],
+   "fixes": 0,
+   "requires": [
+    "out_cap >= s_len"
+   ]
+  },
+  {
+   "slug": "verina_basic_18",
+   "status": "ported",
+   "rules": [
+    "P1"
+   ],
+   "fixes": 0,
+   "requires": [
+    "n >= 0"
+   ]
+  },
+  {
+   "slug": "verina_basic_19",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_basic_2",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P4",
+    "P5"
+   ],
+   "fixes": 0,
+   "requires": [
+    "out_cap >= 2"
+   ]
+  },
+  {
+   "slug": "verina_basic_20",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_basic_21",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_basic_22",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P3",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": [
+    "out_cap >= a_len + b_len"
+   ]
+  },
+  {
+   "slug": "verina_basic_23",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": [
+    "a_len >= 1"
+   ]
+  },
+  {
+   "slug": "verina_basic_24",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_basic_25",
+   "status": "excluded",
+   "exclusion": "X1",
+   "detail": "X1: needs floating point",
+   "stage": "interface"
+  },
+  {
+   "slug": "verina_basic_26",
+   "status": "ported",
+   "rules": [
+    "P1"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_basic_27",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P2",
+    "P5"
+   ],
+   "fixes": 0,
+   "requires": [
+    "out_cap >= 2"
+   ]
+  },
+  {
+   "slug": "verina_basic_28",
+   "status": "ported",
+   "rules": [
+    "P1"
+   ],
+   "fixes": 0,
+   "requires": [
+    "n >= 2"
+   ]
+  },
+  {
+   "slug": "verina_basic_29",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P3",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": [
+    "0 <= k && k < s_len",
+    "out_cap >= s_len - 1"
+   ]
+  },
+  {
+   "slug": "verina_basic_3",
+   "status": "ported",
+   "rules": [
+    "P1"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_basic_30",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P3",
+    "P4"
+   ],
+   "fixes": 1,
+   "requires": [
+    "a_len == b_len",
+    "out_cap >= a_len"
+   ]
+  },
+  {
+   "slug": "verina_basic_31",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P2",
+    "P3",
+    "P7"
+   ],
+   "fixes": 0,
+   "requires": [
+    "out_cap >= s_len"
+   ]
+  },
+  {
+   "slug": "verina_basic_32",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P3",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": [
+    "a_len >= 1",
+    "out_cap >= a_len"
+   ]
+  },
+  {
+   "slug": "verina_basic_33",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_basic_34",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P3",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": [
+    "out_cap >= arr_len"
+   ]
+  },
+  {
+   "slug": "verina_basic_35",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P3",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": [
+    "out_cap >= arr_len"
+   ]
+  },
+  {
+   "slug": "verina_basic_36",
+   "status": "ported",
+   "rules": [
+    "P2",
+    "P3",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": [
+    "out_cap >= s_len"
+   ]
+  },
+  {
+   "slug": "verina_basic_37",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_basic_38",
+   "status": "ported",
+   "rules": [
+    "P2",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_basic_39",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P3",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": [
+    "n >= 0",
+    "out_cap >= l_len"
+   ]
+  },
+  {
+   "slug": "verina_basic_4",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": [
+    "1 <= k && k <= arr_len"
+   ]
+  },
+  {
+   "slug": "verina_basic_40",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": [
+    "s_len >= 2"
+   ]
+  },
+  {
+   "slug": "verina_basic_41",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_basic_42",
+   "status": "ported",
+   "rules": [
+    "P2",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_basic_43",
+   "status": "ported",
+   "rules": [
+    "P1"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_basic_44",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_basic_45",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_basic_46",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_basic_47",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_basic_48",
+   "status": "ported",
+   "rules": [
+    "P1"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_basic_49",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P4",
+    "P5"
+   ],
+   "fixes": 0,
+   "requires": [
+    "out_cap >= 2"
+   ]
+  },
+  {
+   "slug": "verina_basic_5",
+   "status": "ported",
+   "rules": [
+    "P1"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_basic_50",
+   "status": "ported",
+   "rules": [
+    "P1"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_basic_51",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_basic_52",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P3",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": [
+    "out_cap >= a_len"
+   ]
+  },
+  {
+   "slug": "verina_basic_53",
+   "status": "ported",
+   "rules": [
+    "P1"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_basic_54",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": [
+    "a_len >= 1",
+    "b_len >= 1"
+   ]
+  },
+  {
+   "slug": "verina_basic_55",
+   "status": "ported",
+   "rules": [
+    "P1"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_basic_56",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P3",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": [
+    "sStart >= 0",
+    "dStart >= 0",
+    "len >= 0",
+    "sStart + len <= src_len",
+    "dStart + len <= dest_len",
+    "out_cap >= dest_len"
+   ]
+  },
+  {
+   "slug": "verina_basic_57",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_basic_58",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P3",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": [
+    "out_cap >= s_len"
+   ]
+  },
+  {
+   "slug": "verina_basic_59",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P5"
+   ],
+   "fixes": 0,
+   "requires": [
+    "out_cap >= 2"
+   ]
+  },
+  {
+   "slug": "verina_basic_6",
+   "status": "ported",
+   "rules": [
+    "P1"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_basic_60",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P3",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": [
+    "out_cap >= arr_len"
+   ]
+  },
+  {
+   "slug": "verina_basic_61",
+   "status": "ported",
+   "rules": [
+    "P2",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_basic_62",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_basic_63",
+   "status": "excluded",
+   "exclusion": "X1",
+   "detail": "X1: needs floating point",
+   "stage": "interface"
+  },
+  {
+   "slug": "verina_basic_64",
+   "status": "ported",
+   "rules": [
+    "P2",
+    "P3",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": [
+    "0 <= atPos && atPos <= l",
+    "l <= oline_len",
+    "0 <= p && p <= nl_len",
+    "out_cap >= l + p"
+   ]
+  },
+  {
+   "slug": "verina_basic_65",
+   "status": "ported",
+   "rules": [
+    "P1"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_basic_66",
+   "status": "ported",
+   "rules": [
+    "P1"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_basic_67",
+   "status": "excluded",
+   "exclusion": "X7",
+   "detail": "X7: no test of the task can be written on the interface",
+   "stage": "interface"
+  },
+  {
+   "slug": "verina_basic_68",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_basic_69",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_basic_7",
+   "status": "ported",
+   "rules": [
+    "P1"
+   ],
+   "fixes": 0,
+   "requires": [
+    "n >= 0"
+   ]
+  },
+  {
+   "slug": "verina_basic_70",
+   "status": "excluded",
+   "exclusion": "X4",
+   "detail": "X4: needs a function parameter",
+   "stage": "interface"
+  },
+  {
+   "slug": "verina_basic_71",
+   "status": "ported",
+   "rules": [
+    "P2",
+    "P3",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": [
+    "out_cap >= str1_len"
+   ]
+  },
+  {
+   "slug": "verina_basic_72",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P3",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": [
+    "out_cap >= a_len + 1"
+   ]
+  },
+  {
+   "slug": "verina_basic_73",
+   "status": "ported",
+   "rules": [
+    "P2",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_basic_74",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": [
+    "a_len >= 1"
+   ]
+  },
+  {
+   "slug": "verina_basic_75",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": [
+    "a_len >= 1"
+   ]
+  },
+  {
+   "slug": "verina_basic_76",
+   "status": "ported",
+   "rules": [
+    "P1"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_basic_77",
+   "status": "excluded",
+   "exclusion": "X7",
+   "detail": "X7: parameter type Array (Array Nat) is outside the interface mapping",
+   "stage": "interface"
+  },
+  {
+   "slug": "verina_basic_78",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P5"
+   ],
+   "fixes": 0,
+   "requires": [
+    "out_cap >= 2"
+   ]
+  },
+  {
+   "slug": "verina_basic_79",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P4",
+    "P5"
+   ],
+   "fixes": 0,
+   "requires": [
+    "1 <= x && x < a_len",
+    "out_cap >= 2"
+   ]
+  },
+  {
+   "slug": "verina_basic_8",
+   "status": "ported",
+   "rules": [
+    "P1"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_basic_80",
+   "status": "excluded",
+   "exclusion": "X7",
+   "detail": "X7: no test of the task can be written on the interface",
+   "stage": "interface"
+  },
+  {
+   "slug": "verina_basic_81",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P5"
+   ],
+   "fixes": 0,
+   "requires": [
+    "x >= 0",
+    "y >= 0",
+    "out_cap >= 2"
+   ]
+  },
+  {
+   "slug": "verina_basic_82",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P3",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": [
+    "a_len >= 1",
+    "out_cap >= a_len - 1"
+   ]
+  },
+  {
+   "slug": "verina_basic_83",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P3",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": [
+    "out_cap >= a_len + b_len"
+   ]
+  },
+  {
+   "slug": "verina_basic_84",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P3",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": [
+    "out_cap >= arr_len"
+   ]
+  },
+  {
+   "slug": "verina_basic_85",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P3",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": [
+    "out_cap >= a_len"
+   ]
+  },
+  {
+   "slug": "verina_basic_86",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P3",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": [
+    "offset >= 0",
+    "out_cap >= a_len"
+   ]
+  },
+  {
+   "slug": "verina_basic_87",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P3",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": [
+    "out_cap >= a_len"
+   ]
+  },
+  {
+   "slug": "verina_basic_88",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P3",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": [
+    "out_cap >= xs_len"
+   ]
+  },
+  {
+   "slug": "verina_basic_89",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P3",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": [
+    "out_cap >= s_len"
+   ]
+  },
+  {
+   "slug": "verina_basic_9",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_basic_90",
+   "status": "excluded",
+   "exclusion": "X7",
+   "detail": "X7: parameter type Array (Array Int) is outside the interface mapping",
+   "stage": "interface"
+  },
+  {
+   "slug": "verina_basic_91",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P5"
+   ],
+   "fixes": 0,
+   "requires": [
+    "out_cap >= 2"
+   ]
+  },
+  {
+   "slug": "verina_basic_92",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P5"
+   ],
+   "fixes": 0,
+   "requires": [
+    "out_cap >= 2"
+   ]
+  },
+  {
+   "slug": "verina_basic_93",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P5"
+   ],
+   "fixes": 0,
+   "requires": [
+    "out_cap >= 2"
+   ]
+  },
+  {
+   "slug": "verina_basic_94",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P3",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": [
+    "out_cap >= s_len"
+   ]
+  },
+  {
+   "slug": "verina_basic_95",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P3",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": [
+    "0 <= i && i < arr_len",
+    "0 <= j && j < arr_len",
+    "out_cap >= arr_len"
+   ]
+  },
+  {
+   "slug": "verina_basic_96",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P5"
+   ],
+   "fixes": 0,
+   "requires": [
+    "out_cap >= 2"
+   ]
+  },
+  {
+   "slug": "verina_basic_97",
+   "status": "ported",
+   "rules": [
+    "P1",
+    "P3",
+    "P4"
+   ],
+   "fixes": 0,
+   "requires": [
+    "0 <= j && j < a_len",
+    "out_cap >= a_len"
+   ]
+  },
+  {
+   "slug": "verina_basic_98",
+   "status": "ported",
+   "rules": [
+    "P1"
+   ],
+   "fixes": 0,
+   "requires": []
+  },
+  {
+   "slug": "verina_basic_99",
+   "status": "ported",
+   "rules": [
+    "P1"
+   ],
+   "fixes": 0,
+   "requires": []
+  }
+ ]
+}

@@ -1,0 +1,1 @@
+{"id": "verina_advanced_24", "excluded": "X2: the algorithm needs a scratch table whose size grows with the input length (longest increasing subsequence: one cell per element), and the description gives no bound on the input that would justify a local array of a literal length; without the table the direct implementation is recursive (X4)"}

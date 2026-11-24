@@ -1,0 +1,11 @@
+{
+  "id": "verina_basic_28",
+  "stated": "part",
+  "dropped": [
+    "result -> no k in [2, n) divides n (all over a range)",
+    "not result -> some k in [2, n) divides n (any over a range)"
+  ],
+  "weakened": [],
+  "verdict": "certified at full",
+  "remarks": "Precondition n >= 2 stated (already in the port); result is 0 or 1. Note: the postcondition's List.range' 2 (n - 2) is exactly the port's range 2..n-1."
+}

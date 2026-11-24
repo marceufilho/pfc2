@@ -1,0 +1,8 @@
+{
+  "candidate": "pfc2-v3",
+  "files": {
+    "protected": 45,
+    "baseline": 132
+  },
+  "format": "sha256sum"
+}

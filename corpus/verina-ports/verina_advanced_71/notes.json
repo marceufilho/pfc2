@@ -1,0 +1,1 @@
+{"id": "verina_advanced_71", "rules": ["P1", "P2", "P3", "P4"], "requires": ["out_cap >= s_len"], "fixes": 0, "remarks": "Test case 7 (s = \"1001\", k = 0) expects \"0\": the empty substring, which has zero ones and is shorter, is not a candidate, so only non-empty substrings are considered (the description does not say so)."}

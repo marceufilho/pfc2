@@ -1,0 +1,11 @@
+{
+ "id": "verina_advanced_69",
+ "stated": "part",
+ "dropped": [
+  "precondition: xs strictly increasing (quantifier over pairs)",
+  "every element before result is smaller than target (quantifier); only its last instance, xs[result - 1] < target, is stated"
+ ],
+ "weakened": [],
+ "verdict": "certified at full",
+ "remarks": "Stated: result <= length, and target <= xs[result] when result < length. The length parameters are named X_len, which the checker reads in the older spelling without assuming 0 <= X_len; requires(0 <= X_len) states it (a list length is a Nat)."
+}

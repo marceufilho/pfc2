@@ -1,0 +1,52 @@
+{
+ "comment": "Each case is one assertion of the upstream test file, transcribed by hand: the inputs it passes and what it expects, stated on the port's interface. `found` is the value the function returns.",
+ "functions": {
+  "nth": {
+   "result": "long",
+   "parameters": "long n",
+   "call": "nth_prime(n)"
+  }
+ },
+ "cases": [
+  {
+   "name": "first_prime",
+   "function": "nth",
+   "inputs": {
+    "n": 1
+   },
+   "expected": "found == 2"
+  },
+  {
+   "name": "second_prime",
+   "function": "nth",
+   "inputs": {
+    "n": 2
+   },
+   "expected": "found == 3"
+  },
+  {
+   "name": "sixth_prime",
+   "function": "nth",
+   "inputs": {
+    "n": 6
+   },
+   "expected": "found == 13"
+  },
+  {
+   "name": "big_prime",
+   "function": "nth",
+   "inputs": {
+    "n": 10001
+   },
+   "expected": "found == 104743"
+  },
+  {
+   "name": "there_is_no_zeroth_prime",
+   "function": "nth",
+   "inputs": {
+    "n": 0
+   },
+   "expected": "found == 0"
+  }
+ ]
+}

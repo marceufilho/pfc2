@@ -1,0 +1,43 @@
+{
+  "experiment": "verifier",
+  "provenance": {
+    "clang": "Ubuntu clang version 19.1.1 (1ubuntu1~24.04.2)",
+    "commit": null,
+    "experiment": "verifier",
+    "seed": 0,
+    "solver_version": "5.3.3.0",
+    "tag": null,
+    "timestamp": "2026-11-19T16:20:57+00:00",
+    "vc_model": "vc-v4: mathematical integers on defined C executions; target limits not instantiated; shared typed memory; typed reads are representable; substantive obligations; entry consistency"
+  },
+  "settings": {
+    "candidate": "pfc2-v3",
+    "candidate_intact": true,
+    "candidate_protected_sha256": "115f5ad6dbdb0c48c71bbf72678c84b2eb89fba0220c026039f7db6cc835b6ee",
+    "cases": 29,
+    "compiler": "clang-19",
+    "controls": 6,
+    "image": "framac/frama-c@sha256:4f0b7a2bd600c4daabfdcdfa393a3c18301e0db18f3b2739f1d9650193462d36",
+    "level": "full",
+    "options": [
+      "-machdep",
+      "x86_64",
+      "-wp",
+      "-wp-model",
+      "Typed",
+      "-wp-rte",
+      "-warn-signed-downcast",
+      "-wp-smoke-tests",
+      "-wp-prover",
+      "alt-ergo",
+      "-wp-timeout",
+      "10",
+      "-wp-smoke-timeout",
+      "2",
+      "-wp-par",
+      "2"
+    ],
+    "seed": 0,
+    "smt_encoding": "z3-int-shared-memory-v2; C division truncates to zero; division by zero totalized to 0"
+  }
+}

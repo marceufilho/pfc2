@@ -1,0 +1,80 @@
+{
+  "comment": "Generated from the task's test.json by corpus/verina-notes/interface.py: one case per test.",
+  "functions": {
+    "SelectionSort": {
+      "result": "long",
+      "parameters": "long a_len, const long a[a_len]",
+      "call": "SelectionSort(a_len, a, 16, out)",
+      "locals": "long out[16] = {0};"
+    }
+  },
+  "cases": [
+    {
+      "name": "case_0",
+      "function": "SelectionSort",
+      "inputs": {
+        "a_len": 3,
+        "a": [
+          3,
+          1,
+          2
+        ]
+      },
+      "expected": "found == 3 && out[0] == 1 && out[1] == 2 && out[2] == 3"
+    },
+    {
+      "name": "case_1",
+      "function": "SelectionSort",
+      "inputs": {
+        "a_len": 1,
+        "a": [
+          0
+        ]
+      },
+      "expected": "found == 1 && out[0] == 0"
+    },
+    {
+      "name": "case_2",
+      "function": "SelectionSort",
+      "inputs": {
+        "a_len": 5,
+        "a": [
+          5,
+          4,
+          3,
+          2,
+          1
+        ]
+      },
+      "expected": "found == 5 && out[0] == 1 && out[1] == 2 && out[2] == 3 && out[3] == 4 && out[4] == 5"
+    },
+    {
+      "name": "case_3",
+      "function": "SelectionSort",
+      "inputs": {
+        "a_len": 4,
+        "a": [
+          2,
+          2,
+          1,
+          4
+        ]
+      },
+      "expected": "found == 4 && out[0] == 1 && out[1] == 2 && out[2] == 2 && out[3] == 4"
+    },
+    {
+      "name": "case_4",
+      "function": "SelectionSort",
+      "inputs": {
+        "a_len": 4,
+        "a": [
+          10,
+          -5,
+          0,
+          3
+        ]
+      },
+      "expected": "found == 4 && out[0] == -5 && out[1] == 0 && out[2] == 3 && out[3] == 10"
+    }
+  ]
+}

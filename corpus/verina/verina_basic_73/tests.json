@@ -1,0 +1,117 @@
+{
+  "comment": "Generated from the task's test.json by corpus/verina-notes/interface.py: one case per test.",
+  "functions": {
+    "Match": {
+      "result": "long",
+      "parameters": "long s_len, const char s[s_len], long p_len, const char p[p_len]",
+      "call": "Match(s_len, s, p_len, p)"
+    }
+  },
+  "cases": [
+    {
+      "name": "case_0",
+      "function": "Match",
+      "inputs": {
+        "s_len": 3,
+        "s": [
+          97,
+          98,
+          99
+        ],
+        "p_len": 3,
+        "p": [
+          97,
+          63,
+          99
+        ]
+      },
+      "expected": "found == 1"
+    },
+    {
+      "name": "case_1",
+      "function": "Match",
+      "inputs": {
+        "s_len": 5,
+        "s": [
+          104,
+          101,
+          108,
+          108,
+          111
+        ],
+        "p_len": 5,
+        "p": [
+          104,
+          101,
+          63,
+          108,
+          111
+        ]
+      },
+      "expected": "found == 1"
+    },
+    {
+      "name": "case_2",
+      "function": "Match",
+      "inputs": {
+        "s_len": 5,
+        "s": [
+          119,
+          111,
+          114,
+          108,
+          100
+        ],
+        "p_len": 5,
+        "p": [
+          119,
+          63,
+          114,
+          108,
+          100
+        ]
+      },
+      "expected": "found == 1"
+    },
+    {
+      "name": "case_3",
+      "function": "Match",
+      "inputs": {
+        "s_len": 4,
+        "s": [
+          116,
+          101,
+          115,
+          116
+        ],
+        "p_len": 4,
+        "p": [
+          116,
+          101,
+          63,
+          116
+        ]
+      },
+      "expected": "found == 1"
+    },
+    {
+      "name": "case_4",
+      "function": "Match",
+      "inputs": {
+        "s_len": 3,
+        "s": [
+          97,
+          98,
+          99
+        ],
+        "p_len": 3,
+        "p": [
+          97,
+          98,
+          100
+        ]
+      },
+      "expected": "found == 0"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "id": "verina_advanced_44",
+  "stated": "part",
+  "dropped": [
+    "postcond: result is one of the sums of the subarrays whose length is a positive multiple of k, and the largest (enumeration, sums)"
+  ],
+  "weakened": [],
+  "verdict": "certified at memory",
+  "remarks": "Stated: k > 0; no qualifying subarray -> result = 0, written as arr_len >= k || result == 0 (a qualifying subarray exists exactly when arr_len >= k). The running sum can overflow, so its trap stays."
+}

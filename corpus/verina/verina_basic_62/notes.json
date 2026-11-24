@@ -1,0 +1,11 @@
+{
+ "id": "verina_basic_62",
+ "stated": "part",
+ "dropped": [
+  "postcond: no element before result equals key",
+  "postcond: result = -1 implies no element equals key"
+ ],
+ "weakened": [],
+ "verdict": "certified at full",
+ "remarks": ""
+}

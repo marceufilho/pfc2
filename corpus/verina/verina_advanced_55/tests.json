@@ -1,0 +1,86 @@
+{
+ "comment": "Generated from the task's test.json by corpus/verina-notes/interface.py: one case per test.",
+ "functions": {
+  "mostFrequent": {
+   "result": "long",
+   "parameters": "long xs_len, const long xs[xs_len]",
+   "call": "mostFrequent(xs_len, xs)"
+  }
+ },
+ "cases": [
+  {
+   "name": "case_0",
+   "function": "mostFrequent",
+   "inputs": {
+    "xs_len": 4,
+    "xs": [
+     1,
+     2,
+     2,
+     3
+    ]
+   },
+   "expected": "found == 2"
+  },
+  {
+   "name": "case_1",
+   "function": "mostFrequent",
+   "inputs": {
+    "xs_len": 5,
+    "xs": [
+     4,
+     4,
+     5,
+     5,
+     4
+    ]
+   },
+   "expected": "found == 4"
+  },
+  {
+   "name": "case_2",
+   "function": "mostFrequent",
+   "inputs": {
+    "xs_len": 1,
+    "xs": [
+     9
+    ]
+   },
+   "expected": "found == 9"
+  },
+  {
+   "name": "case_3",
+   "function": "mostFrequent",
+   "inputs": {
+    "xs_len": 7,
+    "xs": [
+     1,
+     2,
+     3,
+     1,
+     2,
+     3,
+     2
+    ]
+   },
+   "expected": "found == 2"
+  },
+  {
+   "name": "case_4",
+   "function": "mostFrequent",
+   "inputs": {
+    "xs_len": 7,
+    "xs": [
+     7,
+     7,
+     8,
+     8,
+     9,
+     9,
+     7
+    ]
+   },
+   "expected": "found == 7"
+  }
+ ]
+}

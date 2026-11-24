@@ -1,0 +1,92 @@
+{
+  "comment": "Generated from the task's test.json by corpus/verina-notes/interface.py: one case per test.",
+  "functions": {
+    "swap": {
+      "result": "long",
+      "parameters": "long arr_len, const long arr[arr_len], long i, long j",
+      "call": "swap(arr_len, arr, i, j, 16, out)",
+      "locals": "long out[16] = {0};"
+    }
+  },
+  "cases": [
+    {
+      "name": "case_0",
+      "function": "swap",
+      "inputs": {
+        "arr_len": 5,
+        "arr": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "i": 1,
+        "j": 3
+      },
+      "expected": "found == 5 && out[0] == 1 && out[1] == 4 && out[2] == 3 && out[3] == 2 && out[4] == 5"
+    },
+    {
+      "name": "case_1",
+      "function": "swap",
+      "inputs": {
+        "arr_len": 4,
+        "arr": [
+          10,
+          20,
+          30,
+          40
+        ],
+        "i": 0,
+        "j": 3
+      },
+      "expected": "found == 4 && out[0] == 40 && out[1] == 20 && out[2] == 30 && out[3] == 10"
+    },
+    {
+      "name": "case_2",
+      "function": "swap",
+      "inputs": {
+        "arr_len": 3,
+        "arr": [
+          7,
+          8,
+          9
+        ],
+        "i": 1,
+        "j": 2
+      },
+      "expected": "found == 3 && out[0] == 7 && out[1] == 9 && out[2] == 8"
+    },
+    {
+      "name": "case_3",
+      "function": "swap",
+      "inputs": {
+        "arr_len": 4,
+        "arr": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "i": 0,
+        "j": 0
+      },
+      "expected": "found == 4 && out[0] == 1 && out[1] == 2 && out[2] == 3 && out[3] == 4"
+    },
+    {
+      "name": "case_4",
+      "function": "swap",
+      "inputs": {
+        "arr_len": 3,
+        "arr": [
+          -1,
+          -2,
+          -3
+        ],
+        "i": 0,
+        "j": 2
+      },
+      "expected": "found == 3 && out[0] == -3 && out[1] == -2 && out[2] == -1"
+    }
+  ]
+}

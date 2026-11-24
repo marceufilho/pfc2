@@ -1,0 +1,12 @@
+{
+ "id": "verina_advanced_52",
+ "stated": "part",
+ "dropped": [
+  "precondition: every number of 1..k occurs in nums (quantifier, membership)",
+  "every number of 1..k occurs among the last result elements (quantifier, membership)",
+  "minimality when result > 0: the last result - 1 elements do not contain all of 1..k (quantifier, membership)"
+ ],
+ "weakened": [],
+ "verdict": "certified at full",
+ "remarks": "Stated: k >= 0 (Nat), the branch of minimality for result == 0 (result > 0 || k == 0) and 0 <= result <= nums_len. requires(k <= nums_len) is a scalar consequence of Verina's precondition (k distinct values occur in nums); without it result == 0 with k > 0 on an empty list contradicts the stated ensures."
+}

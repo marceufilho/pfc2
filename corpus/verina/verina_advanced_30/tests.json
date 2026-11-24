@@ -1,0 +1,100 @@
+{
+  "comment": "Generated from the task's test.json by corpus/verina-notes/interface.py: one case per test.",
+  "functions": {
+    "longestIncreasingStreak": {
+      "result": "long",
+      "parameters": "long nums_len, const long nums[nums_len]",
+      "call": "longestIncreasingStreak(nums_len, nums)"
+    }
+  },
+  "cases": [
+    {
+      "name": "case_0",
+      "function": "longestIncreasingStreak",
+      "inputs": {
+        "nums_len": 7,
+        "nums": [
+          1,
+          2,
+          3,
+          2,
+          4,
+          5,
+          6
+        ]
+      },
+      "expected": "found == 4"
+    },
+    {
+      "name": "case_1",
+      "function": "longestIncreasingStreak",
+      "inputs": {
+        "nums_len": 4,
+        "nums": [
+          10,
+          20,
+          30,
+          40
+        ]
+      },
+      "expected": "found == 4"
+    },
+    {
+      "name": "case_2",
+      "function": "longestIncreasingStreak",
+      "inputs": {
+        "nums_len": 4,
+        "nums": [
+          5,
+          5,
+          5,
+          5
+        ]
+      },
+      "expected": "found == 1"
+    },
+    {
+      "name": "case_3",
+      "function": "longestIncreasingStreak",
+      "inputs": {
+        "nums_len": 4,
+        "nums": [
+          10,
+          9,
+          8,
+          7
+        ]
+      },
+      "expected": "found == 1"
+    },
+    {
+      "name": "case_4",
+      "function": "longestIncreasingStreak",
+      "inputs": {
+        "nums_len": 0,
+        "nums": []
+      },
+      "expected": "found == 0"
+    },
+    {
+      "name": "case_5",
+      "function": "longestIncreasingStreak",
+      "inputs": {
+        "nums_len": 10,
+        "nums": [
+          1,
+          2,
+          1,
+          2,
+          3,
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "expected": "found == 5"
+    }
+  ]
+}

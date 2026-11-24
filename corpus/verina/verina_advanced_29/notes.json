@@ -1,0 +1,11 @@
+{
+  "id": "verina_advanced_29",
+  "stated": "part",
+  "dropped": [
+    "postcond (non-empty case): some valid subarray has length result and none is longer (enumeration of subarrays, counts)",
+    "elements are Nats (quantifier over elements); not needed by the proof"
+  ],
+  "weakened": [],
+  "verdict": "certified at full",
+  "remarks": "Stated: k > 0; nums = [] -> result = 0; additionally 0 <= result <= nums_len. requires(nums_len >= 0) was added: with the parameter spelled X_len the checker does not assume 0 <= length (docs/02-language.md says the declaration states it); reported as outside the protocol's list unless a length counts as a Nat."
+}

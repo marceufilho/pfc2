@@ -1,0 +1,331 @@
+{
+  "schema_version": 1,
+  "image": "framac/frama-c@sha256:4f0b7a2bd600c4daabfdcdfa393a3c18301e0db18f3b2739f1d9650193462d36",
+  "frama_c": "32.1 (Germanium)",
+  "prover": "Alt-Ergo 2.5.4",
+  "options": [
+    "-machdep",
+    "x86_64",
+    "-wp",
+    "-wp-model",
+    "Typed",
+    "-wp-rte",
+    "-warn-signed-downcast",
+    "-wp-smoke-tests",
+    "-wp-prover",
+    "alt-ergo",
+    "-wp-timeout",
+    "10",
+    "-wp-smoke-timeout",
+    "2",
+    "-wp-par",
+    "2"
+  ],
+  "cases": [
+    {
+      "name": "example-01_count",
+      "corpus": "examples",
+      "source": "examples/01_count/count.c",
+      "source_sha256": "923c0edf593619ad99bcc8188d42e5dd5dcc9b88dbb93b4c7a4620713a5ff5a0",
+      "acsl": "examples/01_count.c",
+      "acsl_sha256": "0e9e57d82982ad51ea715a2b091dbfd74acb631a12371d81bb8756a9d96c5b1e",
+      "acsl_origin": "written by hand for this experiment (AI assistant), 2026-11-19"
+    },
+    {
+      "name": "example-02_fill",
+      "corpus": "examples",
+      "source": "examples/02_fill/fill.c",
+      "source_sha256": "96af1478432de626be2220ea6c2415c5e869c3177efbd08f022dce0bc725d388",
+      "acsl": "examples/02_fill.c",
+      "acsl_sha256": "30a5eec3477333d93d053fe1555de75b764205b59d3be843443f73c65f7fed09",
+      "acsl_origin": "written by hand for this experiment (AI assistant), 2026-11-19"
+    },
+    {
+      "name": "example-03_sum",
+      "corpus": "examples",
+      "source": "examples/03_sum/sum.c",
+      "source_sha256": "f1b37c4ddbbddd24b313bd5b9ff19d04f9da0fdd2043e75c2c41426eece50465",
+      "acsl": "examples/03_sum.c",
+      "acsl_sha256": "f97dd05262869d5fce0482de880263cf70302558353f1b16599971ba0cc7f7fe",
+      "acsl_origin": "written by hand for this experiment (AI assistant), 2026-11-19"
+    },
+    {
+      "name": "example-04_bounded_sum",
+      "corpus": "examples",
+      "source": "examples/04_bounded_sum/bounded_sum.c",
+      "source_sha256": "256cee0f4035560495ab475a8eab8e4d92cefcdb4426357b91556b4e0d1ca7ab",
+      "acsl": "examples/04_bounded_sum.c",
+      "acsl_sha256": "f778e4b0a90f143370a177e51ef88dc2d53781bb11648b65dd3988112270189f",
+      "acsl_origin": "written by hand for this experiment (AI assistant), 2026-11-19"
+    },
+    {
+      "name": "example-05_binary_search",
+      "corpus": "examples",
+      "source": "examples/05_binary_search/binary_search.c",
+      "source_sha256": "79c9caa25c108cd2c9bf777488298413591c26c15a93f1f408282c6fbcd13d56",
+      "acsl": "examples/05_binary_search.c",
+      "acsl_sha256": "6fd12afa11051f90e78107f2f7c71013ac37c9fcd4e8bd81546d9fed324a229d",
+      "acsl_origin": "written by hand for this experiment (AI assistant), 2026-11-19"
+    },
+    {
+      "name": "example-06_copy",
+      "corpus": "examples",
+      "source": "examples/06_copy/copy.c",
+      "source_sha256": "05aba5fb6d5f321517b6f67b363c4708d7ecb3a04d87e23fb242db2b25d05700",
+      "acsl": "examples/06_copy.c",
+      "acsl_sha256": "6e7c15342ecaaff806bb6fa6f9aaac9b055db3eca98661de5a1a7435a5c24d01",
+      "acsl_origin": "written by hand for this experiment (AI assistant), 2026-11-19"
+    },
+    {
+      "name": "example-07_countdown",
+      "corpus": "examples",
+      "source": "examples/07_countdown/countdown.c",
+      "source_sha256": "c219190dc524e3bfe84fea2ff014aff28317bc1643674335b7cf1dcca22f1917",
+      "acsl": "examples/07_countdown.c",
+      "acsl_sha256": "fa8ee4649c52d428c852f16e1086ec2e22db3a9ad28781e44b5666f7303c4846",
+      "acsl_origin": "written by hand for this experiment (AI assistant), 2026-11-19"
+    },
+    {
+      "name": "example-08_counter",
+      "corpus": "examples",
+      "source": "examples/08_counter/counter.c",
+      "source_sha256": "bfc5916acbd5e8d67757b77df3b801cc446c631a4522b7a75cc66b08f9beea9d",
+      "acsl": "examples/08_counter.c",
+      "acsl_sha256": "d9aa4d6b4ae7ef9d8910e540672682eb0fded9344a922ad8ee111206cd4d5b25",
+      "acsl_origin": "written by hand for this experiment (AI assistant), 2026-11-19"
+    },
+    {
+      "name": "example-11_flag",
+      "corpus": "examples",
+      "source": "examples/11_flag/flag.c",
+      "source_sha256": "8f75628e09981240b2f2039ec0d2942877f138e60d64a1607d645d6522777dd3",
+      "acsl": "examples/11_flag.c",
+      "acsl_sha256": "87ad997e7af0b85ad05d2b9056487fc9842f13d3fec3848c8418026ec6790105",
+      "acsl_origin": "written by hand for this experiment (AI assistant), 2026-11-19"
+    },
+    {
+      "name": "example-12_rest_api",
+      "corpus": "examples",
+      "source": "examples/12_rest_api/api.c",
+      "source_sha256": "17083444e32a5bc1459a3792217cd51ba5811a92f5db38eaab1560889055177d",
+      "acsl": "examples/12_rest_api.c",
+      "acsl_sha256": "6cb412e283ae2c8f4014e0b89e5fa474b76869a29f329652f2936af530b5e3cd",
+      "acsl_origin": "written by hand for this experiment (AI assistant), 2026-11-19"
+    },
+    {
+      "name": "example-13_progression",
+      "corpus": "examples",
+      "source": "examples/13_progression/progression.c",
+      "source_sha256": "f7249e155752a5808dff0cb95ebeb421d391551140525827ed762766c481511b",
+      "acsl": "examples/13_progression.c",
+      "acsl_sha256": "d3937605ae13416a160012b0a6d73a574f8956110a3debe4bf240f0b4264b223",
+      "acsl_origin": "written by hand for this experiment (AI assistant), 2026-11-19"
+    },
+    {
+      "name": "example-14_tree",
+      "corpus": "examples",
+      "source": "examples/14_tree/tree.c",
+      "source_sha256": "ad04735000d2662302576ac585a2c4cfebdc5747e22a740b2aeef8cb3a2d5a4e",
+      "acsl": "examples/14_tree.c",
+      "acsl_sha256": "f3d670a7191e9ee14286af5e203488dcd83b0a4519516bfd460d3afa5fda25f5",
+      "acsl_origin": "written by hand for this experiment (AI assistant), 2026-11-19"
+    },
+    {
+      "name": "example-15_matrix",
+      "corpus": "examples",
+      "source": "examples/15_matrix/matrix.c",
+      "source_sha256": "e876eb94a449da2f05ee7bea5fb177c456f72900e108598f89978b43ab5a1fcf",
+      "acsl": "examples/15_matrix.c",
+      "acsl_sha256": "455e045a0155e1b644a6e4b107e613b186c48babf45fc1b1f1db32917cf3a29e",
+      "acsl_origin": "written by hand for this experiment (AI assistant), 2026-11-19"
+    },
+    {
+      "name": "example-16_calendar",
+      "corpus": "examples",
+      "source": "examples/16_calendar/calendar.c",
+      "source_sha256": "18a4e4a7844d3ce6b078da206ed2c5f669927b8d9bc4e2ff0278479be299300e",
+      "acsl": "examples/16_calendar.c",
+      "acsl_sha256": "44ac057ba62a4aac5354b81e0626b07e7cf9201bf8db1912bfdcaf48891d543c",
+      "acsl_origin": "written by hand for this experiment (AI assistant), 2026-11-19"
+    },
+    {
+      "name": "example-17_text",
+      "corpus": "examples",
+      "source": "examples/17_text/text.c",
+      "source_sha256": "9d3a2da4445645db40fe5653d21668f20e97a6a2f89f5e32105b9a2bbd22216c",
+      "acsl": "examples/17_text.c",
+      "acsl_sha256": "296de235c1c91085fe7ac20c0f5d8afcc03ad27b9dcb8c0d3f07466774ab3e5b",
+      "acsl_origin": "written by hand for this experiment (AI assistant), 2026-11-19"
+    },
+    {
+      "name": "thesis-sum",
+      "corpus": "thesis-derived",
+      "source": "corpus/thesis-derived/kernels/sum.c",
+      "source_sha256": "22755572bd6831a088d93310f9150359bb905a089bb0bac4e329d428169bc2f7",
+      "acsl": "thesis-derived/sum.c",
+      "acsl_sha256": "58dbad7d6f332003d7cbcb11564920b8110271be95a0e354e3365f7e009b3871",
+      "acsl_origin": "thesis repository validation/frama-c/sources, byte for byte (hand-written there, 2026-11-05)"
+    },
+    {
+      "name": "thesis-dot",
+      "corpus": "thesis-derived",
+      "source": "corpus/thesis-derived/kernels/dot.c",
+      "source_sha256": "43768406ca43fc575b8fc21472f1d14244225ed3491eed032318cc12057eb757",
+      "acsl": "thesis-derived/dot.c",
+      "acsl_sha256": "573abdd8ef964e7277d5c3965115efd95d96005f8b44e9d6f36ff3a39a36b51d",
+      "acsl_origin": "thesis repository validation/frama-c/sources, byte for byte (hand-written there, 2026-11-05)"
+    },
+    {
+      "name": "thesis-saxpy",
+      "corpus": "thesis-derived",
+      "source": "corpus/thesis-derived/kernels/saxpy.c",
+      "source_sha256": "f0835f286d6296486d35d6c14c2b74151410e3a60e074197e3ca6c54a3eb21d3",
+      "acsl": "thesis-derived/saxpy.c",
+      "acsl_sha256": "1b06c76d6f25031f2a64715a92bbb3ec4f215ab472162fbb1811cb95b26efda6",
+      "acsl_origin": "thesis repository validation/frama-c/sources, byte for byte (hand-written there, 2026-11-05)"
+    },
+    {
+      "name": "thesis-prefix_sum",
+      "corpus": "thesis-derived",
+      "source": "corpus/thesis-derived/kernels/prefix_sum.c",
+      "source_sha256": "e86c15bc37b92a55694bf245c24853920ed1c2590f8f1df5cc1979aa23baf0a2",
+      "acsl": "thesis-derived/prefix_sum.c",
+      "acsl_sha256": "4d72f560279482f35cf91959670f99528064923cefcfd9f927c14e4d991d935b",
+      "acsl_origin": "thesis repository validation/frama-c/sources, byte for byte (hand-written there, 2026-11-05)"
+    },
+    {
+      "name": "thesis-matvec",
+      "corpus": "thesis-derived",
+      "source": "corpus/thesis-derived/kernels/matvec.c",
+      "source_sha256": "e2bc3e53b807923cc733fcab737e3d4846c19d835565ab08c221e789e2fe9d9e",
+      "acsl": "thesis-derived/matvec.c",
+      "acsl_sha256": "9b2df485081055c07d2fc9b19c749cf64c37d49cacca889bdb5e20e2c237a0b9",
+      "acsl_origin": "thesis repository validation/frama-c/sources, byte for byte (hand-written there, 2026-11-05)"
+    },
+    {
+      "name": "thesis-binary_search",
+      "corpus": "thesis-derived",
+      "source": "corpus/thesis-derived/kernels/binary_search.c",
+      "source_sha256": "ff0eec65a8187a9fd3bbf30ca066e73f0376960dc2770e9ef0b91230d70e0b3d",
+      "acsl": "thesis-derived/binary_search.c",
+      "acsl_sha256": "c919511ef9bf3e288784f1ac83778dbcf00a2fe10f068e4281e5125ab5495b92",
+      "acsl_origin": "thesis repository validation/frama-c/sources, byte for byte (hand-written there, 2026-11-05)"
+    },
+    {
+      "name": "thesis-accumulate",
+      "corpus": "thesis-derived",
+      "source": "corpus/thesis-derived/acsl/accumulate.c",
+      "source_sha256": "a33a592474e7ebf082bb327d66c336c8596eeb9faeef129aefe8de899fe4f752",
+      "acsl": "thesis-derived/accumulate.c",
+      "acsl_sha256": "9f61e9b0b5534f4790edb160b857baa1c8b2fdf7df6becd764c44d925bb7ee7c",
+      "acsl_origin": "thesis repository validation/frama-c/sources, byte for byte (hand-written there, 2026-11-05)"
+    },
+    {
+      "name": "thesis-copy",
+      "corpus": "thesis-derived",
+      "source": "corpus/thesis-derived/acsl/copy.c",
+      "source_sha256": "d3a1de0ac956fde058ef9350f4406bdb39d67c586fdd4a24b7d12edb1d48ff55",
+      "acsl": "thesis-derived/copy.c",
+      "acsl_sha256": "2dcdf3829f540859815acc057b6fc36aeef48547f6116e3ab5f8711aafefbbd5",
+      "acsl_origin": "thesis repository validation/frama-c/sources, byte for byte (hand-written there, 2026-11-05)"
+    },
+    {
+      "name": "thesis-count",
+      "corpus": "thesis-derived",
+      "source": "corpus/thesis-derived/acsl/count.c",
+      "source_sha256": "b8cb8c7de34d4d012eb91dad30ae63f338e19c557eac4bcfc78e0f5b78b4e1e7",
+      "acsl": "thesis-derived/count.c",
+      "acsl_sha256": "a70bb6fb5d54e1fb47d5a8689f449612de04a1a1510beb4f31436d61eec727ca",
+      "acsl_origin": "thesis repository validation/frama-c/sources, byte for byte (hand-written there, 2026-11-05)"
+    },
+    {
+      "name": "thesis-fill",
+      "corpus": "thesis-derived",
+      "source": "corpus/thesis-derived/acsl/fill.c",
+      "source_sha256": "4b8c9f8b1bb48e5eb2a4daa000eaa88b232da7c9136326e9b8ca0a336b3888d1",
+      "acsl": "thesis-derived/fill.c",
+      "acsl_sha256": "89c7b81b937852a8c40deeefc844e02a083cf84e2cc7370b84e788bcf816bc0c",
+      "acsl_origin": "thesis repository validation/frama-c/sources, byte for byte (hand-written there, 2026-11-05)"
+    },
+    {
+      "name": "thesis-find",
+      "corpus": "thesis-derived",
+      "source": "corpus/thesis-derived/acsl/find.c",
+      "source_sha256": "a2f8f9993ef2bf6b21bf76153fcdcb806fc59e1bd9a48a22132d152a37c163ee",
+      "acsl": "thesis-derived/find.c",
+      "acsl_sha256": "fef2e52af7b3db6558f106a6a4a19ec83644acf203471e956c30b73c31f6d995",
+      "acsl_origin": "thesis repository validation/frama-c/sources, byte for byte (hand-written there, 2026-11-05)"
+    },
+    {
+      "name": "thesis-replace",
+      "corpus": "thesis-derived",
+      "source": "corpus/thesis-derived/acsl/replace.c",
+      "source_sha256": "2480262bc2d04c30f16706611b1501152d709640b3519a8672cfc9ec5ae64cad",
+      "acsl": "thesis-derived/replace.c",
+      "acsl_sha256": "a1050a3377e71bd3f1e6ec80391c61884654b652cb39c12f95c28b864f7a2d2c",
+      "acsl_origin": "thesis repository validation/frama-c/sources, byte for byte (hand-written there, 2026-11-05)"
+    },
+    {
+      "name": "thesis-reverse",
+      "corpus": "thesis-derived",
+      "source": "corpus/thesis-derived/acsl/reverse.c",
+      "source_sha256": "0d9a0cf7b1c8172bab902d92fc82a39e745374d88779fb6768fc2627340493c8",
+      "acsl": "thesis-derived/reverse.c",
+      "acsl_sha256": "52c04ccad92cbc48e0160fc789cb8f234e9cf146f025e96109b71b8dc338d76c",
+      "acsl_origin": "thesis repository validation/frama-c/sources, byte for byte (hand-written there, 2026-11-05)"
+    },
+    {
+      "name": "thesis-swap_ranges",
+      "corpus": "thesis-derived",
+      "source": "corpus/thesis-derived/acsl/swap_ranges.c",
+      "source_sha256": "ac3d05779be522c1a86b7a3e9552bc9110dd56b141e039f36b0c96d9c039cc20",
+      "acsl": "thesis-derived/swap_ranges.c",
+      "acsl_sha256": "ac81825042ddbb6731a5e6c41f08e3e08a9b56dce899d3ae1adbfca78c0137df",
+      "acsl_origin": "thesis repository validation/frama-c/sources, byte for byte (hand-written there, 2026-11-05)"
+    }
+  ],
+  "controls": [
+    {
+      "name": "control-missing_bounds",
+      "acsl": "controls/missing_bounds.c",
+      "acsl_sha256": "3b9c33fd5a002d6d854906f34666c6c8d532be99c4e2e8842a58b15b9bb95608",
+      "expected_unproved": "assert_bounds_a",
+      "expected_inconsistent": false
+    },
+    {
+      "name": "control-false_invariant",
+      "acsl": "controls/false_invariant.c",
+      "acsl_sha256": "2406c388e449f232a8d06ef07462a588641468327525dafbe0d159d628f2710f",
+      "expected_unproved": "loop_invariant_established",
+      "expected_inconsistent": false
+    },
+    {
+      "name": "control-bad_preservation",
+      "acsl": "controls/bad_preservation.c",
+      "acsl_sha256": "d43f5e3ee343787e8192bfbbe34942eeff40dfcfd920fad1d3d9725a5b7b6b74",
+      "expected_unproved": "loop_invariant_preserved",
+      "expected_inconsistent": false
+    },
+    {
+      "name": "control-division_zero",
+      "acsl": "controls/division_zero.c",
+      "acsl_sha256": "085aa75e799d0e2b58915bd6d8780bb2d22eb392f060de5b374d1a721a7d3f4d",
+      "expected_unproved": "assert_division_denominator",
+      "expected_inconsistent": false
+    },
+    {
+      "name": "control-signed_overflow",
+      "acsl": "controls/signed_overflow.c",
+      "acsl_sha256": "e29eeff362eea889b315110ae9dd8a82075235853fe4b253e09f28bee8195e39",
+      "expected_unproved": "assert_rte_signed_overflow",
+      "expected_inconsistent": false
+    },
+    {
+      "name": "control-vacuous",
+      "acsl": "controls/vacuous.c",
+      "acsl_sha256": "4bfb9fdf87fdeb40aefce08b402e7607ae1e10981886979a8c1949800ea1aa5a",
+      "expected_unproved": null,
+      "expected_inconsistent": true
+    }
+  ]
+}

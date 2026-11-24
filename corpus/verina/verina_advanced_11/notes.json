@@ -1,0 +1,10 @@
+{
+  "id": "verina_advanced_11",
+  "stated": "none",
+  "dropped": [
+    "postcond: majority test by occurrence counts (count, List.all)"
+  ],
+  "weakened": [],
+  "verdict": "certified at full",
+  "remarks": ""
+}

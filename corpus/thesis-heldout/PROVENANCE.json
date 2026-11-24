@@ -1,0 +1,406 @@
+{
+  "source": "the thesis repository, heldout/ (SV-COMP c/array-tiling and c/array-multidimensional, Apache-2.0)",
+  "upstream": {
+    "commit": "f3feef51a07ffe7c6ef58f3da3b7fe041af4fd25",
+    "directories": [
+      "c/array-tiling",
+      "c/array-multidimensional"
+    ],
+    "license": "Apache-2.0 (upstream LICENSE.Apache-2.0.txt, copied beside the ports)",
+    "origin": {
+      "array-multidimensional": "Rajkhowa, Lin: Extending VIAP to handle array programs, VSTTE 2018",
+      "array-tiling": "Chakraborty, Gupta, Unadkat: Verifying array manipulating programs by tiling, SAS 2017"
+    },
+    "repository": "https://gitlab.com/sosy-lab/benchmarking/sv-benchmarks"
+  },
+  "rule": "Build `corpus/thesis-heldout` from the sealed held-out set of the thesis repository (amendment 24, part A).\n\nRule, fixed before any program of the set was read by PFC2:\n\n  R1  the line `#include \"spec.h\"` becomes `#include \"pfc.h\"`;\n  R2  a line including the program's own header (`#include \"kernel.h\"`) is removed;\n  R3  nothing else is re-spelled: the older clause spellings (REQUIRES, ...) are read by pfc.h;\n  R4  every line that is an `INVARIANT(...)` clause is removed: the experiment asks who supplies them.\n\nNothing is excluded. The canary comment of each kernel is kept.",
+  "tasks": [
+    {
+      "task": "mbpr2",
+      "family": "array-tiling",
+      "source": "heldout/mbpr2/kernel.c",
+      "source_sha256": "2935d55720b5cdb2d836261b8de52925efd8e235bb933c152037f65a8977f1cc",
+      "loops": 2,
+      "invariant_lines_removed": 2,
+      "sha256": "722cdbbc6a73ebcbecde0a483ccf4f9a0e623f334fd8c7f2147b95fd89211f27"
+    },
+    {
+      "task": "mbpr3",
+      "family": "array-tiling",
+      "source": "heldout/mbpr3/kernel.c",
+      "source_sha256": "8921745a7c4d2c67337e897b4013f20e620276767ae9a2ecad1d8ef7cb33191e",
+      "loops": 3,
+      "invariant_lines_removed": 3,
+      "sha256": "b421d41bf2d4605722e74d7e2b7872b4d4849ba0d4af2528db86de9d6fe73a8b"
+    },
+    {
+      "task": "mbpr4",
+      "family": "array-tiling",
+      "source": "heldout/mbpr4/kernel.c",
+      "source_sha256": "ad369752be2a95cfcbe1aa55f75c7c73b66d55a64bcec546184cf25d97a32c19",
+      "loops": 4,
+      "invariant_lines_removed": 4,
+      "sha256": "b13ad7a3405242ed6380931587d38aa512e45374ef98539afcdc3d2ce53c8470"
+    },
+    {
+      "task": "nr2",
+      "family": "array-tiling",
+      "source": "heldout/nr2/kernel.c",
+      "source_sha256": "0c6646592c84b3c0a48dda4b476f5e77edc17d121398b5f34b72a61527abe8db",
+      "loops": 2,
+      "invariant_lines_removed": 2,
+      "sha256": "b5fb6120f5758b79ba87d32c8a25a49e995bf3e971c2635726fdc88d4bbc73ff"
+    },
+    {
+      "task": "nr3",
+      "family": "array-tiling",
+      "source": "heldout/nr3/kernel.c",
+      "source_sha256": "884cfe4658ade25a5f24686f42470e4d2dd0a53fc24e5b7bf188476d5e3b3a1b",
+      "loops": 2,
+      "invariant_lines_removed": 2,
+      "sha256": "a9b8cee931d6ea2a821e6ece839c0b719e3c98ca3c3bb5323b1cbb14d7b9eeee"
+    },
+    {
+      "task": "nr4",
+      "family": "array-tiling",
+      "source": "heldout/nr4/kernel.c",
+      "source_sha256": "fee0110dd2d6c88799b06c153937b45867a4728ab130e0f021e4856ebfc03a8b",
+      "loops": 2,
+      "invariant_lines_removed": 2,
+      "sha256": "aee18fa846a3e398be217e58b9d7deaa22c5c4bf978977250c523d2516223c9f"
+    },
+    {
+      "task": "nr5",
+      "family": "array-tiling",
+      "source": "heldout/nr5/kernel.c",
+      "source_sha256": "bfdcc7c6dd7580bfb4cb6284cf5bb45fcbaebbf47f545fea0263738d8f919b09",
+      "loops": 2,
+      "invariant_lines_removed": 2,
+      "sha256": "1ab8e83a3a05da790cb937ac095e42164e62de99acd7b95fb8f336dd886f1293"
+    },
+    {
+      "task": "pnr2",
+      "family": "array-tiling",
+      "source": "heldout/pnr2/kernel.c",
+      "source_sha256": "a23a12d3bae405a3eb9567cb1b4dcfbf736e7770051e295f07f3e4bcb4a300a2",
+      "loops": 1,
+      "invariant_lines_removed": 1,
+      "sha256": "28775ea9676a064cd05fc0f106b846856c055149c2f240e095838b625263e647"
+    },
+    {
+      "task": "pnr3",
+      "family": "array-tiling",
+      "source": "heldout/pnr3/kernel.c",
+      "source_sha256": "1d9c07bc06698cf369fe4758ae044037750f61b37e641f0bf9696dbcae4f2c90",
+      "loops": 1,
+      "invariant_lines_removed": 1,
+      "sha256": "6aacf3f1728b01dcb90423cd2e277ec0bc036deda41bfb3cd1f82736bbbd2009"
+    },
+    {
+      "task": "poly1",
+      "family": "array-tiling",
+      "source": "heldout/poly1/kernel.c",
+      "source_sha256": "3298b1c46c310d9e5986b59bd2a611f075760aa0c4678aa36a8a9026e5c87065",
+      "loops": 1,
+      "invariant_lines_removed": 1,
+      "sha256": "079dd9b6b358a0d9b0655b6b3d7644dc74a74b7dced6f3d1e7d04036632c10ec"
+    },
+    {
+      "task": "poly2",
+      "family": "array-tiling",
+      "source": "heldout/poly2/kernel.c",
+      "source_sha256": "188f2d250619d4941155dfe036035d667de864b55c95c8f47782b8f71ff237df",
+      "loops": 2,
+      "invariant_lines_removed": 2,
+      "sha256": "5814595480c21f06b19fd0420e958cc9f607822b272f07c08325dc9f8fbd9f08"
+    },
+    {
+      "task": "pr2",
+      "family": "array-tiling",
+      "source": "heldout/pr2/kernel.c",
+      "source_sha256": "d38834a851c688a9d494e6ace59784bc5203d513e5572cc3a609ca9f75174f26",
+      "loops": 1,
+      "invariant_lines_removed": 1,
+      "sha256": "bb2fd93658b807ea8d57d22f91f7cb663c0949e6c4fe258bbcad2dcd916b26a6"
+    },
+    {
+      "task": "pr3",
+      "family": "array-tiling",
+      "source": "heldout/pr3/kernel.c",
+      "source_sha256": "c9f970fdbaddb4411f42ca9f5481a4cb17693db360fc213a3dca6ab3ba5eaa74",
+      "loops": 1,
+      "invariant_lines_removed": 1,
+      "sha256": "6197cee00c4a5ddccded586ebc3542a31964e625bdb62821b587523db9dadcc5"
+    },
+    {
+      "task": "pr4",
+      "family": "array-tiling",
+      "source": "heldout/pr4/kernel.c",
+      "source_sha256": "d5eda38d354a62d68938421c6dd805918aa98dd3f7d845540a007788331bba07",
+      "loops": 1,
+      "invariant_lines_removed": 1,
+      "sha256": "aa6e074eda5ea78e42b6a26fdbe1813406d348abc7eff0e731a8d767c8691814"
+    },
+    {
+      "task": "pr5",
+      "family": "array-tiling",
+      "source": "heldout/pr5/kernel.c",
+      "source_sha256": "6f45d71659ffdddaa0cda4183bcb8f89a5dc9476a57c077acde7ebe3f20798d3",
+      "loops": 1,
+      "invariant_lines_removed": 1,
+      "sha256": "f102b80768fe659b3a69e200ed673c72f69ae766ce8b340a6329677d4afd4d88"
+    },
+    {
+      "task": "revcpyswp2",
+      "family": "array-tiling",
+      "source": "heldout/revcpyswp2/kernel.c",
+      "source_sha256": "b3e701d0d593e63edb835a3cb205f3ac6a6d8187b98549b1711c53da66d7ba87",
+      "loops": 3,
+      "invariant_lines_removed": 3,
+      "sha256": "08086d884439e68724482a86efa21c1b8adfcb15cf86b60db2f306667cc35a8d"
+    },
+    {
+      "task": "rew",
+      "family": "array-tiling",
+      "source": "heldout/rew/kernel.c",
+      "source_sha256": "02500986ad4ee20c9c73b6d0697b5f816bf956a0064c66418a58b8037c55cde1",
+      "loops": 1,
+      "invariant_lines_removed": 1,
+      "sha256": "743a3b372f8eb3e4dc46aeeb62db90c7fec425b34b9d997fa8f6d50790104db6"
+    },
+    {
+      "task": "rewnif",
+      "family": "array-tiling",
+      "source": "heldout/rewnif/kernel.c",
+      "source_sha256": "6ca011dd8da9a242d45ac84af05da8be0d4137b6ea165d69f86c0d5175e3353b",
+      "loops": 1,
+      "invariant_lines_removed": 1,
+      "sha256": "95a8d6ef29a4c3ccf9601ec6bc1aa5a15a8fdd3348f8efd48e9fb5fd24584dd8"
+    },
+    {
+      "task": "rewnifrev",
+      "family": "array-tiling",
+      "source": "heldout/rewnifrev/kernel.c",
+      "source_sha256": "8e365ac3c981647e8fbeb25e0ab95be3b47aa3a5e7f38ce4f92761a968bda0e1",
+      "loops": 1,
+      "invariant_lines_removed": 1,
+      "sha256": "fd8ec62d8344297d8152dafb907d83a3be2f408d7585b8224fbf9602a9ef1cbc"
+    },
+    {
+      "task": "rewnifrev2",
+      "family": "array-tiling",
+      "source": "heldout/rewnifrev2/kernel.c",
+      "source_sha256": "9d326820df32302fab8153cb66408a6f5bf51cde2402fdad091783bceccbff99",
+      "loops": 1,
+      "invariant_lines_removed": 1,
+      "sha256": "6b64ad53df32dca32466e0245b74867e62431a6633d3857b7948ec89ff801d1a"
+    },
+    {
+      "task": "rewrev",
+      "family": "array-tiling",
+      "source": "heldout/rewrev/kernel.c",
+      "source_sha256": "ddfa8aa014a2350c460b39eb3a16ac03719f8ec3c31bfc76c85c03ba1effe298",
+      "loops": 1,
+      "invariant_lines_removed": 1,
+      "sha256": "8518c5ddae64f1b094883297a536df474a86da9f99080aa270eb8c66cc0949d3"
+    },
+    {
+      "task": "skipped",
+      "family": "array-tiling",
+      "source": "heldout/skipped/kernel.c",
+      "source_sha256": "878f3d9764086054952f5013d7b609c1fd52ccee1b1e6811e61be6056d81bc7e",
+      "loops": 1,
+      "invariant_lines_removed": 1,
+      "sha256": "ea3796bb65bef0cb187aa176df76bbd3d24f51aed28e4c8bae620d27a00e8ca1"
+    },
+    {
+      "task": "tcpy",
+      "family": "array-tiling",
+      "source": "heldout/tcpy/kernel.c",
+      "source_sha256": "0a5ddcfa7f7251e6e3a876425113519e566d6847fe6a072a469c7346dcb3a51a",
+      "loops": 1,
+      "invariant_lines_removed": 1,
+      "sha256": "623b48cb6940e1d893ac4da9f1d91d7fcf0c5c09d0bd3c9700b2d4ff783075e0"
+    },
+    {
+      "task": "add_2_n_u",
+      "family": "array-multidimensional",
+      "source": "heldout/add_2_n_u/kernel.c",
+      "source_sha256": "f6163e85af1c9f5c6ac39bff80116e7f382ddee269367d6d288cee0095761a68",
+      "loops": 2,
+      "invariant_lines_removed": 2,
+      "sha256": "026e41eb1bd4d9b58f14e83bfa49864023471e989c38516cac5f366d05d79cf4"
+    },
+    {
+      "task": "add_3_n_u",
+      "family": "array-multidimensional",
+      "source": "heldout/add_3_n_u/kernel.c",
+      "source_sha256": "9f0ecd371b727f3cfcb255b15fedf3565285ebbeb77f9dba5d8414ffc390c795",
+      "loops": 3,
+      "invariant_lines_removed": 3,
+      "sha256": "eb808bbbee0763ffcb51bc4d71c39fcd8844953a3c88bb45863d7fad89eb28a7"
+    },
+    {
+      "task": "copy_2_u",
+      "family": "array-multidimensional",
+      "source": "heldout/copy_2_u/kernel.c",
+      "source_sha256": "9ad8cc44689d8fd0f355ba14e43a04f89d30798fcd04283d7e49acb17f64d04b",
+      "loops": 2,
+      "invariant_lines_removed": 2,
+      "sha256": "504f572c4968a08362424c8ae7f2d1e9af0d1a4b00e4a6df53bb730dd1966fe0"
+    },
+    {
+      "task": "copy_3_n_u",
+      "family": "array-multidimensional",
+      "source": "heldout/copy_3_n_u/kernel.c",
+      "source_sha256": "bd9c9807e6899c98e8f0bc6cd7e0e04ee5d77b9cf1dfe8d68e17686922448bba",
+      "loops": 3,
+      "invariant_lines_removed": 3,
+      "sha256": "f1c0c540c8fbe900d7d965e02d56f7d497de8a43bea78390b1dbe35a39225edb"
+    },
+    {
+      "task": "copy_partial_2_n_u",
+      "family": "array-multidimensional",
+      "source": "heldout/copy_partial_2_n_u/kernel.c",
+      "source_sha256": "9ff820d117d4217db01debc64d763e86a896e375f8135561eddc16d26f4d5234",
+      "loops": 2,
+      "invariant_lines_removed": 2,
+      "sha256": "0caa6e601f401fa5d29000378849d2d595f0ea11184b57f7ed2b36cc9a95cfc0"
+    },
+    {
+      "task": "copy_partial_3_u",
+      "family": "array-multidimensional",
+      "source": "heldout/copy_partial_3_u/kernel.c",
+      "source_sha256": "ebaeea3b6764165671bc5305efb7ff2d5cb2bb5dc735c8d02149db64acdd0dba",
+      "loops": 6,
+      "invariant_lines_removed": 6,
+      "sha256": "9d0cb0b6d07dc7c0579f78358cb2ffa7427544c275cfeecc543ddbb372819fd1"
+    },
+    {
+      "task": "diff_2_n_u",
+      "family": "array-multidimensional",
+      "source": "heldout/diff_2_n_u/kernel.c",
+      "source_sha256": "440ecfa82b1fd01b3eb002806fff4de680110e0c773884f00f6ee30beee12a77",
+      "loops": 2,
+      "invariant_lines_removed": 2,
+      "sha256": "322240e874f01a0b24eeecaade5c3cfdd095a4c93fc62937a030ef281fecf689"
+    },
+    {
+      "task": "diff_3_n_u",
+      "family": "array-multidimensional",
+      "source": "heldout/diff_3_n_u/kernel.c",
+      "source_sha256": "5a6336e38a0a4c4cb1c0b7b76496df06a33c69854cb0b611f4f1ab398048ee33",
+      "loops": 3,
+      "invariant_lines_removed": 3,
+      "sha256": "44772fa6c99283264c0889f8b88d441061b2d6d9b6e9deb21a0b1070a402673b"
+    },
+    {
+      "task": "init_2_n_u",
+      "family": "array-multidimensional",
+      "source": "heldout/init_2_n_u/kernel.c",
+      "source_sha256": "c7e6139e6d855b72f9ca820e04ff90c314c6d2c12f786058995e15d63e6a4939",
+      "loops": 2,
+      "invariant_lines_removed": 2,
+      "sha256": "5020020d4856ea4cca070bf6c067133157d270a357568b607aecd870fc3e023e"
+    },
+    {
+      "task": "init_3_u",
+      "family": "array-multidimensional",
+      "source": "heldout/init_3_u/kernel.c",
+      "source_sha256": "bf57e8892e2112b3322108c6a738c277acc33b48447745ae6a6e5aabdcf55704",
+      "loops": 3,
+      "invariant_lines_removed": 3,
+      "sha256": "4b6915194069fb898ff09267e4ceacba76764b40783ba19c9b8fb02eff24022d"
+    },
+    {
+      "task": "init_4_n_u",
+      "family": "array-multidimensional",
+      "source": "heldout/init_4_n_u/kernel.c",
+      "source_sha256": "0188c648e9515adf695dc1ddd1dec4c35e55ec298d72efa8f50a2f3239e568be",
+      "loops": 4,
+      "invariant_lines_removed": 4,
+      "sha256": "cd9021dac388121de6f4ecc7fe4a0b0352231dc30f72d86328ac7db1d64b76b2"
+    },
+    {
+      "task": "init_non_constant_2_n_u",
+      "family": "array-multidimensional",
+      "source": "heldout/init_non_constant_2_n_u/kernel.c",
+      "source_sha256": "58381a965bfcdeebc4bc23dd7bc9fc8e02841444b55eb233c0fa3685851ea3f2",
+      "loops": 2,
+      "invariant_lines_removed": 2,
+      "sha256": "1d37c1d52c46750230e6f2f87c318fbc516369cab8fbdaddaa37da9e6ff00ead"
+    },
+    {
+      "task": "init_non_constant_3_u",
+      "family": "array-multidimensional",
+      "source": "heldout/init_non_constant_3_u/kernel.c",
+      "source_sha256": "6289ef4b67ad7bcff4cb95564d907bbd2f2f795c17dcf0a6a5dbc206336b1a02",
+      "loops": 3,
+      "invariant_lines_removed": 3,
+      "sha256": "cf4d20ecc6a1bc8b07815b690ef0950dce5848029aa3cd9495effa1636f98c64"
+    },
+    {
+      "task": "max_2_u",
+      "family": "array-multidimensional",
+      "source": "heldout/max_2_u/kernel.c",
+      "source_sha256": "e33460e0c35f4d8e9397908145d1f0e194ecfbcd3f3c274d022600a59b35b554",
+      "loops": 2,
+      "invariant_lines_removed": 2,
+      "sha256": "7dbeba82b5aaabf4d5e474d904f27dcbd2a655c8fc06ac43f1d0ecaa3ab03411"
+    },
+    {
+      "task": "max_3_n_u",
+      "family": "array-multidimensional",
+      "source": "heldout/max_3_n_u/kernel.c",
+      "source_sha256": "e968fb962f250aa2acbe71a369f3dbb892b58ec5cf4ba68b5dd3afe74cc997ee",
+      "loops": 3,
+      "invariant_lines_removed": 3,
+      "sha256": "3fa8224b23072395e4bdc9f317a4bb9972b59f59c0b1bb88d4666b52a07ff125"
+    },
+    {
+      "task": "min_2_u",
+      "family": "array-multidimensional",
+      "source": "heldout/min_2_u/kernel.c",
+      "source_sha256": "3cdb42ef6dca7fe60bec7661158bf2237d2d2fa4a6710fab40f22bd0fed2ef73",
+      "loops": 2,
+      "invariant_lines_removed": 2,
+      "sha256": "30e0952c223542a53f40bc4a4a9e3a9c60d0a4e2afdacbf1daeb18d38285c044"
+    },
+    {
+      "task": "min_3_n_u",
+      "family": "array-multidimensional",
+      "source": "heldout/min_3_n_u/kernel.c",
+      "source_sha256": "e6631f73c2ffa419c9b068f5bee90d9d84ee3c86f72dad60b9dad42773edcc4f",
+      "loops": 3,
+      "invariant_lines_removed": 3,
+      "sha256": "c7855a0ecc01b8edb74dc1c802563321f4f2adffa02186ece4bb47af6c4b8174"
+    },
+    {
+      "task": "rev_2_n_u",
+      "family": "array-multidimensional",
+      "source": "heldout/rev_2_n_u/kernel.c",
+      "source_sha256": "c9d0e6507ba1a46643f3a7c6feedf150966a126e40c9d75fa3af4ad138041507",
+      "loops": 2,
+      "invariant_lines_removed": 2,
+      "sha256": "e84391ccfca4284a85db1ec232e16d7e944d3690eccc1cdd7b626b55ffd2db0f"
+    },
+    {
+      "task": "rev_3_u",
+      "family": "array-multidimensional",
+      "source": "heldout/rev_3_u/kernel.c",
+      "source_sha256": "5c24c48c9af729b229c1ebb491d3188bee40b9ba8bd12bd802ba07430f206f01",
+      "loops": 3,
+      "invariant_lines_removed": 3,
+      "sha256": "a6e4df087ef35ed1de07a3667a2fc62f966223240f8bfad9d5161d54172fe559"
+    },
+    {
+      "task": "transpose_u",
+      "family": "array-multidimensional",
+      "source": "heldout/transpose_u/kernel.c",
+      "source_sha256": "552b4528b9cf38d9b52a2c1d9099e7db91aa8d93b372514dfd8faf42b163359a",
+      "loops": 2,
+      "invariant_lines_removed": 2,
+      "sha256": "0341fb0f4deb1989c19c5ed5c6a01dd9dcb1ae4255b6c5e584ad9b232b73b536"
+    }
+  ]
+}

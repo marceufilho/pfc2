@@ -1,0 +1,87 @@
+{
+ "comment": "Generated from the task's test.json by corpus/verina-notes/interface.py: one case per test.",
+ "functions": {
+  "binaryToDecimal": {
+   "result": "long",
+   "parameters": "long digits_len, const long digits[digits_len]",
+   "call": "binaryToDecimal(digits_len, digits)"
+  }
+ },
+ "cases": [
+  {
+   "name": "case_0",
+   "function": "binaryToDecimal",
+   "inputs": {
+    "digits_len": 3,
+    "digits": [
+     1,
+     0,
+     1
+    ]
+   },
+   "expected": "found == 5"
+  },
+  {
+   "name": "case_1",
+   "function": "binaryToDecimal",
+   "inputs": {
+    "digits_len": 4,
+    "digits": [
+     1,
+     1,
+     1,
+     1
+    ]
+   },
+   "expected": "found == 15"
+  },
+  {
+   "name": "case_2",
+   "function": "binaryToDecimal",
+   "inputs": {
+    "digits_len": 3,
+    "digits": [
+     0,
+     0,
+     0
+    ]
+   },
+   "expected": "found == 0"
+  },
+  {
+   "name": "case_3",
+   "function": "binaryToDecimal",
+   "inputs": {
+    "digits_len": 5,
+    "digits": [
+     1,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "expected": "found == 16"
+  },
+  {
+   "name": "case_4",
+   "function": "binaryToDecimal",
+   "inputs": {
+    "digits_len": 0,
+    "digits": []
+   },
+   "expected": "found == 0"
+  },
+  {
+   "name": "case_5",
+   "function": "binaryToDecimal",
+   "inputs": {
+    "digits_len": 1,
+    "digits": [
+     1
+    ]
+   },
+   "expected": "found == 1"
+  }
+ ]
+}

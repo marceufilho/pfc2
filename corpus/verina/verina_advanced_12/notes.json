@@ -1,0 +1,11 @@
+{
+  "id": "verina_advanced_12",
+  "stated": "none",
+  "dropped": [
+    "postcond none: List.Nodup",
+    "postcond some x: count x > 1 and minimal index of the second occurrence (count, quantifier, idxOf)"
+  ],
+  "weakened": [],
+  "verdict": "certified at full",
+  "remarks": "ensures(out[0] is 0 or 1) is the Option encoding, not part of Verina's postcondition."
+}

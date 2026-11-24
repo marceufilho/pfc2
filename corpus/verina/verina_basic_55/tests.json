@@ -1,0 +1,30 @@
+{
+  "comment": "Generated from the task's test.json by corpus/verina-notes/interface.py: one case per test.",
+  "functions": {
+    "Compare": {
+      "result": "long",
+      "parameters": "long a, long b",
+      "call": "Compare(a, b)"
+    }
+  },
+  "cases": [
+    {
+      "name": "case_0",
+      "function": "Compare",
+      "inputs": {
+        "a": 1,
+        "b": 1
+      },
+      "expected": "found == 1"
+    },
+    {
+      "name": "case_1",
+      "function": "Compare",
+      "inputs": {
+        "a": 1,
+        "b": 2
+      },
+      "expected": "found == 0"
+    }
+  ]
+}

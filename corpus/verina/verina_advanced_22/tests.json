@@ -1,0 +1,91 @@
+{
+  "comment": "Generated from the task's test.json by corpus/verina-notes/interface.py: one case per test.",
+  "functions": {
+    "isPeakValley": {
+      "result": "long",
+      "parameters": "long lst_len, const long lst[lst_len]",
+      "call": "isPeakValley(lst_len, lst)"
+    }
+  },
+  "cases": [
+    {
+      "name": "case_0",
+      "function": "isPeakValley",
+      "inputs": {
+        "lst_len": 5,
+        "lst": [
+          1,
+          3,
+          5,
+          2,
+          1
+        ]
+      },
+      "expected": "found == 1"
+    },
+    {
+      "name": "case_1",
+      "function": "isPeakValley",
+      "inputs": {
+        "lst_len": 5,
+        "lst": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "expected": "found == 0"
+    },
+    {
+      "name": "case_2",
+      "function": "isPeakValley",
+      "inputs": {
+        "lst_len": 0,
+        "lst": []
+      },
+      "expected": "found == 0"
+    },
+    {
+      "name": "case_3",
+      "function": "isPeakValley",
+      "inputs": {
+        "lst_len": 1,
+        "lst": [
+          1
+        ]
+      },
+      "expected": "found == 0"
+    },
+    {
+      "name": "case_4",
+      "function": "isPeakValley",
+      "inputs": {
+        "lst_len": 5,
+        "lst": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "expected": "found == 0"
+    },
+    {
+      "name": "case_5",
+      "function": "isPeakValley",
+      "inputs": {
+        "lst_len": 4,
+        "lst": [
+          1,
+          10,
+          100,
+          1
+        ]
+      },
+      "expected": "found == 1"
+    }
+  ]
+}

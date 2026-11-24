@@ -1,0 +1,582 @@
+{
+ "campaign": "bench/eval/corpus-exercism-20261118",
+ "manifest_sha256": "04b4a446a16037224e71babcfd4afcbe9a96c446bd0c4bec252b2b20f908eef0",
+ "classified_by": "AI assistant (Claude Code); author's review pending",
+ "definition": "A mutant is equivalent when no call through the upstream interface (the host glue of the unit) can tell it from the port. Every mutant classified as not equivalent has a probe whose output differs (corpus/exercism-notes/witnesses).",
+ "mutants_missed_by_tests": 47,
+ "equivalent": 30,
+ "not_equivalent": 17,
+ "non_equivalent_mutants": {
+  "total": 254,
+  "both": 152,
+  "tests": 85,
+  "proof": 15,
+  "neither": 2,
+  "killed_by_tests": 237,
+  "refused_by_proof": 167
+ },
+ "h4b_refused_minus_killed_non_equivalent": {
+  "estimate": -0.2755905511811024,
+  "low": -0.45592705167173253,
+  "high": -0.0641025641025641,
+  "units": 16,
+  "seed": 20261118
+ },
+ "entries": [
+  {
+   "unit": "high-scores",
+   "mutant": "m001",
+   "operator": "constant",
+   "line": 10,
+   "proof": "refused-failed",
+   "equivalent_at_upstream_interface": false,
+   "reason": "the latest of a one-element list is reported 0",
+   "probe": {
+    "original": "latest1=7 best1=7 best2=9 latest0=0 best0=0 top=3:30,20,10",
+    "mutant": "latest1=0 best1=7 best2=9 latest0=11 best0=0 top=3:30,20,10"
+   }
+  },
+  {
+   "unit": "high-scores",
+   "mutant": "m002",
+   "operator": "constant",
+   "line": 11,
+   "proof": "refused-failed",
+   "equivalent_at_upstream_interface": false,
+   "reason": "the latest of an empty list is reported 1",
+   "probe": {
+    "original": "latest1=7 best1=7 best2=9 latest0=0 best0=0 top=3:30,20,10",
+    "mutant": "latest1=7 best1=7 best2=9 latest0=1 best0=0 top=3:30,20,10"
+   }
+  },
+  {
+   "unit": "high-scores",
+   "mutant": "m007",
+   "operator": "constant",
+   "line": 20,
+   "proof": "refused-failed",
+   "equivalent_at_upstream_interface": false,
+   "reason": "the best of a one-element list is reported 0",
+   "probe": {
+    "original": "latest1=7 best1=7 best2=9 latest0=0 best0=0 top=3:30,20,10",
+    "mutant": "latest1=7 best1=0 best2=9 latest0=0 best0=7 top=3:30,20,10"
+   }
+  },
+  {
+   "unit": "high-scores",
+   "mutant": "m008",
+   "operator": "constant",
+   "line": 21,
+   "proof": "refused-failed",
+   "equivalent_at_upstream_interface": false,
+   "reason": "the best of an empty list is reported 1",
+   "probe": {
+    "original": "latest1=7 best1=7 best2=9 latest0=0 best0=0 top=3:30,20,10",
+    "mutant": "latest1=7 best1=7 best2=9 latest0=0 best0=1 top=3:30,20,10"
+   }
+  },
+  {
+   "unit": "high-scores",
+   "mutant": "m009",
+   "operator": "constant",
+   "line": 23,
+   "proof": "refused-failed",
+   "equivalent_at_upstream_interface": false,
+   "reason": "the first score is never considered: the best of {9, 3} is reported 3",
+   "probe": {
+    "original": "latest1=7 best1=7 best2=9 latest0=0 best0=0 top=3:30,20,10",
+    "mutant": "latest1=7 best1=9 best2=3 latest0=0 best0=0 top=3:30,20,10"
+   }
+  },
+  {
+   "unit": "high-scores",
+   "mutant": "m010",
+   "operator": "relational",
+   "line": 26,
+   "proof": "certified",
+   "equivalent_at_upstream_interface": true,
+   "reason": "`best <= scores[i]` assigns a value equal to the one already held",
+   "probe": {
+    "original": "latest1=7 best1=7 best2=9 latest0=0 best0=0 top=3:30,20,10",
+    "mutant": "latest1=7 best1=7 best2=9 latest0=0 best0=0 top=3:30,20,10"
+   }
+  },
+  {
+   "unit": "high-scores",
+   "mutant": "m015",
+   "operator": "relational",
+   "line": 45,
+   "proof": "certified",
+   "equivalent_at_upstream_interface": true,
+   "reason": "`count` never exceeds 3, so `!= 3` and `< 3` agree",
+   "probe": {
+    "original": "latest1=7 best1=7 best2=9 latest0=0 best0=0 top=3:30,20,10",
+    "mutant": "latest1=7 best1=7 best2=9 latest0=0 best0=0 top=3:30,20,10"
+   }
+  },
+  {
+   "unit": "high-scores",
+   "mutant": "m017",
+   "operator": "relational",
+   "line": 47,
+   "proof": "certified",
+   "equivalent_at_upstream_interface": true,
+   "reason": "a score equal to the lowest kept one is written over that equal value",
+   "probe": {
+    "original": "latest1=7 best1=7 best2=9 latest0=0 best0=0 top=3:30,20,10",
+    "mutant": "latest1=7 best1=7 best2=9 latest0=0 best0=0 top=3:30,20,10"
+   }
+  },
+  {
+   "unit": "high-scores",
+   "mutant": "m018",
+   "operator": "relational",
+   "line": 47,
+   "proof": "certified",
+   "equivalent_at_upstream_interface": false,
+   "reason": "a score lower than the lowest kept one replaces it: {30, 20, 10, 5} gives 30, 20, 5",
+   "probe": {
+    "original": "latest1=7 best1=7 best2=9 latest0=0 best0=0 top=3:30,20,10",
+    "mutant": "latest1=7 best1=7 best2=9 latest0=0 best0=0 top=3:30,20,5"
+   }
+  },
+  {
+   "unit": "leap",
+   "mutant": "m010",
+   "operator": "constant",
+   "line": 8,
+   "proof": "certified",
+   "equivalent_at_upstream_interface": true,
+   "reason": "`return 2` from a `_Bool` function is true"
+  },
+  {
+   "unit": "leap",
+   "mutant": "m018",
+   "operator": "constant",
+   "line": 13,
+   "proof": "certified",
+   "equivalent_at_upstream_interface": true,
+   "reason": "`return 2` from a `_Bool` function is true"
+  },
+  {
+   "unit": "nth-prime",
+   "mutant": "m004",
+   "operator": "constant",
+   "line": 12,
+   "proof": "certified",
+   "equivalent_at_upstream_interface": true,
+   "reason": "`return 2` from a `_Bool` function is true"
+  },
+  {
+   "unit": "pangram",
+   "mutant": "m009",
+   "operator": "relational",
+   "line": 18,
+   "proof": "not-judged",
+   "equivalent_at_upstream_interface": true,
+   "reason": "is_alpha is only called on a lower-cased character; its upper-case half is never reached",
+   "probe": {
+    "original": "0 1",
+    "mutant": "0 1"
+   }
+  },
+  {
+   "unit": "pangram",
+   "mutant": "m010",
+   "operator": "relational",
+   "line": 18,
+   "proof": "not-judged",
+   "equivalent_at_upstream_interface": true,
+   "reason": "as m009",
+   "probe": {
+    "original": "0 1",
+    "mutant": "0 1"
+   }
+  },
+  {
+   "unit": "pangram",
+   "mutant": "m011",
+   "operator": "relational",
+   "line": 18,
+   "proof": "not-judged",
+   "equivalent_at_upstream_interface": true,
+   "reason": "as m009",
+   "probe": {
+    "original": "0 1",
+    "mutant": "0 1"
+   }
+  },
+  {
+   "unit": "pangram",
+   "mutant": "m012",
+   "operator": "relational",
+   "line": 18,
+   "proof": "not-judged",
+   "equivalent_at_upstream_interface": true,
+   "reason": "as m009",
+   "probe": {
+    "original": "0 1",
+    "mutant": "0 1"
+   }
+  },
+  {
+   "unit": "pangram",
+   "mutant": "m013",
+   "operator": "constant",
+   "line": 27,
+   "proof": "not-judged",
+   "equivalent_at_upstream_interface": false,
+   "reason": "the table starts with 'a' already found: the 25 letters b to z are reported a pangram",
+   "probe": {
+    "original": "0 1",
+    "mutant": "1 1"
+   }
+  },
+  {
+   "unit": "pangram",
+   "mutant": "m015",
+   "operator": "constant",
+   "line": 34,
+   "proof": "not-judged",
+   "equivalent_at_upstream_interface": true,
+   "reason": "storing 2 into a `_Bool` element stores true",
+   "probe": {
+    "original": "0 1",
+    "mutant": "0 1"
+   }
+  },
+  {
+   "unit": "pangram",
+   "mutant": "m018",
+   "operator": "constant",
+   "line": 42,
+   "proof": "certified",
+   "equivalent_at_upstream_interface": true,
+   "reason": "`return 2` from a `_Bool` function is true"
+  },
+  {
+   "unit": "perfect-numbers",
+   "mutant": "m006",
+   "operator": "constant",
+   "line": 17,
+   "proof": "certified",
+   "equivalent_at_upstream_interface": true,
+   "reason": "the `for` assigns `i = 2` again before its first use"
+  },
+  {
+   "unit": "perfect-numbers",
+   "mutant": "m007",
+   "operator": "constant",
+   "line": 17,
+   "proof": "certified",
+   "equivalent_at_upstream_interface": true,
+   "reason": "as m006"
+  },
+  {
+   "unit": "perfect-numbers",
+   "mutant": "m017",
+   "operator": "arithmetic",
+   "line": 27,
+   "proof": "certified",
+   "equivalent_at_upstream_interface": true,
+   "reason": "`total - 0` is `total + 0`"
+  },
+  {
+   "unit": "perfect-numbers",
+   "mutant": "m026",
+   "operator": "relational",
+   "line": 44,
+   "proof": "certified",
+   "equivalent_at_upstream_interface": true,
+   "reason": "reached only when `sum <= n`, where `!=` and `<` agree"
+  },
+  {
+   "unit": "queen-attack",
+   "mutant": "m003",
+   "operator": "relational",
+   "line": 17,
+   "proof": "refused-failed",
+   "equivalent_at_upstream_interface": false,
+   "reason": "a white queen on row 9 is accepted",
+   "probe": {
+    "original": "2 2 2 2",
+    "mutant": "0 2 2 2"
+   }
+  },
+  {
+   "unit": "queen-attack",
+   "mutant": "m005",
+   "operator": "relational",
+   "line": 18,
+   "proof": "refused-failed",
+   "equivalent_at_upstream_interface": false,
+   "reason": "a white queen on column 9 is accepted",
+   "probe": {
+    "original": "2 2 2 2",
+    "mutant": "2 0 2 2"
+   }
+  },
+  {
+   "unit": "queen-attack",
+   "mutant": "m006",
+   "operator": "relational",
+   "line": 18,
+   "proof": "refused-failed",
+   "equivalent_at_upstream_interface": false,
+   "reason": "a black queen on row 8 is accepted",
+   "probe": {
+    "original": "2 2 2 2",
+    "mutant": "2 2 0 2"
+   }
+  },
+  {
+   "unit": "queen-attack",
+   "mutant": "m008",
+   "operator": "relational",
+   "line": 18,
+   "proof": "refused-failed",
+   "equivalent_at_upstream_interface": false,
+   "reason": "a black queen on column 8 is accepted",
+   "probe": {
+    "original": "2 2 2 2",
+    "mutant": "2 2 2 0"
+   }
+  },
+  {
+   "unit": "resistor-color-trio",
+   "mutant": "m004",
+   "operator": "constant",
+   "line": 24,
+   "proof": "certified",
+   "equivalent_at_upstream_interface": true,
+   "reason": "resistor[0] is assigned the value before returning; resistor[1] is set to 0 on the next line",
+   "probe": {
+    "original": "990 2",
+    "mutant": "990 2"
+   }
+  },
+  {
+   "unit": "resistor-color-trio",
+   "mutant": "m005",
+   "operator": "constant",
+   "line": 24,
+   "proof": "certified",
+   "equivalent_at_upstream_interface": true,
+   "reason": "resistor[0] is assigned the value before returning",
+   "probe": {
+    "original": "990 2",
+    "mutant": "990 2"
+   }
+  },
+  {
+   "unit": "resistor-color-trio",
+   "mutant": "m006",
+   "operator": "deletion",
+   "line": 24,
+   "proof": "certified",
+   "equivalent_at_upstream_interface": true,
+   "reason": "as m005",
+   "probe": {
+    "original": "990 2",
+    "mutant": "990 2"
+   }
+  },
+  {
+   "unit": "resistor-color-trio",
+   "mutant": "m008",
+   "operator": "constant",
+   "line": 25,
+   "proof": "refused-failed",
+   "equivalent_at_upstream_interface": true,
+   "reason": "the glue passes an array of zeros, so the missing initial value of the unit is not seen; another caller would see it",
+   "probe": {
+    "original": "990 2",
+    "mutant": "990 2"
+   }
+  },
+  {
+   "unit": "resistor-color-trio",
+   "mutant": "m010",
+   "operator": "deletion",
+   "line": 25,
+   "proof": "refused-failed",
+   "equivalent_at_upstream_interface": true,
+   "reason": "as m008",
+   "probe": {
+    "original": "990 2",
+    "mutant": "990 2"
+   }
+  },
+  {
+   "unit": "resistor-color-trio",
+   "mutant": "m026",
+   "operator": "constant",
+   "line": 32,
+   "proof": "refused-failed",
+   "equivalent_at_upstream_interface": false,
+   "reason": "white, white, violet gives 991 megaohms, not 990",
+   "probe": {
+    "original": "990 2",
+    "mutant": "991 2"
+   }
+  },
+  {
+   "unit": "resistor-color-trio",
+   "mutant": "m030",
+   "operator": "constant",
+   "line": 35,
+   "proof": "certified",
+   "equivalent_at_upstream_interface": true,
+   "reason": "the port's return value replaces `void` (P14) and the glue ignores it",
+   "probe": {
+    "original": "990 2",
+    "mutant": "990 2"
+   }
+  },
+  {
+   "unit": "reverse-string",
+   "mutant": "m003",
+   "operator": "constant",
+   "line": 19,
+   "proof": "certified",
+   "equivalent_at_upstream_interface": true,
+   "reason": "the port's return value replaces `void` (P14) and the glue ignores it"
+  },
+  {
+   "unit": "rna-transcription",
+   "mutant": "m008",
+   "operator": "constant",
+   "line": 24,
+   "proof": "refused-failed",
+   "equivalent_at_upstream_interface": false,
+   "reason": "a letter that is not a nucleotide no longer yields NULL",
+   "probe": {
+    "original": "NULL NULL",
+    "mutant": "CU"
+   }
+  },
+  {
+   "unit": "rna-transcription",
+   "mutant": "m009",
+   "operator": "constant",
+   "line": 27,
+   "proof": "refused-failed",
+   "equivalent_at_upstream_interface": true,
+   "reason": "the glue tests the result for non-zero; 2 and 1 are the same to it",
+   "probe": {
+    "original": "NULL NULL",
+    "mutant": "NULL NULL"
+   }
+  },
+  {
+   "unit": "robot-simulator",
+   "mutant": "m052",
+   "operator": "constant",
+   "line": 55,
+   "proof": "certified",
+   "equivalent_at_upstream_interface": true,
+   "reason": "the port's return value replaces `void` (P14) and the glue ignores it"
+  },
+  {
+   "unit": "robot-simulator",
+   "mutant": "m056",
+   "operator": "constant",
+   "line": 74,
+   "proof": "certified",
+   "equivalent_at_upstream_interface": true,
+   "reason": "as m052"
+  },
+  {
+   "unit": "robot-simulator",
+   "mutant": "m008",
+   "operator": "relational",
+   "line": 20,
+   "proof": "certified",
+   "equivalent_at_upstream_interface": true,
+   "reason": "direction 0 is replaced by the default, which is 0",
+   "probe": {
+    "original": "0,3,2 0,3,2 0,3,2",
+    "mutant": "0,3,2 0,3,2 0,3,2"
+   }
+  },
+  {
+   "unit": "robot-simulator",
+   "mutant": "m010",
+   "operator": "relational",
+   "line": 20,
+   "proof": "refused-failed",
+   "equivalent_at_upstream_interface": false,
+   "reason": "direction 4 is kept",
+   "probe": {
+    "original": "0,3,2 0,3,2 0,3,2",
+    "mutant": "4,3,2 0,3,2 0,3,2"
+   }
+  },
+  {
+   "unit": "robot-simulator",
+   "mutant": "m011",
+   "operator": "relational",
+   "line": 20,
+   "proof": "refused-failed",
+   "equivalent_at_upstream_interface": false,
+   "reason": "directions above 4 are kept",
+   "probe": {
+    "original": "0,3,2 0,3,2 0,3,2",
+    "mutant": "0,3,2 5,3,2 7,3,2"
+   }
+  },
+  {
+   "unit": "robot-simulator",
+   "mutant": "m012",
+   "operator": "constant",
+   "line": 21,
+   "proof": "refused-failed",
+   "equivalent_at_upstream_interface": false,
+   "reason": "an invalid direction is kept and x is set to 0",
+   "probe": {
+    "original": "0,3,2 0,3,2 0,3,2",
+    "mutant": "4,0,2 5,0,2 7,0,2"
+   }
+  },
+  {
+   "unit": "robot-simulator",
+   "mutant": "m013",
+   "operator": "deletion",
+   "line": 21,
+   "proof": "refused-failed",
+   "equivalent_at_upstream_interface": false,
+   "reason": "an invalid direction is kept",
+   "probe": {
+    "original": "0,3,2 0,3,2 0,3,2",
+    "mutant": "4,3,2 5,3,2 7,3,2"
+   }
+  },
+  {
+   "unit": "robot-simulator",
+   "mutant": "m014",
+   "operator": "constant",
+   "line": 23,
+   "proof": "certified",
+   "equivalent_at_upstream_interface": true,
+   "reason": "as m052"
+  },
+  {
+   "unit": "robot-simulator",
+   "mutant": "m022",
+   "operator": "constant",
+   "line": 31,
+   "proof": "certified",
+   "equivalent_at_upstream_interface": true,
+   "reason": "as m052"
+  },
+  {
+   "unit": "robot-simulator",
+   "mutant": "m031",
+   "operator": "constant",
+   "line": 39,
+   "proof": "certified",
+   "equivalent_at_upstream_interface": true,
+   "reason": "as m052"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+  "id": "verina_basic_38",
+  "stated": "part",
+  "dropped": [
+    "result -> all characters pairwise equal (Pairwise)",
+    "not result -> some character differs from the first (any)"
+  ],
+  "weakened": [],
+  "verdict": "certified at full",
+  "remarks": "Stated: result is 0 or 1; not result -> s is not empty."
+}

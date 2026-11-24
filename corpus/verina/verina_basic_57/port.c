@@ -1,0 +1,15 @@
+#include "pfc.h"
+
+/* Verina verina_basic_57: number of elements of numbers that are less than threshold. */
+long CountLessThan(long numbers_len, const long numbers[numbers_len], long threshold)
+    ensures(result >= 0)
+{
+    long count = 0;
+
+    for (long i = 0; i < numbers_len; i++) invariant(0 <= count && count <= i) {
+        if (numbers[i] < threshold) {
+            count++;
+        }
+    }
+    return count;
+}

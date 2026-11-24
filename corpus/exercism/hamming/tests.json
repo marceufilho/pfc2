@@ -1,0 +1,111 @@
+{
+ "comment": "Each case is one assertion of the upstream test file, transcribed by hand: the inputs it passes and what it expects, stated on the port's interface. `found` is the value the function returns.",
+ "functions": {
+  "compute": {
+   "result": "long",
+   "parameters": "long n, const char lhs[n], long m, const char rhs[m]",
+   "call": "hamming_distance(n, lhs, m, rhs)"
+  }
+ },
+ "cases": [
+  {
+   "name": "empty_strands",
+   "function": "compute",
+   "inputs": {
+    "n": 0,
+    "lhs": "",
+    "m": 0,
+    "rhs": ""
+   },
+   "expected": "found == 0"
+  },
+  {
+   "name": "single_letter_identical_strands",
+   "function": "compute",
+   "inputs": {
+    "n": 1,
+    "lhs": "A",
+    "m": 1,
+    "rhs": "A"
+   },
+   "expected": "found == 0"
+  },
+  {
+   "name": "single_letter_different_strands",
+   "function": "compute",
+   "inputs": {
+    "n": 1,
+    "lhs": "G",
+    "m": 1,
+    "rhs": "T"
+   },
+   "expected": "found == 1"
+  },
+  {
+   "name": "long_identical_strands",
+   "function": "compute",
+   "inputs": {
+    "n": 13,
+    "lhs": "GGACTGAAATCTG",
+    "m": 13,
+    "rhs": "GGACTGAAATCTG"
+   },
+   "expected": "found == 0"
+  },
+  {
+   "name": "long_different_strands",
+   "function": "compute",
+   "inputs": {
+    "n": 12,
+    "lhs": "GGACGGATTCTG",
+    "m": 12,
+    "rhs": "AGGACGGATTCT"
+   },
+   "expected": "found == 9"
+  },
+  {
+   "name": "disallow_first_strand_longer",
+   "function": "compute",
+   "inputs": {
+    "n": 4,
+    "lhs": "AATG",
+    "m": 3,
+    "rhs": "AAA"
+   },
+   "expected": "found == -1"
+  },
+  {
+   "name": "disallow_second_strand_longer",
+   "function": "compute",
+   "inputs": {
+    "n": 3,
+    "lhs": "ATA",
+    "m": 4,
+    "rhs": "AGTG"
+   },
+   "expected": "found == -1"
+  },
+  {
+   "name": "disallow_empty_first_strand",
+   "function": "compute",
+   "inputs": {
+    "n": 0,
+    "lhs": "",
+    "m": 1,
+    "rhs": "G"
+   },
+   "expected": "found == -1"
+  },
+  {
+   "name": "disallow_empty_second_strand",
+   "function": "compute",
+   "inputs": {
+    "n": 1,
+    "lhs": "G",
+    "m": 0,
+    "rhs": ""
+   },
+   "expected": "found == -1"
+  }
+ ]
+}

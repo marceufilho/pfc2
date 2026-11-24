@@ -1,0 +1,10 @@
+{
+  "id": "verina_advanced_77",
+  "stated": "none",
+  "dropped": [
+    "result equals the sum over all indices of min(prefix max, suffix max) - height (sum, fold over the list)"
+  ],
+  "weakened": [],
+  "verdict": "certified at memory",
+  "remarks": "Only the Nat type of the result (result >= 0) is stated. The elements are Nat in Lean; that needs a quantifier and is not required, so the subtractions and the sum can overflow."
+}

@@ -1,0 +1,153 @@
+{
+ "comment": "Generated from the task's test.json by corpus/verina-notes/interface.py: one case per test.",
+ "functions": {
+  "mergeSorted": {
+   "result": "long",
+   "parameters": "long a1_len, const long a1[a1_len], long a2_len, const long a2[a2_len]",
+   "call": "mergeSorted(a1_len, a1, a2_len, a2, 32, out)",
+   "locals": "long out[32] = {0};"
+  }
+ },
+ "cases": [
+  {
+   "name": "case_0",
+   "function": "mergeSorted",
+   "inputs": {
+    "a1_len": 3,
+    "a1": [
+     1,
+     3,
+     5
+    ],
+    "a2_len": 3,
+    "a2": [
+     2,
+     4,
+     6
+    ]
+   },
+   "expected": "found == 6 && out[0] == 1 && out[1] == 2 && out[2] == 3 && out[3] == 4 && out[4] == 5 && out[5] == 6"
+  },
+  {
+   "name": "case_1",
+   "function": "mergeSorted",
+   "inputs": {
+    "a1_len": 0,
+    "a1": [],
+    "a2_len": 3,
+    "a2": [
+     1,
+     2,
+     3
+    ]
+   },
+   "expected": "found == 3 && out[0] == 1 && out[1] == 2 && out[2] == 3"
+  },
+  {
+   "name": "case_2",
+   "function": "mergeSorted",
+   "inputs": {
+    "a1_len": 3,
+    "a1": [
+     1,
+     2,
+     3
+    ],
+    "a2_len": 0,
+    "a2": []
+   },
+   "expected": "found == 3 && out[0] == 1 && out[1] == 2 && out[2] == 3"
+  },
+  {
+   "name": "case_3",
+   "function": "mergeSorted",
+   "inputs": {
+    "a1_len": 0,
+    "a1": [],
+    "a2_len": 0,
+    "a2": []
+   },
+   "expected": "found == 0"
+  },
+  {
+   "name": "case_4",
+   "function": "mergeSorted",
+   "inputs": {
+    "a1_len": 3,
+    "a1": [
+     1,
+     1,
+     2
+    ],
+    "a2_len": 3,
+    "a2": [
+     1,
+     2,
+     2
+    ]
+   },
+   "expected": "found == 6 && out[0] == 1 && out[1] == 1 && out[2] == 1 && out[3] == 2 && out[4] == 2 && out[5] == 2"
+  },
+  {
+   "name": "case_5",
+   "function": "mergeSorted",
+   "inputs": {
+    "a1_len": 3,
+    "a1": [
+     10,
+     20,
+     30
+    ],
+    "a2_len": 3,
+    "a2": [
+     5,
+     15,
+     25
+    ]
+   },
+   "expected": "found == 6 && out[0] == 5 && out[1] == 10 && out[2] == 15 && out[3] == 20 && out[4] == 25 && out[5] == 30"
+  },
+  {
+   "name": "case_6",
+   "function": "mergeSorted",
+   "inputs": {
+    "a1_len": 5,
+    "a1": [
+     1,
+     3,
+     5,
+     7,
+     9
+    ],
+    "a2_len": 5,
+    "a2": [
+     2,
+     4,
+     6,
+     8,
+     10
+    ]
+   },
+   "expected": "found == 10 && out[0] == 1 && out[1] == 2 && out[2] == 3 && out[3] == 4 && out[4] == 5 && out[5] == 6 && out[6] == 7 && out[7] == 8 && out[8] == 9 && out[9] == 10"
+  },
+  {
+   "name": "case_7",
+   "function": "mergeSorted",
+   "inputs": {
+    "a1_len": 3,
+    "a1": [
+     5,
+     5,
+     5
+    ],
+    "a2_len": 3,
+    "a2": [
+     5,
+     5,
+     5
+    ]
+   },
+   "expected": "found == 6 && out[0] == 5 && out[1] == 5 && out[2] == 5 && out[3] == 5 && out[4] == 5 && out[5] == 5"
+  }
+ ]
+}

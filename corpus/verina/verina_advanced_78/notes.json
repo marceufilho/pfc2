@@ -1,0 +1,12 @@
+{
+  "id": "verina_advanced_78",
+  "stated": "part",
+  "dropped": [
+    "precondition: exactly one pair sums to target (count over pairs)"
+  ],
+  "weakened": [
+    "the whole postcondition (i < j, i < length, j < length, nums[i] + nums[j] = target) is not stated: it is statable about out[0], out[1], but it is false without the dropped precondition (when no pair exists the port leaves out untouched and returns the same value), so no ensures remains"
+  ],
+  "verdict": "certified at memory",
+  "remarks": "Certified with no ensures: see weakened."
+}

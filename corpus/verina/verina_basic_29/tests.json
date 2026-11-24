@@ -1,0 +1,71 @@
+{
+  "comment": "Generated from the task's test.json by corpus/verina-notes/interface.py: one case per test.",
+  "functions": {
+    "removeElement": {
+      "result": "long",
+      "parameters": "long s_len, const long s[s_len], long k",
+      "call": "removeElement(s_len, s, k, 16, out)",
+      "locals": "long out[16] = {0};"
+    }
+  },
+  "cases": [
+    {
+      "name": "case_0",
+      "function": "removeElement",
+      "inputs": {
+        "s_len": 5,
+        "s": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "k": 2
+      },
+      "expected": "found == 4 && out[0] == 1 && out[1] == 2 && out[2] == 4 && out[3] == 5"
+    },
+    {
+      "name": "case_1",
+      "function": "removeElement",
+      "inputs": {
+        "s_len": 4,
+        "s": [
+          10,
+          20,
+          30,
+          40
+        ],
+        "k": 0
+      },
+      "expected": "found == 3 && out[0] == 20 && out[1] == 30 && out[2] == 40"
+    },
+    {
+      "name": "case_2",
+      "function": "removeElement",
+      "inputs": {
+        "s_len": 4,
+        "s": [
+          10,
+          20,
+          30,
+          40
+        ],
+        "k": 3
+      },
+      "expected": "found == 3 && out[0] == 10 && out[1] == 20 && out[2] == 30"
+    },
+    {
+      "name": "case_3",
+      "function": "removeElement",
+      "inputs": {
+        "s_len": 1,
+        "s": [
+          7
+        ],
+        "k": 0
+      },
+      "expected": "found == 0"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "id": "verina_basic_15",
+  "stated": "none",
+  "dropped": [
+    "result is true exactly when some i has a[i] + 1 = a[i + 1] (existential)"
+  ],
+  "weakened": [],
+  "verdict": "certified at memory",
+  "remarks": "Only the Bool range of the result is stated."
+}

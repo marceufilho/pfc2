@@ -1,0 +1,98 @@
+{
+ "comment": "Generated from the task's test.json by corpus/verina-notes/interface.py: one case per test.",
+ "functions": {
+  "rain": {
+   "result": "long",
+   "parameters": "long heights_len, const long heights[heights_len]",
+   "call": "rain(heights_len, heights)"
+  }
+ },
+ "cases": [
+  {
+   "name": "case_0",
+   "function": "rain",
+   "inputs": {
+    "heights_len": 12,
+    "heights": [
+     0,
+     1,
+     0,
+     2,
+     1,
+     0,
+     1,
+     3,
+     2,
+     1,
+     2,
+     1
+    ]
+   },
+   "expected": "found == 6"
+  },
+  {
+   "name": "case_1",
+   "function": "rain",
+   "inputs": {
+    "heights_len": 6,
+    "heights": [
+     4,
+     2,
+     0,
+     3,
+     2,
+     5
+    ]
+   },
+   "expected": "found == 9"
+  },
+  {
+   "name": "case_2",
+   "function": "rain",
+   "inputs": {
+    "heights_len": 3,
+    "heights": [
+     1,
+     1,
+     1
+    ]
+   },
+   "expected": "found == 0"
+  },
+  {
+   "name": "case_3",
+   "function": "rain",
+   "inputs": {
+    "heights_len": 2,
+    "heights": [
+     10,
+     5
+    ]
+   },
+   "expected": "found == 0"
+  },
+  {
+   "name": "case_4",
+   "function": "rain",
+   "inputs": {
+    "heights_len": 4,
+    "heights": [
+     1,
+     10,
+     9,
+     11
+    ]
+   },
+   "expected": "found == 1"
+  },
+  {
+   "name": "case_5",
+   "function": "rain",
+   "inputs": {
+    "heights_len": 0,
+    "heights": []
+   },
+   "expected": "found == 0"
+  }
+ ]
+}

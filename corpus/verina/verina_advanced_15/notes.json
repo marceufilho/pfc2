@@ -1,0 +1,10 @@
+{
+  "id": "verina_advanced_15",
+  "stated": "none",
+  "dropped": [
+    "postcond: both directions quantify over index triples"
+  ],
+  "weakened": [],
+  "verdict": "certified at full",
+  "remarks": "The 0/1 ensures is the Bool encoding."
+}

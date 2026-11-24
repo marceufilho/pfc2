@@ -1,0 +1,12 @@
+{
+ "id": "verina_basic_56",
+ "stated": "part",
+ "dropped": [
+  "postcond: result[i] = dest[i] for i < dStart",
+  "postcond: result[i] = dest[i] for dStart + len <= i",
+  "postcond: result[dStart + i] = src[sStart + i] for i < len"
+ ],
+ "weakened": [],
+ "verdict": "certified at full",
+ "remarks": ""
+}

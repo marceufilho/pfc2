@@ -1,0 +1,12 @@
+{
+  "id": "verina_basic_40",
+  "stated": "part",
+  "dropped": [
+    "precondition: at least two distinct values (existential)",
+    "result is an element of s (existential)",
+    "some element is smaller than result and every element different from it is >= result (existential, quantifier)"
+  ],
+  "weakened": [],
+  "verdict": "certified at full",
+  "remarks": "Only the precondition s.size > 1 (already in the port) is stated; memory safety is proved."
+}

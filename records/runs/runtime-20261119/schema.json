@@ -1,0 +1,82 @@
+{
+  "columns": [
+    {
+      "allowed": [
+        "program",
+        "run"
+      ],
+      "name": "row",
+      "nullable": false,
+      "type": "string"
+    },
+    {
+      "allowed": null,
+      "name": "program",
+      "nullable": false,
+      "type": "string"
+    },
+    {
+      "allowed": null,
+      "name": "corpus",
+      "nullable": false,
+      "type": "string"
+    },
+    {
+      "allowed": null,
+      "name": "status",
+      "nullable": true,
+      "type": "string"
+    },
+    {
+      "allowed": [
+        "plain",
+        "checked",
+        "certified"
+      ],
+      "name": "variant",
+      "nullable": true,
+      "type": "string"
+    },
+    {
+      "allowed": null,
+      "name": "block",
+      "nullable": true,
+      "type": "integer"
+    },
+    {
+      "allowed": null,
+      "name": "run",
+      "nullable": true,
+      "type": "integer"
+    },
+    {
+      "allowed": null,
+      "name": "nanoseconds",
+      "nullable": true,
+      "type": "integer"
+    },
+    {
+      "allowed": null,
+      "name": "checksum",
+      "nullable": true,
+      "type": "string"
+    },
+    {
+      "allowed": null,
+      "name": "at",
+      "nullable": true,
+      "type": "number"
+    }
+  ],
+  "provenance": [
+    "experiment",
+    "evidence_dir",
+    "tag",
+    "commit",
+    "seed",
+    "timestamp",
+    "vc_model",
+    "solver_version",
+    "clang"
+  ]
+}

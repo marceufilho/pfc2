@@ -1,0 +1,628 @@
+{
+  "rule": "Build `corpus/thesis-derived` from the thesis repository by the registered mechanical rule.\n\nRule (DESIGN.md section 2, \"re-spelled for pfc.h by a mechanical rule\"), fixed here before any program\nwas judged for the record:\n\n  R1  the line `#include \"spec.h\"` becomes `#include \"pfc.h\"`;\n  R2  a line including the program's own header (`#include \"kernel.h\"`) is removed;\n  R3  nothing else changes: the older clause spellings (REQUIRES, INVARIANT, ...) are read by pfc.h.",
+  "units": [
+    {
+      "stratum": "kernels",
+      "unit": "binary_search",
+      "source": "kernels/binary_search/kernel.c",
+      "source_sha256": "4780cd5b475309fb3ceb82f79da909483d6b9391a45acc244afc7acaca53a077",
+      "sha256": "ff0eec65a8187a9fd3bbf30ca066e73f0376960dc2770e9ef0b91230d70e0b3d"
+    },
+    {
+      "stratum": "kernels",
+      "unit": "dot",
+      "source": "kernels/dot/kernel.c",
+      "source_sha256": "281079fc940ac103b9c6b2948dc0cc92821bcf3368cc75e804b64dd4d1c10ae8",
+      "sha256": "43768406ca43fc575b8fc21472f1d14244225ed3491eed032318cc12057eb757"
+    },
+    {
+      "stratum": "kernels",
+      "unit": "matvec",
+      "source": "kernels/matvec/kernel.c",
+      "source_sha256": "38cbcd06bc92e6ca78e205dbd5e27e2f5d70b8893ca37f44134b89028016025b",
+      "sha256": "e2bc3e53b807923cc733fcab737e3d4846c19d835565ab08c221e789e2fe9d9e"
+    },
+    {
+      "stratum": "kernels",
+      "unit": "prefix_sum",
+      "source": "kernels/prefix_sum/kernel.c",
+      "source_sha256": "856c5a493367680f06e98c57dff31cc5382c6a11a18f14d626f5a8d8ec1e6b3d",
+      "sha256": "e86c15bc37b92a55694bf245c24853920ed1c2590f8f1df5cc1979aa23baf0a2"
+    },
+    {
+      "stratum": "kernels",
+      "unit": "saxpy",
+      "source": "kernels/saxpy/kernel.c",
+      "source_sha256": "f644f383234d600b7aba80c4a3a1feb8744fcad38bdb44e149d1ab02af60af27",
+      "sha256": "f0835f286d6296486d35d6c14c2b74151410e3a60e074197e3ca6c54a3eb21d3"
+    },
+    {
+      "stratum": "kernels",
+      "unit": "sum",
+      "source": "kernels/sum/kernel.c",
+      "source_sha256": "fdbfb9ba53745d86457e7626d16298b82fc8652bb4d58e7a864c46eed727ff75",
+      "sha256": "22755572bd6831a088d93310f9150359bb905a089bb0bac4e329d428169bc2f7"
+    },
+    {
+      "stratum": "acsl",
+      "unit": "accumulate",
+      "source": "bench/external/acsl/accumulate/kernel.c",
+      "source_sha256": "9b1a7d809abbc21179009c1e1991c628e0f0d8aaffad145d8e2125acb0afe5b7",
+      "sha256": "a33a592474e7ebf082bb327d66c336c8596eeb9faeef129aefe8de899fe4f752"
+    },
+    {
+      "stratum": "acsl",
+      "unit": "copy",
+      "source": "bench/external/acsl/copy/kernel.c",
+      "source_sha256": "4b29d8e550ea7f15fc706237d5852b5e2b50bc422351fea70e25f89c46ee21f8",
+      "sha256": "d3a1de0ac956fde058ef9350f4406bdb39d67c586fdd4a24b7d12edb1d48ff55"
+    },
+    {
+      "stratum": "acsl",
+      "unit": "count",
+      "source": "bench/external/acsl/count/kernel.c",
+      "source_sha256": "378b37cd2c142e422b741b6c3dc93f1832798c7c8bd7dc9e21ecfcbd25786694",
+      "sha256": "b8cb8c7de34d4d012eb91dad30ae63f338e19c557eac4bcfc78e0f5b78b4e1e7"
+    },
+    {
+      "stratum": "acsl",
+      "unit": "fill",
+      "source": "bench/external/acsl/fill/kernel.c",
+      "source_sha256": "3b002d07ef53fad8e9834c32a4d9014fbe37d572b24e361b6a0a5f59a2a7d661",
+      "sha256": "4b8c9f8b1bb48e5eb2a4daa000eaa88b232da7c9136326e9b8ca0a336b3888d1"
+    },
+    {
+      "stratum": "acsl",
+      "unit": "find",
+      "source": "bench/external/acsl/find/kernel.c",
+      "source_sha256": "101701674a7bbbacbdcc4dcf62f83703370f530679c3ff6038b1a3aa97e6b41e",
+      "sha256": "a2f8f9993ef2bf6b21bf76153fcdcb806fc59e1bd9a48a22132d152a37c163ee"
+    },
+    {
+      "stratum": "acsl",
+      "unit": "replace",
+      "source": "bench/external/acsl/replace/kernel.c",
+      "source_sha256": "3c3d14dcb0865f1a2a9fc56a525b2d3f4d06a07faf8d7c8a3ec48985f2982e3b",
+      "sha256": "2480262bc2d04c30f16706611b1501152d709640b3519a8672cfc9ec5ae64cad"
+    },
+    {
+      "stratum": "acsl",
+      "unit": "reverse",
+      "source": "bench/external/acsl/reverse/kernel.c",
+      "source_sha256": "55b9781099311635d130a39fbbc05aa6d3d3d372660a634315f673145236d79e",
+      "sha256": "0d9a0cf7b1c8172bab902d92fc82a39e745374d88779fb6768fc2627340493c8"
+    },
+    {
+      "stratum": "acsl",
+      "unit": "swap_ranges",
+      "source": "bench/external/acsl/swap_ranges/kernel.c",
+      "source_sha256": "c70de0ae5f6e78a4b0d599f609daa9105e214a8e4a131e632529d1d082ec74f8",
+      "sha256": "ac3d05779be522c1a86b7a3e9552bc9110dd56b141e039f36b0c96d9c039cc20"
+    },
+    {
+      "stratum": "zilu",
+      "unit": "zilu01",
+      "source": "bench/external/zilu/zilu01/kernel.c",
+      "source_sha256": "de7ca8e122dcf464127c6aebceb738355e8bdfdc0b41ceb846ce48bf2c430bf6",
+      "sha256": "5fdab481c43a89e303a39003c3849127277ab69a91c1fda4fbc9e632303df8ff"
+    },
+    {
+      "stratum": "zilu",
+      "unit": "zilu02",
+      "source": "bench/external/zilu/zilu02/kernel.c",
+      "source_sha256": "af5da22ed3ef5f04eca0d5b3b0138b39c49b39277d556aa7eeb7feeba75cef6f",
+      "sha256": "e3c5ee955d499f6001a2d9269f1fa2f9016760b53aed416317b49ecd37a85db1"
+    },
+    {
+      "stratum": "zilu",
+      "unit": "zilu04",
+      "source": "bench/external/zilu/zilu04/kernel.c",
+      "source_sha256": "4c3e328491dfdf5a16734772731232bdce9e91979435ee3e501bd7e39d89cd8b",
+      "sha256": "5a388a293d29fa2366c2382819748d68208d82145d7944f955086915496c74be"
+    },
+    {
+      "stratum": "zilu",
+      "unit": "zilu05",
+      "source": "bench/external/zilu/zilu05/kernel.c",
+      "source_sha256": "58dbee2fd5ceb76eb88d94e93f4367eedb5e4405237344cc3463e30e862cd414",
+      "sha256": "ac34bbd694cd9dca399e392a8c7dff02ced17a120875f206036045ca65c88259"
+    },
+    {
+      "stratum": "zilu",
+      "unit": "zilu06",
+      "source": "bench/external/zilu/zilu06/kernel.c",
+      "source_sha256": "c7122d2b82ceb95341b993386d48c1fc3179562f08578fe8ea0fd1f9126d671f",
+      "sha256": "c43d4264bae87339379dc6f1106945e1225c004af1bee81ec08ed597742f894b"
+    },
+    {
+      "stratum": "zilu",
+      "unit": "zilu08",
+      "source": "bench/external/zilu/zilu08/kernel.c",
+      "source_sha256": "7ede2f8088f994fc08057ca44328d0aaaef0f25ff979009334e56f4edccb99f0",
+      "sha256": "3649f75767fb36fddcee7b21b2110be2e656015b64b08ba62050e0a6866a9a2c"
+    },
+    {
+      "stratum": "zilu",
+      "unit": "zilu11",
+      "source": "bench/external/zilu/zilu11/kernel.c",
+      "source_sha256": "57c9aeaaea35c406bd1a94ff778ae17f86de545c4394c5d270d432331c279b1f",
+      "sha256": "5968f977a04d3768514fb57fcd10cd3b6f2c4167ae9276263e65c256917b1f10"
+    },
+    {
+      "stratum": "zilu",
+      "unit": "zilu12",
+      "source": "bench/external/zilu/zilu12/kernel.c",
+      "source_sha256": "19541fd8144b7155a4d521c75b31fa14c7642e314a3815795c80a616a4681d5c",
+      "sha256": "1314e0b19ba7c94de91a009f92b88995f6cdfdd8ddbeaff1d818a4f384e21944"
+    },
+    {
+      "stratum": "zilu",
+      "unit": "zilu13",
+      "source": "bench/external/zilu/zilu13/kernel.c",
+      "source_sha256": "fd5dcf0df2469e22b3c782c3fc5fcd33d40a5ece1c8784f9d00b0c6cf827ba57",
+      "sha256": "8c5596996537696d811a185c1fd1d3daa2e8ea7b8fcdd02f883ed0c8cd75ca75"
+    },
+    {
+      "stratum": "zilu",
+      "unit": "zilu14",
+      "source": "bench/external/zilu/zilu14/kernel.c",
+      "source_sha256": "d94d4a7108d095eb38ce9294fcf38d11400201bc988819b3802069957d76f466",
+      "sha256": "2bf8225f99972ccdf29082ab393abcec3a5b29bd5cb17fe7315938a435b4ef9f"
+    },
+    {
+      "stratum": "zilu",
+      "unit": "zilu15",
+      "source": "bench/external/zilu/zilu15/kernel.c",
+      "source_sha256": "8d204ca198a70206b8db13c181147aecce08d07bc447dd3e325475ce9085dde6",
+      "sha256": "c45d7f482bdcfd6ad2af83f8e1b76c555acd41445b241978257542b31ff21cc2"
+    },
+    {
+      "stratum": "zilu",
+      "unit": "zilu16",
+      "source": "bench/external/zilu/zilu16/kernel.c",
+      "source_sha256": "2718e4fcd589769f5a21f129c9491232ed25f636221e083c742ae7c381843cb6",
+      "sha256": "e5d60fcb649302d6bd5052264f04874b114ec1ba02d9349118d9be921128947d"
+    },
+    {
+      "stratum": "zilu",
+      "unit": "zilu17",
+      "source": "bench/external/zilu/zilu17/kernel.c",
+      "source_sha256": "d341261ac395edc1cae2057e0968f29bf0da76abb887106635411207262e21cc",
+      "sha256": "a9af472e85c4935ec2476e65b7ff28889336bdd5cbbf977862675d4dd574cefc"
+    },
+    {
+      "stratum": "zilu",
+      "unit": "zilu18",
+      "source": "bench/external/zilu/zilu18/kernel.c",
+      "source_sha256": "906f58dbf58c06573e4b53bb7bc8a3f430129e8ee74069fb1b17c11afc8b95f2",
+      "sha256": "f604d7005f6ce333c6567a85ee3ace7ca818453c6b279446b407d11898a548c3"
+    },
+    {
+      "stratum": "zilu",
+      "unit": "zilu19",
+      "source": "bench/external/zilu/zilu19/kernel.c",
+      "source_sha256": "c611f90924eec8aa3127a99fc4c22bc227f004841713caccb46e7f4d07b6763b",
+      "sha256": "c172644f92b4c5c1cdd45407cc0a67a950e5805f20d3cf5e9005b01e9653d618"
+    },
+    {
+      "stratum": "zilu",
+      "unit": "zilu20",
+      "source": "bench/external/zilu/zilu20/kernel.c",
+      "source_sha256": "34479b1030912210140ea64ccd8138ccc3971e8f3d850638d173b7427b6b2cda",
+      "sha256": "feed663509f980ab269b39406232dc61d4e2fee4684ebe179b2fe100a8fb60fe"
+    },
+    {
+      "stratum": "zilu",
+      "unit": "zilu22",
+      "source": "bench/external/zilu/zilu22/kernel.c",
+      "source_sha256": "59fd16f20c56700be16a632fd8f9fae0972f5569f89405d0fa7ebbeaf4f911d4",
+      "sha256": "c29a1ec8c69c3b514c90b97c14fbe8ac49a28c1d5f825be250805c34b19c4fa1"
+    },
+    {
+      "stratum": "zilu",
+      "unit": "zilu23",
+      "source": "bench/external/zilu/zilu23/kernel.c",
+      "source_sha256": "30eb0d8a512c321e8381dc5885492e092a63e07841c22ba59d45aaa276605679",
+      "sha256": "27d72e05974764f74e194b1efc0a294c8f210d97b0276885113e68a23c24d597"
+    },
+    {
+      "stratum": "zilu",
+      "unit": "zilu24",
+      "source": "bench/external/zilu/zilu24/kernel.c",
+      "source_sha256": "525d8503f63ca1ad3feaee6444ac05be836df123db8dca5d2577d01c3936e4ab",
+      "sha256": "e4738232b19e294d352602fe6ddd1ff0f4c86e01287680ffd6a116f0602abc73"
+    },
+    {
+      "stratum": "zilu",
+      "unit": "zilu25",
+      "source": "bench/external/zilu/zilu25/kernel.c",
+      "source_sha256": "47eab1f771fec2891199ef95766c3fb524e230baa7a00fcff3a0414c3a269631",
+      "sha256": "cdfd834e6a339fbfccf2cc6e9e635b3f0280331d4dc762c84ff620d3f7447ffc"
+    },
+    {
+      "stratum": "zilu",
+      "unit": "zilu26",
+      "source": "bench/external/zilu/zilu26/kernel.c",
+      "source_sha256": "f5ad0a2f89d31b9c21be946b37e649362dd0a40dac11c0c2d45127e450349c41",
+      "sha256": "91c7bf9f8bc4ba618bd0063c95a53e2733826de4ba0197f1591c1ccd4688b96f"
+    },
+    {
+      "stratum": "zilu",
+      "unit": "zilu27",
+      "source": "bench/external/zilu/zilu27/kernel.c",
+      "source_sha256": "9ce7216435b6928cdb3080bc7f2c42878237f4f3eaeeaf7cb9fdef9913f5a5ae",
+      "sha256": "7fcf57adee656c4e2d3bee26e11bac821d33dbf36bf62fe28d4d2faa51ef52c6"
+    },
+    {
+      "stratum": "zilu",
+      "unit": "zilu29",
+      "source": "bench/external/zilu/zilu29/kernel.c",
+      "source_sha256": "b232fe48842d6601857d40e9329ef402d3d11c537a31ddc030777bf3003bcb11",
+      "sha256": "1895535281cef0c2dccbf728dc7c9a9d2fc55b34fa96f140497fd4697d20f655"
+    },
+    {
+      "stratum": "zilu",
+      "unit": "zilu30",
+      "source": "bench/external/zilu/zilu30/kernel.c",
+      "source_sha256": "445cc552be2d631ef761e54981d500d73313e93c0db7a23b0c26348a1f4b2868",
+      "sha256": "9abab8d8be3ea69919bf487c6b23b2e25b243df44f4c81dab8886c1b8a803d34"
+    },
+    {
+      "stratum": "zilu",
+      "unit": "zilu32",
+      "source": "bench/external/zilu/zilu32/kernel.c",
+      "source_sha256": "aed84447c9946f6cd8ef0160edac902d897ec4ad1cbbbdc3c838db5afe2e22dd",
+      "sha256": "771cb591d508e0f7614279fc13c0f5451e3e99e565cfa4a97c5638240a07447c"
+    },
+    {
+      "stratum": "zilu",
+      "unit": "zilu33",
+      "source": "bench/external/zilu/zilu33/kernel.c",
+      "source_sha256": "5b07c4e28bdc26db1dade853bc5d98a90465f895846b843b9cc3757a669366b5",
+      "sha256": "0bde4638f1f4389287efc109336f4ea176208146d83552438065931eb91ddbec"
+    },
+    {
+      "stratum": "zilu",
+      "unit": "zilu34",
+      "source": "bench/external/zilu/zilu34/kernel.c",
+      "source_sha256": "fdaa8a93decd3a1d8fb6aca9b5fc975cf7cafec063998e46757efdaf18e7827e",
+      "sha256": "d99b1d7ea1769ea21d60912b6d3d97e3a53d03842a4174ce3f1d778bd8d82a55"
+    },
+    {
+      "stratum": "zilu",
+      "unit": "zilu35",
+      "source": "bench/external/zilu/zilu35/kernel.c",
+      "source_sha256": "97c7f6ca34a46bc4ea0c3a12448050e43701d878d4ffa03d8081c160c419d0ca",
+      "sha256": "1c9cb3b30aa112fc1a484b4f331f806d479f1a854b297e90cc28c7358f88422e"
+    },
+    {
+      "stratum": "zilu",
+      "unit": "zilu36",
+      "source": "bench/external/zilu/zilu36/kernel.c",
+      "source_sha256": "43e813c6f7c7e397a2534ffb4e826a521c9638c6f9131558dfd3fd6c3a371986",
+      "sha256": "bbd34bbfea25d6088c18d715a72d920cba9a89eabedeaad6f1f548a64d770e26"
+    },
+    {
+      "stratum": "zilu",
+      "unit": "zilu37",
+      "source": "bench/external/zilu/zilu37/kernel.c",
+      "source_sha256": "865d49e07b2ef747ad8af75504f555f2568d9d155edaf38406d728b95dbd3626",
+      "sha256": "89cda86c35516b00a50079bc5384f4a9f65403ca82d381674788775e6b326dfc"
+    },
+    {
+      "stratum": "zilu-obfuscated",
+      "unit": "zilu01",
+      "source": "bench/external/zilu-obfuscated/zilu01/kernel.c",
+      "source_sha256": "1379e5e0bf4ffecc843af7d2178991dd942b8cad7daff1db485bf363ae33e054",
+      "sha256": "18db3f712007ae7f68a95c734a19a6091094512166232cff0e48fb3a3ac80b47"
+    },
+    {
+      "stratum": "zilu-obfuscated",
+      "unit": "zilu02",
+      "source": "bench/external/zilu-obfuscated/zilu02/kernel.c",
+      "source_sha256": "45cd5aa84d8fbc1a45237c25b9ff14ab92d64e611dcc5bfaaa9529b05cc95c90",
+      "sha256": "a8116efabd5b49ce1018aa7dc9724e4dc9efb121e0380cbac42e6e11c38e10aa"
+    },
+    {
+      "stratum": "zilu-obfuscated",
+      "unit": "zilu04",
+      "source": "bench/external/zilu-obfuscated/zilu04/kernel.c",
+      "source_sha256": "2fdec9f73a96262cf9fedfe22a41c6f928d4ec95ec72b04ff9e1f1c0b2ac0365",
+      "sha256": "68ec39c3f193d09f80a11ff86378f6e2730c23a48fad02dfe7864b05401262cd"
+    },
+    {
+      "stratum": "zilu-obfuscated",
+      "unit": "zilu05",
+      "source": "bench/external/zilu-obfuscated/zilu05/kernel.c",
+      "source_sha256": "7113612a339823c6b5a972f2ff92419b57a56b0283d49e8e0950341397c11303",
+      "sha256": "dd5b93b14a56109ba942a52d48b12807a2e3fde80c7c001d1aa54d0f35ca56ac"
+    },
+    {
+      "stratum": "zilu-obfuscated",
+      "unit": "zilu06",
+      "source": "bench/external/zilu-obfuscated/zilu06/kernel.c",
+      "source_sha256": "8968bc78b5efea5905c8be703b924b82245816919c598a02667108df3157b9a2",
+      "sha256": "a7c664a10b3cee98f980833c8d3482a4bababb7c176daad2ce30414532101478"
+    },
+    {
+      "stratum": "zilu-obfuscated",
+      "unit": "zilu08",
+      "source": "bench/external/zilu-obfuscated/zilu08/kernel.c",
+      "source_sha256": "caff80ed8d4a9f97999f95b4d99adfd7b4cf71b0c170e16622d578d61ee3ed60",
+      "sha256": "ca6c3a7e52d60ce9caa4403f42916ce35eb60fea2be2d3daa559624bc094d92a"
+    },
+    {
+      "stratum": "zilu-obfuscated",
+      "unit": "zilu11",
+      "source": "bench/external/zilu-obfuscated/zilu11/kernel.c",
+      "source_sha256": "35f9261f7fb27e1cb933ede5bc4bd3cd32c6e6fd90803853cce3d3eba841a439",
+      "sha256": "c3ed46f2f8db96f09c9b0b42f4f330160ff9aef25ee0a9c1d45ea2cb1c940843"
+    },
+    {
+      "stratum": "zilu-obfuscated",
+      "unit": "zilu12",
+      "source": "bench/external/zilu-obfuscated/zilu12/kernel.c",
+      "source_sha256": "e803610182f97a93225a715e5e3c8a7a98806edcf4ee2c6cd827a1d6181302a6",
+      "sha256": "2abeba86f451293cb71f7411059cd36780171b788ae9554fd47afdb841cf65ee"
+    },
+    {
+      "stratum": "zilu-obfuscated",
+      "unit": "zilu13",
+      "source": "bench/external/zilu-obfuscated/zilu13/kernel.c",
+      "source_sha256": "c5fecb7349799234c5dd6b94de3abd1edd46b3071e70496e33e0a5f0cc14df67",
+      "sha256": "f463ead0715d7d3e9cdc57c91aa42ad676ace4fd2aa6d452a3c65ff51f3d77e6"
+    },
+    {
+      "stratum": "zilu-obfuscated",
+      "unit": "zilu14",
+      "source": "bench/external/zilu-obfuscated/zilu14/kernel.c",
+      "source_sha256": "ddb1ad1c75029b4ab434f97a508daff5ea074c37b93cd46b9ec124a9aa42714f",
+      "sha256": "9d8135c969dd03697599ddf655c0210e3edf14705dfa162fec216d21ffd2a483"
+    },
+    {
+      "stratum": "zilu-obfuscated",
+      "unit": "zilu15",
+      "source": "bench/external/zilu-obfuscated/zilu15/kernel.c",
+      "source_sha256": "747112aa754172e5cad17d0aa0aea08de09f8bef66e10c0023d8a10bb15d6614",
+      "sha256": "78813f64fa48f9294c56333e55331f9bf110e0689ba1075a0e9787a41b0ebb22"
+    },
+    {
+      "stratum": "zilu-obfuscated",
+      "unit": "zilu16",
+      "source": "bench/external/zilu-obfuscated/zilu16/kernel.c",
+      "source_sha256": "a3dfcfdc8ed17cdcfff1c3ff26e039d41a75407b4fdc80520187c989eb212249",
+      "sha256": "4cfd6af4cf12d351bd36db278c19075a552c2a3c9a9a82a94eceecd18b5c0b8a"
+    },
+    {
+      "stratum": "zilu-obfuscated",
+      "unit": "zilu17",
+      "source": "bench/external/zilu-obfuscated/zilu17/kernel.c",
+      "source_sha256": "3f3cfb1f4317b43c755258390f46e148dc5bdeec98216b281effd5eac80bce28",
+      "sha256": "8fa34a84e98aad193607088a156d9eff3851a0260d944288c1b15e2119259a6d"
+    },
+    {
+      "stratum": "zilu-obfuscated",
+      "unit": "zilu18",
+      "source": "bench/external/zilu-obfuscated/zilu18/kernel.c",
+      "source_sha256": "c47b01dcd211783b6df5d2652ec6b98c5392f8d55a3c70b17db7a7fb38e29288",
+      "sha256": "461d7d5b31f276e7a7878641b04cad187263caba652cb8817deadd04ab7063a5"
+    },
+    {
+      "stratum": "zilu-obfuscated",
+      "unit": "zilu19",
+      "source": "bench/external/zilu-obfuscated/zilu19/kernel.c",
+      "source_sha256": "0fdf8059c89d8f180ea146320ef32f3acb61cc5feee57f515bde0031145a604b",
+      "sha256": "b8ce11f8e25b445ac86bb582597e0d03d8f0d816da6388a4981ff6a0a4f8500f"
+    },
+    {
+      "stratum": "zilu-obfuscated",
+      "unit": "zilu20",
+      "source": "bench/external/zilu-obfuscated/zilu20/kernel.c",
+      "source_sha256": "198e1f0fbc5edd30d6cdd69f9cb861188d25b35b2a59e1fbf1619dd0752382f2",
+      "sha256": "36ec1101d1b386b446e8829f7f5703549a540de4d972211110b783ccb2ef5699"
+    },
+    {
+      "stratum": "zilu-obfuscated",
+      "unit": "zilu22",
+      "source": "bench/external/zilu-obfuscated/zilu22/kernel.c",
+      "source_sha256": "936d71c2ee17b67d7f3c653e24884568d3528f2d6976314ef50552ada1dd99fa",
+      "sha256": "2fc324cf60ea565df4b862870701a0ceebe9d83a333b2b6437149749f746248d"
+    },
+    {
+      "stratum": "zilu-obfuscated",
+      "unit": "zilu23",
+      "source": "bench/external/zilu-obfuscated/zilu23/kernel.c",
+      "source_sha256": "9e196fad41794a0b58707aa2ca07a40e769f621d851d358c02a15177b75de408",
+      "sha256": "861ab3084c43edb7e570f818820ccbddec8f1b7cb49c1823576a50d8a44cd2f0"
+    },
+    {
+      "stratum": "zilu-obfuscated",
+      "unit": "zilu24",
+      "source": "bench/external/zilu-obfuscated/zilu24/kernel.c",
+      "source_sha256": "0249c823b04aaaef861f8012b70d49afc04fc97c0ad5f0c948e69b8345dafe28",
+      "sha256": "a4e9dea538ba447f27ff9b08325d870a3ea983a4e25fe6844f2a5714c135429a"
+    },
+    {
+      "stratum": "zilu-obfuscated",
+      "unit": "zilu25",
+      "source": "bench/external/zilu-obfuscated/zilu25/kernel.c",
+      "source_sha256": "c4729b4b11805d46d781c75886c6c51dc6e169bab714855a0f215893d99f73b2",
+      "sha256": "593ec849fe88a54ba48d22ae2ccbd5e9529c7616dab3730a39584015e1c8b689"
+    },
+    {
+      "stratum": "zilu-obfuscated",
+      "unit": "zilu26",
+      "source": "bench/external/zilu-obfuscated/zilu26/kernel.c",
+      "source_sha256": "efc818fe9818f2d709a5e33efc3be4fdff4864522a6d82b24dcc67422e4c7089",
+      "sha256": "0ecb756019bcfea23f177ba52915b62911ec04e2a2b043de0eb9b7754f44d3de"
+    },
+    {
+      "stratum": "zilu-obfuscated",
+      "unit": "zilu27",
+      "source": "bench/external/zilu-obfuscated/zilu27/kernel.c",
+      "source_sha256": "1fa0172541ed18bbfe00d972f1a656d994bce61a8ecde7839bceac01038e87fa",
+      "sha256": "5eea9299e692801e48c4c4c6710934156c45ec43a5a59163557174357d0dff63"
+    },
+    {
+      "stratum": "zilu-obfuscated",
+      "unit": "zilu29",
+      "source": "bench/external/zilu-obfuscated/zilu29/kernel.c",
+      "source_sha256": "b1bb14c53f634166ad3f7ab5aad3747f6095ecbb165518cd99e1a04d513bffe2",
+      "sha256": "9abd2a09f8bb4c06a674ae64c6d095ca6b614886066cb65a65fe2b59642a0180"
+    },
+    {
+      "stratum": "zilu-obfuscated",
+      "unit": "zilu30",
+      "source": "bench/external/zilu-obfuscated/zilu30/kernel.c",
+      "source_sha256": "2674972891ce3d76905af243e1323c43863f1219a674bb47772458d22f3d423f",
+      "sha256": "0df770596c4acb7931c4e6330b71b50d3e074dac3eacb100b684d68165f42d2c"
+    },
+    {
+      "stratum": "zilu-obfuscated",
+      "unit": "zilu32",
+      "source": "bench/external/zilu-obfuscated/zilu32/kernel.c",
+      "source_sha256": "ebee870e29e9a96a89742b02acaa148922a105088af541187ab3564ca6cfe87a",
+      "sha256": "dff0620cbb99fcde5147096243b5c3d8eecf44db567a18411fd63c069e9d93ab"
+    },
+    {
+      "stratum": "zilu-obfuscated",
+      "unit": "zilu33",
+      "source": "bench/external/zilu-obfuscated/zilu33/kernel.c",
+      "source_sha256": "571ec13e22f5ec7aa0cf8601219795cb9ac20aad1d6106bca75a0a2b1ccf6ea2",
+      "sha256": "4da3ecfb1ae7214d89cc6171e1accf1d3a456abd965b82b19c0125ccb9185675"
+    },
+    {
+      "stratum": "zilu-obfuscated",
+      "unit": "zilu34",
+      "source": "bench/external/zilu-obfuscated/zilu34/kernel.c",
+      "source_sha256": "85f9d0b92e02f8734fd1e0696d1fc4e10d27bcc72b28a497b107b69d3b494d77",
+      "sha256": "77e4a1ad4cf7b8a74a7b813775ac4d273fb70f4b52cfd07799c2006f5c1b6bfb"
+    },
+    {
+      "stratum": "zilu-obfuscated",
+      "unit": "zilu35",
+      "source": "bench/external/zilu-obfuscated/zilu35/kernel.c",
+      "source_sha256": "693f819a8d760a32c797007a6781dad0324105dc1c6ed65f150ed0ac1cb5fb45",
+      "sha256": "3af8fa1baec9ccdf793522f30a7fa9ddbab940217d85f2abc00e8439962205bd"
+    },
+    {
+      "stratum": "zilu-obfuscated",
+      "unit": "zilu36",
+      "source": "bench/external/zilu-obfuscated/zilu36/kernel.c",
+      "source_sha256": "e7f5cf75e3cf2179d693845e78891da064e85ba09b0e1ebfb4cf10a50165de04",
+      "sha256": "0e842fa6ac575eb01d3a3399e335049055539c6ad1b42984d7892ae5e28631bc"
+    },
+    {
+      "stratum": "zilu-obfuscated",
+      "unit": "zilu37",
+      "source": "bench/external/zilu-obfuscated/zilu37/kernel.c",
+      "source_sha256": "f2fedc5f3178f539ecee20ab2fa0e3664aca5e14e2ff7c17a586258d1ab56339",
+      "sha256": "1c99ef6f1b47023acb48a266be6f208bd442845520d6ef927b6ee90bbe1154bf"
+    },
+    {
+      "stratum": "zilu-composed",
+      "unit": "zilupair01",
+      "source": "bench/external/zilu-composed/zilupair01/kernel.c",
+      "source_sha256": "2f540e105c49d30ac5d02a25bd8858f2bfdf281dca39643ac0d0a3b5cbcde42a",
+      "sha256": "cda9fb227b3308342317aea06194d177abb21f50f8dcb9b70f1badbcd3b14aef"
+    },
+    {
+      "stratum": "zilu-composed",
+      "unit": "zilupair02",
+      "source": "bench/external/zilu-composed/zilupair02/kernel.c",
+      "source_sha256": "bf3bf11e85ada59e8044c5ffca6d8375ef2fc1de18f4af86da60877b4d42b35a",
+      "sha256": "3c6336709de991b08fabf252d1beadc3a7f9d531e7704d414ca7ae20f4550bd3"
+    },
+    {
+      "stratum": "zilu-composed",
+      "unit": "zilupair03",
+      "source": "bench/external/zilu-composed/zilupair03/kernel.c",
+      "source_sha256": "97c02c5b7e9978ba006e8c7cf4d45b32bc8e439230d2423e13522811f70e04ed",
+      "sha256": "df0e2e304eb0adb6303611fe452076897a5e2a31b31ebfb33e92ec9af4168748"
+    },
+    {
+      "stratum": "zilu-composed",
+      "unit": "zilupair04",
+      "source": "bench/external/zilu-composed/zilupair04/kernel.c",
+      "source_sha256": "469bf25fb96c4aa4a29744de4de2356d32538b6d486fd658e476a34108ccfa71",
+      "sha256": "8bca54b5684f764cc162b3ce019527a00060debe5d7e4749bcd70d72e185e091"
+    },
+    {
+      "stratum": "zilu-composed",
+      "unit": "zilupair05",
+      "source": "bench/external/zilu-composed/zilupair05/kernel.c",
+      "source_sha256": "104c29f1955b5e3c7e913b2c23e2168572eef308acac1803ff4fa71179bec993",
+      "sha256": "401fe9e4afbab925bc5867220829243bb845789a3961c7694f2de9fa7bef8c94"
+    },
+    {
+      "stratum": "zilu-composed",
+      "unit": "zilupair06",
+      "source": "bench/external/zilu-composed/zilupair06/kernel.c",
+      "source_sha256": "fcc24fbd86e380957e08834eb474350a1df56b366d77dfd3ef2571ee9542227d",
+      "sha256": "43e73f8d47241288ca11dcfa3f423711fbb4c4df2958daa8c780a750f37abc4e"
+    },
+    {
+      "stratum": "zilu-composed",
+      "unit": "zilupair07",
+      "source": "bench/external/zilu-composed/zilupair07/kernel.c",
+      "source_sha256": "99f7c2ec7a252eea707181768a6584a6cdf18d577b0097106699144f37adbe36",
+      "sha256": "634ba6e8fd8e63138cfa2e8426595a8d490f25d8feab90becbe9f45363352114"
+    },
+    {
+      "stratum": "zilu-composed",
+      "unit": "zilupair08",
+      "source": "bench/external/zilu-composed/zilupair08/kernel.c",
+      "source_sha256": "63bed3d7cf3845eba2bb0d9ecbdaaad13d5dbaa5cee04950d4eba5268e5f47db",
+      "sha256": "73fed5cb14f98d9baae49fbf8bce71ac50cb6937d752381c7ce460bcf296e871"
+    },
+    {
+      "stratum": "zilu-composed",
+      "unit": "zilupair09",
+      "source": "bench/external/zilu-composed/zilupair09/kernel.c",
+      "source_sha256": "181b618e5c28e7f4d6a443b2b8e9c7a08ff1f5b473043653feaea51b0af373e0",
+      "sha256": "eaa43c945f5c7c6b64c1cf5a32a0b0fd22ab73427dfc03f8acd46a7aece2f2c5"
+    },
+    {
+      "stratum": "zilu-composed",
+      "unit": "zilupair10",
+      "source": "bench/external/zilu-composed/zilupair10/kernel.c",
+      "source_sha256": "54907d6c21cadc16571d5fdc82e4245caa90969bd4314c5f68b7dbee1d46dbd9",
+      "sha256": "3eee8b4c63aeba29a235553464f6fe58d7498d9f8c0324eb691857257d635f74"
+    },
+    {
+      "stratum": "zilu-composed",
+      "unit": "zilupair11",
+      "source": "bench/external/zilu-composed/zilupair11/kernel.c",
+      "source_sha256": "5288f360e4baba30dc40fced3f0eccd3170c1ec44ec85bd9db23f0228f5ab904",
+      "sha256": "01fe684daf05f5c3df69a10e3238ed93474a6d019102719e33cbcb130e12c3b4"
+    },
+    {
+      "stratum": "zilu-composed",
+      "unit": "zilupair12",
+      "source": "bench/external/zilu-composed/zilupair12/kernel.c",
+      "source_sha256": "208139f8675bc00b30e6e86b948e6580f610b1cf72c9624336aafb53f68695f5",
+      "sha256": "22b47640063f0ba1c879cd33841b90e613dbcefbc78674dfca8b2a80c122df90"
+    },
+    {
+      "stratum": "zilu-composed",
+      "unit": "zilupair13",
+      "source": "bench/external/zilu-composed/zilupair13/kernel.c",
+      "source_sha256": "c918d019f13d0e4ab21dc9f903fdb70ad8dd78a578204ed51a83ddd8a986932b",
+      "sha256": "d93938b0dbca80b3c029f67ad2e40355116953a64bf396df5cc0b2cc026cebcb"
+    },
+    {
+      "stratum": "zilu-composed",
+      "unit": "zilupair14",
+      "source": "bench/external/zilu-composed/zilupair14/kernel.c",
+      "source_sha256": "932a336c5672a9756a3d732bf922713a1dd0a4abd1829efaa9272c9721f89950",
+      "sha256": "d6ad8bc1e44c5281fe612949a186bc73d6a3e838fd022abbcb2cb27085a99933"
+    },
+    {
+      "stratum": "zilu-composed",
+      "unit": "zilupair15",
+      "source": "bench/external/zilu-composed/zilupair15/kernel.c",
+      "source_sha256": "a060f2970f092fdb6505b199d1ef3188b381b235ad5485be30e5bfecc7474330",
+      "sha256": "9b4b1acaee067250087015f0ee9e5cf38441055804301d9cb63a26c29ec12431"
+    }
+  ]
+}

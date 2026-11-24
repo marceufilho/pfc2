@@ -1,0 +1,1 @@
+{"id": "verina_advanced_1", "rules": ["P1", "P4"], "requires": [], "fixes": 0, "remarks": "Written by counting occurrences; the usual XOR fold needs a bitwise operator the subset lacks, and the description does not need it. Returns 0 when no element appears exactly once (outside the description's inputs)."}

@@ -1,0 +1,12 @@
+{
+ "id": "verina_advanced_50",
+ "stated": "none",
+ "dropped": [
+  "precondition: both inputs sorted (quantifier over elements)",
+  "result sorted (quantifier over elements)",
+  "result is a permutation of the two inputs (permutation)"
+ ],
+ "weakened": [],
+ "verdict": "certified at full",
+ "remarks": "Only a consequence of the permutation is stated: result == sum of the two lengths. The length parameters are named X_len, which the checker reads in the older spelling without assuming 0 <= X_len; requires(0 <= X_len) states it (a list length is a Nat)."
+}

@@ -1,0 +1,1 @@
+{"id": "verina_advanced_48", "excluded": "X4: the description asks for merge sort as a recursive divide and conquer, which is not a loop in disguise; the iterative bottom-up form would need a scratch buffer as long as the input, whose length the description does not bound (X2)"}

@@ -1,0 +1,12 @@
+{
+  "id": "verina_basic_33",
+  "stated": "none",
+  "dropped": [
+    "precondition: s sorted (Pairwise)",
+    "result is not in s (membership)",
+    "every k < result is in s (quantifier, membership)"
+  ],
+  "weakened": [],
+  "verdict": "certified at full",
+  "remarks": "Only the Nat type of the result (0 <= result) is stated. requires(X_len >= 0) was added for the listed lengths: the `a[a_len]` spelling does not give the checker 0 <= length (a length is a Nat)."
+}

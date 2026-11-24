@@ -1,0 +1,103 @@
+{
+  "comment": "Generated from the task's test.json by corpus/verina-notes/interface.py: one case per test.",
+  "functions": {
+    "LongestCommonPrefix": {
+      "result": "long",
+      "parameters": "long str1_len, const char str1[str1_len], long str2_len, const char str2[str2_len]",
+      "call": "LongestCommonPrefix(str1_len, str1, str2_len, str2, 16, out)",
+      "locals": "char out[16] = {0};"
+    }
+  },
+  "cases": [
+    {
+      "name": "case_0",
+      "function": "LongestCommonPrefix",
+      "inputs": {
+        "str1_len": 3,
+        "str1": [
+          97,
+          98,
+          99
+        ],
+        "str2_len": 3,
+        "str2": [
+          97,
+          98,
+          100
+        ]
+      },
+      "expected": "found == 2 && out[0] == 97 && out[1] == 98"
+    },
+    {
+      "name": "case_1",
+      "function": "LongestCommonPrefix",
+      "inputs": {
+        "str1_len": 3,
+        "str1": [
+          120,
+          121,
+          122
+        ],
+        "str2_len": 3,
+        "str2": [
+          120,
+          121,
+          122
+        ]
+      },
+      "expected": "found == 3 && out[0] == 120 && out[1] == 121 && out[2] == 122"
+    },
+    {
+      "name": "case_2",
+      "function": "LongestCommonPrefix",
+      "inputs": {
+        "str1_len": 2,
+        "str1": [
+          119,
+          111
+        ],
+        "str2_len": 3,
+        "str2": [
+          119,
+          111,
+          119
+        ]
+      },
+      "expected": "found == 2 && out[0] == 119 && out[1] == 111"
+    },
+    {
+      "name": "case_3",
+      "function": "LongestCommonPrefix",
+      "inputs": {
+        "str1_len": 2,
+        "str1": [
+          97,
+          120
+        ],
+        "str2_len": 2,
+        "str2": [
+          98,
+          121
+        ]
+      },
+      "expected": "found == 0"
+    },
+    {
+      "name": "case_4",
+      "function": "LongestCommonPrefix",
+      "inputs": {
+        "str1_len": 0,
+        "str1": [],
+        "str2_len": 5,
+        "str2": [
+          104,
+          101,
+          108,
+          108,
+          111
+        ]
+      },
+      "expected": "found == 0"
+    }
+  ]
+}

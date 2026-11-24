@@ -1,0 +1,6 @@
+{
+  "candidate": "pfc2-v2",
+  "files": 43,
+  "rule": "Exercism C track at 1675b02c, practice exercises 13 to 85 in lexicographic order; every unit whose reference solution ports under P1-P14 (DESIGN.md section 6, AMENDMENTS 3, 6, 7); ports as they passed the unmodified upstream tests, before any contract was written",
+  "sealed": "2026-11-19T01:40:46+00:00"
+}

@@ -1,0 +1,1 @@
+{"id": "verina_basic_20", "rules": ["P1", "P4"], "requires": [], "fixes": 0, "remarks": "A value is multiplied at its first occurrence; no scratch set is needed."}

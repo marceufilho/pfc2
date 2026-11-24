@@ -1,0 +1,12 @@
+{
+ "id": "verina_advanced_68",
+ "stated": "part",
+ "dropped": [
+  "precondition: the input has no digit (quantifier over characters)",
+  "formatValid: the result is characters each followed by at least one digit (recursive definition)",
+  "contentValid: parsing the result into (character, count) pairs and expanding them gives the input (recursive definitions)"
+ ],
+ "weakened": [],
+ "verdict": "certified at full",
+ "remarks": "Stated: nonEmptyValid (the result is empty exactly when the input is). The check takes about ten minutes: with no quantifier, the invariants spell out, for each of the 19 cells of the local digit buffer, that a written cell fits a char when added to '0' (written as digits[k] / 80 == 0, because the two-comparison form 0 <= digits[k] <= 9 exceeded the VC size limit and the file was rejected with vc-complexity), and, for each digit count d, the bound count <= LONG_MAX / 10^d that keeps d below 20. The length parameter is named input_len, which the checker reads in the older spelling without assuming 0 <= input_len; requires(0 <= input_len) states it."
+}

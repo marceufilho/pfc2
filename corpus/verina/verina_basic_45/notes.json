@@ -1,0 +1,12 @@
+{
+ "id": "verina_basic_45",
+ "stated": "part",
+ "dropped": [
+  "precond: an even element exists",
+  "precond: an odd element exists",
+  "postcond: result = lst[ei] * lst[oi] with ei, oi the first even and odd indices (findIdx?, a search over the list)"
+ ],
+ "weakened": [],
+ "verdict": "certified at memory",
+ "remarks": "Only the length precondition is stated. even * odd can overflow."
+}

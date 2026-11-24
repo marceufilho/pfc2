@@ -1,0 +1,1 @@
+{"id": "verina_advanced_74", "rules": ["P1", "P4"], "requires": [], "fixes": 0, "remarks": "The distinct count of a subarray is kept while its right end advances; whether the new element is new is decided by a scan of the subarray, so no table indexed by value is needed."}

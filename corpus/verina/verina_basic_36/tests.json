@@ -1,0 +1,92 @@
+{
+  "comment": "Generated from the task's test.json by corpus/verina-notes/interface.py: one case per test.",
+  "functions": {
+    "replaceWithColon": {
+      "result": "long",
+      "parameters": "long s_len, const char s[s_len]",
+      "call": "replaceWithColon(s_len, s, 64, out)",
+      "locals": "char out[64] = {0};"
+    }
+  },
+  "cases": [
+    {
+      "name": "case_0",
+      "function": "replaceWithColon",
+      "inputs": {
+        "s_len": 26,
+        "s": [
+          72,
+          101,
+          108,
+          108,
+          111,
+          44,
+          32,
+          119,
+          111,
+          114,
+          108,
+          100,
+          46,
+          32,
+          72,
+          111,
+          119,
+          32,
+          97,
+          114,
+          101,
+          32,
+          121,
+          111,
+          117,
+          63
+        ]
+      },
+      "expected": "found == 26 && out[0] == 72 && out[1] == 101 && out[2] == 108 && out[3] == 108 && out[4] == 111 && out[5] == 58 && out[6] == 58 && out[7] == 119 && out[8] == 111 && out[9] == 114 && out[10] == 108 && out[11] == 100 && out[12] == 58 && out[13] == 58 && out[14] == 72 && out[15] == 111 && out[16] == 119 && out[17] == 58 && out[18] == 97 && out[19] == 114 && out[20] == 101 && out[21] == 58 && out[22] == 121 && out[23] == 111 && out[24] == 117 && out[25] == 63"
+    },
+    {
+      "name": "case_1",
+      "function": "replaceWithColon",
+      "inputs": {
+        "s_len": 11,
+        "s": [
+          78,
+          111,
+          45,
+          99,
+          104,
+          97,
+          110,
+          103,
+          101,
+          115,
+          33
+        ]
+      },
+      "expected": "found == 11 && out[0] == 78 && out[1] == 111 && out[2] == 45 && out[3] == 99 && out[4] == 104 && out[5] == 97 && out[6] == 110 && out[7] == 103 && out[8] == 101 && out[9] == 115 && out[10] == 33"
+    },
+    {
+      "name": "case_2",
+      "function": "replaceWithColon",
+      "inputs": {
+        "s_len": 3,
+        "s": [
+          44,
+          46,
+          32
+        ]
+      },
+      "expected": "found == 3 && out[0] == 58 && out[1] == 58 && out[2] == 58"
+    },
+    {
+      "name": "case_3",
+      "function": "replaceWithColon",
+      "inputs": {
+        "s_len": 0,
+        "s": []
+      },
+      "expected": "found == 0"
+    }
+  ]
+}

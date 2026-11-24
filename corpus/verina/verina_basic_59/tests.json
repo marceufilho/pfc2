@@ -1,0 +1,53 @@
+{
+  "comment": "Generated from the task's test.json by corpus/verina-notes/interface.py: one case per test.",
+  "functions": {
+    "DoubleQuadruple": {
+      "result": "long",
+      "parameters": "long x",
+      "call": "DoubleQuadruple(x, 8, out)",
+      "locals": "long out[8] = {0};"
+    }
+  },
+  "cases": [
+    {
+      "name": "case_0",
+      "function": "DoubleQuadruple",
+      "inputs": {
+        "x": 0
+      },
+      "expected": "out[0] == 0 && out[1] == 0"
+    },
+    {
+      "name": "case_1",
+      "function": "DoubleQuadruple",
+      "inputs": {
+        "x": 1
+      },
+      "expected": "out[0] == 2 && out[1] == 4"
+    },
+    {
+      "name": "case_2",
+      "function": "DoubleQuadruple",
+      "inputs": {
+        "x": -1
+      },
+      "expected": "out[0] == -2 && out[1] == -4"
+    },
+    {
+      "name": "case_3",
+      "function": "DoubleQuadruple",
+      "inputs": {
+        "x": 10
+      },
+      "expected": "out[0] == 20 && out[1] == 40"
+    },
+    {
+      "name": "case_4",
+      "function": "DoubleQuadruple",
+      "inputs": {
+        "x": -5
+      },
+      "expected": "out[0] == -10 && out[1] == -20"
+    }
+  ]
+}

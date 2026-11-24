@@ -1,0 +1,110 @@
+{
+  "columns": [
+    {
+      "allowed": [
+        "program",
+        "removal"
+      ],
+      "name": "row",
+      "nullable": false,
+      "type": "string"
+    },
+    {
+      "allowed": null,
+      "name": "program",
+      "nullable": false,
+      "type": "string"
+    },
+    {
+      "allowed": [
+        "generated",
+        "examples"
+      ],
+      "name": "stratum",
+      "nullable": false,
+      "type": "string"
+    },
+    {
+      "allowed": null,
+      "name": "status",
+      "nullable": true,
+      "type": "string"
+    },
+    {
+      "allowed": null,
+      "name": "function",
+      "nullable": true,
+      "type": "string"
+    },
+    {
+      "allowed": null,
+      "name": "line",
+      "nullable": true,
+      "type": "integer"
+    },
+    {
+      "allowed": null,
+      "name": "conjunct",
+      "nullable": true,
+      "type": "string"
+    },
+    {
+      "allowed": [
+        "witness",
+        "overflow",
+        "none",
+        "undecided"
+      ],
+      "name": "expected",
+      "nullable": true,
+      "type": "string"
+    },
+    {
+      "allowed": null,
+      "name": "witness",
+      "nullable": true,
+      "type": "string"
+    },
+    {
+      "allowed": null,
+      "name": "certified",
+      "nullable": true,
+      "type": "boolean"
+    },
+    {
+      "allowed": null,
+      "name": "decisions_same",
+      "nullable": true,
+      "type": "boolean"
+    },
+    {
+      "allowed": null,
+      "name": "code_same",
+      "nullable": true,
+      "type": "boolean"
+    },
+    {
+      "allowed": null,
+      "name": "overflow_trap_kept",
+      "nullable": true,
+      "type": "boolean"
+    },
+    {
+      "allowed": null,
+      "name": "as_expected",
+      "nullable": true,
+      "type": "boolean"
+    }
+  ],
+  "provenance": [
+    "experiment",
+    "evidence_dir",
+    "tag",
+    "commit",
+    "seed",
+    "timestamp",
+    "vc_model",
+    "solver_version",
+    "clang"
+  ]
+}

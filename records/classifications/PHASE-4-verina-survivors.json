@@ -1,0 +1,6133 @@
+{
+ "campaign": "bench/eval/corpus-verina-20261119",
+ "manifest_sha256": "cc08ee63877a5f5447d1d5e29e36aca29b709b06516cc4358f57b64c6ddbab72",
+ "procedure": "docs/evaluation/AMENDMENTS.md, entry 23",
+ "classified_by": "AI assistant (Claude Code); author's review pending",
+ "definition": "A mutant is different when a recorded call through the unit's interface that satisfies the written requires gives another result, another output, a sanitizer report or no answer; equivalent when no probe found such a call and a reading gives the reason. Equivalence by reading is an argument, not a proof.",
+ "summary": {
+  "proof only": {
+   "different": 49,
+   "different, first pass": 27,
+   "different, in a unit whose Verina precondition is not written": 13,
+   "different, reading": 1,
+   "different, second pass: a negative length": 20,
+   "different, second pass: letters or capacity": 1,
+   "equivalent by reading": 12,
+   "equivalent: dead": 2,
+   "equivalent: helper": 4,
+   "equivalent: same": 6,
+   "mutants": 61
+  },
+  "neither": {
+   "different": 116,
+   "different, first pass": 104,
+   "different, in a unit whose Verina precondition is not written": 42,
+   "different, reading": 3,
+   "different, second pass: letters or capacity": 9,
+   "equivalent by reading": 123,
+   "equivalent: bound": 31,
+   "equivalent: dead": 14,
+   "equivalent: flag": 20,
+   "equivalent: helper": 1,
+   "equivalent: same": 8,
+   "equivalent: tie": 49,
+   "mutants": 239
+  }
+ },
+ "entries": [
+  {
+   "unit": "verina_advanced_1",
+   "mutant": "m009",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 19,
+   "original_line": "return 0;",
+   "mutant_line": "return 1;",
+   "level": "full",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 0,
+    "kind": "result",
+    "port": "nums(len 0)=[] |r=0",
+    "mutant": "nums(len 0)=[] |r=1"
+   }
+  },
+  {
+   "unit": "verina_advanced_1",
+   "mutant": "m001",
+   "cell": "proof only",
+   "operator": "relational",
+   "line": 8,
+   "original_line": "for (long i = 0; i < nums_len; i++) {",
+   "mutant_line": "for (long i = 0; i <= nums_len; i++) {",
+   "level": "full",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [
+    "bounds",
+    "overflow"
+   ],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "sanitizer report"
+   ],
+   "witness": {
+    "input": 10,
+    "kind": "sanitizer report",
+    "port": "nums(len 2)=[1,1,] |r=0",
+    "mutant": "crash: ERROR: AddressSanitizer: heap-buffer-overflow on address 0x5020000000a0 at pc 0x59e920005963 bp 0x7ffc71bff5d0 sp 0x7ffc71bff5c8"
+   }
+  },
+  {
+   "unit": "verina_advanced_1",
+   "mutant": "m002",
+   "cell": "proof only",
+   "operator": "relational",
+   "line": 8,
+   "original_line": "for (long i = 0; i < nums_len; i++) {",
+   "mutant_line": "for (long i = 0; i != nums_len; i++) {",
+   "level": "full",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [
+    "bounds",
+    "overflow"
+   ],
+   "different": true,
+   "found_by": "second pass: a negative length",
+   "kinds": [
+    "no answer in time"
+   ],
+   "witness": {
+    "input": 3,
+    "kind": "no answer in time",
+    "port": "nums(len -1)=[] |r=0",
+    "mutant": "timeout"
+   }
+  },
+  {
+   "unit": "verina_advanced_11",
+   "mutant": "m002",
+   "cell": "proof only",
+   "operator": "relational",
+   "line": 7,
+   "original_line": "for (long i = 0; i < lst_len; i++) {",
+   "mutant_line": "for (long i = 0; i != lst_len; i++) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [
+    "bounds",
+    "overflow"
+   ],
+   "different": true,
+   "found_by": "second pass: a negative length",
+   "kinds": [
+    "no answer in time",
+    "sanitizer report"
+   ],
+   "witness": {
+    "input": 3,
+    "kind": "no answer in time",
+    "port": "lst(len -1)=[] |r=-1",
+    "mutant": "timeout"
+   }
+  },
+  {
+   "unit": "verina_advanced_11",
+   "mutant": "m003",
+   "cell": "proof only",
+   "operator": "constant",
+   "line": 8,
+   "original_line": "long count = 0;",
+   "mutant_line": "long count = 1;",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [
+    "entry"
+   ],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 1,
+    "kind": "result",
+    "port": "lst(len 4)=[5,5,6,-1,] |r=-1",
+    "mutant": "lst(len 4)=[5,5,6,-1,] |r=5"
+   }
+  },
+  {
+   "unit": "verina_advanced_11",
+   "mutant": "m006",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 14,
+   "original_line": "if (count > lst_len / 2) {",
+   "mutant_line": "if (count >= lst_len / 2) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 1,
+    "kind": "result",
+    "port": "lst(len 4)=[5,5,6,-1,] |r=-1",
+    "mutant": "lst(len 4)=[5,5,6,-1,] |r=5"
+   }
+  },
+  {
+   "unit": "verina_advanced_11",
+   "mutant": "m009",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 14,
+   "original_line": "if (count > lst_len / 2) {",
+   "mutant_line": "if (count > lst_len / 3) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 1,
+    "kind": "result",
+    "port": "lst(len 4)=[5,5,6,-1,] |r=-1",
+    "mutant": "lst(len 4)=[5,5,6,-1,] |r=5"
+   }
+  },
+  {
+   "unit": "verina_advanced_11",
+   "mutant": "m000",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 7,
+   "original_line": "for (long i = 0; i < lst_len; i++) {",
+   "mutant_line": "for (long i = 1; i < lst_len; i++) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 2,
+    "kind": "result",
+    "port": "lst(len 1)=[-97,] |r=-97",
+    "mutant": "lst(len 1)=[-97,] |r=-1"
+   }
+  },
+  {
+   "unit": "verina_advanced_12",
+   "mutant": "m002",
+   "cell": "proof only",
+   "operator": "relational",
+   "line": 11,
+   "original_line": "for (long j = 0; j < lst_len; j++) {",
+   "mutant_line": "for (long j = 0; j != lst_len; j++) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [
+    "bounds",
+    "overflow"
+   ],
+   "different": true,
+   "found_by": "second pass: a negative length",
+   "kinds": [
+    "sanitizer report"
+   ],
+   "witness": {
+    "input": 3,
+    "kind": "sanitizer report",
+    "port": "lst(len -1)=[] |r=0|out=0,77,77,77,77,77,77,77,77,77,",
+    "mutant": "crash: ERROR: AddressSanitizer: heap-buffer-overflow on address 0x502000000050 at pc 0x6270885069ab bp 0x7ffdaaf22370 sp 0x7ffdaaf22368"
+   }
+  },
+  {
+   "unit": "verina_advanced_12",
+   "mutant": "m005",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 12,
+   "original_line": "for (long i = 0; i < j; i++) {",
+   "mutant_line": "for (long i = 0; i != j; i++) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "bound",
+   "reason": "i starts at 0 <= j"
+  },
+  {
+   "unit": "verina_advanced_12",
+   "mutant": "m014",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 16,
+   "original_line": "return 0;",
+   "mutant_line": "return 1;",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 1,
+    "kind": "result",
+    "port": "lst(len 4)=[5,5,6,-1,] |r=0|out=1,5,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,",
+    "mutant": "lst(len 4)=[5,5,6,-1,] |r=1|out=1,5,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,"
+   }
+  },
+  {
+   "unit": "verina_advanced_12",
+   "mutant": "m018",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 21,
+   "original_line": "return 0;",
+   "mutant_line": "return 1;",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 0,
+    "kind": "result",
+    "port": "lst(len 0)=[] |r=0|out=0,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,",
+    "mutant": "lst(len 0)=[] |r=1|out=0,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,"
+   }
+  },
+  {
+   "unit": "verina_advanced_12",
+   "mutant": "m000",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 11,
+   "original_line": "for (long j = 0; j < lst_len; j++) {",
+   "mutant_line": "for (long j = 1; j < lst_len; j++) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "bound",
+   "reason": "with j = 0 the inner loop runs zero times"
+  },
+  {
+   "unit": "verina_advanced_14",
+   "mutant": "m001",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 9,
+   "original_line": "if (n <= 0) {",
+   "mutant_line": "if (n == 0) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "dead",
+   "reason": "n >= 0 is required, so n <= 0 is n == 0"
+  },
+  {
+   "unit": "verina_advanced_15",
+   "mutant": "m002",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 10,
+   "original_line": "long first = 0;",
+   "mutant_line": "long first = 1;",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "dead",
+   "reason": "first is read only after have_first is set"
+  },
+  {
+   "unit": "verina_advanced_15",
+   "mutant": "m003",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 11,
+   "original_line": "long second = 0;",
+   "mutant_line": "long second = 1;",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "dead",
+   "reason": "second is read only after have_second is set"
+  },
+  {
+   "unit": "verina_advanced_15",
+   "mutant": "m006",
+   "cell": "proof only",
+   "operator": "relational",
+   "line": 13,
+   "original_line": "for (long i = 0; i < nums_len; i++) {",
+   "mutant_line": "for (long i = 0; i != nums_len; i++) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [
+    "bounds",
+    "overflow"
+   ],
+   "different": true,
+   "found_by": "second pass: a negative length",
+   "kinds": [
+    "sanitizer report"
+   ],
+   "witness": {
+    "input": 3,
+    "kind": "sanitizer report",
+    "port": "nums(len -1)=[] |r=0",
+    "mutant": "crash: ERROR: AddressSanitizer: heap-buffer-overflow on address 0x502000000050 at pc 0x60b5d3a3689b bp 0x7ffea7585a00 sp 0x7ffea75859f8"
+   }
+  },
+  {
+   "unit": "verina_advanced_15",
+   "mutant": "m007",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 15,
+   "original_line": "if (!have_first || x <= first) {",
+   "mutant_line": "if (!have_first || x < first) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 1,
+    "kind": "result",
+    "port": "nums(len 4)=[5,5,6,-1,] |r=0",
+    "mutant": "nums(len 4)=[5,5,6,-1,] |r=1"
+   }
+  },
+  {
+   "unit": "verina_advanced_15",
+   "mutant": "m008",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 15,
+   "original_line": "if (!have_first || x <= first) {",
+   "mutant_line": "if (!have_first || x == first) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 9,
+    "kind": "result",
+    "port": "nums(len 5)=[-52,66,44,-99,-3,] |r=0",
+    "mutant": "nums(len 5)=[-52,66,44,-99,-3,] |r=1"
+   }
+  },
+  {
+   "unit": "verina_advanced_15",
+   "mutant": "m009",
+   "cell": "neither",
+   "operator": "deletion",
+   "line": 16,
+   "original_line": "first = x;",
+   "mutant_line": ";",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 1,
+    "kind": "result",
+    "port": "nums(len 4)=[5,5,6,-1,] |r=0",
+    "mutant": "nums(len 4)=[5,5,6,-1,] |r=1"
+   }
+  },
+  {
+   "unit": "verina_advanced_15",
+   "mutant": "m010",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 17,
+   "original_line": "have_first = 1;",
+   "mutant_line": "have_first = 2;",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "flag",
+   "reason": ""
+  },
+  {
+   "unit": "verina_advanced_15",
+   "mutant": "m013",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 18,
+   "original_line": "} else if (!have_second || x <= second) {",
+   "mutant_line": "} else if (!have_second || x < second) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 27,
+    "kind": "result",
+    "port": "nums(len 5)=[1,3,-2,3,1,] |r=0",
+    "mutant": "nums(len 5)=[1,3,-2,3,1,] |r=1"
+   }
+  },
+  {
+   "unit": "verina_advanced_15",
+   "mutant": "m014",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 18,
+   "original_line": "} else if (!have_second || x <= second) {",
+   "mutant_line": "} else if (!have_second || x == second) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 3,
+    "kind": "result",
+    "port": "nums(len 3)=[-93,88,5,] |r=0",
+    "mutant": "nums(len 3)=[-93,88,5,] |r=1"
+   }
+  },
+  {
+   "unit": "verina_advanced_15",
+   "mutant": "m015",
+   "cell": "neither",
+   "operator": "deletion",
+   "line": 19,
+   "original_line": "second = x;",
+   "mutant_line": ";",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 3,
+    "kind": "result",
+    "port": "nums(len 3)=[-93,88,5,] |r=0",
+    "mutant": "nums(len 3)=[-93,88,5,] |r=1"
+   }
+  },
+  {
+   "unit": "verina_advanced_15",
+   "mutant": "m016",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 20,
+   "original_line": "have_second = 1;",
+   "mutant_line": "have_second = 2;",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "flag",
+   "reason": ""
+  },
+  {
+   "unit": "verina_advanced_16",
+   "mutant": "m002",
+   "cell": "proof only",
+   "operator": "relational",
+   "line": 9,
+   "original_line": "for (long i = 0; i < xs_len; i++) {",
+   "mutant_line": "for (long i = 0; i != xs_len; i++) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [
+    "bounds",
+    "overflow"
+   ],
+   "different": true,
+   "found_by": "second pass: a negative length",
+   "kinds": [
+    "sanitizer report"
+   ],
+   "witness": {
+    "input": 3,
+    "kind": "sanitizer report",
+    "port": "xs(len -1)=[] |r=-1|out=77,77,77,77,77,77,77,77,77,77,",
+    "mutant": "crash: ERROR: AddressSanitizer: heap-buffer-overflow on address 0x502000000050 at pc 0x61980abf49fe bp 0x7ffeaf2adf50 sp 0x7ffeaf2adf48"
+   }
+  },
+  {
+   "unit": "verina_advanced_17",
+   "mutant": "m002",
+   "cell": "proof only",
+   "operator": "relational",
+   "line": 9,
+   "original_line": "for (long i = 0; i < l_len; i++) {",
+   "mutant_line": "for (long i = 0; i != l_len; i++) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [
+    "bounds",
+    "overflow"
+   ],
+   "different": true,
+   "found_by": "second pass: a negative length",
+   "kinds": [
+    "sanitizer report"
+   ],
+   "witness": {
+    "input": 3,
+    "kind": "sanitizer report",
+    "port": "l(len -1)=[] |r=-1|out=77,77,77,77,77,77,77,77,77,77,",
+    "mutant": "crash: ERROR: AddressSanitizer: heap-buffer-overflow on address 0x502000000050 at pc 0x558021c079fe bp 0x7ffe41dd1890 sp 0x7ffe41dd1888"
+   }
+  },
+  {
+   "unit": "verina_advanced_18",
+   "mutant": "m006",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 13,
+   "original_line": "rest = rest / 10;",
+   "mutant_line": "rest = rest / 11;",
+   "level": "memory",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "reading",
+   "reason": "1741725 is an Armstrong number of seven decimal digits; dividing by 11 counts six",
+   "witness": {
+    "port": "1",
+    "mutant": "0"
+   }
+  },
+  {
+   "unit": "verina_advanced_18",
+   "mutant": "m012",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 18,
+   "original_line": "while (rest > 0) {",
+   "mutant_line": "while (rest != 0) {",
+   "level": "memory",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "bound",
+   "reason": "rest >= 0 because n >= 0 is required"
+  },
+  {
+   "unit": "verina_advanced_18",
+   "mutant": "m021",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 21,
+   "original_line": "for (long k = 0; k < digits; k++) {",
+   "mutant_line": "for (long k = 0; k != digits; k++) {",
+   "level": "memory",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "bound",
+   "reason": "digits >= 0"
+  },
+  {
+   "unit": "verina_advanced_18",
+   "mutant": "m002",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 11,
+   "original_line": "while (rest > 0) {",
+   "mutant_line": "while (rest != 0) {",
+   "level": "memory",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "bound",
+   "reason": "rest >= 0 because n >= 0 is required"
+  },
+  {
+   "unit": "verina_advanced_19",
+   "mutant": "m006",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 7,
+   "original_line": "if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) {",
+   "mutant_line": "if ((c >= 'a' && c <= 'z') || (c >= 'A' && c < 'Z')) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 2409,
+    "kind": "result",
+    "port": "s(len 5)=[-28,-28,90,113,42,] |r=0",
+    "mutant": "s(len 5)=[-28,-28,90,113,42,] |r=1"
+   }
+  },
+  {
+   "unit": "verina_advanced_19",
+   "mutant": "m008",
+   "cell": "proof only",
+   "operator": "constant",
+   "line": 8,
+   "original_line": "return 1;",
+   "mutant_line": "return 2;",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [
+    "postcondition"
+   ],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "helper",
+   "reason": "isLetter is read only through `!`; its `ensures(result == 0 || result == 1)` fails"
+  },
+  {
+   "unit": "verina_advanced_19",
+   "mutant": "m013",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 16,
+   "original_line": "if (c >= 'A' && c <= 'Z') {",
+   "mutant_line": "if (c >= 'A' && c < 'Z') {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "second pass: letters or capacity",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 68,
+    "kind": "result",
+    "port": "s(len 4)=[90,32,122,32,] |r=1",
+    "mutant": "s(len 4)=[90,32,122,32,] |r=0"
+   }
+  },
+  {
+   "unit": "verina_advanced_19",
+   "mutant": "m002",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 7,
+   "original_line": "if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) {",
+   "mutant_line": "if ((c >= 'a' && c < 'z') || (c >= 'A' && c <= 'Z')) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 1,
+    "kind": "result",
+    "port": "s(len 4)=[46,46,122,98,] |r=0",
+    "mutant": "s(len 4)=[46,46,122,98,] |r=1"
+   }
+  },
+  {
+   "unit": "verina_advanced_20",
+   "mutant": "m013",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 16,
+   "original_line": "if (digit == 8 || digit == -8) {",
+   "mutant_line": "if (digit == 9 || digit == -8) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 2,
+    "kind": "result",
+    "port": "n=94 |r=0",
+    "mutant": "n=94 |r=1"
+   }
+  },
+  {
+   "unit": "verina_advanced_20",
+   "mutant": "m017",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 16,
+   "original_line": "if (digit == 8 || digit == -8) {",
+   "mutant_line": "if (digit == 8 || digit == -7) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 3,
+    "kind": "result",
+    "port": "n=-7 |r=0",
+    "mutant": "n=-7 |r=1"
+   }
+  },
+  {
+   "unit": "verina_advanced_22",
+   "mutant": "m004",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 14,
+   "original_line": "if (i == 1 || i >= lst_len) {",
+   "mutant_line": "if (i == 2 || i >= lst_len) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 3,
+    "kind": "result",
+    "port": "lst(len 3)=[-93,88,5,] |r=1",
+    "mutant": "lst(len 3)=[-93,88,5,] |r=0"
+   }
+  },
+  {
+   "unit": "verina_advanced_22",
+   "mutant": "m005",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 14,
+   "original_line": "if (i == 1 || i >= lst_len) {",
+   "mutant_line": "if (i == 0 || i >= lst_len) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 30,
+    "kind": "result",
+    "port": "lst(len 2)=[38,-81,] |r=0",
+    "mutant": "lst(len 2)=[38,-81,] |r=1"
+   }
+  },
+  {
+   "unit": "verina_advanced_22",
+   "mutant": "m007",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 14,
+   "original_line": "if (i == 1 || i >= lst_len) {",
+   "mutant_line": "if (i == 1 || i == lst_len) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "same",
+   "reason": "i > lst_len only when i == 1, which the same test already catches"
+  },
+  {
+   "unit": "verina_advanced_22",
+   "mutant": "m013",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 23,
+   "original_line": "return 0;",
+   "mutant_line": "return 1;",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 9,
+    "kind": "result",
+    "port": "lst(len 5)=[-52,66,44,-99,-3,] |r=0",
+    "mutant": "lst(len 5)=[-52,66,44,-99,-3,] |r=1"
+   }
+  },
+  {
+   "unit": "verina_advanced_22",
+   "mutant": "m000",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 9,
+   "original_line": "long i = 1;",
+   "mutant_line": "long i = 2;",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 1,
+    "kind": "result",
+    "port": "lst(len 4)=[5,5,6,-1,] |r=0",
+    "mutant": "lst(len 4)=[5,5,6,-1,] |r=1"
+   }
+  },
+  {
+   "unit": "verina_advanced_23",
+   "mutant": "m001",
+   "cell": "proof only",
+   "operator": "relational",
+   "line": 9,
+   "original_line": "if (n <= 0) {",
+   "mutant_line": "if (n == 0) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [
+    "entry"
+   ],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "same",
+   "reason": "a negative n stays negative under halving and is never 1; the written invariant n > 0 fails"
+  },
+  {
+   "unit": "verina_advanced_28",
+   "mutant": "m004",
+   "cell": "proof only",
+   "operator": "constant",
+   "line": 10,
+   "original_line": "return 1;",
+   "mutant_line": "return 2;",
+   "level": "memory",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [
+    "entry",
+    "postcondition"
+   ],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "helper",
+   "reason": "contains is read only as a truth value; its `ensures` fails"
+  },
+  {
+   "unit": "verina_advanced_28",
+   "mutant": "m009",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 25,
+   "original_line": "long has_previous = contains(nums_len, nums, nums[i] - 1);",
+   "mutant_line": "long has_previous = contains(nums_len, nums, nums[i] - 2);",
+   "level": "memory",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result",
+    "sanitizer report"
+   ],
+   "witness": {
+    "input": 21,
+    "kind": "result",
+    "port": "nums(len 5)=[6,4,3,1,5,] |r=4",
+    "mutant": "nums(len 5)=[6,4,3,1,5,] |r=3"
+   }
+  },
+  {
+   "unit": "verina_advanced_28",
+   "mutant": "m012",
+   "cell": "proof only",
+   "operator": "constant",
+   "line": 27,
+   "original_line": "long length = 1;",
+   "mutant_line": "long length = 0;",
+   "level": "memory",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [
+    "entry"
+   ],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "same",
+   "reason": "nums[i] + 0 is always found, so length reaches 1 on the first step; the invariant length >= 1 fails"
+  },
+  {
+   "unit": "verina_advanced_28",
+   "mutant": "m017",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 33,
+   "original_line": "if (length > best) {",
+   "mutant_line": "if (length >= best) {",
+   "level": "memory",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "tie",
+   "reason": ""
+  },
+  {
+   "unit": "verina_advanced_28",
+   "mutant": "m018",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 33,
+   "original_line": "if (length > best) {",
+   "mutant_line": "if (length != best) {",
+   "level": "memory",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 1,
+    "kind": "result",
+    "port": "nums(len 4)=[5,5,6,-1,] |r=2",
+    "mutant": "nums(len 4)=[5,5,6,-1,] |r=1"
+   }
+  },
+  {
+   "unit": "verina_advanced_28",
+   "mutant": "m002",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 8,
+   "original_line": "for (long i = 0; i < n; i++) {",
+   "mutant_line": "for (long i = 0; i != n; i++) {",
+   "level": "memory",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "bound",
+   "reason": "contains is called only inside a loop that needs nums_len > 0"
+  },
+  {
+   "unit": "verina_advanced_29",
+   "mutant": "m008",
+   "cell": "proof only",
+   "operator": "constant",
+   "line": 26,
+   "original_line": "if (end - start + 1 > best) {",
+   "mutant_line": "if (end - start + 2 > best) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [
+    "overflow"
+   ],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "same",
+   "reason": "true exactly when end - start + 1 >= best, a tie that stores the same value; the overflow is real only for an array of 2^63 - 1 cells"
+  },
+  {
+   "unit": "verina_advanced_29",
+   "mutant": "m010",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 26,
+   "original_line": "if (end - start + 1 > best) {",
+   "mutant_line": "if (end - start + 1 >= best) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "tie",
+   "reason": ""
+  },
+  {
+   "unit": "verina_advanced_29",
+   "mutant": "m012",
+   "cell": "proof only",
+   "operator": "arithmetic",
+   "line": 27,
+   "original_line": "best = end - start + 1;",
+   "mutant_line": "best = end + start + 1;",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [
+    "overflow",
+    "preservation"
+   ],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 32,
+    "kind": "result",
+    "port": "nums(len 6)=[3,6,4,3,0,-1,] k=1 |r=5",
+    "mutant": "nums(len 6)=[3,6,4,3,0,-1,] k=1 |r=6"
+   }
+  },
+  {
+   "unit": "verina_advanced_29",
+   "mutant": "m000",
+   "cell": "proof only",
+   "operator": "constant",
+   "line": 13,
+   "original_line": "long best = 0;",
+   "mutant_line": "long best = 1;",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [
+    "entry"
+   ],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 5,
+    "kind": "result",
+    "port": "nums(len 0)=[] k=1 |r=0",
+    "mutant": "nums(len 0)=[] k=1 |r=1"
+   }
+  },
+  {
+   "unit": "verina_advanced_30",
+   "mutant": "m004",
+   "cell": "proof only",
+   "operator": "constant",
+   "line": 13,
+   "original_line": "long best = 1;",
+   "mutant_line": "long best = 0;",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [
+    "entry"
+   ],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 2,
+    "kind": "result",
+    "port": "nums(len 1)=[-97,] |r=1",
+    "mutant": "nums(len 1)=[-97,] |r=0"
+   }
+  },
+  {
+   "unit": "verina_advanced_30",
+   "mutant": "m016",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 22,
+   "original_line": "if (current > best) {",
+   "mutant_line": "if (current >= best) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "tie",
+   "reason": ""
+  },
+  {
+   "unit": "verina_advanced_30",
+   "mutant": "m017",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 22,
+   "original_line": "if (current > best) {",
+   "mutant_line": "if (current != best) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 1,
+    "kind": "result",
+    "port": "nums(len 4)=[5,5,6,-1,] |r=2",
+    "mutant": "nums(len 4)=[5,5,6,-1,] |r=1"
+   }
+  },
+  {
+   "unit": "verina_advanced_35",
+   "mutant": "m005",
+   "cell": "proof only",
+   "operator": "constant",
+   "line": 16,
+   "original_line": "count = 1;",
+   "mutant_line": "count = 2;",
+   "level": "full",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [
+    "preservation"
+   ],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 3,
+    "kind": "result",
+    "port": "nums(len 3)=[-93,88,5,] |r=5",
+    "mutant": "nums(len 3)=[-93,88,5,] |r=-93"
+   }
+  },
+  {
+   "unit": "verina_advanced_35",
+   "mutant": "m006",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 16,
+   "original_line": "count = 1;",
+   "mutant_line": "count = 0;",
+   "level": "full",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 1,
+    "kind": "result",
+    "port": "nums(len 4)=[5,5,6,-1,] |r=5",
+    "mutant": "nums(len 4)=[5,5,6,-1,] |r=-1"
+   }
+  },
+  {
+   "unit": "verina_advanced_35",
+   "mutant": "m007",
+   "cell": "neither",
+   "operator": "deletion",
+   "line": 16,
+   "original_line": "count = 1;",
+   "mutant_line": ";",
+   "level": "full",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 1,
+    "kind": "result",
+    "port": "nums(len 4)=[5,5,6,-1,] |r=5",
+    "mutant": "nums(len 4)=[5,5,6,-1,] |r=-1"
+   }
+  },
+  {
+   "unit": "verina_advanced_35",
+   "mutant": "m010",
+   "cell": "neither",
+   "operator": "deletion",
+   "line": 20,
+   "original_line": "count--;",
+   "mutant_line": ";",
+   "level": "full",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 3,
+    "kind": "result",
+    "port": "nums(len 3)=[-93,88,5,] |r=5",
+    "mutant": "nums(len 3)=[-93,88,5,] |r=-93"
+   }
+  },
+  {
+   "unit": "verina_advanced_35",
+   "mutant": "m000",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 10,
+   "original_line": "long candidate = 0;",
+   "mutant_line": "long candidate = 1;",
+   "level": "full",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "dead",
+   "reason": "count is 0 at the first element, which overwrites candidate"
+  },
+  {
+   "unit": "verina_advanced_36",
+   "mutant": "m005",
+   "cell": "proof only",
+   "operator": "constant",
+   "line": 16,
+   "original_line": "count = 1;",
+   "mutant_line": "count = 2;",
+   "level": "full",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [
+    "preservation"
+   ],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 3,
+    "kind": "result",
+    "port": "xs(len 3)=[-93,88,5,] |r=5",
+    "mutant": "xs(len 3)=[-93,88,5,] |r=-93"
+   }
+  },
+  {
+   "unit": "verina_advanced_36",
+   "mutant": "m010",
+   "cell": "neither",
+   "operator": "deletion",
+   "line": 20,
+   "original_line": "count--;",
+   "mutant_line": ";",
+   "level": "full",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 3,
+    "kind": "result",
+    "port": "xs(len 3)=[-93,88,5,] |r=5",
+    "mutant": "xs(len 3)=[-93,88,5,] |r=-93"
+   }
+  },
+  {
+   "unit": "verina_advanced_36",
+   "mutant": "m000",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 10,
+   "original_line": "long candidate = 0;",
+   "mutant_line": "long candidate = 1;",
+   "level": "full",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "dead",
+   "reason": "count is 0 at the first element, which overwrites candidate"
+  },
+  {
+   "unit": "verina_advanced_36",
+   "mutant": "m001",
+   "cell": "proof only",
+   "operator": "constant",
+   "line": 11,
+   "original_line": "long count = 0;",
+   "mutant_line": "long count = 1;",
+   "level": "full",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [
+    "entry"
+   ],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 1,
+    "kind": "result",
+    "port": "xs(len 4)=[5,5,6,-1,] |r=5",
+    "mutant": "xs(len 4)=[5,5,6,-1,] |r=-1"
+   }
+  },
+  {
+   "unit": "verina_advanced_37",
+   "mutant": "m000",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 10,
+   "original_line": "long candidate = 0;",
+   "mutant_line": "long candidate = 1;",
+   "level": "full",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "dead",
+   "reason": "count is 0 at the first element, which overwrites candidate"
+  },
+  {
+   "unit": "verina_advanced_37",
+   "mutant": "m005",
+   "cell": "proof only",
+   "operator": "constant",
+   "line": 16,
+   "original_line": "count = 1;",
+   "mutant_line": "count = 2;",
+   "level": "full",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [
+    "preservation"
+   ],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 3,
+    "kind": "result",
+    "port": "nums(len 3)=[-93,88,5,] |r=5",
+    "mutant": "nums(len 3)=[-93,88,5,] |r=-93"
+   }
+  },
+  {
+   "unit": "verina_advanced_39",
+   "mutant": "m001",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 13,
+   "original_line": "if (lst[i] > best) {",
+   "mutant_line": "if (lst[i] >= best) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "tie",
+   "reason": ""
+  },
+  {
+   "unit": "verina_advanced_40",
+   "mutant": "m001",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 13,
+   "original_line": "if (lst[i] > best) {",
+   "mutant_line": "if (lst[i] >= best) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "tie",
+   "reason": ""
+  },
+  {
+   "unit": "verina_advanced_41",
+   "mutant": "m005",
+   "cell": "proof only",
+   "operator": "deletion",
+   "line": 14,
+   "original_line": "best = c;",
+   "mutant_line": ";",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [
+    "postcondition"
+   ],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 3,
+    "kind": "result",
+    "port": "a=-7 b=-93 c=88 |r=88",
+    "mutant": "a=-7 b=-93 c=88 |r=-7"
+   }
+  },
+  {
+   "unit": "verina_advanced_41",
+   "mutant": "m000",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 10,
+   "original_line": "if (b > best) {",
+   "mutant_line": "if (b >= best) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "tie",
+   "reason": ""
+  },
+  {
+   "unit": "verina_advanced_41",
+   "mutant": "m003",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 13,
+   "original_line": "if (c > best) {",
+   "mutant_line": "if (c >= best) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "tie",
+   "reason": ""
+  },
+  {
+   "unit": "verina_advanced_42",
+   "mutant": "m006",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 19,
+   "original_line": "if (prices[i] - lowest > best) {",
+   "mutant_line": "if (prices[i] - lowest >= best) {",
+   "level": "memory",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "tie",
+   "reason": ""
+  },
+  {
+   "unit": "verina_advanced_42",
+   "mutant": "m010",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 22,
+   "original_line": "if (prices[i] < lowest) {",
+   "mutant_line": "if (prices[i] <= lowest) {",
+   "level": "memory",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "tie",
+   "reason": ""
+  },
+  {
+   "unit": "verina_advanced_42",
+   "mutant": "m001",
+   "cell": "proof only",
+   "operator": "constant",
+   "line": 12,
+   "original_line": "if (prices_len == 0) {",
+   "mutant_line": "if (prices_len == 1) {",
+   "level": "memory",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [
+    "bounds"
+   ],
+   "different": true,
+   "found_by": "reading",
+   "reason": "an empty list: the mutant reads prices[0]; at -O2 the read is dead and removed, so it is run at -O0",
+   "witness": {
+    "port": "0",
+    "mutant": "exit 1: ==1012412==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x502000000010 at pc 0x56c57f9ab820 bp 0x7ffdd2986e10 sp 0x7ffdd2986e08"
+   }
+  },
+  {
+   "unit": "verina_advanced_44",
+   "mutant": "m012",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 19,
+   "original_line": "if (!found || sum > best) {",
+   "mutant_line": "if (!found || sum >= best) {",
+   "level": "memory",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "tie",
+   "reason": ""
+  },
+  {
+   "unit": "verina_advanced_44",
+   "mutant": "m015",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 21,
+   "original_line": "found = 1;",
+   "mutant_line": "found = 2;",
+   "level": "memory",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "flag",
+   "reason": ""
+  },
+  {
+   "unit": "verina_advanced_45",
+   "mutant": "m004",
+   "cell": "proof only",
+   "operator": "constant",
+   "line": 13,
+   "original_line": "long best = xs[0];",
+   "mutant_line": "long best = xs[1];",
+   "level": "memory",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [
+    "bounds"
+   ],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "sanitizer report"
+   ],
+   "witness": {
+    "input": 2,
+    "kind": "sanitizer report",
+    "port": "xs(len 1)=[-97,] |r=-97",
+    "mutant": "crash: ERROR: AddressSanitizer: heap-buffer-overflow on address 0x502000000038 at pc 0x5b4ae8bb3900 bp 0x7ffe5e264b60 sp 0x7ffe5e264b58"
+   }
+  },
+  {
+   "unit": "verina_advanced_45",
+   "mutant": "m008",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 15,
+   "original_line": "for (long i = 1; i < xs_len; i++) {",
+   "mutant_line": "for (long i = 1; i != xs_len; i++) {",
+   "level": "memory",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "bound",
+   "reason": "xs_len >= 1 here and i starts at 1"
+  },
+  {
+   "unit": "verina_advanced_45",
+   "mutant": "m009",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 16,
+   "original_line": "if (current < 0) {",
+   "mutant_line": "if (current <= 0) {",
+   "level": "memory",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "tie",
+   "reason": "with current == 0, current + xs[i] is xs[i]"
+  },
+  {
+   "unit": "verina_advanced_45",
+   "mutant": "m011",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 16,
+   "original_line": "if (current < 0) {",
+   "mutant_line": "if (current < 1) {",
+   "level": "memory",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "tie",
+   "reason": "with current == 0, current + xs[i] is xs[i]"
+  },
+  {
+   "unit": "verina_advanced_45",
+   "mutant": "m014",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 21,
+   "original_line": "if (current > best) {",
+   "mutant_line": "if (current >= best) {",
+   "level": "memory",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "tie",
+   "reason": ""
+  },
+  {
+   "unit": "verina_advanced_45",
+   "mutant": "m001",
+   "cell": "proof only",
+   "operator": "constant",
+   "line": 9,
+   "original_line": "if (xs_len == 0) {",
+   "mutant_line": "if (xs_len == 1) {",
+   "level": "memory",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [
+    "bounds",
+    "postcondition"
+   ],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result",
+    "sanitizer report"
+   ],
+   "witness": {
+    "input": 0,
+    "kind": "sanitizer report",
+    "port": "xs(len 0)=[] |r=0",
+    "mutant": "crash: ERROR: AddressSanitizer: heap-buffer-overflow on address 0x502000000010 at pc 0x6551f870b8de bp 0x7ffc8648f260 sp 0x7ffc8648f258"
+   }
+  },
+  {
+   "unit": "verina_advanced_46",
+   "mutant": "m003",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 14,
+   "original_line": "if (current < 0) {",
+   "mutant_line": "if (current <= 0) {",
+   "level": "memory",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "tie",
+   "reason": "current == 0 is set to 0"
+  },
+  {
+   "unit": "verina_advanced_46",
+   "mutant": "m005",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 14,
+   "original_line": "if (current < 0) {",
+   "mutant_line": "if (current < 1) {",
+   "level": "memory",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "tie",
+   "reason": "current == 0 is set to 0"
+  },
+  {
+   "unit": "verina_advanced_46",
+   "mutant": "m008",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 17,
+   "original_line": "if (current > best) {",
+   "mutant_line": "if (current >= best) {",
+   "level": "memory",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "tie",
+   "reason": ""
+  },
+  {
+   "unit": "verina_advanced_49",
+   "mutant": "m003",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 16,
+   "original_line": "if (arr1[i] <= arr2[j]) {",
+   "mutant_line": "if (arr1[i] < arr2[j]) {",
+   "level": "full",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "output below the returned length"
+   ],
+   "witness": {
+    "input": 13,
+    "kind": "output below the returned length",
+    "port": "arr1(len 6)=[79,18,-64,-55,-17,87,] arr2(len 2)=[87,-80,] |r=8|out=79,18,-64,-55,-17,87,87,-80,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,",
+    "mutant": "arr1(len 6)=[79,18,-64,-55,-17,87,] arr2(len 2)=[87,-80,] |r=8|out=79,18,-64,-55,-17,87,-80,87,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,"
+   }
+  },
+  {
+   "unit": "verina_advanced_50",
+   "mutant": "m003",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 16,
+   "original_line": "if (a1[i] <= a2[j]) {",
+   "mutant_line": "if (a1[i] < a2[j]) {",
+   "level": "full",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "output below the returned length"
+   ],
+   "witness": {
+    "input": 13,
+    "kind": "output below the returned length",
+    "port": "a1(len 6)=[79,18,-64,-55,-17,87,] a2(len 2)=[87,-80,] |r=8|out=79,18,-64,-55,-17,87,87,-80,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,",
+    "mutant": "a1(len 6)=[79,18,-64,-55,-17,87,] a2(len 2)=[87,-80,] |r=8|out=79,18,-64,-55,-17,87,-80,87,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,"
+   }
+  },
+  {
+   "unit": "verina_advanced_51",
+   "mutant": "m003",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 16,
+   "original_line": "if (a[i] <= b[j]) {",
+   "mutant_line": "if (a[i] < b[j]) {",
+   "level": "full",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "output below the returned length"
+   ],
+   "witness": {
+    "input": 13,
+    "kind": "output below the returned length",
+    "port": "a(len 6)=[79,18,-64,-55,-17,87,] b(len 2)=[87,-80,] |r=8|out=79,18,-64,-55,-17,87,87,-80,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,",
+    "mutant": "a(len 6)=[79,18,-64,-55,-17,87,] b(len 2)=[87,-80,] |r=8|out=79,18,-64,-55,-17,87,-80,87,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,"
+   }
+  },
+  {
+   "unit": "verina_advanced_52",
+   "mutant": "m005",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 19,
+   "original_line": "if (value >= 1 && value <= k) {",
+   "mutant_line": "if (value >= 0 && value <= k) {",
+   "level": "full",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 32,
+    "kind": "result",
+    "port": "nums(len 6)=[3,6,4,3,0,-1,] k=1 |r=6",
+    "mutant": "nums(len 6)=[3,6,4,3,0,-1,] k=1 |r=2"
+   }
+  },
+  {
+   "unit": "verina_advanced_52",
+   "mutant": "m010",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 24,
+   "original_line": "seen = 1;",
+   "mutant_line": "seen = 2;",
+   "level": "full",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "flag",
+   "reason": ""
+  },
+  {
+   "unit": "verina_advanced_52",
+   "mutant": "m011",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 24,
+   "original_line": "seen = 1;",
+   "mutant_line": "seen = 0;",
+   "level": "full",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 107,
+    "kind": "result",
+    "port": "nums(len 5)=[-2,1,-2,4,1,] k=2 |r=5",
+    "mutant": "nums(len 5)=[-2,1,-2,4,1,] k=2 |r=4"
+   }
+  },
+  {
+   "unit": "verina_advanced_52",
+   "mutant": "m012",
+   "cell": "neither",
+   "operator": "deletion",
+   "line": 24,
+   "original_line": "seen = 1;",
+   "mutant_line": ";",
+   "level": "full",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 107,
+    "kind": "result",
+    "port": "nums(len 5)=[-2,1,-2,4,1,] k=2 |r=5",
+    "mutant": "nums(len 5)=[-2,1,-2,4,1,] k=2 |r=4"
+   }
+  },
+  {
+   "unit": "verina_advanced_53",
+   "mutant": "m001",
+   "cell": "proof only",
+   "operator": "constant",
+   "line": 9,
+   "original_line": "long drop = 0;",
+   "mutant_line": "long drop = 1;",
+   "level": "full",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [
+    "entry"
+   ],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "dead",
+   "reason": "drop is read only when drops == 1, after it was assigned; the written invariant fails at entry"
+  },
+  {
+   "unit": "verina_advanced_53",
+   "mutant": "m002",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 12,
+   "original_line": "if (nums[i] > nums[i + 1]) {",
+   "mutant_line": "if (nums[i] >= nums[i + 1]) {",
+   "level": "full",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 1,
+    "kind": "result",
+    "port": "nums(len 4)=[5,5,6,-1,] |r=1",
+    "mutant": "nums(len 4)=[5,5,6,-1,] |r=-1"
+   }
+  },
+  {
+   "unit": "verina_advanced_53",
+   "mutant": "m018",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 20,
+   "original_line": "if (drops == 1 && nums[nums_len - 1] < nums[0]) {",
+   "mutant_line": "if (drops == 1 && nums[nums_len - 1] <= nums[0]) {",
+   "level": "full",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 70,
+    "kind": "result",
+    "port": "nums(len 3)=[-1,2,-1,] |r=-1",
+    "mutant": "nums(len 3)=[-1,2,-1,] |r=1"
+   }
+  },
+  {
+   "unit": "verina_advanced_55",
+   "mutant": "m005",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 18,
+   "original_line": "if (count > best_count) {",
+   "mutant_line": "if (count >= best_count) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 3,
+    "kind": "result",
+    "port": "xs(len 3)=[-93,88,5,] |r=-93",
+    "mutant": "xs(len 3)=[-93,88,5,] |r=5"
+   }
+  },
+  {
+   "unit": "verina_advanced_55",
+   "mutant": "m000",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 7,
+   "original_line": "long best = 0;",
+   "mutant_line": "long best = 1;",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "dead",
+   "reason": "the first element has a count above 0 and overwrites best"
+  },
+  {
+   "unit": "verina_advanced_55",
+   "mutant": "m002",
+   "cell": "proof only",
+   "operator": "constant",
+   "line": 11,
+   "original_line": "long count = 0;",
+   "mutant_line": "long count = 1;",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [
+    "entry"
+   ],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "same",
+   "reason": "every count grows by one, which keeps their order; the invariant count <= j fails"
+  },
+  {
+   "unit": "verina_advanced_57",
+   "mutant": "m005",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 19,
+   "original_line": "if (nums2[k] > nums1[i]) {",
+   "mutant_line": "if (nums2[k] >= nums1[i]) {",
+   "level": "memory",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "output below the returned length"
+   ],
+   "witness": {
+    "input": 24,
+    "kind": "output below the returned length",
+    "port": "nums1(len 4)=[3,-1,2,6,] nums2(len 4)=[3,1,3,-1,] |r=4|out=-1,-1,-1,-1,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,",
+    "mutant": "nums1(len 4)=[3,-1,2,6,] nums2(len 4)=[3,1,3,-1,] |r=4|out=3,-1,-1,-1,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,"
+   }
+  },
+  {
+   "unit": "verina_advanced_58",
+   "mutant": "m022",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 16,
+   "original_line": "rest /= 5;",
+   "mutant_line": "rest /= 4;",
+   "level": "memory",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 2,
+    "kind": "result",
+    "port": "n=94 |r=1280",
+    "mutant": "n=94 |r=4096"
+   }
+  },
+  {
+   "unit": "verina_advanced_58",
+   "mutant": "m027",
+   "cell": "proof only",
+   "operator": "constant",
+   "line": 19,
+   "original_line": "return 1;",
+   "mutant_line": "return 2;",
+   "level": "memory",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [
+    "postcondition"
+   ],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "helper",
+   "reason": "is_ugly is read only as a truth value; its `ensures` fails"
+  },
+  {
+   "unit": "verina_advanced_59",
+   "mutant": "m003",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 6,
+   "original_line": "if ((c >= '0' && c <= '9') || (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) {",
+   "mutant_line": "if ((c >= '0' && c == '9') || (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 3,
+    "kind": "result",
+    "port": "s(len 3)=[98,49,44,] |r=0",
+    "mutant": "s(len 3)=[98,49,44,] |r=1"
+   }
+  },
+  {
+   "unit": "verina_advanced_59",
+   "mutant": "m006",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 6,
+   "original_line": "if ((c >= '0' && c <= '9') || (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) {",
+   "mutant_line": "if ((c >= '0' && c <= '9') || (c >= 'a' && c < 'z') || (c >= 'A' && c <= 'Z')) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 1,
+    "kind": "result",
+    "port": "s(len 4)=[46,46,122,98,] |r=0",
+    "mutant": "s(len 4)=[46,46,122,98,] |r=1"
+   }
+  },
+  {
+   "unit": "verina_advanced_59",
+   "mutant": "m010",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 6,
+   "original_line": "if ((c >= '0' && c <= '9') || (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) {",
+   "mutant_line": "if ((c >= '0' && c <= '9') || (c >= 'a' && c <= 'z') || (c >= 'A' && c < 'Z')) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 2409,
+    "kind": "result",
+    "port": "s(len 5)=[-28,-28,90,113,42,] |r=0",
+    "mutant": "s(len 5)=[-28,-28,90,113,42,] |r=1"
+   }
+  },
+  {
+   "unit": "verina_advanced_59",
+   "mutant": "m012",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 7,
+   "original_line": "return 1;",
+   "mutant_line": "return 2;",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "helper",
+   "reason": "is_alnum is read only through `!`"
+  },
+  {
+   "unit": "verina_advanced_59",
+   "mutant": "m017",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 14,
+   "original_line": "if (c >= 'A' && c <= 'Z') {",
+   "mutant_line": "if (c >= 'A' && c < 'Z') {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "second pass: letters or capacity",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 68,
+    "kind": "result",
+    "port": "s(len 4)=[90,32,122,32,] |r=1",
+    "mutant": "s(len 4)=[90,32,122,32,] |r=0"
+   }
+  },
+  {
+   "unit": "verina_advanced_59",
+   "mutant": "m000",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 6,
+   "original_line": "if ((c >= '0' && c <= '9') || (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) {",
+   "mutant_line": "if ((c > '0' && c <= '9') || (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 1491,
+    "kind": "result",
+    "port": "s(len 4)=[-118,48,-73,113,] |r=0",
+    "mutant": "s(len 4)=[-118,48,-73,113,] |r=1"
+   }
+  },
+  {
+   "unit": "verina_advanced_59",
+   "mutant": "m001",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 6,
+   "original_line": "if ((c >= '0' && c <= '9') || (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) {",
+   "mutant_line": "if ((c == '0' && c <= '9') || (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 3,
+    "kind": "result",
+    "port": "s(len 3)=[98,49,44,] |r=0",
+    "mutant": "s(len 3)=[98,49,44,] |r=1"
+   }
+  },
+  {
+   "unit": "verina_advanced_59",
+   "mutant": "m002",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 6,
+   "original_line": "if ((c >= '0' && c <= '9') || (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) {",
+   "mutant_line": "if ((c >= '0' && c < '9') || (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 704,
+    "kind": "result",
+    "port": "s(len 6)=[-81,-67,57,0,-83,83,] |r=0",
+    "mutant": "s(len 6)=[-81,-67,57,0,-83,83,] |r=1"
+   }
+  },
+  {
+   "unit": "verina_advanced_6",
+   "mutant": "m003",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 11,
+   "original_line": "long has_o = 0;",
+   "mutant_line": "long has_o = 1;",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "second pass: letters or capacity",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 27,
+    "kind": "result",
+    "port": "s(len 5)=[105,85,65,69,57,] |r=0",
+    "mutant": "s(len 5)=[105,85,65,69,57,] |r=1"
+   }
+  },
+  {
+   "unit": "verina_advanced_6",
+   "mutant": "m004",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 12,
+   "original_line": "long has_u = 0;",
+   "mutant_line": "long has_u = 1;",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "second pass: letters or capacity",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 185,
+    "kind": "result",
+    "port": "s(len 6)=[73,65,105,101,111,97,] |r=0",
+    "mutant": "s(len 6)=[73,65,105,101,111,97,] |r=1"
+   }
+  },
+  {
+   "unit": "verina_advanced_6",
+   "mutant": "m007",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 16,
+   "original_line": "has_a = 1;",
+   "mutant_line": "has_a = 2;",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "flag",
+   "reason": ""
+  },
+  {
+   "unit": "verina_advanced_6",
+   "mutant": "m012",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 18,
+   "original_line": "has_e = 1;",
+   "mutant_line": "has_e = 2;",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "flag",
+   "reason": ""
+  },
+  {
+   "unit": "verina_advanced_6",
+   "mutant": "m017",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 20,
+   "original_line": "has_i = 1;",
+   "mutant_line": "has_i = 2;",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "flag",
+   "reason": ""
+  },
+  {
+   "unit": "verina_advanced_6",
+   "mutant": "m022",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 22,
+   "original_line": "has_o = 1;",
+   "mutant_line": "has_o = 2;",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "flag",
+   "reason": ""
+  },
+  {
+   "unit": "verina_advanced_6",
+   "mutant": "m025",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 23,
+   "original_line": "} else if (s[k] == 'u' || s[k] == 'U') {",
+   "mutant_line": "} else if (s[k] != 'u' || s[k] == 'U') {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "second pass: letters or capacity",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 245,
+    "kind": "result",
+    "port": "s(len 6)=[69,79,73,90,79,65,] |r=0",
+    "mutant": "s(len 6)=[69,79,73,90,79,65,] |r=1"
+   }
+  },
+  {
+   "unit": "verina_advanced_6",
+   "mutant": "m027",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 24,
+   "original_line": "has_u = 1;",
+   "mutant_line": "has_u = 2;",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "flag",
+   "reason": ""
+  },
+  {
+   "unit": "verina_advanced_6",
+   "mutant": "m000",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 8,
+   "original_line": "long has_a = 0;",
+   "mutant_line": "long has_a = 1;",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "second pass: letters or capacity",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 19,
+    "kind": "result",
+    "port": "s(len 5)=[122,73,85,69,79,] |r=0",
+    "mutant": "s(len 5)=[122,73,85,69,79,] |r=1"
+   }
+  },
+  {
+   "unit": "verina_advanced_6",
+   "mutant": "m001",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 9,
+   "original_line": "long has_e = 0;",
+   "mutant_line": "long has_e = 1;",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "second pass: letters or capacity",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 52,
+    "kind": "result",
+    "port": "s(len 6)=[122,97,73,111,117,111,] |r=0",
+    "mutant": "s(len 6)=[122,97,73,111,117,111,] |r=1"
+   }
+  },
+  {
+   "unit": "verina_advanced_6",
+   "mutant": "m002",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 10,
+   "original_line": "long has_i = 0;",
+   "mutant_line": "long has_i = 1;",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "second pass: letters or capacity",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 203,
+    "kind": "result",
+    "port": "s(len 6)=[111,90,69,111,117,65,] |r=0",
+    "mutant": "s(len 6)=[111,90,69,111,117,65,] |r=1"
+   }
+  },
+  {
+   "unit": "verina_advanced_66",
+   "mutant": "m010",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 27,
+   "original_line": "if (n > 0) {",
+   "mutant_line": "if (n != 0) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "bound",
+   "reason": "n >= 0"
+  },
+  {
+   "unit": "verina_advanced_66",
+   "mutant": "m011",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 27,
+   "original_line": "if (n > 0) {",
+   "mutant_line": "if (n > 1) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 13,
+    "kind": "result",
+    "port": "words_str(len 6)=[49,46,44,44,32,65,] |r=6|out=65,32,49,46,44,44,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,",
+    "mutant": "words_str(len 6)=[49,46,44,44,32,65,] |r=5|out=65,49,46,44,44,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,"
+   }
+  },
+  {
+   "unit": "verina_advanced_68",
+   "mutant": "m000",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 10,
+   "original_line": "long digits[20] = {0};",
+   "mutant_line": "long digits[21] = {0};",
+   "level": "full",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "same",
+   "reason": "a longer scratch array"
+  },
+  {
+   "unit": "verina_advanced_68",
+   "mutant": "m001",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 10,
+   "original_line": "long digits[20] = {0};",
+   "mutant_line": "long digits[19] = {0};",
+   "level": "full",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "same",
+   "reason": "a count below 2^63 has at most 19 digits"
+  },
+  {
+   "unit": "verina_advanced_68",
+   "mutant": "m002",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 10,
+   "original_line": "long digits[20] = {0};",
+   "mutant_line": "long digits[20] = {1};",
+   "level": "full",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "dead",
+   "reason": "every cell is written before it is read"
+  },
+  {
+   "unit": "verina_advanced_68",
+   "mutant": "m014",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 27,
+   "original_line": "count /= 10;",
+   "mutant_line": "count /= 11;",
+   "level": "full",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "reading",
+   "reason": "a run of ten equal characters: the count 10 has two digits",
+   "witness": {
+    "port": "3:a10",
+    "mutant": "2:a0"
+   }
+  },
+  {
+   "unit": "verina_advanced_68",
+   "mutant": "m015",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 27,
+   "original_line": "count /= 10;",
+   "mutant_line": "count /= 9;",
+   "level": "full",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "reading",
+   "reason": "a run of nine equal characters: 9 / 9 leaves a second digit",
+   "witness": {
+    "port": "2:a9",
+    "mutant": "3:a19"
+   }
+  },
+  {
+   "unit": "verina_advanced_69",
+   "mutant": "m004",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 15,
+   "original_line": "long mid = low + (high - low) / 2;",
+   "mutant_line": "long mid = low + (high - low) / 3;",
+   "level": "full",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 15,
+    "kind": "result",
+    "port": "xs(len 6)=[97,34,76,69,-68,-69,] target=50 |r=2",
+    "mutant": "xs(len 6)=[97,34,76,69,-68,-69,] target=50 |r=0"
+   }
+  },
+  {
+   "unit": "verina_advanced_70",
+   "mutant": "m004",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 14,
+   "original_line": "return 0;",
+   "mutant_line": "return 1;",
+   "level": "memory",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "dead",
+   "reason": "nums_len > 0 is required"
+  },
+  {
+   "unit": "verina_advanced_70",
+   "mutant": "m016",
+   "cell": "proof only",
+   "operator": "relational",
+   "line": 26,
+   "original_line": "if (first > last) {",
+   "mutant_line": "if (first >= last) {",
+   "level": "memory",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [
+    "postcondition"
+   ],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 1,
+    "kind": "result",
+    "port": "nums(len 4)=[5,5,6,-1,] |r=3",
+    "mutant": "nums(len 4)=[5,5,6,-1,] |r=2"
+   }
+  },
+  {
+   "unit": "verina_advanced_70",
+   "mutant": "m000",
+   "cell": "proof only",
+   "operator": "constant",
+   "line": 10,
+   "original_line": "long first = 0;",
+   "mutant_line": "long first = 1;",
+   "level": "memory",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [
+    "entry"
+   ],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 32,
+    "kind": "result",
+    "port": "nums(len 6)=[3,6,4,3,0,-1,] |r=4",
+    "mutant": "nums(len 6)=[3,6,4,3,0,-1,] |r=5"
+   }
+  },
+  {
+   "unit": "verina_advanced_70",
+   "mutant": "m001",
+   "cell": "proof only",
+   "operator": "constant",
+   "line": 11,
+   "original_line": "long last = 0;",
+   "mutant_line": "long last = 1;",
+   "level": "memory",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [
+    "entry"
+   ],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 1,
+    "kind": "result",
+    "port": "nums(len 4)=[5,5,6,-1,] |r=3",
+    "mutant": "nums(len 4)=[5,5,6,-1,] |r=2"
+   }
+  },
+  {
+   "unit": "verina_advanced_70",
+   "mutant": "m003",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 13,
+   "original_line": "if (nums_len == 0) {",
+   "mutant_line": "if (nums_len == 1) {",
+   "level": "memory",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "same",
+   "reason": "a list of one element gives 0 through the loop as well"
+  },
+  {
+   "unit": "verina_advanced_71",
+   "mutant": "m000",
+   "cell": "proof only",
+   "operator": "constant",
+   "line": 12,
+   "original_line": "long best_start = 0;",
+   "mutant_line": "long best_start = 1;",
+   "level": "full",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [
+    "entry"
+   ],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "dead",
+   "reason": "best_start is read only when best_len != 0, after it was assigned; the invariant fails at entry"
+  },
+  {
+   "unit": "verina_advanced_71",
+   "mutant": "m012",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 27,
+   "original_line": "long better = 0;",
+   "mutant_line": "long better = 1;",
+   "level": "full",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "output below the returned length",
+    "result"
+   ],
+   "witness": {
+    "input": 14,
+    "kind": "output below the returned length",
+    "port": "s(len 5)=[122,97,98,99,49,] k=0 |r=1|out=97,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,",
+    "mutant": "s(len 5)=[122,97,98,99,49,] k=0 |r=1|out=99,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,"
+   }
+  },
+  {
+   "unit": "verina_advanced_71",
+   "mutant": "m015",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 29,
+   "original_line": "if (best_len == 0 || len < best_len) {",
+   "mutant_line": "if (best_len == 0 || len <= best_len) {",
+   "level": "full",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "output below the returned length"
+   ],
+   "witness": {
+    "input": 14,
+    "kind": "output below the returned length",
+    "port": "s(len 5)=[122,97,98,99,49,] k=0 |r=1|out=97,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,",
+    "mutant": "s(len 5)=[122,97,98,99,49,] k=0 |r=1|out=99,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,"
+   }
+  },
+  {
+   "unit": "verina_advanced_71",
+   "mutant": "m016",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 29,
+   "original_line": "if (best_len == 0 || len < best_len) {",
+   "mutant_line": "if (best_len == 0 || len != best_len) {",
+   "level": "full",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 3590,
+    "kind": "result",
+    "port": "s(len 6)=[97,97,49,49,98,49,] k=2 |r=2|out=49,49,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,",
+    "mutant": "s(len 6)=[97,97,49,49,98,49,] k=2 |r=3|out=49,98,49,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,"
+   }
+  },
+  {
+   "unit": "verina_advanced_71",
+   "mutant": "m017",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 30,
+   "original_line": "better = 1;",
+   "mutant_line": "better = 2;",
+   "level": "full",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "flag",
+   "reason": ""
+  },
+  {
+   "unit": "verina_advanced_71",
+   "mutant": "m025",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 34,
+   "original_line": "if (s[i + t] < s[best_start + t]) {",
+   "mutant_line": "if (s[i + t] <= s[best_start + t]) {",
+   "level": "full",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "tie",
+   "reason": "the two characters are known to differ"
+  },
+  {
+   "unit": "verina_advanced_71",
+   "mutant": "m026",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 34,
+   "original_line": "if (s[i + t] < s[best_start + t]) {",
+   "mutant_line": "if (s[i + t] != s[best_start + t]) {",
+   "level": "full",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "output below the returned length"
+   ],
+   "witness": {
+    "input": 14,
+    "kind": "output below the returned length",
+    "port": "s(len 5)=[122,97,98,99,49,] k=0 |r=1|out=97,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,",
+    "mutant": "s(len 5)=[122,97,98,99,49,] k=0 |r=1|out=99,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,"
+   }
+  },
+  {
+   "unit": "verina_advanced_71",
+   "mutant": "m028",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 35,
+   "original_line": "better = 1;",
+   "mutant_line": "better = 2;",
+   "level": "full",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "flag",
+   "reason": ""
+  },
+  {
+   "unit": "verina_advanced_72",
+   "mutant": "m017",
+   "cell": "proof only",
+   "operator": "arithmetic",
+   "line": 21,
+   "original_line": "if (n % 5 == 0) {",
+   "mutant_line": "if (n / 5 == 0) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [
+    "postcondition"
+   ],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 4,
+    "kind": "result",
+    "port": "n=55 |r=5",
+    "mutant": "n=55 |r=0"
+   }
+  },
+  {
+   "unit": "verina_advanced_72",
+   "mutant": "m018",
+   "cell": "proof only",
+   "operator": "constant",
+   "line": 21,
+   "original_line": "if (n % 5 == 0) {",
+   "mutant_line": "if (n % 6 == 0) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [
+    "postcondition"
+   ],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 4,
+    "kind": "result",
+    "port": "n=55 |r=5",
+    "mutant": "n=55 |r=0"
+   }
+  },
+  {
+   "unit": "verina_advanced_72",
+   "mutant": "m019",
+   "cell": "proof only",
+   "operator": "constant",
+   "line": 21,
+   "original_line": "if (n % 5 == 0) {",
+   "mutant_line": "if (n % 4 == 0) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [
+    "postcondition"
+   ],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 4,
+    "kind": "result",
+    "port": "n=55 |r=5",
+    "mutant": "n=55 |r=0"
+   }
+  },
+  {
+   "unit": "verina_advanced_72",
+   "mutant": "m022",
+   "cell": "proof only",
+   "operator": "constant",
+   "line": 22,
+   "original_line": "return 5;",
+   "mutant_line": "return 6;",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [
+    "postcondition"
+   ],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 4,
+    "kind": "result",
+    "port": "n=55 |r=5",
+    "mutant": "n=55 |r=6"
+   }
+  },
+  {
+   "unit": "verina_advanced_72",
+   "mutant": "m023",
+   "cell": "proof only",
+   "operator": "constant",
+   "line": 22,
+   "original_line": "return 5;",
+   "mutant_line": "return 4;",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [
+    "postcondition"
+   ],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 4,
+    "kind": "result",
+    "port": "n=55 |r=5",
+    "mutant": "n=55 |r=4"
+   }
+  },
+  {
+   "unit": "verina_advanced_73",
+   "mutant": "m004",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 14,
+   "original_line": "} else if (l[i] > expected) {",
+   "mutant_line": "} else if (l[i] != expected) {",
+   "level": "full",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 20,
+    "kind": "result",
+    "port": "l(len 2)=[-1,0,] |r=1",
+    "mutant": "l(len 2)=[-1,0,] |r=0"
+   }
+  },
+  {
+   "unit": "verina_advanced_73",
+   "mutant": "m003",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 14,
+   "original_line": "} else if (l[i] > expected) {",
+   "mutant_line": "} else if (l[i] >= expected) {",
+   "level": "full",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "tie",
+   "reason": "the equal case is taken by the branch before"
+  },
+  {
+   "unit": "verina_advanced_74",
+   "mutant": "m004",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 18,
+   "original_line": "seen = 1;",
+   "mutant_line": "seen = 2;",
+   "level": "full",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "flag",
+   "reason": ""
+  },
+  {
+   "unit": "verina_advanced_75",
+   "mutant": "m008",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 16,
+   "original_line": "if (cur > max_so_far) {",
+   "mutant_line": "if (cur >= max_so_far) {",
+   "level": "memory",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "tie",
+   "reason": ""
+  },
+  {
+   "unit": "verina_advanced_75",
+   "mutant": "m003",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 11,
+   "original_line": "if (cur + sequence[i] > sequence[i]) {",
+   "mutant_line": "if (cur + sequence[i] >= sequence[i]) {",
+   "level": "memory",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "tie",
+   "reason": "with cur == 0 both branches store sequence[i]"
+  },
+  {
+   "unit": "verina_advanced_76",
+   "mutant": "m005",
+   "cell": "proof only",
+   "operator": "relational",
+   "line": 16,
+   "original_line": "for (long i = 0; i < nums_len; i++) {",
+   "mutant_line": "for (long i = 0; i != nums_len; i++) {",
+   "level": "full",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [
+    "entry"
+   ],
+   "different": true,
+   "found_by": "second pass: a negative length",
+   "kinds": [
+    "no answer in time"
+   ],
+   "witness": {
+    "input": 10,
+    "kind": "no answer in time",
+    "port": "nums(len -1)=[] k=1 |r=0|out=77,77,77,77,",
+    "mutant": "timeout"
+   }
+  },
+  {
+   "unit": "verina_advanced_76",
+   "mutant": "m008",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 21,
+   "original_line": "taken = 1;",
+   "mutant_line": "taken = 2;",
+   "level": "full",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "flag",
+   "reason": ""
+  },
+  {
+   "unit": "verina_advanced_76",
+   "mutant": "m011",
+   "cell": "proof only",
+   "operator": "constant",
+   "line": 28,
+   "original_line": "long count = 0;",
+   "mutant_line": "long count = 1;",
+   "level": "full",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [
+    "entry"
+   ],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "same",
+   "reason": "every count grows by one, which keeps their order; the invariant count <= j fails"
+  },
+  {
+   "unit": "verina_advanced_76",
+   "mutant": "m001",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 13,
+   "original_line": "long best = 0;",
+   "mutant_line": "long best = 1;",
+   "level": "full",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "dead",
+   "reason": "best is read only when best_count != 0, after it was assigned"
+  },
+  {
+   "unit": "verina_advanced_77",
+   "mutant": "m004",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 20,
+   "original_line": "if (height[j] > right_max) {",
+   "mutant_line": "if (height[j] >= right_max) {",
+   "level": "memory",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "tie",
+   "reason": ""
+  },
+  {
+   "unit": "verina_advanced_77",
+   "mutant": "m007",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 24,
+   "original_line": "if (left_max < right_max) {",
+   "mutant_line": "if (left_max <= right_max) {",
+   "level": "memory",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "tie",
+   "reason": "with equal maxima both branches add the same amount"
+  },
+  {
+   "unit": "verina_advanced_77",
+   "mutant": "m001",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 15,
+   "original_line": "if (height[j] > left_max) {",
+   "mutant_line": "if (height[j] >= left_max) {",
+   "level": "memory",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "tie",
+   "reason": ""
+  },
+  {
+   "unit": "verina_advanced_78",
+   "mutant": "m007",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 13,
+   "original_line": "return 0;",
+   "mutant_line": "return 1;",
+   "level": "memory",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 1,
+    "kind": "result",
+    "port": "nums(len 4)=[5,5,6,-1,] target=5 |r=0|out=2,3,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,",
+    "mutant": "nums(len 4)=[5,5,6,-1,] target=5 |r=1|out=2,3,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,"
+   }
+  },
+  {
+   "unit": "verina_advanced_78",
+   "mutant": "m008",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 17,
+   "original_line": "return 0;",
+   "mutant_line": "return 1;",
+   "level": "memory",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 3,
+    "kind": "result",
+    "port": "nums(len 3)=[-93,88,5,] target=-7 |r=0|out=77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,",
+    "mutant": "nums(len 3)=[-93,88,5,] target=-7 |r=1|out=77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,"
+   }
+  },
+  {
+   "unit": "verina_advanced_79",
+   "mutant": "m012",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 17,
+   "original_line": "return 0;",
+   "mutant_line": "return 1;",
+   "level": "memory",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 1,
+    "kind": "result",
+    "port": "nums(len 4)=[5,5,6,-1,] target=5 |r=0|out=1,2,3,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,",
+    "mutant": "nums(len 4)=[5,5,6,-1,] target=5 |r=1|out=1,2,3,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,"
+   }
+  },
+  {
+   "unit": "verina_advanced_79",
+   "mutant": "m016",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 22,
+   "original_line": "return 0;",
+   "mutant_line": "return 1;",
+   "level": "memory",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 0,
+    "kind": "result",
+    "port": "nums(len 0)=[] target=-1 |r=0|out=0,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,",
+    "mutant": "nums(len 0)=[] target=-1 |r=1|out=0,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,"
+   }
+  },
+  {
+   "unit": "verina_advanced_80",
+   "mutant": "m009",
+   "cell": "proof only",
+   "operator": "constant",
+   "line": 20,
+   "original_line": "return 0;",
+   "mutant_line": "return 1;",
+   "level": "memory",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [
+    "postcondition"
+   ],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 3,
+    "kind": "result",
+    "port": "nums(len 3)=[-93,88,5,] target=-7 |r=0|out=77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,",
+    "mutant": "nums(len 3)=[-93,88,5,] target=-7 |r=1|out=77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,"
+   }
+  },
+  {
+   "unit": "verina_advanced_81",
+   "mutant": "m004",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 18,
+   "original_line": "if (pos < count && out[pos] == value) {",
+   "mutant_line": "if (pos != count && out[pos] == value) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "bound",
+   "reason": "pos <= count"
+  },
+  {
+   "unit": "verina_advanced_81",
+   "mutant": "m003",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 18,
+   "original_line": "if (pos < count && out[pos] == value) {",
+   "mutant_line": "if (pos <= count && out[pos] == value) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 33,
+    "kind": "result",
+    "port": "arr(len 6)=[-64,36,1,57,-11,77,] |r=6|out=-64,-11,1,36,57,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,",
+    "mutant": "arr(len 6)=[-64,36,1,57,-11,77,] |r=5|out=-64,-11,1,36,57,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,"
+   }
+  },
+  {
+   "unit": "verina_basic_10",
+   "mutant": "m001",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 9,
+   "original_line": "if (n <= a[i]) {",
+   "mutant_line": "if (n == a[i]) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 6,
+    "kind": "result",
+    "port": "n=-83 a(len 3)=[-91,-79,-12,] |r=0",
+    "mutant": "n=-83 a(len 3)=[-91,-79,-12,] |r=1"
+   }
+  },
+  {
+   "unit": "verina_basic_102",
+   "mutant": "m007",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 13,
+   "original_line": "return 0;",
+   "mutant_line": "return 1;",
+   "level": "memory",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 1,
+    "kind": "result",
+    "port": "nums(len 4)=[5,5,6,-1,] target=5 |r=0|out=2,3,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,",
+    "mutant": "nums(len 4)=[5,5,6,-1,] target=5 |r=1|out=2,3,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,"
+   }
+  },
+  {
+   "unit": "verina_basic_102",
+   "mutant": "m008",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 17,
+   "original_line": "return 0;",
+   "mutant_line": "return 1;",
+   "level": "memory",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 3,
+    "kind": "result",
+    "port": "nums(len 3)=[-93,88,5,] target=-7 |r=0|out=77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,",
+    "mutant": "nums(len 3)=[-93,88,5,] target=-7 |r=1|out=77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,"
+   }
+  },
+  {
+   "unit": "verina_basic_105",
+   "mutant": "m000",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 10,
+   "original_line": "long other = 0;",
+   "mutant_line": "long other = 1;",
+   "level": "memory",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "dead",
+   "reason": "a_len == b_len is required, so other is always overwritten"
+  },
+  {
+   "unit": "verina_basic_105",
+   "mutant": "m001",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 12,
+   "original_line": "if (i < b_len) {",
+   "mutant_line": "if (i <= b_len) {",
+   "level": "memory",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "dead",
+   "reason": "a_len == b_len is required, so i < b_len in the loop"
+  },
+  {
+   "unit": "verina_basic_105",
+   "mutant": "m002",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 12,
+   "original_line": "if (i < b_len) {",
+   "mutant_line": "if (i != b_len) {",
+   "level": "memory",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "dead",
+   "reason": "a_len == b_len is required, so i < b_len in the loop"
+  },
+  {
+   "unit": "verina_basic_17",
+   "mutant": "m002",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 9,
+   "original_line": "if (s[i] >= 'A' && s[i] <= 'Z') {",
+   "mutant_line": "if (s[i] >= 'A' && s[i] < 'Z') {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "output below the returned length"
+   ],
+   "witness": {
+    "input": 970,
+    "kind": "output below the returned length",
+    "port": "s(len 3)=[15,90,-7,] |r=3|out=15,122,-7,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,",
+    "mutant": "s(len 3)=[15,90,-7,] |r=3|out=15,90,-7,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,"
+   }
+  },
+  {
+   "unit": "verina_basic_2",
+   "mutant": "m005",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 11,
+   "original_line": "return 0;",
+   "mutant_line": "return 1;",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 0,
+    "kind": "result",
+    "port": "s(len 0)=[] |r=0|out=0,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,",
+    "mutant": "s(len 0)=[] |r=1|out=0,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,"
+   }
+  },
+  {
+   "unit": "verina_basic_2",
+   "mutant": "m007",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 16,
+   "original_line": "if (s[i] < smallest) {",
+   "mutant_line": "if (s[i] <= smallest) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "tie",
+   "reason": ""
+  },
+  {
+   "unit": "verina_basic_2",
+   "mutant": "m017",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 22,
+   "original_line": "return 0;",
+   "mutant_line": "return 1;",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 1,
+    "kind": "result",
+    "port": "s(len 4)=[5,5,6,-1,] |r=0|out=1,-1,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,",
+    "mutant": "s(len 4)=[5,5,6,-1,] |r=1|out=1,-1,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,"
+   }
+  },
+  {
+   "unit": "verina_basic_20",
+   "mutant": "m004",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 15,
+   "original_line": "seen = 1;",
+   "mutant_line": "seen = 2;",
+   "level": "memory",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "flag",
+   "reason": "a _Bool"
+  },
+  {
+   "unit": "verina_basic_22",
+   "mutant": "m002",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 7,
+   "original_line": "for (long i = 0; i < n; i++) {",
+   "mutant_line": "for (long i = 0; i != n; i++) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "bound",
+   "reason": "both lengths are required to be >= 0"
+  },
+  {
+   "unit": "verina_basic_22",
+   "mutant": "m004",
+   "cell": "proof only",
+   "operator": "constant",
+   "line": 9,
+   "original_line": "return 1;",
+   "mutant_line": "return 2;",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [
+    "postcondition"
+   ],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "helper",
+   "reason": "contains is compared with 0 only; its `ensures` fails"
+  },
+  {
+   "unit": "verina_basic_22",
+   "mutant": "m009",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 24,
+   "original_line": "if (pos < count && out[pos] == value) {",
+   "mutant_line": "if (pos <= count && out[pos] == value) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 33,
+    "kind": "result",
+    "port": "a(len 6)=[-64,36,1,57,-11,77,] b(len 1)=[100,] |r=7|out=-64,-11,1,36,57,77,100,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,",
+    "mutant": "a(len 6)=[-64,36,1,57,-11,77,] b(len 1)=[100,] |r=6|out=-64,-11,1,36,57,100,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,"
+   }
+  },
+  {
+   "unit": "verina_basic_22",
+   "mutant": "m010",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 24,
+   "original_line": "if (pos < count && out[pos] == value) {",
+   "mutant_line": "if (pos != count && out[pos] == value) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "bound",
+   "reason": "pos <= count"
+  },
+  {
+   "unit": "verina_basic_22",
+   "mutant": "m012",
+   "cell": "proof only",
+   "operator": "arithmetic",
+   "line": 28,
+   "original_line": "out[j] = out[j - 1];",
+   "mutant_line": "out[j] = out[j + 1];",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [
+    "bounds"
+   ],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "output below the returned length",
+    "result"
+   ],
+   "witness": {
+    "input": 0,
+    "kind": "output below the returned length",
+    "port": "a(len 0)=[] b(len 2)=[2,-2,] |r=2|out=-2,2,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,",
+    "mutant": "a(len 0)=[] b(len 2)=[2,-2,] |r=2|out=-2,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,"
+   }
+  },
+  {
+   "unit": "verina_basic_22",
+   "mutant": "m013",
+   "cell": "proof only",
+   "operator": "constant",
+   "line": 28,
+   "original_line": "out[j] = out[j - 1];",
+   "mutant_line": "out[j] = out[j - 2];",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [
+    "bounds"
+   ],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "output below the returned length",
+    "sanitizer report"
+   ],
+   "witness": {
+    "input": 0,
+    "kind": "sanitizer report",
+    "port": "a(len 0)=[] b(len 2)=[2,-2,] |r=2|out=-2,2,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,",
+    "mutant": "crash: ERROR: AddressSanitizer: heap-buffer-overflow on address 0x511000000038 at pc 0x64a7c95fdaf5 bp 0x7ffc841f3310 sp 0x7ffc841f3308"
+   }
+  },
+  {
+   "unit": "verina_basic_22",
+   "mutant": "m014",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 28,
+   "original_line": "out[j] = out[j - 1];",
+   "mutant_line": "out[j] = out[j - 0];",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "output below the returned length",
+    "result"
+   ],
+   "witness": {
+    "input": 0,
+    "kind": "output below the returned length",
+    "port": "a(len 0)=[] b(len 2)=[2,-2,] |r=2|out=-2,2,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,",
+    "mutant": "a(len 0)=[] b(len 2)=[2,-2,] |r=2|out=-2,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,"
+   }
+  },
+  {
+   "unit": "verina_basic_22",
+   "mutant": "m015",
+   "cell": "neither",
+   "operator": "deletion",
+   "line": 28,
+   "original_line": "out[j] = out[j - 1];",
+   "mutant_line": ";",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "output below the returned length",
+    "result"
+   ],
+   "witness": {
+    "input": 0,
+    "kind": "output below the returned length",
+    "port": "a(len 0)=[] b(len 2)=[2,-2,] |r=2|out=-2,2,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,",
+    "mutant": "a(len 0)=[] b(len 2)=[2,-2,] |r=2|out=-2,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,"
+   }
+  },
+  {
+   "unit": "verina_basic_23",
+   "mutant": "m005",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 15,
+   "original_line": "if (a[i] > highest) {",
+   "mutant_line": "if (a[i] >= highest) {",
+   "level": "memory",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "tie",
+   "reason": ""
+  },
+  {
+   "unit": "verina_basic_23",
+   "mutant": "m002",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 12,
+   "original_line": "if (a[i] < lowest) {",
+   "mutant_line": "if (a[i] <= lowest) {",
+   "level": "memory",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "tie",
+   "reason": ""
+  },
+  {
+   "unit": "verina_basic_24",
+   "mutant": "m010",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 16,
+   "original_line": "haveEven = 1;",
+   "mutant_line": "haveEven = 2;",
+   "level": "memory",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "flag",
+   "reason": "a _Bool"
+  },
+  {
+   "unit": "verina_basic_24",
+   "mutant": "m014",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 21,
+   "original_line": "haveOdd = 1;",
+   "mutant_line": "haveOdd = 2;",
+   "level": "memory",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "flag",
+   "reason": "a _Bool"
+  },
+  {
+   "unit": "verina_basic_24",
+   "mutant": "m000",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 7,
+   "original_line": "long firstEven = 0;",
+   "mutant_line": "long firstEven = 1;",
+   "level": "memory",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 10,
+    "kind": "result",
+    "port": "a(len 2)=[1,1,] |r=-1",
+    "mutant": "a(len 2)=[1,1,] |r=0"
+   }
+  },
+  {
+   "unit": "verina_basic_24",
+   "mutant": "m001",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 8,
+   "original_line": "long firstOdd = 0;",
+   "mutant_line": "long firstOdd = 1;",
+   "level": "memory",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 34,
+    "kind": "result",
+    "port": "a(len 2)=[6,0,] |r=6",
+    "mutant": "a(len 2)=[6,0,] |r=5"
+   }
+  },
+  {
+   "unit": "verina_basic_27",
+   "mutant": "m008",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 13,
+   "original_line": "return 0;",
+   "mutant_line": "return 1;",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 1,
+    "kind": "result",
+    "port": "s(len 4)=[46,46,122,98,] |r=0|out=1,46,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,",
+    "mutant": "s(len 4)=[46,46,122,98,] |r=1|out=1,46,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,"
+   }
+  },
+  {
+   "unit": "verina_basic_27",
+   "mutant": "m012",
+   "cell": "proof only",
+   "operator": "constant",
+   "line": 18,
+   "original_line": "out[1] = 0;",
+   "mutant_line": "out[2] = 0;",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [
+    "bounds"
+   ],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "output at or beyond the returned length"
+   ],
+   "witness": {
+    "input": 0,
+    "kind": "output at or beyond the returned length",
+    "port": "s(len 0)=[] |r=0|out=0,0,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,",
+    "mutant": "s(len 0)=[] |r=0|out=0,77,0,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,"
+   }
+  },
+  {
+   "unit": "verina_basic_27",
+   "mutant": "m013",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 18,
+   "original_line": "out[1] = 0;",
+   "mutant_line": "out[0] = 0;",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "output at or beyond the returned length"
+   ],
+   "witness": {
+    "input": 0,
+    "kind": "output at or beyond the returned length",
+    "port": "s(len 0)=[] |r=0|out=0,0,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,",
+    "mutant": "s(len 0)=[] |r=0|out=0,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,"
+   }
+  },
+  {
+   "unit": "verina_basic_27",
+   "mutant": "m014",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 18,
+   "original_line": "out[1] = 0;",
+   "mutant_line": "out[1] = 1;",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "output at or beyond the returned length"
+   ],
+   "witness": {
+    "input": 0,
+    "kind": "output at or beyond the returned length",
+    "port": "s(len 0)=[] |r=0|out=0,0,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,",
+    "mutant": "s(len 0)=[] |r=0|out=0,1,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,"
+   }
+  },
+  {
+   "unit": "verina_basic_27",
+   "mutant": "m015",
+   "cell": "neither",
+   "operator": "deletion",
+   "line": 18,
+   "original_line": "out[1] = 0;",
+   "mutant_line": ";",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "output at or beyond the returned length"
+   ],
+   "witness": {
+    "input": 0,
+    "kind": "output at or beyond the returned length",
+    "port": "s(len 0)=[] |r=0|out=0,0,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,",
+    "mutant": "s(len 0)=[] |r=0|out=0,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,"
+   }
+  },
+  {
+   "unit": "verina_basic_27",
+   "mutant": "m016",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 19,
+   "original_line": "return 0;",
+   "mutant_line": "return 1;",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 0,
+    "kind": "result",
+    "port": "s(len 0)=[] |r=0|out=0,0,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,",
+    "mutant": "s(len 0)=[] |r=1|out=0,0,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,"
+   }
+  },
+  {
+   "unit": "verina_basic_31",
+   "mutant": "m002",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 10,
+   "original_line": "if (s[i] >= 'a' && s[i] <= 'z') {",
+   "mutant_line": "if (s[i] >= 'a' && s[i] < 'z') {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "output below the returned length"
+   ],
+   "witness": {
+    "input": 1,
+    "kind": "output below the returned length",
+    "port": "s(len 4)=[46,46,122,98,] |r=4|out=46,46,90,66,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,",
+    "mutant": "s(len 4)=[46,46,122,98,] |r=4|out=46,46,122,66,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,"
+   }
+  },
+  {
+   "unit": "verina_basic_33",
+   "mutant": "m004",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 13,
+   "original_line": "} else if (s[i] > missing) {",
+   "mutant_line": "} else if (s[i] != missing) {",
+   "level": "full",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 20,
+    "kind": "result",
+    "port": "s(len 2)=[-1,0,] |r=1",
+    "mutant": "s(len 2)=[-1,0,] |r=0"
+   }
+  },
+  {
+   "unit": "verina_basic_33",
+   "mutant": "m003",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 13,
+   "original_line": "} else if (s[i] > missing) {",
+   "mutant_line": "} else if (s[i] >= missing) {",
+   "level": "full",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "tie",
+   "reason": "the equal case is taken by the branch before"
+  },
+  {
+   "unit": "verina_basic_37",
+   "mutant": "m001",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 12,
+   "original_line": "if (arr[i] > target) {",
+   "mutant_line": "if (arr[i] >= target) {",
+   "level": "full",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "tie",
+   "reason": "the equal case has already returned"
+  },
+  {
+   "unit": "verina_basic_38",
+   "mutant": "m001",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 9,
+   "original_line": "if (s[i] != s[0]) {",
+   "mutant_line": "if (s[i] != s[1]) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 19,
+    "kind": "result",
+    "port": "s(len 2)=[98,122,] |r=0",
+    "mutant": "s(len 2)=[98,122,] |r=1"
+   }
+  },
+  {
+   "unit": "verina_basic_40",
+   "mutant": "m003",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 12,
+   "original_line": "if (s[i] < smallest) {",
+   "mutant_line": "if (s[i] <= smallest) {",
+   "level": "full",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "tie",
+   "reason": ""
+  },
+  {
+   "unit": "verina_basic_40",
+   "mutant": "m007",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 17,
+   "original_line": "if (s[i] > smallest && (!found || s[i] < second)) {",
+   "mutant_line": "if (s[i] != smallest && (!found || s[i] < second)) {",
+   "level": "full",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "same",
+   "reason": "smallest is the minimum, so != is >"
+  },
+  {
+   "unit": "verina_basic_40",
+   "mutant": "m008",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 17,
+   "original_line": "if (s[i] > smallest && (!found || s[i] < second)) {",
+   "mutant_line": "if (s[i] > smallest && (!found || s[i] <= second)) {",
+   "level": "full",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "tie",
+   "reason": ""
+  },
+  {
+   "unit": "verina_basic_40",
+   "mutant": "m009",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 17,
+   "original_line": "if (s[i] > smallest && (!found || s[i] < second)) {",
+   "mutant_line": "if (s[i] > smallest && (!found || s[i] != second)) {",
+   "level": "full",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 1,
+    "kind": "result",
+    "port": "s(len 4)=[5,5,6,-1,] |r=5",
+    "mutant": "s(len 4)=[5,5,6,-1,] |r=6"
+   }
+  },
+  {
+   "unit": "verina_basic_40",
+   "mutant": "m011",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 19,
+   "original_line": "found = 1;",
+   "mutant_line": "found = 2;",
+   "level": "full",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "flag",
+   "reason": "a _Bool"
+  },
+  {
+   "unit": "verina_basic_40",
+   "mutant": "m012",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 19,
+   "original_line": "found = 1;",
+   "mutant_line": "found = 0;",
+   "level": "full",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 1,
+    "kind": "result",
+    "port": "s(len 4)=[5,5,6,-1,] |r=5",
+    "mutant": "s(len 4)=[5,5,6,-1,] |r=6"
+   }
+  },
+  {
+   "unit": "verina_basic_40",
+   "mutant": "m013",
+   "cell": "neither",
+   "operator": "deletion",
+   "line": 19,
+   "original_line": "found = 1;",
+   "mutant_line": ";",
+   "level": "full",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 1,
+    "kind": "result",
+    "port": "s(len 4)=[5,5,6,-1,] |r=5",
+    "mutant": "s(len 4)=[5,5,6,-1,] |r=6"
+   }
+  },
+  {
+   "unit": "verina_basic_40",
+   "mutant": "m001",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 8,
+   "original_line": "long second = s[0];",
+   "mutant_line": "long second = s[1];",
+   "level": "full",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "same",
+   "reason": "second is returned unassigned only when all elements are equal, and then s[1] == s[0]"
+  },
+  {
+   "unit": "verina_basic_41",
+   "mutant": "m001",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 9,
+   "original_line": "if (a[i] != a[0]) {",
+   "mutant_line": "if (a[i] != a[1]) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 19,
+    "kind": "result",
+    "port": "a(len 2)=[-1,6,] |r=0",
+    "mutant": "a(len 2)=[-1,6,] |r=1"
+   }
+  },
+  {
+   "unit": "verina_basic_45",
+   "mutant": "m006",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 12,
+   "original_line": "for (long i = 0; i < lst_len; i++) {",
+   "mutant_line": "for (long i = 0; i != lst_len; i++) {",
+   "level": "memory",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "bound",
+   "reason": "lst_len > 1 is required"
+  },
+  {
+   "unit": "verina_basic_45",
+   "mutant": "m010",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 13,
+   "original_line": "if (lst[i] % 2 == 0) {",
+   "mutant_line": "if (lst[i] % 2 != 0) {",
+   "level": "memory",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "same",
+   "reason": "the two roles swap and the product is the same; with one parity only it is 0 both ways"
+  },
+  {
+   "unit": "verina_basic_45",
+   "mutant": "m011",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 13,
+   "original_line": "if (lst[i] % 2 == 0) {",
+   "mutant_line": "if (lst[i] % 2 == 1) {",
+   "level": "memory",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result",
+    "sanitizer report"
+   ],
+   "witness": {
+    "input": 3,
+    "kind": "result",
+    "port": "lst(len 3)=[-93,88,5,] |r=-8184",
+    "mutant": "lst(len 3)=[-93,88,5,] |r=-465"
+   }
+  },
+  {
+   "unit": "verina_basic_45",
+   "mutant": "m013",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 16,
+   "original_line": "have_even = 1;",
+   "mutant_line": "have_even = 2;",
+   "level": "memory",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "flag",
+   "reason": "a _Bool"
+  },
+  {
+   "unit": "verina_basic_45",
+   "mutant": "m017",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 21,
+   "original_line": "have_odd = 1;",
+   "mutant_line": "have_odd = 2;",
+   "level": "memory",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "flag",
+   "reason": "a _Bool"
+  },
+  {
+   "unit": "verina_basic_45",
+   "mutant": "m000",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 7,
+   "original_line": "long even = 0;",
+   "mutant_line": "long even = 1;",
+   "level": "memory",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 10,
+    "kind": "result",
+    "port": "lst(len 2)=[1,1,] |r=0",
+    "mutant": "lst(len 2)=[1,1,] |r=1"
+   }
+  },
+  {
+   "unit": "verina_basic_45",
+   "mutant": "m001",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 8,
+   "original_line": "long odd = 0;",
+   "mutant_line": "long odd = 1;",
+   "level": "memory",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 34,
+    "kind": "result",
+    "port": "lst(len 2)=[6,0,] |r=0",
+    "mutant": "lst(len 2)=[6,0,] |r=6"
+   }
+  },
+  {
+   "unit": "verina_basic_45",
+   "mutant": "m005",
+   "cell": "proof only",
+   "operator": "relational",
+   "line": 12,
+   "original_line": "for (long i = 0; i < lst_len; i++) {",
+   "mutant_line": "for (long i = 0; i <= lst_len; i++) {",
+   "level": "memory",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [
+    "bounds"
+   ],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "sanitizer report"
+   ],
+   "witness": {
+    "input": 10,
+    "kind": "sanitizer report",
+    "port": "lst(len 2)=[1,1,] |r=0",
+    "mutant": "crash: ERROR: AddressSanitizer: heap-buffer-overflow on address 0x5020000000a0 at pc 0x60581690e8e3 bp 0x7fff99087c30 sp 0x7fff99087c28"
+   }
+  },
+  {
+   "unit": "verina_basic_47",
+   "mutant": "m003",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 9,
+   "original_line": "for (long i = 0; i < a_len; i++) {",
+   "mutant_line": "for (long i = 0; i != a_len; i++) {",
+   "level": "memory",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "bound",
+   "reason": "a_len > 0 is required"
+  },
+  {
+   "unit": "verina_basic_49",
+   "mutant": "m003",
+   "cell": "proof only",
+   "operator": "constant",
+   "line": 11,
+   "original_line": "out[1] = -1;",
+   "mutant_line": "out[2] = -1;",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [
+    "bounds"
+   ],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "output at or beyond the returned length"
+   ],
+   "witness": {
+    "input": 1,
+    "kind": "output at or beyond the returned length",
+    "port": "a(len 4)=[5,5,6,-1,] |r=0|out=1,0,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,",
+    "mutant": "a(len 4)=[5,5,6,-1,] |r=0|out=1,0,-1,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,"
+   }
+  },
+  {
+   "unit": "verina_basic_49",
+   "mutant": "m005",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 11,
+   "original_line": "out[1] = -1;",
+   "mutant_line": "out[1] = -2;",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "output at or beyond the returned length"
+   ],
+   "witness": {
+    "input": 11,
+    "kind": "output at or beyond the returned length",
+    "port": "a(len 1)=[0,] |r=0|out=0,-1,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,",
+    "mutant": "a(len 1)=[0,] |r=0|out=0,-2,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,"
+   }
+  },
+  {
+   "unit": "verina_basic_49",
+   "mutant": "m006",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 11,
+   "original_line": "out[1] = -1;",
+   "mutant_line": "out[1] = -0;",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "output at or beyond the returned length"
+   ],
+   "witness": {
+    "input": 11,
+    "kind": "output at or beyond the returned length",
+    "port": "a(len 1)=[0,] |r=0|out=0,-1,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,",
+    "mutant": "a(len 1)=[0,] |r=0|out=0,0,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,"
+   }
+  },
+  {
+   "unit": "verina_basic_49",
+   "mutant": "m007",
+   "cell": "neither",
+   "operator": "deletion",
+   "line": 11,
+   "original_line": "out[1] = -1;",
+   "mutant_line": ";",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "output at or beyond the returned length"
+   ],
+   "witness": {
+    "input": 11,
+    "kind": "output at or beyond the returned length",
+    "port": "a(len 1)=[0,] |r=0|out=0,-1,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,",
+    "mutant": "a(len 1)=[0,] |r=0|out=0,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,"
+   }
+  },
+  {
+   "unit": "verina_basic_49",
+   "mutant": "m020",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 19,
+   "original_line": "return 0;",
+   "mutant_line": "return 1;",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 1,
+    "kind": "result",
+    "port": "a(len 4)=[5,5,6,-1,] |r=0|out=1,0,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,",
+    "mutant": "a(len 4)=[5,5,6,-1,] |r=1|out=1,0,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,"
+   }
+  },
+  {
+   "unit": "verina_basic_50",
+   "mutant": "m000",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 7,
+   "original_line": "if (x < 0) {",
+   "mutant_line": "if (x <= 0) {",
+   "level": "memory",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "tie",
+   "reason": "-0 is 0"
+  },
+  {
+   "unit": "verina_basic_50",
+   "mutant": "m002",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 7,
+   "original_line": "if (x < 0) {",
+   "mutant_line": "if (x < 1) {",
+   "level": "memory",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "tie",
+   "reason": "-0 is 0"
+  },
+  {
+   "unit": "verina_basic_51",
+   "mutant": "m004",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 12,
+   "original_line": "long mid = lo + (hi - lo) / 2;",
+   "mutant_line": "long mid = lo + (hi - lo) / 3;",
+   "level": "full",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 15,
+    "kind": "result",
+    "port": "a(len 6)=[97,34,76,69,-68,-69,] key=50 |r=2",
+    "mutant": "a(len 6)=[97,34,76,69,-68,-69,] key=50 |r=0"
+   }
+  },
+  {
+   "unit": "verina_basic_52",
+   "mutant": "m005",
+   "cell": "proof only",
+   "operator": "relational",
+   "line": 10,
+   "original_line": "for (long i = 0; i < a_len; i++) {",
+   "mutant_line": "for (long i = 0; i <= a_len; i++) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [
+    "entry",
+    "overflow"
+   ],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "same",
+   "reason": "the extra pass has an empty inner loop; the inner invariant fails at entry, and the overflow is real only for an array of 2^63 - 1 cells"
+  },
+  {
+   "unit": "verina_basic_52",
+   "mutant": "m006",
+   "cell": "proof only",
+   "operator": "relational",
+   "line": 10,
+   "original_line": "for (long i = 0; i < a_len; i++) {",
+   "mutant_line": "for (long i = 0; i != a_len; i++) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [
+    "entry"
+   ],
+   "different": true,
+   "found_by": "second pass: a negative length",
+   "kinds": [
+    "no answer in time"
+   ],
+   "witness": {
+    "input": 3,
+    "kind": "no answer in time",
+    "port": "a(len -1)=[] |r=-1|out=77,77,77,77,77,77,77,77,77,77,",
+    "mutant": "timeout"
+   }
+  },
+  {
+   "unit": "verina_basic_52",
+   "mutant": "m007",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 12,
+   "original_line": "if (out[j] > out[j + 1]) {",
+   "mutant_line": "if (out[j] >= out[j + 1]) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "tie",
+   "reason": "swapping two equal cells"
+  },
+  {
+   "unit": "verina_basic_52",
+   "mutant": "m002",
+   "cell": "proof only",
+   "operator": "relational",
+   "line": 7,
+   "original_line": "for (long i = 0; i < a_len; i++) {",
+   "mutant_line": "for (long i = 0; i != a_len; i++) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [
+    "bounds",
+    "overflow"
+   ],
+   "different": true,
+   "found_by": "second pass: a negative length",
+   "kinds": [
+    "sanitizer report"
+   ],
+   "witness": {
+    "input": 3,
+    "kind": "sanitizer report",
+    "port": "a(len -1)=[] |r=-1|out=77,77,77,77,77,77,77,77,77,77,",
+    "mutant": "crash: ERROR: AddressSanitizer: heap-buffer-overflow on address 0x502000000050 at pc 0x62f31425b9de bp 0x7ffe246d4a80 sp 0x7ffe246d4a78"
+   }
+  },
+  {
+   "unit": "verina_basic_54",
+   "mutant": "m005",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 13,
+   "original_line": "if (best < 0) {",
+   "mutant_line": "if (best <= 0) {",
+   "level": "memory",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "tie",
+   "reason": "-0 is 0"
+  },
+  {
+   "unit": "verina_basic_54",
+   "mutant": "m007",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 13,
+   "original_line": "if (best < 0) {",
+   "mutant_line": "if (best < 1) {",
+   "level": "memory",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "tie",
+   "reason": "-0 is 0"
+  },
+  {
+   "unit": "verina_basic_54",
+   "mutant": "m010",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 19,
+   "original_line": "if (diff < 0) {",
+   "mutant_line": "if (diff <= 0) {",
+   "level": "memory",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "tie",
+   "reason": "-0 is 0"
+  },
+  {
+   "unit": "verina_basic_54",
+   "mutant": "m012",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 19,
+   "original_line": "if (diff < 0) {",
+   "mutant_line": "if (diff < 1) {",
+   "level": "memory",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "tie",
+   "reason": "-0 is 0"
+  },
+  {
+   "unit": "verina_basic_54",
+   "mutant": "m014",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 22,
+   "original_line": "if (diff < best) {",
+   "mutant_line": "if (diff <= best) {",
+   "level": "memory",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "tie",
+   "reason": ""
+  },
+  {
+   "unit": "verina_basic_54",
+   "mutant": "m015",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 22,
+   "original_line": "if (diff < best) {",
+   "mutant_line": "if (diff != best) {",
+   "level": "memory",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 3,
+    "kind": "result",
+    "port": "a(len 3)=[-93,88,5,] b(len 4)=[32,-61,37,-26,] |r=51",
+    "mutant": "a(len 3)=[-93,88,5,] b(len 4)=[32,-61,37,-26,] |r=114"
+   }
+  },
+  {
+   "unit": "verina_basic_54",
+   "mutant": "m017",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 25,
+   "original_line": "if (a[i] < b[j]) {",
+   "mutant_line": "if (a[i] <= b[j]) {",
+   "level": "memory",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "same",
+   "reason": "when a[i] == b[j] the difference is 0, already the least possible result"
+  },
+  {
+   "unit": "verina_basic_54",
+   "mutant": "m018",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 25,
+   "original_line": "if (a[i] < b[j]) {",
+   "mutant_line": "if (a[i] != b[j]) {",
+   "level": "memory",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result",
+    "sanitizer report"
+   ],
+   "witness": {
+    "input": 1,
+    "kind": "result",
+    "port": "a(len 4)=[5,5,6,-1,] b(len 1)=[-2,] |r=7",
+    "mutant": "a(len 4)=[5,5,6,-1,] b(len 1)=[-2,] |r=1"
+   }
+  },
+  {
+   "unit": "verina_basic_54",
+   "mutant": "m000",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 9,
+   "original_line": "long i = 0;",
+   "mutant_line": "long i = 1;",
+   "level": "memory",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 6,
+    "kind": "result",
+    "port": "a(len 6)=[65,-91,-79,-12,13,99,] b(len 5)=[-22,-36,63,57,-33,] |r=2",
+    "mutant": "a(len 6)=[65,-91,-79,-12,13,99,] b(len 5)=[-22,-36,63,57,-33,] |r=10"
+   }
+  },
+  {
+   "unit": "verina_basic_54",
+   "mutant": "m002",
+   "cell": "proof only",
+   "operator": "constant",
+   "line": 11,
+   "original_line": "long best = a[0] - b[0];",
+   "mutant_line": "long best = a[1] - b[0];",
+   "level": "memory",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [
+    "bounds"
+   ],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "sanitizer report"
+   ],
+   "witness": {
+    "input": 2,
+    "kind": "sanitizer report",
+    "port": "a(len 1)=[-97,] b(len 3)=[14,56,-67,] |r=111",
+    "mutant": "crash: ERROR: AddressSanitizer: heap-buffer-overflow on address 0x502000000078 at pc 0x58b6dd3799ed bp 0x7ffe263f5bb0 sp 0x7ffe263f5ba8"
+   }
+  },
+  {
+   "unit": "verina_basic_54",
+   "mutant": "m003",
+   "cell": "neither",
+   "operator": "arithmetic",
+   "line": 11,
+   "original_line": "long best = a[0] - b[0];",
+   "mutant_line": "long best = a[0] + b[0];",
+   "level": "memory",
+   "upstream_precondition_dropped": true,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 1,
+    "kind": "result",
+    "port": "a(len 4)=[5,5,6,-1,] b(len 1)=[-2,] |r=7",
+    "mutant": "a(len 4)=[5,5,6,-1,] b(len 1)=[-2,] |r=3"
+   }
+  },
+  {
+   "unit": "verina_basic_56",
+   "mutant": "m006",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 17,
+   "original_line": "for (long i = 0; i < len; i++) {",
+   "mutant_line": "for (long i = 0; i != len; i++) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "bound",
+   "reason": "len >= 0 is required"
+  },
+  {
+   "unit": "verina_basic_56",
+   "mutant": "m002",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 14,
+   "original_line": "for (long i = 0; i < dest_len; i++) {",
+   "mutant_line": "for (long i = 0; i != dest_len; i++) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "bound",
+   "reason": "the requires give dest_len >= 0"
+  },
+  {
+   "unit": "verina_basic_58",
+   "mutant": "m002",
+   "cell": "proof only",
+   "operator": "relational",
+   "line": 8,
+   "original_line": "for (long i = 0; i < s_len; i++) {",
+   "mutant_line": "for (long i = 0; i != s_len; i++) {",
+   "level": "memory",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [
+    "bounds"
+   ],
+   "different": true,
+   "found_by": "second pass: a negative length",
+   "kinds": [
+    "sanitizer report"
+   ],
+   "witness": {
+    "input": 3,
+    "kind": "sanitizer report",
+    "port": "s(len -1)=[] |r=-1|out=77,77,77,77,77,77,77,77,77,77,",
+    "mutant": "crash: ERROR: AddressSanitizer: heap-buffer-overflow on address 0x502000000050 at pc 0x5dbc1d1ea8c0 bp 0x7ffe46a6fae0 sp 0x7ffe46a6fad8"
+   }
+  },
+  {
+   "unit": "verina_basic_59",
+   "mutant": "m011",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 10,
+   "original_line": "return 0;",
+   "mutant_line": "return 1;",
+   "level": "memory",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 0,
+    "kind": "result",
+    "port": "x=6 |r=0|out=12,24,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,",
+    "mutant": "x=6 |r=1|out=12,24,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,"
+   }
+  },
+  {
+   "unit": "verina_basic_6",
+   "mutant": "m000",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 10,
+   "original_line": "if (b < min) {",
+   "mutant_line": "if (b <= min) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "tie",
+   "reason": ""
+  },
+  {
+   "unit": "verina_basic_6",
+   "mutant": "m003",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 13,
+   "original_line": "if (c < min) {",
+   "mutant_line": "if (c <= min) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "tie",
+   "reason": ""
+  },
+  {
+   "unit": "verina_basic_61",
+   "mutant": "m005",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 8,
+   "original_line": "if (s[i] < '0' || s[i] > '9') {",
+   "mutant_line": "if (s[i] < '0' || s[i] >= '9') {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "second pass: letters or capacity",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 70,
+    "kind": "result",
+    "port": "s(len 1)=[57,] |r=1",
+    "mutant": "s(len 1)=[57,] |r=0"
+   }
+  },
+  {
+   "unit": "verina_basic_61",
+   "mutant": "m000",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 7,
+   "original_line": "for (long i = 0; i < s_len; i++) {",
+   "mutant_line": "for (long i = 1; i < s_len; i++) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 2,
+    "kind": "result",
+    "port": "s(len 1)=[97,] |r=0",
+    "mutant": "s(len 1)=[97,] |r=1"
+   }
+  },
+  {
+   "unit": "verina_basic_61",
+   "mutant": "m002",
+   "cell": "proof only",
+   "operator": "relational",
+   "line": 7,
+   "original_line": "for (long i = 0; i < s_len; i++) {",
+   "mutant_line": "for (long i = 0; i != s_len; i++) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [
+    "bounds",
+    "overflow"
+   ],
+   "different": true,
+   "found_by": "second pass: a negative length",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 3,
+    "kind": "result",
+    "port": "s(len -1)=[] |r=1",
+    "mutant": "s(len -1)=[] |r=0"
+   }
+  },
+  {
+   "unit": "verina_basic_62",
+   "mutant": "m002",
+   "cell": "proof only",
+   "operator": "relational",
+   "line": 7,
+   "original_line": "for (long i = 0; i < a_len; i++) {",
+   "mutant_line": "for (long i = 0; i != a_len; i++) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [
+    "bounds",
+    "overflow",
+    "postcondition"
+   ],
+   "different": true,
+   "found_by": "second pass: a negative length",
+   "kinds": [
+    "sanitizer report"
+   ],
+   "witness": {
+    "input": 3,
+    "kind": "sanitizer report",
+    "port": "a(len -1)=[] key=88 |r=-1",
+    "mutant": "crash: ERROR: AddressSanitizer: heap-buffer-overflow on address 0x502000000050 at pc 0x622558182835 bp 0x7ffe2eebce60 sp 0x7ffe2eebce58"
+   }
+  },
+  {
+   "unit": "verina_basic_64",
+   "mutant": "m006",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 15,
+   "original_line": "for (long i = 0; i < p; i++) {",
+   "mutant_line": "for (long i = 0; i != p; i++) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "bound",
+   "reason": "p >= 0 is required"
+  },
+  {
+   "unit": "verina_basic_64",
+   "mutant": "m010",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 18,
+   "original_line": "for (long i = atPos; i < l; i++) {",
+   "mutant_line": "for (long i = atPos; i != l; i++) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "bound",
+   "reason": "atPos <= l is required"
+  },
+  {
+   "unit": "verina_basic_64",
+   "mutant": "m002",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 12,
+   "original_line": "for (long i = 0; i < atPos; i++) {",
+   "mutant_line": "for (long i = 0; i != atPos; i++) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "bound",
+   "reason": "atPos >= 0 is required"
+  },
+  {
+   "unit": "verina_basic_68",
+   "mutant": "m002",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 9,
+   "original_line": "for (long i = 0; i < a_len; i++) {",
+   "mutant_line": "for (long i = 0; i != a_len; i++) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "bound",
+   "reason": "a_len >= 0 is required"
+  },
+  {
+   "unit": "verina_basic_72",
+   "mutant": "m002",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 10,
+   "original_line": "for (long i = 0; i < a_len; i++) {",
+   "mutant_line": "for (long i = 0; i != a_len; i++) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "bound",
+   "reason": "a_len >= 0 is required"
+  },
+  {
+   "unit": "verina_basic_73",
+   "mutant": "m004",
+   "cell": "proof only",
+   "operator": "relational",
+   "line": 11,
+   "original_line": "for (long i = 0; i < s_len; i++) {",
+   "mutant_line": "for (long i = 0; i != s_len; i++) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [
+    "bounds",
+    "overflow"
+   ],
+   "different": true,
+   "found_by": "second pass: a negative length",
+   "kinds": [
+    "sanitizer report"
+   ],
+   "witness": {
+    "input": 10,
+    "kind": "sanitizer report",
+    "port": "s(len -1)=[] p(len -1)=[] |r=1",
+    "mutant": "crash: ERROR: AddressSanitizer: heap-buffer-overflow on address 0x502000000291 at pc 0x57529fba08b6 bp 0x7ffe76ee02d0 sp 0x7ffe76ee02c8"
+   }
+  },
+  {
+   "unit": "verina_basic_73",
+   "mutant": "m001",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 9,
+   "original_line": "return 0;",
+   "mutant_line": "return 1;",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "dead",
+   "reason": "s_len == p_len is required"
+  },
+  {
+   "unit": "verina_basic_73",
+   "mutant": "m002",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 11,
+   "original_line": "for (long i = 0; i < s_len; i++) {",
+   "mutant_line": "for (long i = 1; i < s_len; i++) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 268,
+    "kind": "result",
+    "port": "s(len 1)=[46,] p(len 1)=[49,] |r=0",
+    "mutant": "s(len 1)=[46,] p(len 1)=[49,] |r=1"
+   }
+  },
+  {
+   "unit": "verina_basic_74",
+   "mutant": "m004",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 9,
+   "original_line": "for (long i = 1; i < a_len; i++) {",
+   "mutant_line": "for (long i = 1; i != a_len; i++) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "bound",
+   "reason": "a_len >= 1 is required"
+  },
+  {
+   "unit": "verina_basic_74",
+   "mutant": "m005",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 10,
+   "original_line": "if (a[i] > best) {",
+   "mutant_line": "if (a[i] >= best) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "tie",
+   "reason": ""
+  },
+  {
+   "unit": "verina_basic_74",
+   "mutant": "m001",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 9,
+   "original_line": "for (long i = 1; i < a_len; i++) {",
+   "mutant_line": "for (long i = 2; i < a_len; i++) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 3,
+    "kind": "result",
+    "port": "a(len 3)=[-93,88,5,] |r=88",
+    "mutant": "a(len 3)=[-93,88,5,] |r=5"
+   }
+  },
+  {
+   "unit": "verina_basic_74",
+   "mutant": "m002",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 9,
+   "original_line": "for (long i = 1; i < a_len; i++) {",
+   "mutant_line": "for (long i = 0; i < a_len; i++) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "tie",
+   "reason": "a[0] > a[0] is false"
+  },
+  {
+   "unit": "verina_basic_75",
+   "mutant": "m004",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 9,
+   "original_line": "for (long i = 1; i < a_len; i++) {",
+   "mutant_line": "for (long i = 1; i != a_len; i++) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "bound",
+   "reason": "a_len >= 1 is required"
+  },
+  {
+   "unit": "verina_basic_75",
+   "mutant": "m005",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 10,
+   "original_line": "if (a[i] < best) {",
+   "mutant_line": "if (a[i] <= best) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "tie",
+   "reason": ""
+  },
+  {
+   "unit": "verina_basic_75",
+   "mutant": "m002",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 9,
+   "original_line": "for (long i = 1; i < a_len; i++) {",
+   "mutant_line": "for (long i = 0; i < a_len; i++) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "tie",
+   "reason": "a[0] < a[0] is false"
+  },
+  {
+   "unit": "verina_basic_76",
+   "mutant": "m000",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 8,
+   "original_line": "if (x <= y) {",
+   "mutant_line": "if (x < y) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "tie",
+   "reason": ""
+  },
+  {
+   "unit": "verina_basic_78",
+   "mutant": "m007",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 10,
+   "original_line": "return 0;",
+   "mutant_line": "return 1;",
+   "level": "memory",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 0,
+    "kind": "result",
+    "port": "x=6 y=-1 |r=0|out=5,7,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,",
+    "mutant": "x=6 y=-1 |r=1|out=5,7,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,"
+   }
+  },
+  {
+   "unit": "verina_basic_79",
+   "mutant": "m005",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 14,
+   "original_line": "for (long i = 1; i < x; i++) {",
+   "mutant_line": "for (long i = 0; i < x; i++) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "tie",
+   "reason": "a[0] > a[0] is false"
+  },
+  {
+   "unit": "verina_basic_79",
+   "mutant": "m007",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 14,
+   "original_line": "for (long i = 1; i < x; i++) {",
+   "mutant_line": "for (long i = 1; i != x; i++) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "bound",
+   "reason": "x >= 1 is required"
+  },
+  {
+   "unit": "verina_basic_79",
+   "mutant": "m008",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 15,
+   "original_line": "if (a[i] > m) {",
+   "mutant_line": "if (a[i] >= m) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "tie",
+   "reason": ""
+  },
+  {
+   "unit": "verina_basic_79",
+   "mutant": "m019",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 27,
+   "original_line": "return 0;",
+   "mutant_line": "return 1;",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 31,
+    "kind": "result",
+    "port": "a(len 5)=[5,6,-1,3,3,] x=4 |r=0|out=6,4,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,",
+    "mutant": "a(len 5)=[5,6,-1,3,3,] x=4 |r=1|out=6,4,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,"
+   }
+  },
+  {
+   "unit": "verina_basic_8",
+   "mutant": "m000",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 8,
+   "original_line": "if (a <= b) {",
+   "mutant_line": "if (a < b) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "tie",
+   "reason": ""
+  },
+  {
+   "unit": "verina_basic_81",
+   "mutant": "m008",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 14,
+   "original_line": "return 0;",
+   "mutant_line": "return 1;",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 11,
+    "kind": "result",
+    "port": "x=6 y=0 |r=0|out=6,0,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,",
+    "mutant": "x=6 y=0 |r=1|out=6,0,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,"
+   }
+  },
+  {
+   "unit": "verina_basic_81",
+   "mutant": "m016",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 18,
+   "original_line": "return 0;",
+   "mutant_line": "return 1;",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 1,
+    "kind": "result",
+    "port": "x=6 y=5 |r=0|out=1,1,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,",
+    "mutant": "x=6 y=5 |r=1|out=1,1,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,"
+   }
+  },
+  {
+   "unit": "verina_basic_82",
+   "mutant": "m003",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 9,
+   "original_line": "for (long i = 1; i < a_len; i++) {",
+   "mutant_line": "for (long i = 1; i != a_len; i++) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "bound",
+   "reason": "a_len >= 1 is required"
+  },
+  {
+   "unit": "verina_basic_83",
+   "mutant": "m006",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 12,
+   "original_line": "for (long i = 0; i < b_len; i++) {",
+   "mutant_line": "for (long i = 0; i != b_len; i++) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "bound",
+   "reason": "b_len >= 0 is required"
+  },
+  {
+   "unit": "verina_basic_83",
+   "mutant": "m002",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 9,
+   "original_line": "for (long i = 0; i < a_len; i++) {",
+   "mutant_line": "for (long i = 0; i != a_len; i++) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "bound",
+   "reason": "a_len >= 0 is required"
+  },
+  {
+   "unit": "verina_basic_84",
+   "mutant": "m002",
+   "cell": "proof only",
+   "operator": "relational",
+   "line": 8,
+   "original_line": "for (long i = 0; i < arr_len; i++) {",
+   "mutant_line": "for (long i = 0; i != arr_len; i++) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [
+    "bounds",
+    "overflow"
+   ],
+   "different": true,
+   "found_by": "second pass: a negative length",
+   "kinds": [
+    "sanitizer report"
+   ],
+   "witness": {
+    "input": 3,
+    "kind": "sanitizer report",
+    "port": "arr(len -1)=[] k=88 |r=-1|out=",
+    "mutant": "crash: ERROR: AddressSanitizer: heap-buffer-overflow on address 0x502000000070 at pc 0x5d0428fbd8f9 bp 0x7ffda852a820 sp 0x7ffda852a818"
+   }
+  },
+  {
+   "unit": "verina_basic_85",
+   "mutant": "m002",
+   "cell": "proof only",
+   "operator": "relational",
+   "line": 8,
+   "original_line": "for (long i = 0; i < a_len; i++) {",
+   "mutant_line": "for (long i = 0; i != a_len; i++) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [
+    "bounds",
+    "overflow"
+   ],
+   "different": true,
+   "found_by": "second pass: a negative length",
+   "kinds": [
+    "sanitizer report"
+   ],
+   "witness": {
+    "input": 3,
+    "kind": "sanitizer report",
+    "port": "a(len -1)=[] |r=-1|out=77,77,77,77,77,77,77,77,77,77,",
+    "mutant": "crash: ERROR: AddressSanitizer: heap-buffer-overflow on address 0x502000000040 at pc 0x62d4e0df88f2 bp 0x7ffd7eb33a70 sp 0x7ffd7eb33a68"
+   }
+  },
+  {
+   "unit": "verina_basic_86",
+   "mutant": "m002",
+   "cell": "proof only",
+   "operator": "relational",
+   "line": 9,
+   "original_line": "for (long i = 0; i < a_len; i++) {",
+   "mutant_line": "for (long i = 0; i != a_len; i++) {",
+   "level": "memory",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [
+    "bounds",
+    "division"
+   ],
+   "different": true,
+   "found_by": "second pass: a negative length",
+   "kinds": [
+    "sanitizer report"
+   ],
+   "witness": {
+    "input": 3,
+    "kind": "sanitizer report",
+    "port": "a(len -1)=[] offset=88 |r=-1|out=",
+    "mutant": "crash: ERROR: AddressSanitizer: heap-buffer-overflow on address 0x502000000070 at pc 0x5744335be949 bp 0x7fffb9ee5620 sp 0x7fffb9ee5618"
+   }
+  },
+  {
+   "unit": "verina_basic_87",
+   "mutant": "m005",
+   "cell": "proof only",
+   "operator": "relational",
+   "line": 11,
+   "original_line": "for (long i = 0; i < a_len; i++) {",
+   "mutant_line": "for (long i = 0; i <= a_len; i++) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [
+    "entry",
+    "overflow"
+   ],
+   "different": true,
+   "found_by": "second pass: letters or capacity",
+   "kinds": [
+    "sanitizer report"
+   ],
+   "witness": {
+    "input": 11,
+    "kind": "sanitizer report",
+    "port": "a(len 6)=[-2,3,6,-1,-1,4,] |r=6|out=-2,-1,-1,3,4,6,",
+    "mutant": "crash: ERROR: AddressSanitizer: heap-buffer-overflow on address 0x504000000140 at pc 0x632a2cfa1b14 bp 0x7ffe2e100310 sp 0x7ffe2e100308"
+   }
+  },
+  {
+   "unit": "verina_basic_87",
+   "mutant": "m006",
+   "cell": "proof only",
+   "operator": "relational",
+   "line": 11,
+   "original_line": "for (long i = 0; i < a_len; i++) {",
+   "mutant_line": "for (long i = 0; i != a_len; i++) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [
+    "entry"
+   ],
+   "different": true,
+   "found_by": "second pass: a negative length",
+   "kinds": [
+    "sanitizer report"
+   ],
+   "witness": {
+    "input": 3,
+    "kind": "sanitizer report",
+    "port": "a(len -1)=[] |r=-1|out=77,77,77,77,77,77,77,77,77,77,",
+    "mutant": "crash: ERROR: AddressSanitizer: heap-buffer-overflow on address 0x507000000070 at pc 0x5b72f8695b17 bp 0x7ffe9633f7c0 sp 0x7ffe9633f7b8"
+   }
+  },
+  {
+   "unit": "verina_basic_87",
+   "mutant": "m007",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 15,
+   "original_line": "if (out[j] < out[smallest]) {",
+   "mutant_line": "if (out[j] <= out[smallest]) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "tie",
+   "reason": "which of two equal cells is chosen does not change the sorted values"
+  },
+  {
+   "unit": "verina_basic_87",
+   "mutant": "m002",
+   "cell": "proof only",
+   "operator": "relational",
+   "line": 8,
+   "original_line": "for (long i = 0; i < a_len; i++) {",
+   "mutant_line": "for (long i = 0; i != a_len; i++) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [
+    "bounds",
+    "overflow"
+   ],
+   "different": true,
+   "found_by": "second pass: a negative length",
+   "kinds": [
+    "sanitizer report"
+   ],
+   "witness": {
+    "input": 3,
+    "kind": "sanitizer report",
+    "port": "a(len -1)=[] |r=-1|out=77,77,77,77,77,77,77,77,77,77,",
+    "mutant": "crash: ERROR: AddressSanitizer: heap-buffer-overflow on address 0x502000000050 at pc 0x5b847ca95ac7 bp 0x7ffe81ab1aa0 sp 0x7ffe81ab1a98"
+   }
+  },
+  {
+   "unit": "verina_basic_88",
+   "mutant": "m002",
+   "cell": "proof only",
+   "operator": "relational",
+   "line": 8,
+   "original_line": "for (long i = 0; i < xs_len; i++) {",
+   "mutant_line": "for (long i = 0; i != xs_len; i++) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [
+    "bounds",
+    "overflow"
+   ],
+   "different": true,
+   "found_by": "second pass: a negative length",
+   "kinds": [
+    "sanitizer report"
+   ],
+   "witness": {
+    "input": 3,
+    "kind": "sanitizer report",
+    "port": "xs(len -1)=[] |r=-1|out=77,77,77,77,77,77,77,77,77,77,",
+    "mutant": "crash: ERROR: AddressSanitizer: heap-buffer-overflow on address 0x502000000050 at pc 0x5faadff8d8a6 bp 0x7fff02e80290 sp 0x7fff02e80288"
+   }
+  },
+  {
+   "unit": "verina_basic_89",
+   "mutant": "m004",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 12,
+   "original_line": "for (long j = 0; j < count; j++) {",
+   "mutant_line": "for (long j = 0; j != count; j++) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "bound",
+   "reason": "count >= 0"
+  },
+  {
+   "unit": "verina_basic_89",
+   "mutant": "m006",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 14,
+   "original_line": "seen = 1;",
+   "mutant_line": "seen = 2;",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "flag",
+   "reason": "compared with 0 only"
+  },
+  {
+   "unit": "verina_basic_89",
+   "mutant": "m003",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 12,
+   "original_line": "for (long j = 0; j < count; j++) {",
+   "mutant_line": "for (long j = 0; j <= count; j++) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 33,
+    "kind": "result",
+    "port": "s(len 6)=[-64,36,1,57,-11,77,] |r=6|out=-64,36,1,57,-11,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,",
+    "mutant": "s(len 6)=[-64,36,1,57,-11,77,] |r=5|out=-64,36,1,57,-11,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,"
+   }
+  },
+  {
+   "unit": "verina_basic_9",
+   "mutant": "m002",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 8,
+   "original_line": "for (long i = 0; i < a_len; i++) {",
+   "mutant_line": "for (long i = 0; i != a_len; i++) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "bound",
+   "reason": "a_len > 0 is required"
+  },
+  {
+   "unit": "verina_basic_9",
+   "mutant": "m005",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 9,
+   "original_line": "for (long j = 0; j < b_len; j++) {",
+   "mutant_line": "for (long j = 0; j != b_len; j++) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "bound",
+   "reason": "b_len > 0 is required"
+  },
+  {
+   "unit": "verina_basic_91",
+   "mutant": "m005",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 11,
+   "original_line": "return 0;",
+   "mutant_line": "return 1;",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 0,
+    "kind": "result",
+    "port": "X=6 Y=-1 |r=0|out=-1,6,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,",
+    "mutant": "X=6 Y=-1 |r=1|out=-1,6,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,"
+   }
+  },
+  {
+   "unit": "verina_basic_92",
+   "mutant": "m005",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 11,
+   "original_line": "return 0;",
+   "mutant_line": "return 1;",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 0,
+    "kind": "result",
+    "port": "X=6 Y=-1 |r=0|out=-1,6,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,",
+    "mutant": "X=6 Y=-1 |r=1|out=-1,6,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,"
+   }
+  },
+  {
+   "unit": "verina_basic_93",
+   "mutant": "m005",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 11,
+   "original_line": "return 0;",
+   "mutant_line": "return 1;",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 0,
+    "kind": "result",
+    "port": "X=6 Y=-1 |r=0|out=-1,6,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,",
+    "mutant": "X=6 Y=-1 |r=1|out=-1,6,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,"
+   }
+  },
+  {
+   "unit": "verina_basic_94",
+   "mutant": "m002",
+   "cell": "proof only",
+   "operator": "relational",
+   "line": 8,
+   "original_line": "for (long i = 0; i < s_len; i++) {",
+   "mutant_line": "for (long i = 0; i != s_len; i++) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [
+    "bounds",
+    "overflow"
+   ],
+   "different": true,
+   "found_by": "second pass: a negative length",
+   "kinds": [
+    "sanitizer report"
+   ],
+   "witness": {
+    "input": 3,
+    "kind": "sanitizer report",
+    "port": "s(len -1)=[] |r=-1|out=77,77,77,77,77,77,77,77,77,77,",
+    "mutant": "crash: ERROR: AddressSanitizer: heap-buffer-overflow on address 0x502000000050 at pc 0x5f1bd44c88a6 bp 0x7ffcdf0302f0 sp 0x7ffcdf0302e8"
+   }
+  },
+  {
+   "unit": "verina_basic_95",
+   "mutant": "m002",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 12,
+   "original_line": "for (long k = 0; k < arr_len; k++) {",
+   "mutant_line": "for (long k = 0; k != arr_len; k++) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "bound",
+   "reason": "the requires give arr_len > 0"
+  },
+  {
+   "unit": "verina_basic_96",
+   "mutant": "m005",
+   "cell": "neither",
+   "operator": "constant",
+   "line": 11,
+   "original_line": "return 0;",
+   "mutant_line": "return 1;",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": true,
+   "found_by": "first pass",
+   "kinds": [
+    "result"
+   ],
+   "witness": {
+    "input": 0,
+    "kind": "result",
+    "port": "X=6 Y=-1 |r=0|out=-1,6,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,",
+    "mutant": "X=6 Y=-1 |r=1|out=-1,6,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,77,"
+   }
+  },
+  {
+   "unit": "verina_basic_97",
+   "mutant": "m002",
+   "cell": "neither",
+   "operator": "relational",
+   "line": 10,
+   "original_line": "for (long i = 0; i < a_len; i++) {",
+   "mutant_line": "for (long i = 0; i != a_len; i++) {",
+   "level": "full",
+   "upstream_precondition_dropped": false,
+   "failed_obligations": [],
+   "different": false,
+   "found_by": "reading",
+   "equivalence": "bound",
+   "reason": "the requires give a_len > 0"
+  }
+ ]
+}

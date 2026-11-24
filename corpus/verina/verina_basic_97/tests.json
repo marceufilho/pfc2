@@ -1,0 +1,83 @@
+{
+  "comment": "Generated from the task's test.json by corpus/verina-notes/interface.py: one case per test.",
+  "functions": {
+    "TestArrayElements": {
+      "result": "long",
+      "parameters": "long a_len, const long a[a_len], long j",
+      "call": "TestArrayElements(a_len, a, j, 16, out)",
+      "locals": "long out[16] = {0};"
+    }
+  },
+  "cases": [
+    {
+      "name": "case_0",
+      "function": "TestArrayElements",
+      "inputs": {
+        "a_len": 5,
+        "a": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "j": 2
+      },
+      "expected": "found == 5 && out[0] == 1 && out[1] == 2 && out[2] == 60 && out[3] == 4 && out[4] == 5"
+    },
+    {
+      "name": "case_1",
+      "function": "TestArrayElements",
+      "inputs": {
+        "a_len": 3,
+        "a": [
+          60,
+          30,
+          20
+        ],
+        "j": 1
+      },
+      "expected": "found == 3 && out[0] == 60 && out[1] == 60 && out[2] == 20"
+    },
+    {
+      "name": "case_2",
+      "function": "TestArrayElements",
+      "inputs": {
+        "a_len": 3,
+        "a": [
+          10,
+          20,
+          30
+        ],
+        "j": 0
+      },
+      "expected": "found == 3 && out[0] == 60 && out[1] == 20 && out[2] == 30"
+    },
+    {
+      "name": "case_3",
+      "function": "TestArrayElements",
+      "inputs": {
+        "a_len": 3,
+        "a": [
+          5,
+          10,
+          15
+        ],
+        "j": 2
+      },
+      "expected": "found == 3 && out[0] == 5 && out[1] == 10 && out[2] == 60"
+    },
+    {
+      "name": "case_4",
+      "function": "TestArrayElements",
+      "inputs": {
+        "a_len": 1,
+        "a": [
+          0
+        ],
+        "j": 0
+      },
+      "expected": "found == 1 && out[0] == 60"
+    }
+  ]
+}

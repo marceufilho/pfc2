@@ -1,0 +1,13 @@
+{
+ "id": "verina_basic_54",
+ "stated": "part",
+ "dropped": [
+  "precond: a sorted (Pairwise)",
+  "precond: b sorted (Pairwise)",
+  "postcond: some pair attains result",
+  "postcond: result <= |ai - bi| for every pair"
+ ],
+ "weakened": [],
+ "verdict": "certified at memory",
+ "remarks": "Stated: both size preconditions (already in the port) and the Nat result being non-negative. The differences can overflow."
+}

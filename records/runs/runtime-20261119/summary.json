@@ -1,0 +1,835 @@
+{
+  "by_program": {
+    "example-binary_search": {
+      "certified_over_checked": {
+        "interval": [
+          0.9337,
+          0.9819
+        ],
+        "median": 0.9617,
+        "pairs": 30
+      },
+      "certified_over_plain": {
+        "interval": [
+          1.3108,
+          1.3531
+        ],
+        "median": 1.3294,
+        "pairs": 30
+      },
+      "checked_over_plain": {
+        "interval": [
+          1.3682,
+          1.4072
+        ],
+        "median": 1.3779,
+        "pairs": 30
+      },
+      "corpus": "examples",
+      "median_ns": {
+        "certified": 5671438354,
+        "checked": 5877602773,
+        "plain": 4239161936
+      },
+      "status": "measured"
+    },
+    "example-copy": {
+      "certified_over_checked": {
+        "interval": [
+          0.9652,
+          1.0271
+        ],
+        "median": 0.9991,
+        "pairs": 30
+      },
+      "certified_over_plain": {
+        "interval": [
+          0.9692,
+          1.0154
+        ],
+        "median": 0.9897,
+        "pairs": 30
+      },
+      "checked_over_plain": {
+        "interval": [
+          0.9774,
+          1.0323
+        ],
+        "median": 1.0019,
+        "pairs": 30
+      },
+      "corpus": "examples",
+      "median_ns": {
+        "certified": 116693606,
+        "checked": 116556057,
+        "plain": 116829753
+      },
+      "status": "measured"
+    },
+    "example-count_char": {
+      "certified_over_checked": {
+        "interval": [
+          0.7062,
+          0.7138
+        ],
+        "median": 0.7109,
+        "pairs": 30
+      },
+      "certified_over_plain": {
+        "interval": [
+          0.9994,
+          1.0003
+        ],
+        "median": 0.9999,
+        "pairs": 30
+      },
+      "checked_over_plain": {
+        "interval": [
+          1.4017,
+          1.4163
+        ],
+        "median": 1.4084,
+        "pairs": 30
+      },
+      "corpus": "examples",
+      "median_ns": {
+        "certified": 66892934,
+        "checked": 94063029,
+        "plain": 66893374
+      },
+      "status": "measured"
+    },
+    "example-fill": {
+      "certified_over_checked": {
+        "interval": [
+          0.9486,
+          1.015
+        ],
+        "median": 0.9852,
+        "pairs": 30
+      },
+      "certified_over_plain": {
+        "interval": [
+          0.9918,
+          1.0388
+        ],
+        "median": 1.0239,
+        "pairs": 30
+      },
+      "checked_over_plain": {
+        "interval": [
+          1.0043,
+          1.0817
+        ],
+        "median": 1.0271,
+        "pairs": 30
+      },
+      "corpus": "examples",
+      "median_ns": {
+        "certified": 79026274,
+        "checked": 79126190,
+        "plain": 77760161
+      },
+      "status": "measured"
+    },
+    "example-handle": {
+      "certified_over_checked": {
+        "interval": [
+          0.9975,
+          1.0194
+        ],
+        "median": 1.0063,
+        "pairs": 30
+      },
+      "certified_over_plain": {
+        "interval": [
+          0.9854,
+          1.0155
+        ],
+        "median": 1.0065,
+        "pairs": 30
+      },
+      "checked_over_plain": {
+        "interval": [
+          0.9841,
+          1.005
+        ],
+        "median": 0.9966,
+        "pairs": 30
+      },
+      "corpus": "examples",
+      "median_ns": {
+        "certified": 219711710,
+        "checked": 219201053,
+        "plain": 218673244
+      },
+      "status": "measured"
+    },
+    "example-index_of": {
+      "certified_over_checked": {
+        "interval": [
+          1.0433,
+          1.0494
+        ],
+        "median": 1.0454,
+        "pairs": 30
+      },
+      "certified_over_plain": {
+        "interval": [
+          1.0428,
+          1.0522
+        ],
+        "median": 1.0456,
+        "pairs": 30
+      },
+      "checked_over_plain": {
+        "interval": [
+          0.9998,
+          1.0157
+        ],
+        "median": 1.0005,
+        "pairs": 30
+      },
+      "corpus": "examples",
+      "median_ns": {
+        "certified": 93012066,
+        "checked": 89406608,
+        "plain": 86318628
+      },
+      "status": "measured"
+    },
+    "example-multiply": {
+      "certified_over_checked": {
+        "interval": [
+          0.4351,
+          0.443
+        ],
+        "median": 0.4399,
+        "pairs": 30
+      },
+      "certified_over_plain": {
+        "interval": [
+          1.2067,
+          1.2081
+        ],
+        "median": 1.2077,
+        "pairs": 30
+      },
+      "checked_over_plain": {
+        "interval": [
+          2.7256,
+          2.7723
+        ],
+        "median": 2.745,
+        "pairs": 30
+      },
+      "corpus": "examples",
+      "median_ns": {
+        "certified": 89310636,
+        "checked": 201668431,
+        "plain": 73954890
+      },
+      "status": "measured"
+    },
+    "example-path_max": {
+      "certified_over_checked": {
+        "interval": [
+          0.9792,
+          1.0287
+        ],
+        "median": 1.0135,
+        "pairs": 30
+      },
+      "certified_over_plain": {
+        "interval": [
+          0.9616,
+          1.0043
+        ],
+        "median": 0.9732,
+        "pairs": 30
+      },
+      "checked_over_plain": {
+        "interval": [
+          0.9505,
+          0.9994
+        ],
+        "median": 0.9686,
+        "pairs": 30
+      },
+      "corpus": "examples",
+      "median_ns": {
+        "certified": 298083331,
+        "checked": 296474910,
+        "plain": 307176031
+      },
+      "status": "measured"
+    },
+    "example-play": {
+      "certified_over_checked": {
+        "interval": [
+          1.2154,
+          1.2574
+        ],
+        "median": 1.2379,
+        "pairs": 30
+      },
+      "certified_over_plain": {
+        "interval": [
+          1.5582,
+          1.6158
+        ],
+        "median": 1.6059,
+        "pairs": 30
+      },
+      "checked_over_plain": {
+        "interval": [
+          1.259,
+          1.3213
+        ],
+        "median": 1.2893,
+        "pairs": 30
+      },
+      "corpus": "examples",
+      "median_ns": {
+        "certified": 455230010,
+        "checked": 362119389,
+        "plain": 285190964
+      },
+      "status": "measured"
+    },
+    "example-sum": {
+      "certified_over_checked": {
+        "interval": [
+          0.9808,
+          1.0182
+        ],
+        "median": 1.0052,
+        "pairs": 30
+      },
+      "certified_over_plain": {
+        "interval": [
+          1.6071,
+          1.6577
+        ],
+        "median": 1.6229,
+        "pairs": 30
+      },
+      "checked_over_plain": {
+        "interval": [
+          1.5946,
+          1.6561
+        ],
+        "median": 1.6189,
+        "pairs": 30
+      },
+      "corpus": "examples",
+      "median_ns": {
+        "certified": 107948102,
+        "checked": 109234453,
+        "plain": 66812384
+      },
+      "status": "measured"
+    },
+    "example-to_upper": {
+      "certified_over_checked": {
+        "interval": [
+          0.9922,
+          1.011
+        ],
+        "median": 0.9985,
+        "pairs": 30
+      },
+      "certified_over_plain": {
+        "interval": [
+          0.998,
+          1.0127
+        ],
+        "median": 1.0078,
+        "pairs": 30
+      },
+      "checked_over_plain": {
+        "interval": [
+          0.9997,
+          1.0114
+        ],
+        "median": 1.0041,
+        "pairs": 30
+      },
+      "corpus": "examples",
+      "median_ns": {
+        "certified": 68900933,
+        "checked": 68817340,
+        "plain": 68365892
+      },
+      "status": "measured"
+    },
+    "thesis-accumulate": {
+      "certified_over_checked": {
+        "interval": [
+          0.8213,
+          0.8724
+        ],
+        "median": 0.8536,
+        "pairs": 30
+      },
+      "certified_over_plain": {
+        "interval": [
+          1.5367,
+          1.677
+        ],
+        "median": 1.6141,
+        "pairs": 30
+      },
+      "checked_over_plain": {
+        "interval": [
+          1.8531,
+          1.9696
+        ],
+        "median": 1.915,
+        "pairs": 30
+      },
+      "corpus": "thesis-derived",
+      "median_ns": {
+        "certified": 113538756,
+        "checked": 132975123,
+        "plain": 72048232
+      },
+      "status": "measured"
+    },
+    "thesis-binary_search": {
+      "certified_over_checked": {
+        "interval": [
+          0.9534,
+          1.0095
+        ],
+        "median": 0.997,
+        "pairs": 30
+      },
+      "certified_over_plain": {
+        "interval": [
+          0.9785,
+          1.0401
+        ],
+        "median": 1.0147,
+        "pairs": 30
+      },
+      "checked_over_plain": {
+        "interval": [
+          0.9924,
+          1.067
+        ],
+        "median": 1.0308,
+        "pairs": 30
+      },
+      "corpus": "thesis-derived",
+      "median_ns": {
+        "certified": 4258575180,
+        "checked": 4394762841,
+        "plain": 4314087394
+      },
+      "status": "measured"
+    },
+    "thesis-copy": {
+      "certified_over_checked": {
+        "interval": [
+          0.9749,
+          1.0761
+        ],
+        "median": 1.0358,
+        "pairs": 30
+      },
+      "certified_over_plain": {
+        "interval": [
+          0.9742,
+          1.0584
+        ],
+        "median": 1.0015,
+        "pairs": 30
+      },
+      "checked_over_plain": {
+        "interval": [
+          0.9704,
+          1.0315
+        ],
+        "median": 0.9968,
+        "pairs": 30
+      },
+      "corpus": "thesis-derived",
+      "median_ns": {
+        "certified": 120310183,
+        "checked": 118071395,
+        "plain": 119263262
+      },
+      "status": "measured"
+    },
+    "thesis-count": {
+      "certified_over_checked": {
+        "interval": [
+          0.6964,
+          0.7178
+        ],
+        "median": 0.7092,
+        "pairs": 30
+      },
+      "certified_over_plain": {
+        "interval": [
+          0.9873,
+          1.0413
+        ],
+        "median": 1.0135,
+        "pairs": 30
+      },
+      "checked_over_plain": {
+        "interval": [
+          1.4123,
+          1.4595
+        ],
+        "median": 1.443,
+        "pairs": 30
+      },
+      "corpus": "thesis-derived",
+      "median_ns": {
+        "certified": 88140574,
+        "checked": 123820936,
+        "plain": 87242581
+      },
+      "status": "measured"
+    },
+    "thesis-dot": {
+      "certified_over_checked": {
+        "interval": [
+          0.8866,
+          0.9423
+        ],
+        "median": 0.9281,
+        "pairs": 30
+      },
+      "certified_over_plain": {
+        "interval": [
+          1.0104,
+          1.1008
+        ],
+        "median": 1.0681,
+        "pairs": 30
+      },
+      "checked_over_plain": {
+        "interval": [
+          1.1262,
+          1.2019
+        ],
+        "median": 1.1609,
+        "pairs": 30
+      },
+      "corpus": "thesis-derived",
+      "median_ns": {
+        "certified": 153268024,
+        "checked": 165991471,
+        "plain": 141984208
+      },
+      "status": "measured"
+    },
+    "thesis-fill": {
+      "certified_over_checked": {
+        "interval": [
+          0.9893,
+          1.0904
+        ],
+        "median": 1.0119,
+        "pairs": 30
+      },
+      "certified_over_plain": {
+        "interval": [
+          0.9661,
+          1.0933
+        ],
+        "median": 0.9999,
+        "pairs": 30
+      },
+      "checked_over_plain": {
+        "interval": [
+          0.9387,
+          1.0075
+        ],
+        "median": 0.9903,
+        "pairs": 30
+      },
+      "corpus": "thesis-derived",
+      "median_ns": {
+        "certified": 86849211,
+        "checked": 85501556,
+        "plain": 85535246
+      },
+      "status": "measured"
+    },
+    "thesis-find": {
+      "certified_over_checked": {
+        "interval": [
+          0.8083,
+          0.8443
+        ],
+        "median": 0.8254,
+        "pairs": 30
+      },
+      "certified_over_plain": {
+        "interval": [
+          0.9568,
+          0.995
+        ],
+        "median": 0.9774,
+        "pairs": 30
+      },
+      "checked_over_plain": {
+        "interval": [
+          1.138,
+          1.2168
+        ],
+        "median": 1.1741,
+        "pairs": 30
+      },
+      "corpus": "thesis-derived",
+      "median_ns": {
+        "certified": 110364513,
+        "checked": 133114674,
+        "plain": 113107338
+      },
+      "status": "measured"
+    },
+    "thesis-matvec": {
+      "certified_over_checked": {
+        "interval": [
+          0.74,
+          0.7713
+        ],
+        "median": 0.7553,
+        "pairs": 30
+      },
+      "certified_over_plain": {
+        "interval": [
+          1.1351,
+          1.2366
+        ],
+        "median": 1.1802,
+        "pairs": 30
+      },
+      "checked_over_plain": {
+        "interval": [
+          1.468,
+          1.5892
+        ],
+        "median": 1.5113,
+        "pairs": 30
+      },
+      "corpus": "thesis-derived",
+      "median_ns": {
+        "certified": 141340012,
+        "checked": 184602425,
+        "plain": 122446916
+      },
+      "status": "measured"
+    },
+    "thesis-prefix_sum": {
+      "certified_over_checked": {
+        "interval": [
+          0.936,
+          0.9808
+        ],
+        "median": 0.9593,
+        "pairs": 30
+      },
+      "certified_over_plain": {
+        "interval": [
+          1.2255,
+          1.2687
+        ],
+        "median": 1.2427,
+        "pairs": 30
+      },
+      "checked_over_plain": {
+        "interval": [
+          1.2512,
+          1.3272
+        ],
+        "median": 1.2944,
+        "pairs": 30
+      },
+      "corpus": "thesis-derived",
+      "median_ns": {
+        "certified": 132143550,
+        "checked": 137325163,
+        "plain": 105695899
+      },
+      "status": "measured"
+    },
+    "thesis-replace": {
+      "certified_over_checked": {
+        "interval": [
+          0.7461,
+          0.7677
+        ],
+        "median": 0.7576,
+        "pairs": 30
+      },
+      "certified_over_plain": {
+        "interval": [
+          0.984,
+          1.0098
+        ],
+        "median": 0.9948,
+        "pairs": 30
+      },
+      "checked_over_plain": {
+        "interval": [
+          1.2921,
+          1.3248
+        ],
+        "median": 1.3167,
+        "pairs": 30
+      },
+      "corpus": "thesis-derived",
+      "median_ns": {
+        "certified": 107741926,
+        "checked": 141833940,
+        "plain": 108406134
+      },
+      "status": "measured"
+    },
+    "thesis-reverse": {
+      "certified_over_checked": {
+        "interval": [
+          0.964,
+          1.0006
+        ],
+        "median": 0.9754,
+        "pairs": 30
+      },
+      "certified_over_plain": {
+        "interval": [
+          0.9835,
+          1.0206
+        ],
+        "median": 1.0012,
+        "pairs": 30
+      },
+      "checked_over_plain": {
+        "interval": [
+          0.9878,
+          1.0363
+        ],
+        "median": 1.0164,
+        "pairs": 30
+      },
+      "corpus": "thesis-derived",
+      "median_ns": {
+        "certified": 87719933,
+        "checked": 88981189,
+        "plain": 88004265
+      },
+      "status": "measured"
+    },
+    "thesis-saxpy": {
+      "certified_over_checked": {
+        "interval": [
+          0.8132,
+          0.9441
+        ],
+        "median": 0.879,
+        "pairs": 30
+      },
+      "certified_over_plain": {
+        "interval": [
+          0.9532,
+          1.073
+        ],
+        "median": 1.0156,
+        "pairs": 30
+      },
+      "checked_over_plain": {
+        "interval": [
+          1.089,
+          1.2399
+        ],
+        "median": 1.1534,
+        "pairs": 30
+      },
+      "corpus": "thesis-derived",
+      "median_ns": {
+        "certified": 169243335,
+        "checked": 185877941,
+        "plain": 162681197
+      },
+      "status": "measured"
+    },
+    "thesis-sum": {
+      "certified_over_checked": {
+        "interval": [
+          0.8221,
+          0.8686
+        ],
+        "median": 0.8397,
+        "pairs": 30
+      },
+      "certified_over_plain": {
+        "interval": [
+          1.5323,
+          1.6683
+        ],
+        "median": 1.6336,
+        "pairs": 30
+      },
+      "checked_over_plain": {
+        "interval": [
+          1.8312,
+          1.9627
+        ],
+        "median": 1.8825,
+        "pairs": 30
+      },
+      "corpus": "thesis-derived",
+      "median_ns": {
+        "certified": 111220790,
+        "checked": 132737597,
+        "plain": 69362090
+      },
+      "status": "measured"
+    },
+    "thesis-swap_ranges": {
+      "certified_over_checked": {
+        "interval": [
+          0.9737,
+          1.0129
+        ],
+        "median": 0.9862,
+        "pairs": 30
+      },
+      "certified_over_plain": {
+        "interval": [
+          0.9598,
+          1.0121
+        ],
+        "median": 0.9802,
+        "pairs": 30
+      },
+      "checked_over_plain": {
+        "interval": [
+          0.953,
+          1.0235
+        ],
+        "median": 0.9905,
+        "pairs": 30
+      },
+      "corpus": "thesis-derived",
+      "median_ns": {
+        "certified": 144005769,
+        "checked": 143478415,
+        "plain": 144600572
+      },
+      "status": "measured"
+    }
+  },
+  "failures": [],
+  "label": "exploratory",
+  "measured": 25,
+  "not_measured": {},
+  "passed": true,
+  "programs": 25
+}

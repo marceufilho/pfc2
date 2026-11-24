@@ -1,0 +1,91 @@
+{
+  "comment": "Generated from the task's test.json by corpus/verina-notes/interface.py: one case per test.",
+  "functions": {
+    "secondSmallest": {
+      "result": "long",
+      "parameters": "long s_len, const long s[s_len]",
+      "call": "secondSmallest(s_len, s)"
+    }
+  },
+  "cases": [
+    {
+      "name": "case_0",
+      "function": "secondSmallest",
+      "inputs": {
+        "s_len": 5,
+        "s": [
+          5,
+          3,
+          1,
+          4,
+          2
+        ]
+      },
+      "expected": "found == 2"
+    },
+    {
+      "name": "case_1",
+      "function": "secondSmallest",
+      "inputs": {
+        "s_len": 4,
+        "s": [
+          7,
+          2,
+          5,
+          3
+        ]
+      },
+      "expected": "found == 3"
+    },
+    {
+      "name": "case_2",
+      "function": "secondSmallest",
+      "inputs": {
+        "s_len": 2,
+        "s": [
+          10,
+          20
+        ]
+      },
+      "expected": "found == 20"
+    },
+    {
+      "name": "case_3",
+      "function": "secondSmallest",
+      "inputs": {
+        "s_len": 2,
+        "s": [
+          20,
+          10
+        ]
+      },
+      "expected": "found == 20"
+    },
+    {
+      "name": "case_4",
+      "function": "secondSmallest",
+      "inputs": {
+        "s_len": 3,
+        "s": [
+          3,
+          1,
+          2
+        ]
+      },
+      "expected": "found == 2"
+    },
+    {
+      "name": "case_5",
+      "function": "secondSmallest",
+      "inputs": {
+        "s_len": 3,
+        "s": [
+          1,
+          1,
+          2
+        ]
+      },
+      "expected": "found == 2"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+ "n": 32,
+ "unclear": 0,
+ "compared": 32,
+ "agreement": 27,
+ "kappa": 0.6923076923076923,
+ "disagreements": [
+  {
+   "id": "U03",
+   "unit": "verina_basic_91",
+   "rater": "different",
+   "assistant": "restates",
+   "assistant_class": "restates"
+  },
+  {
+   "id": "U04",
+   "unit": "verina_basic_96",
+   "rater": "different",
+   "assistant": "restates",
+   "assistant_class": "restates"
+  },
+  {
+   "id": "U09",
+   "unit": "verina_basic_93",
+   "rater": "different",
+   "assistant": "restates",
+   "assistant_class": "restates"
+  },
+  {
+   "id": "U11",
+   "unit": "verina_basic_50",
+   "rater": "different",
+   "assistant": "restates",
+   "assistant_class": "restates"
+  },
+  {
+   "id": "U16",
+   "unit": "verina_basic_92",
+   "rater": "different",
+   "assistant": "restates",
+   "assistant_class": "restates"
+  }
+ ],
+ "without_assistant_partly": {
+  "compared": 25,
+  "agreement": 20,
+  "kappa": 0.6056782334384859
+ },
+ "reading": "agreement is a count of units out of `compared` (n minus unclear); kappa is Cohen's, over restates and different; the assistant's partly and independent both count as different"
+}

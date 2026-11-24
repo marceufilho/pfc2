@@ -1,0 +1,16 @@
+{
+  "id": "verina_advanced_76",
+  "stated": "part",
+  "dropped": [
+    "precondition k <= nums.eraseDups.length (number of distinct values)",
+    "every element of the result occurs in nums (quantifier)",
+    "the elements of the result are pairwise distinct (quantifier)",
+    "frequency dominance over values outside the result (count)",
+    "non-increasing frequency order (count)"
+  ],
+  "weakened": [
+    "result.length = k is stated as 0 <= result <= k: equality holds only under the dropped precondition on the number of distinct values"
+  ],
+  "verdict": "certified at full",
+  "remarks": ""
+}

@@ -1,0 +1,34 @@
+---
+title: Playground
+description: Write a small C program with contracts and laws, and watch PFC2 prove it or show why it cannot.
+tableOfContents: false
+---
+
+import Playground from "../../components/Playground.astro";
+
+Pick an example or write your own, then press **Check**. PFC2 proves every contract, array index, division and
+arithmetic operation for all inputs, and releases C only when it succeeds. What it cannot prove is underlined in
+the editor. Use **Experiments** to remove a clause and see which proof it was holding up, and **Share** to copy a
+link to your program.
+
+<Playground program="01_count/count" />
+
+## What to try
+
+- **`wrong/off_by_one`**: the report names the line, the formula and a state in which it fails.
+- **`03_sum/sum`** at level **full**, then **memory**: one addition cannot be proved, and at `memory` its trap is
+  kept and listed.
+- **`05_binary_search/binary_search`**, then *Remove every invariant(...)*: the three array accesses lose their proofs.
+- **`07_countdown/countdown`**, then *Remove every decreases(...)*: still certified, with "loops proved to
+  terminate: 0/1".
+- **`wrong/contradictory_extern`**: a declared function whose contract nothing can satisfy is refused before
+  anything is proved from it.
+
+## What runs here
+
+- The same Python code as the `pfc2` command, and Z3 5.3.3, compiled to WebAssembly.
+- One declared difference from the command line: the integer layout is fixed (32-bit `int`, 64-bit `long`)
+  instead of read from clang.
+- Programs are checked here, not compiled or run. To run one, use `pfc2 run` from a checkout.
+
+Start with the [tour](../docs/01-tour/), or read the [limits](../docs/09-limits/) first.

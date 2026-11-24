@@ -1,0 +1,11 @@
+{
+  "id": "verina_basic_29",
+  "stated": "part",
+  "dropped": [
+    "result[i] = s[i] for i < k (quantifier)",
+    "result[i] = s[i + 1] for k <= i < result.size (quantifier)"
+  ],
+  "weakened": [],
+  "verdict": "certified at full",
+  "remarks": "Stated: precondition k < s.size and result.size = s.size - 1."
+}

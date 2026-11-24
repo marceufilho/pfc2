@@ -1,0 +1,10 @@
+{
+  "id": "verina_basic_18",
+  "stated": "none",
+  "dropped": [
+    "result equals the sum of the decimal digits of n (sum over the digits of Nat.repr n)"
+  ],
+  "weakened": [],
+  "verdict": "certified at full",
+  "remarks": "Only the Nat type of the result is stated."
+}

@@ -1,0 +1,71 @@
+{
+  "comment": "Generated from the task's test.json by corpus/verina-notes/interface.py: one case per test.",
+  "functions": {
+    "rotateRight": {
+      "result": "long",
+      "parameters": "long l_len, const long l[l_len], long n",
+      "call": "rotateRight(l_len, l, n, 16, out)",
+      "locals": "long out[16] = {0};"
+    }
+  },
+  "cases": [
+    {
+      "name": "case_0",
+      "function": "rotateRight",
+      "inputs": {
+        "l_len": 5,
+        "l": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "n": 2
+      },
+      "expected": "found == 5 && out[0] == 4 && out[1] == 5 && out[2] == 1 && out[3] == 2 && out[4] == 3"
+    },
+    {
+      "name": "case_1",
+      "function": "rotateRight",
+      "inputs": {
+        "l_len": 5,
+        "l": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "n": 7
+      },
+      "expected": "found == 5 && out[0] == 4 && out[1] == 5 && out[2] == 1 && out[3] == 2 && out[4] == 3"
+    },
+    {
+      "name": "case_2",
+      "function": "rotateRight",
+      "inputs": {
+        "l_len": 5,
+        "l": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "n": 0
+      },
+      "expected": "found == 5 && out[0] == 1 && out[1] == 2 && out[2] == 3 && out[3] == 4 && out[4] == 5"
+    },
+    {
+      "name": "case_3",
+      "function": "rotateRight",
+      "inputs": {
+        "l_len": 0,
+        "l": [],
+        "n": 2
+      },
+      "expected": "found == 0"
+    }
+  ]
+}

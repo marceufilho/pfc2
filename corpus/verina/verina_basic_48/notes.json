@@ -1,0 +1,10 @@
+{
+ "id": "verina_basic_48",
+ "stated": "none",
+ "dropped": [
+  "postcond: result <-> exists i, i * i = n"
+ ],
+ "weakened": [],
+ "verdict": "certified at memory",
+ "remarks": "The Bool result is stated as its C encoding (0 or 1). n is a Nat. i * i can overflow for n near LONG_MAX."
+}

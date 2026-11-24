@@ -1,0 +1,13 @@
+{
+  "id": "verina_advanced_1",
+  "stated": "none",
+  "dropped": [
+    "precond: every value occurs once or twice and exactly one occurs once (counts)",
+    "postcond: nums.length > 0 (follows only from the dropped precondition)",
+    "postcond: result occurs once (count)",
+    "postcond: every other element occurs twice (quantifier, count)"
+  ],
+  "weakened": [],
+  "verdict": "certified at full",
+  "remarks": "No part of the specification is statable; the certificate covers memory safety and arithmetic only."
+}

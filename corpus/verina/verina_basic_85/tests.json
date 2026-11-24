@@ -1,0 +1,75 @@
+{
+  "comment": "Generated from the task's test.json by corpus/verina-notes/interface.py: one case per test.",
+  "functions": {
+    "reverse": {
+      "result": "long",
+      "parameters": "long a_len, const long a[a_len]",
+      "call": "reverse(a_len, a, 16, out)",
+      "locals": "long out[16] = {0};"
+    }
+  },
+  "cases": [
+    {
+      "name": "case_0",
+      "function": "reverse",
+      "inputs": {
+        "a_len": 5,
+        "a": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "expected": "found == 5 && out[0] == 5 && out[1] == 4 && out[2] == 3 && out[3] == 2 && out[4] == 1"
+    },
+    {
+      "name": "case_1",
+      "function": "reverse",
+      "inputs": {
+        "a_len": 4,
+        "a": [
+          10,
+          20,
+          30,
+          40
+        ]
+      },
+      "expected": "found == 4 && out[0] == 40 && out[1] == 30 && out[2] == 20 && out[3] == 10"
+    },
+    {
+      "name": "case_2",
+      "function": "reverse",
+      "inputs": {
+        "a_len": 0,
+        "a": []
+      },
+      "expected": "found == 0"
+    },
+    {
+      "name": "case_3",
+      "function": "reverse",
+      "inputs": {
+        "a_len": 1,
+        "a": [
+          7
+        ]
+      },
+      "expected": "found == 1 && out[0] == 7"
+    },
+    {
+      "name": "case_4",
+      "function": "reverse",
+      "inputs": {
+        "a_len": 3,
+        "a": [
+          -1,
+          0,
+          1
+        ]
+      },
+      "expected": "found == 3 && out[0] == 1 && out[1] == 0 && out[2] == -1"
+    }
+  ]
+}

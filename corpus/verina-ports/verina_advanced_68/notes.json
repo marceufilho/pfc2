@@ -1,0 +1,1 @@
+{"id": "verina_advanced_68", "rules": ["P2", "P3", "P4"], "requires": ["out_cap >= 2 * input_len"], "fixes": 0, "remarks": "The decimal digits of a count are collected in a local array of 20 cells, enough for any long."}

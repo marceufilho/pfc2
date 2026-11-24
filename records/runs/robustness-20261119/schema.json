@@ -1,0 +1,88 @@
+{
+  "columns": [
+    {
+      "allowed": [
+        "program",
+        "variant"
+      ],
+      "name": "row",
+      "nullable": false,
+      "type": "string"
+    },
+    {
+      "allowed": null,
+      "name": "program",
+      "nullable": false,
+      "type": "string"
+    },
+    {
+      "allowed": null,
+      "name": "status",
+      "nullable": true,
+      "type": "string"
+    },
+    {
+      "allowed": [
+        "rename",
+        "reorder",
+        "swap",
+        "layout"
+      ],
+      "name": "variant",
+      "nullable": true,
+      "type": "string"
+    },
+    {
+      "allowed": [
+        "same",
+        "differs",
+        "not applicable",
+        "variant not accepted by the front end"
+      ],
+      "name": "outcome",
+      "nullable": true,
+      "type": "string"
+    },
+    {
+      "allowed": null,
+      "name": "verdict_same",
+      "nullable": true,
+      "type": "boolean"
+    },
+    {
+      "allowed": null,
+      "name": "decisions_same",
+      "nullable": true,
+      "type": "boolean"
+    },
+    {
+      "allowed": null,
+      "name": "code_same",
+      "nullable": true,
+      "type": "boolean"
+    },
+    {
+      "allowed": null,
+      "name": "behaviour_same",
+      "nullable": true,
+      "type": "boolean"
+    },
+    {
+      "allowed": null,
+      "name": "sites",
+      "nullable": true,
+      "type": "integer"
+    }
+  ],
+  "provenance": [
+    "experiment",
+    "evidence_dir",
+    "tag",
+    "commit",
+    "seed",
+    "timestamp",
+    "vc_model",
+    "solver_version",
+    "clang"
+  ]
+}

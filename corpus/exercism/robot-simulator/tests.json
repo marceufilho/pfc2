@@ -1,0 +1,803 @@
+{
+ "comment": "Each case is one assertion of the upstream test file, transcribed by hand: the inputs it passes and what it expects, stated on the port's interface. `found` is the value the function returns.",
+ "functions": {
+  "create": {
+   "result": "long",
+   "parameters": "long direction, long x, long y, long m, long robot[m]",
+   "call": "robot_init(direction, x, y, m, robot)"
+  },
+  "move": {
+   "result": "long",
+   "parameters": "long m, long robot[m], long n, const char instructions[n]",
+   "call": "robot_run(m, robot, n, instructions)"
+  }
+ },
+ "cases": [
+  {
+   "name": "create_at_origin_facing_north_direction",
+   "function": "create",
+   "inputs": {
+    "direction": 0,
+    "x": 0,
+    "y": 0,
+    "m": 3
+   },
+   "expected": "robot[0] == 0"
+  },
+  {
+   "name": "create_at_origin_facing_north_x",
+   "function": "create",
+   "inputs": {
+    "direction": 0,
+    "x": 0,
+    "y": 0,
+    "m": 3
+   },
+   "expected": "robot[1] == 0"
+  },
+  {
+   "name": "create_at_origin_facing_north_y",
+   "function": "create",
+   "inputs": {
+    "direction": 0,
+    "x": 0,
+    "y": 0,
+    "m": 3
+   },
+   "expected": "robot[2] == 0"
+  },
+  {
+   "name": "create_at_negative_position_facing_south_direction",
+   "function": "create",
+   "inputs": {
+    "direction": 2,
+    "x": -1,
+    "y": -1,
+    "m": 3
+   },
+   "expected": "robot[0] == 2"
+  },
+  {
+   "name": "create_at_negative_position_facing_south_x",
+   "function": "create",
+   "inputs": {
+    "direction": 2,
+    "x": -1,
+    "y": -1,
+    "m": 3
+   },
+   "expected": "robot[1] == -1"
+  },
+  {
+   "name": "create_at_negative_position_facing_south_y",
+   "function": "create",
+   "inputs": {
+    "direction": 2,
+    "x": -1,
+    "y": -1,
+    "m": 3
+   },
+   "expected": "robot[2] == -1"
+  },
+  {
+   "name": "rotating_clockwise_changes_north_to_east_direction",
+   "function": "move",
+   "inputs": {
+    "m": 3,
+    "robot": [
+     0,
+     0,
+     0
+    ],
+    "n": 1,
+    "instructions": "R"
+   },
+   "expected": "robot[0] == 1"
+  },
+  {
+   "name": "rotating_clockwise_changes_north_to_east_x",
+   "function": "move",
+   "inputs": {
+    "m": 3,
+    "robot": [
+     0,
+     0,
+     0
+    ],
+    "n": 1,
+    "instructions": "R"
+   },
+   "expected": "robot[1] == 0"
+  },
+  {
+   "name": "rotating_clockwise_changes_north_to_east_y",
+   "function": "move",
+   "inputs": {
+    "m": 3,
+    "robot": [
+     0,
+     0,
+     0
+    ],
+    "n": 1,
+    "instructions": "R"
+   },
+   "expected": "robot[2] == 0"
+  },
+  {
+   "name": "rotating_clockwise_changes_east_to_south_direction",
+   "function": "move",
+   "inputs": {
+    "m": 3,
+    "robot": [
+     1,
+     0,
+     0
+    ],
+    "n": 1,
+    "instructions": "R"
+   },
+   "expected": "robot[0] == 2"
+  },
+  {
+   "name": "rotating_clockwise_changes_east_to_south_x",
+   "function": "move",
+   "inputs": {
+    "m": 3,
+    "robot": [
+     1,
+     0,
+     0
+    ],
+    "n": 1,
+    "instructions": "R"
+   },
+   "expected": "robot[1] == 0"
+  },
+  {
+   "name": "rotating_clockwise_changes_east_to_south_y",
+   "function": "move",
+   "inputs": {
+    "m": 3,
+    "robot": [
+     1,
+     0,
+     0
+    ],
+    "n": 1,
+    "instructions": "R"
+   },
+   "expected": "robot[2] == 0"
+  },
+  {
+   "name": "rotating_clockwise_changes_south_to_west_direction",
+   "function": "move",
+   "inputs": {
+    "m": 3,
+    "robot": [
+     2,
+     0,
+     0
+    ],
+    "n": 1,
+    "instructions": "R"
+   },
+   "expected": "robot[0] == 3"
+  },
+  {
+   "name": "rotating_clockwise_changes_south_to_west_x",
+   "function": "move",
+   "inputs": {
+    "m": 3,
+    "robot": [
+     2,
+     0,
+     0
+    ],
+    "n": 1,
+    "instructions": "R"
+   },
+   "expected": "robot[1] == 0"
+  },
+  {
+   "name": "rotating_clockwise_changes_south_to_west_y",
+   "function": "move",
+   "inputs": {
+    "m": 3,
+    "robot": [
+     2,
+     0,
+     0
+    ],
+    "n": 1,
+    "instructions": "R"
+   },
+   "expected": "robot[2] == 0"
+  },
+  {
+   "name": "rotating_clockwise_changes_west_to_north_direction",
+   "function": "move",
+   "inputs": {
+    "m": 3,
+    "robot": [
+     3,
+     0,
+     0
+    ],
+    "n": 1,
+    "instructions": "R"
+   },
+   "expected": "robot[0] == 0"
+  },
+  {
+   "name": "rotating_clockwise_changes_west_to_north_x",
+   "function": "move",
+   "inputs": {
+    "m": 3,
+    "robot": [
+     3,
+     0,
+     0
+    ],
+    "n": 1,
+    "instructions": "R"
+   },
+   "expected": "robot[1] == 0"
+  },
+  {
+   "name": "rotating_clockwise_changes_west_to_north_y",
+   "function": "move",
+   "inputs": {
+    "m": 3,
+    "robot": [
+     3,
+     0,
+     0
+    ],
+    "n": 1,
+    "instructions": "R"
+   },
+   "expected": "robot[2] == 0"
+  },
+  {
+   "name": "rotating_counter_clockwise_changes_north_to_west_direction",
+   "function": "move",
+   "inputs": {
+    "m": 3,
+    "robot": [
+     0,
+     0,
+     0
+    ],
+    "n": 1,
+    "instructions": "L"
+   },
+   "expected": "robot[0] == 3"
+  },
+  {
+   "name": "rotating_counter_clockwise_changes_north_to_west_x",
+   "function": "move",
+   "inputs": {
+    "m": 3,
+    "robot": [
+     0,
+     0,
+     0
+    ],
+    "n": 1,
+    "instructions": "L"
+   },
+   "expected": "robot[1] == 0"
+  },
+  {
+   "name": "rotating_counter_clockwise_changes_north_to_west_y",
+   "function": "move",
+   "inputs": {
+    "m": 3,
+    "robot": [
+     0,
+     0,
+     0
+    ],
+    "n": 1,
+    "instructions": "L"
+   },
+   "expected": "robot[2] == 0"
+  },
+  {
+   "name": "rotating_counter_clockwise_changes_west_to_south_direction",
+   "function": "move",
+   "inputs": {
+    "m": 3,
+    "robot": [
+     3,
+     0,
+     0
+    ],
+    "n": 1,
+    "instructions": "L"
+   },
+   "expected": "robot[0] == 2"
+  },
+  {
+   "name": "rotating_counter_clockwise_changes_west_to_south_x",
+   "function": "move",
+   "inputs": {
+    "m": 3,
+    "robot": [
+     3,
+     0,
+     0
+    ],
+    "n": 1,
+    "instructions": "L"
+   },
+   "expected": "robot[1] == 0"
+  },
+  {
+   "name": "rotating_counter_clockwise_changes_west_to_south_y",
+   "function": "move",
+   "inputs": {
+    "m": 3,
+    "robot": [
+     3,
+     0,
+     0
+    ],
+    "n": 1,
+    "instructions": "L"
+   },
+   "expected": "robot[2] == 0"
+  },
+  {
+   "name": "rotating_counter_clockwise_changes_south_to_east_direction",
+   "function": "move",
+   "inputs": {
+    "m": 3,
+    "robot": [
+     2,
+     0,
+     0
+    ],
+    "n": 1,
+    "instructions": "L"
+   },
+   "expected": "robot[0] == 1"
+  },
+  {
+   "name": "rotating_counter_clockwise_changes_south_to_east_x",
+   "function": "move",
+   "inputs": {
+    "m": 3,
+    "robot": [
+     2,
+     0,
+     0
+    ],
+    "n": 1,
+    "instructions": "L"
+   },
+   "expected": "robot[1] == 0"
+  },
+  {
+   "name": "rotating_counter_clockwise_changes_south_to_east_y",
+   "function": "move",
+   "inputs": {
+    "m": 3,
+    "robot": [
+     2,
+     0,
+     0
+    ],
+    "n": 1,
+    "instructions": "L"
+   },
+   "expected": "robot[2] == 0"
+  },
+  {
+   "name": "rotating_counter_clockwise_changes_east_to_north_direction",
+   "function": "move",
+   "inputs": {
+    "m": 3,
+    "robot": [
+     1,
+     0,
+     0
+    ],
+    "n": 1,
+    "instructions": "L"
+   },
+   "expected": "robot[0] == 0"
+  },
+  {
+   "name": "rotating_counter_clockwise_changes_east_to_north_x",
+   "function": "move",
+   "inputs": {
+    "m": 3,
+    "robot": [
+     1,
+     0,
+     0
+    ],
+    "n": 1,
+    "instructions": "L"
+   },
+   "expected": "robot[1] == 0"
+  },
+  {
+   "name": "rotating_counter_clockwise_changes_east_to_north_y",
+   "function": "move",
+   "inputs": {
+    "m": 3,
+    "robot": [
+     1,
+     0,
+     0
+    ],
+    "n": 1,
+    "instructions": "L"
+   },
+   "expected": "robot[2] == 0"
+  },
+  {
+   "name": "moving_forward_one_facing_north_increments_Y_direction",
+   "function": "move",
+   "inputs": {
+    "m": 3,
+    "robot": [
+     0,
+     0,
+     0
+    ],
+    "n": 1,
+    "instructions": "A"
+   },
+   "expected": "robot[0] == 0"
+  },
+  {
+   "name": "moving_forward_one_facing_north_increments_Y_x",
+   "function": "move",
+   "inputs": {
+    "m": 3,
+    "robot": [
+     0,
+     0,
+     0
+    ],
+    "n": 1,
+    "instructions": "A"
+   },
+   "expected": "robot[1] == 0"
+  },
+  {
+   "name": "moving_forward_one_facing_north_increments_Y_y",
+   "function": "move",
+   "inputs": {
+    "m": 3,
+    "robot": [
+     0,
+     0,
+     0
+    ],
+    "n": 1,
+    "instructions": "A"
+   },
+   "expected": "robot[2] == 1"
+  },
+  {
+   "name": "moving_forward_one_facing_south_decrements_Y_direction",
+   "function": "move",
+   "inputs": {
+    "m": 3,
+    "robot": [
+     2,
+     0,
+     0
+    ],
+    "n": 1,
+    "instructions": "A"
+   },
+   "expected": "robot[0] == 2"
+  },
+  {
+   "name": "moving_forward_one_facing_south_decrements_Y_x",
+   "function": "move",
+   "inputs": {
+    "m": 3,
+    "robot": [
+     2,
+     0,
+     0
+    ],
+    "n": 1,
+    "instructions": "A"
+   },
+   "expected": "robot[1] == 0"
+  },
+  {
+   "name": "moving_forward_one_facing_south_decrements_Y_y",
+   "function": "move",
+   "inputs": {
+    "m": 3,
+    "robot": [
+     2,
+     0,
+     0
+    ],
+    "n": 1,
+    "instructions": "A"
+   },
+   "expected": "robot[2] == -1"
+  },
+  {
+   "name": "moving_forward_one_facing_east_increments_X_direction",
+   "function": "move",
+   "inputs": {
+    "m": 3,
+    "robot": [
+     1,
+     0,
+     0
+    ],
+    "n": 1,
+    "instructions": "A"
+   },
+   "expected": "robot[0] == 1"
+  },
+  {
+   "name": "moving_forward_one_facing_east_increments_X_x",
+   "function": "move",
+   "inputs": {
+    "m": 3,
+    "robot": [
+     1,
+     0,
+     0
+    ],
+    "n": 1,
+    "instructions": "A"
+   },
+   "expected": "robot[1] == 1"
+  },
+  {
+   "name": "moving_forward_one_facing_east_increments_X_y",
+   "function": "move",
+   "inputs": {
+    "m": 3,
+    "robot": [
+     1,
+     0,
+     0
+    ],
+    "n": 1,
+    "instructions": "A"
+   },
+   "expected": "robot[2] == 0"
+  },
+  {
+   "name": "moving_forward_one_facing_west_decrements_X_direction",
+   "function": "move",
+   "inputs": {
+    "m": 3,
+    "robot": [
+     3,
+     0,
+     0
+    ],
+    "n": 1,
+    "instructions": "A"
+   },
+   "expected": "robot[0] == 3"
+  },
+  {
+   "name": "moving_forward_one_facing_west_decrements_X_x",
+   "function": "move",
+   "inputs": {
+    "m": 3,
+    "robot": [
+     3,
+     0,
+     0
+    ],
+    "n": 1,
+    "instructions": "A"
+   },
+   "expected": "robot[1] == -1"
+  },
+  {
+   "name": "moving_forward_one_facing_west_decrements_X_y",
+   "function": "move",
+   "inputs": {
+    "m": 3,
+    "robot": [
+     3,
+     0,
+     0
+    ],
+    "n": 1,
+    "instructions": "A"
+   },
+   "expected": "robot[2] == 0"
+  },
+  {
+   "name": "follow_series_of_instructions_moving_east_and_north_from_README_direction",
+   "function": "move",
+   "inputs": {
+    "m": 3,
+    "robot": [
+     0,
+     7,
+     3
+    ],
+    "n": 6,
+    "instructions": "RAALAL"
+   },
+   "expected": "robot[0] == 3"
+  },
+  {
+   "name": "follow_series_of_instructions_moving_east_and_north_from_README_x",
+   "function": "move",
+   "inputs": {
+    "m": 3,
+    "robot": [
+     0,
+     7,
+     3
+    ],
+    "n": 6,
+    "instructions": "RAALAL"
+   },
+   "expected": "robot[1] == 9"
+  },
+  {
+   "name": "follow_series_of_instructions_moving_east_and_north_from_README_y",
+   "function": "move",
+   "inputs": {
+    "m": 3,
+    "robot": [
+     0,
+     7,
+     3
+    ],
+    "n": 6,
+    "instructions": "RAALAL"
+   },
+   "expected": "robot[2] == 4"
+  },
+  {
+   "name": "follow_series_of_instructions_moving_west_and_north_direction",
+   "function": "move",
+   "inputs": {
+    "m": 3,
+    "robot": [
+     0,
+     0,
+     0
+    ],
+    "n": 8,
+    "instructions": "LAAARALA"
+   },
+   "expected": "robot[0] == 3"
+  },
+  {
+   "name": "follow_series_of_instructions_moving_west_and_north_x",
+   "function": "move",
+   "inputs": {
+    "m": 3,
+    "robot": [
+     0,
+     0,
+     0
+    ],
+    "n": 8,
+    "instructions": "LAAARALA"
+   },
+   "expected": "robot[1] == -4"
+  },
+  {
+   "name": "follow_series_of_instructions_moving_west_and_north_y",
+   "function": "move",
+   "inputs": {
+    "m": 3,
+    "robot": [
+     0,
+     0,
+     0
+    ],
+    "n": 8,
+    "instructions": "LAAARALA"
+   },
+   "expected": "robot[2] == 1"
+  },
+  {
+   "name": "follow_series_of_instructions_moving_west_and_south_direction",
+   "function": "move",
+   "inputs": {
+    "m": 3,
+    "robot": [
+     1,
+     2,
+     -7
+    ],
+    "n": 9,
+    "instructions": "RRAAAAALA"
+   },
+   "expected": "robot[0] == 2"
+  },
+  {
+   "name": "follow_series_of_instructions_moving_west_and_south_x",
+   "function": "move",
+   "inputs": {
+    "m": 3,
+    "robot": [
+     1,
+     2,
+     -7
+    ],
+    "n": 9,
+    "instructions": "RRAAAAALA"
+   },
+   "expected": "robot[1] == -3"
+  },
+  {
+   "name": "follow_series_of_instructions_moving_west_and_south_y",
+   "function": "move",
+   "inputs": {
+    "m": 3,
+    "robot": [
+     1,
+     2,
+     -7
+    ],
+    "n": 9,
+    "instructions": "RRAAAAALA"
+   },
+   "expected": "robot[2] == -8"
+  },
+  {
+   "name": "follow_series_of_instructions_moving_east_and_north_direction",
+   "function": "move",
+   "inputs": {
+    "m": 3,
+    "robot": [
+     2,
+     8,
+     4
+    ],
+    "n": 12,
+    "instructions": "LAAARRRALLLL"
+   },
+   "expected": "robot[0] == 0"
+  },
+  {
+   "name": "follow_series_of_instructions_moving_east_and_north_x",
+   "function": "move",
+   "inputs": {
+    "m": 3,
+    "robot": [
+     2,
+     8,
+     4
+    ],
+    "n": 12,
+    "instructions": "LAAARRRALLLL"
+   },
+   "expected": "robot[1] == 11"
+  },
+  {
+   "name": "follow_series_of_instructions_moving_east_and_north_y",
+   "function": "move",
+   "inputs": {
+    "m": 3,
+    "robot": [
+     2,
+     8,
+     4
+    ],
+    "n": 12,
+    "instructions": "LAAARRRALLLL"
+   },
+   "expected": "robot[2] == 5"
+  }
+ ]
+}

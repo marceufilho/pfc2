@@ -1,0 +1,117 @@
+{
+  "columns": [
+    {
+      "allowed": [
+        "program",
+        "case"
+      ],
+      "name": "row",
+      "nullable": false,
+      "type": "string"
+    },
+    {
+      "allowed": null,
+      "name": "program_seed",
+      "nullable": false,
+      "type": "integer"
+    },
+    {
+      "allowed": null,
+      "name": "defect",
+      "nullable": false,
+      "type": "boolean"
+    },
+    {
+      "allowed": null,
+      "name": "certified_memory",
+      "nullable": false,
+      "type": "boolean"
+    },
+    {
+      "allowed": null,
+      "name": "certified_full",
+      "nullable": false,
+      "type": "boolean"
+    },
+    {
+      "allowed": null,
+      "name": "refusal",
+      "nullable": true,
+      "type": "string"
+    },
+    {
+      "allowed": [
+        "reproduced",
+        "differs",
+        "failed"
+      ],
+      "name": "replay",
+      "nullable": true,
+      "type": "string"
+    },
+    {
+      "allowed": null,
+      "name": "guards_removed",
+      "nullable": true,
+      "type": "integer"
+    },
+    {
+      "allowed": null,
+      "name": "traps_kept",
+      "nullable": true,
+      "type": "integer"
+    },
+    {
+      "allowed": null,
+      "name": "case",
+      "nullable": true,
+      "type": "integer"
+    },
+    {
+      "allowed": [
+        "memory",
+        "full"
+      ],
+      "name": "level",
+      "nullable": true,
+      "type": "string"
+    },
+    {
+      "allowed": null,
+      "name": "reference",
+      "nullable": true,
+      "type": "string"
+    },
+    {
+      "allowed": [
+        "agree",
+        "differ",
+        "trapped-as-required",
+        "missing-trap",
+        "certified-unsafe",
+        "unscored",
+        "failed"
+      ],
+      "name": "outcome",
+      "nullable": true,
+      "type": "string"
+    },
+    {
+      "allowed": null,
+      "name": "detail",
+      "nullable": true,
+      "type": "string"
+    }
+  ],
+  "provenance": [
+    "experiment",
+    "evidence_dir",
+    "tag",
+    "commit",
+    "seed",
+    "timestamp",
+    "vc_model",
+    "solver_version",
+    "clang"
+  ]
+}

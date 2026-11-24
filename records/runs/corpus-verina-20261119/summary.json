@@ -1,0 +1,77 @@
+{
+  "h4a_subsumed_proportion": {
+    "estimate": 0.16146393972012918,
+    "high": 0.21593291404612158,
+    "low": 0.11182795698924732,
+    "observations": 929,
+    "units": 155
+  },
+  "h4b_refused_minus_killed": {
+    "estimate": -0.40127758420441345,
+    "high": -0.35057787561915243,
+    "low": -0.45159574468085106,
+    "observations": 1722,
+    "units": 155
+  },
+  "passed": true,
+  "s1_selection": {
+    "candidates": 189,
+    "excluded": {
+      "X1": 2,
+      "X4": 1,
+      "X7": 13,
+      "X8": 11
+    },
+    "fixes": 2,
+    "pilot": 0,
+    "ported": 162,
+    "ported_registered_rules": 159,
+    "ported_without_p14": 162
+  },
+  "s2_clause_lines": 551,
+  "s2_code_lines": 2061,
+  "s2_levels": {
+    "full": 107,
+    "memory": 48,
+    "refused-failed": 7
+  },
+  "s2_tests_pass_on_port": 162,
+  "s3_assertions": {
+    "not-subsumed": 779,
+    "subsumed": 150
+  },
+  "s4_by_operator": {
+    "arithmetic": {
+      "both": 122,
+      "neither": 1,
+      "proof": 3,
+      "tests": 51
+    },
+    "constant": {
+      "both": 356,
+      "neither": 110,
+      "proof": 31,
+      "tests": 287
+    },
+    "deletion": {
+      "both": 90,
+      "neither": 10,
+      "proof": 1,
+      "tests": 237
+    },
+    "relational": {
+      "both": 102,
+      "neither": 118,
+      "proof": 26,
+      "tests": 177
+    }
+  },
+  "s4_mutants": {
+    "both": 670,
+    "neither": 239,
+    "proof": 61,
+    "proof-inconclusive": 8,
+    "tests": 752
+  },
+  "units": 162
+}

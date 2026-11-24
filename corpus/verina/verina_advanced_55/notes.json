@@ -1,0 +1,12 @@
+{
+ "id": "verina_advanced_55",
+ "stated": "part",
+ "dropped": [
+  "result occurs in xs (existential)",
+  "no element occurs more often than result (count)",
+  "result is the first of the most frequent elements (count, filter)"
+ ],
+ "weakened": [],
+ "verdict": "certified at full",
+ "remarks": "Only the precondition (non-empty list) is stated; the whole postcondition needs counts."
+}

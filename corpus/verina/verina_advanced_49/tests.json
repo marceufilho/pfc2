@@ -1,0 +1,99 @@
+{
+ "comment": "Generated from the task's test.json by corpus/verina-notes/interface.py: one case per test.",
+ "functions": {
+  "mergeSortedLists": {
+   "result": "long",
+   "parameters": "long arr1_len, const long arr1[arr1_len], long arr2_len, const long arr2[arr2_len]",
+   "call": "mergeSortedLists(arr1_len, arr1, arr2_len, arr2, 16, out)",
+   "locals": "long out[16] = {0};"
+  }
+ },
+ "cases": [
+  {
+   "name": "case_0",
+   "function": "mergeSortedLists",
+   "inputs": {
+    "arr1_len": 3,
+    "arr1": [
+     1,
+     3,
+     5
+    ],
+    "arr2_len": 3,
+    "arr2": [
+     2,
+     4,
+     6
+    ]
+   },
+   "expected": "found == 6 && out[0] == 1 && out[1] == 2 && out[2] == 3 && out[3] == 4 && out[4] == 5 && out[5] == 6"
+  },
+  {
+   "name": "case_1",
+   "function": "mergeSortedLists",
+   "inputs": {
+    "arr1_len": 0,
+    "arr1": [],
+    "arr2_len": 0,
+    "arr2": []
+   },
+   "expected": "found == 0"
+  },
+  {
+   "name": "case_2",
+   "function": "mergeSortedLists",
+   "inputs": {
+    "arr1_len": 3,
+    "arr1": [
+     -2,
+     0,
+     1
+    ],
+    "arr2_len": 2,
+    "arr2": [
+     -3,
+     -1
+    ]
+   },
+   "expected": "found == 5 && out[0] == -3 && out[1] == -2 && out[2] == -1 && out[3] == 0 && out[4] == 1"
+  },
+  {
+   "name": "case_3",
+   "function": "mergeSortedLists",
+   "inputs": {
+    "arr1_len": 3,
+    "arr1": [
+     10,
+     20,
+     30
+    ],
+    "arr2_len": 3,
+    "arr2": [
+     5,
+     25,
+     35
+    ]
+   },
+   "expected": "found == 6 && out[0] == 5 && out[1] == 10 && out[2] == 20 && out[3] == 25 && out[4] == 30 && out[5] == 35"
+  },
+  {
+   "name": "case_4",
+   "function": "mergeSortedLists",
+   "inputs": {
+    "arr1_len": 3,
+    "arr1": [
+     1,
+     2,
+     2
+    ],
+    "arr2_len": 3,
+    "arr2": [
+     2,
+     3,
+     3
+    ]
+   },
+   "expected": "found == 6 && out[0] == 1 && out[1] == 2 && out[2] == 2 && out[3] == 2 && out[4] == 3 && out[5] == 3"
+  }
+ ]
+}

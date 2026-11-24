@@ -1,0 +1,1953 @@
+{
+ "source": "frozen pfc at freeze-v5, Z3 5.3.3.0, recorded 2026-11-17",
+ "programs": [
+  {
+   "name": "examples/01_first/kernel.c",
+   "preprocessed": "# 0 \"<stdin>\"\n# 0 \"<built-in>\"\n# 0 \"<command-line>\"\n# 1 \"<stdin>\"\n# 1 \"examples/01_first/kernel.c\"\n# 1 \"include/spec.h\" 1\n# 12 \"include/spec.h\"\nvoid __spec_requires(_Bool condition);\nvoid __spec_ensures(_Bool condition);\nvoid __spec_invariant(_Bool condition);\nvoid __spec_assert(_Bool condition);\n_Bool __spec_separated(const void *left, long left_len, const void *right, long right_len);\n# 2 \"examples/01_first/kernel.c\" 2\n\nlong first(const long a[], long a_len)\n{\n    __spec_requires((a_len > 0));\n    return a[0];\n}\n",
+   "summary": {
+    "obligations": [
+     [
+      "bounds",
+      "required",
+      6,
+      12,
+      "proved"
+     ]
+    ],
+    "entry": [
+     [
+      "first",
+      "sat"
+     ]
+    ],
+    "required_passed": true,
+    "decisions": [
+     [
+      "bounds",
+      6,
+      12,
+      true
+     ]
+    ],
+    "overflow": [],
+    "c": "\n\n#ifndef __clang__\n#error \"pfc output requires clang\"\n#endif\n_Static_assert(__CHAR_BIT__ == 8 && sizeof(int) * 8 == 32 && sizeof(long) * 8 == 64, \"pfc target widths mismatch\");\n_Static_assert(__INT_MAX__ == 2147483647 && __LONG_MAX__ == 9223372036854775807L, \"pfc target ranges mismatch\");\n\nlong first(const long a[], long a_len)\n{\n    (void)a;\n    (void)a_len;\n    "
+   }
+  },
+  {
+   "name": "examples/02_clamp/kernel.c",
+   "preprocessed": "# 0 \"<stdin>\"\n# 0 \"<built-in>\"\n# 0 \"<command-line>\"\n# 1 \"<stdin>\"\n# 1 \"examples/02_clamp/kernel.c\"\n# 1 \"include/spec.h\" 1\n# 12 \"include/spec.h\"\nvoid __spec_requires(_Bool condition);\nvoid __spec_ensures(_Bool condition);\nvoid __spec_invariant(_Bool condition);\nvoid __spec_assert(_Bool condition);\n_Bool __spec_separated(const void *left, long left_len, const void *right, long right_len);\n# 2 \"examples/02_clamp/kernel.c\" 2\n\nlong clamp(long x)\n{\n    __spec_ensures((0 <= RESULT && RESULT <= 100));\n    if (x < 0) {\n        return 0;\n    }\n    if (x > 100) {\n        return 100;\n    }\n    return x;\n}\n",
+   "summary": {
+    "obligations": [
+     [
+      "postcondition",
+      "required",
+      7,
+      9,
+      "proved"
+     ],
+     [
+      "postcondition",
+      "required",
+      10,
+      9,
+      "proved"
+     ],
+     [
+      "postcondition",
+      "required",
+      12,
+      5,
+      "proved"
+     ]
+    ],
+    "entry": [
+     [
+      "clamp",
+      "sat"
+     ]
+    ],
+    "required_passed": true,
+    "decisions": [],
+    "overflow": [],
+    "c": "\n\n#ifndef __clang__\n#error \"pfc output requires clang\"\n#endif\n_Static_assert(__CHAR_BIT__ == 8 && sizeof(int) * 8 == 32 && sizeof(long) * 8 == 64, \"pfc target widths mismatch\");\n_Static_assert(__INT_MAX__ == 2147483647 && __LONG_MAX__ == 9223372036854775807L, \"pfc target ranges mismatch\");\n\nlong clamp(long x)\n{\n    (void)x;\n    long pfc_tmp_1 = 0;\n    int pfc_tmp_2 = (x < pfc_tmp_1);\n    if (pfc_tmp_2) {\n        long pfc_tmp_3 = 0;\n        return pfc_tmp_3;\n    }\n    long pfc_tmp_4 = 100;\n    int pfc_tmp_5 = (x > pfc_tmp_4);\n    if (pfc_tmp_5) {\n        long pfc_tmp_6 = 100;\n        return pfc_tmp_6;\n    }\n    return x;\n}\n"
+   }
+  },
+  {
+   "name": "examples/03_divide/kernel.c",
+   "preprocessed": "# 0 \"<stdin>\"\n# 0 \"<built-in>\"\n# 0 \"<command-line>\"\n# 1 \"<stdin>\"\n# 1 \"examples/03_divide/kernel.c\"\n# 1 \"include/spec.h\" 1\n# 12 \"include/spec.h\"\nvoid __spec_requires(_Bool condition);\nvoid __spec_ensures(_Bool condition);\nvoid __spec_invariant(_Bool condition);\nvoid __spec_assert(_Bool condition);\n_Bool __spec_separated(const void *left, long left_len, const void *right, long right_len);\n# 2 \"examples/03_divide/kernel.c\" 2\n\nlong divide(long numerator, long denominator)\n{\n    __spec_requires((numerator >= 0));\n    __spec_requires((denominator > 0));\n    return numerator / denominator;\n}\n",
+   "summary": {
+    "obligations": [
+     [
+      "division",
+      "required",
+      7,
+      12,
+      "proved"
+     ],
+     [
+      "overflow",
+      "reported",
+      7,
+      12,
+      "proved"
+     ]
+    ],
+    "entry": [
+     [
+      "divide",
+      "sat"
+     ]
+    ],
+    "required_passed": true,
+    "decisions": [
+     [
+      "division",
+      7,
+      12,
+      true
+     ]
+    ],
+    "overflow": [],
+    "c": "\n\n#ifndef __clang__\n#error \"pfc output requires clang\"\n#endif\n_Static_assert(__CHAR_BIT__ == 8 && sizeof(int) * 8 == 32 && sizeof(long) * 8 == 64, \"pfc target widths mismatch\");\n_Static_assert(__INT_MAX__ == 2147483647 && __LONG_MAX__ == 9223372036854775807L, \"pfc target ranges mismatch\");\n\nlong divide(long numerator, long denominator)\n{\n    (void)numerator;\n    (void)denominator;\n    "
+   }
+  },
+  {
+   "name": "examples/04_count/kernel.c",
+   "preprocessed": "# 0 \"<stdin>\"\n# 0 \"<built-in>\"\n# 0 \"<command-line>\"\n# 1 \"<stdin>\"\n# 1 \"examples/04_count/kernel.c\"\n# 1 \"include/spec.h\" 1\n# 12 \"include/spec.h\"\nvoid __spec_requires(_Bool condition);\nvoid __spec_ensures(_Bool condition);\nvoid __spec_invariant(_Bool condition);\nvoid __spec_assert(_Bool condition);\n_Bool __spec_separated(const void *left, long left_len, const void *right, long right_len);\n# 2 \"examples/04_count/kernel.c\" 2\n\nlong count_to(long n)\n{\n    __spec_requires((0 <= n && n <= 100));\n    __spec_ensures((RESULT == n));\n    long i = 0;\n    while (i < n) {\n        __spec_invariant((0 <= i && i <= n));\n        i = i + 1;\n    }\n    return i;\n}\n",
+   "summary": {
+    "obligations": [
+     [
+      "entry",
+      "required",
+      9,
+      9,
+      "proved"
+     ],
+     [
+      "preservation",
+      "required",
+      9,
+      9,
+      "proved"
+     ],
+     [
+      "overflow",
+      "reported",
+      10,
+      13,
+      "proved"
+     ],
+     [
+      "postcondition",
+      "required",
+      12,
+      5,
+      "proved"
+     ]
+    ],
+    "entry": [
+     [
+      "count_to",
+      "sat"
+     ]
+    ],
+    "required_passed": true,
+    "decisions": [],
+    "overflow": [
+     [
+      "overflow",
+      10,
+      13,
+      true
+     ]
+    ],
+    "c": "\n\n#ifndef __clang__\n#error \"pfc output requires clang\"\n#endif\n_Static_assert(__CHAR_BIT__ == 8 && sizeof(int) * 8 == 32 && sizeof(long) * 8 == 64, \"pfc target widths mismatch\");\n_Static_assert(__INT_MAX__ == 2147483647 && __LONG_MAX__ == 9223372036854775807L, \"pfc target ranges mismatch\");\n\nlong count_to(long n)\n{\n    (void)n;\n    "
+   }
+  },
+  {
+   "name": "examples/05_zero/kernel.c",
+   "preprocessed": "# 0 \"<stdin>\"\n# 0 \"<built-in>\"\n# 0 \"<command-line>\"\n# 1 \"<stdin>\"\n# 1 \"examples/05_zero/kernel.c\"\n# 1 \"include/spec.h\" 1\n# 12 \"include/spec.h\"\nvoid __spec_requires(_Bool condition);\nvoid __spec_ensures(_Bool condition);\nvoid __spec_invariant(_Bool condition);\nvoid __spec_assert(_Bool condition);\n_Bool __spec_separated(const void *left, long left_len, const void *right, long right_len);\n# 2 \"examples/05_zero/kernel.c\" 2\n\nlong zero_prefix(long a[], long a_len, long n)\n{\n    __spec_requires((0 <= n && n <= a_len));\n    __spec_ensures((RESULT == n));\n    for (long i = 0; i < n; i = i + 1) {\n        __spec_invariant((0 <= i && i <= n));\n        a[i] = 0;\n    }\n    return n;\n}\n",
+   "summary": {
+    "obligations": [
+     [
+      "entry",
+      "required",
+      8,
+      9,
+      "proved"
+     ],
+     [
+      "preservation",
+      "required",
+      8,
+      9,
+      "proved"
+     ],
+     [
+      "bounds",
+      "required",
+      9,
+      9,
+      "proved"
+     ],
+     [
+      "overflow",
+      "reported",
+      7,
+      33,
+      "proved"
+     ],
+     [
+      "postcondition",
+      "required",
+      11,
+      5,
+      "proved"
+     ]
+    ],
+    "entry": [
+     [
+      "zero_prefix",
+      "sat"
+     ]
+    ],
+    "required_passed": true,
+    "decisions": [
+     [
+      "bounds",
+      9,
+      9,
+      true
+     ]
+    ],
+    "overflow": [
+     [
+      "overflow",
+      7,
+      33,
+      true
+     ]
+    ],
+    "c": "\n\n#ifndef __clang__\n#error \"pfc output requires clang\"\n#endif\n_Static_assert(__CHAR_BIT__ == 8 && sizeof(int) * 8 == 32 && sizeof(long) * 8 == 64, \"pfc target widths mismatch\");\n_Static_assert(__INT_MAX__ == 2147483647 && __LONG_MAX__ == 9223372036854775807L, \"pfc target ranges mismatch\");\n\nlong zero_prefix(long a[], long a_len, long n)\n{\n    (void)a;\n    (void)a_len;\n    (void)n;\n    "
+   }
+  },
+  {
+   "name": "examples/06_calls/kernel.c",
+   "preprocessed": "# 0 \"<stdin>\"\n# 0 \"<built-in>\"\n# 0 \"<command-line>\"\n# 1 \"<stdin>\"\n# 1 \"examples/06_calls/kernel.c\"\n# 1 \"include/spec.h\" 1\n# 12 \"include/spec.h\"\nvoid __spec_requires(_Bool condition);\nvoid __spec_ensures(_Bool condition);\nvoid __spec_invariant(_Bool condition);\nvoid __spec_assert(_Bool condition);\n_Bool __spec_separated(const void *left, long left_len, const void *right, long right_len);\n# 2 \"examples/06_calls/kernel.c\" 2\n\nlong increment(long x)\n{\n    __spec_requires((0 <= x && x < 10));\n    __spec_ensures((RESULT == x + 1));\n    return x + 1;\n}\n\nlong increment_twice(long x)\n{\n    __spec_requires((0 <= x && x < 9));\n    __spec_ensures((RESULT == x + 2));\n    long y = increment(x);\n    return increment(y);\n}\n",
+   "summary": {
+    "obligations": [
+     [
+      "overflow",
+      "reported",
+      7,
+      12,
+      "proved"
+     ],
+     [
+      "postcondition",
+      "required",
+      7,
+      5,
+      "proved"
+     ],
+     [
+      "call-precondition",
+      "required",
+      14,
+      14,
+      "proved"
+     ],
+     [
+      "call-precondition",
+      "required",
+      15,
+      12,
+      "proved"
+     ],
+     [
+      "postcondition",
+      "required",
+      15,
+      5,
+      "proved"
+     ]
+    ],
+    "entry": [
+     [
+      "increment",
+      "sat"
+     ],
+     [
+      "increment_twice",
+      "sat"
+     ]
+    ],
+    "required_passed": true,
+    "decisions": [],
+    "overflow": [
+     [
+      "overflow",
+      7,
+      12,
+      true
+     ]
+    ],
+    "c": "\n\n#ifndef __clang__\n#error \"pfc output requires clang\"\n#endif\n_Static_assert(__CHAR_BIT__ == 8 && sizeof(int) * 8 == 32 && sizeof(long) * 8 == 64, \"pfc target widths mismatch\");\n_Static_assert(__INT_MAX__ == 2147483647 && __LONG_MAX__ == 9223372036854775807L, \"pfc target ranges mismatch\");\n\nlong increment(long x);\nlong increment_twice(long x);\n\nlong increment(long x)\n{\n    (void)x;\n    "
+   }
+  },
+  {
+   "name": "examples/07_flag/kernel.c",
+   "preprocessed": "# 0 \"<stdin>\"\n# 0 \"<built-in>\"\n# 0 \"<command-line>\"\n# 1 \"<stdin>\"\n# 1 \"examples/07_flag/kernel.c\"\n# 1 \"include/spec.h\" 1\n# 12 \"include/spec.h\"\nvoid __spec_requires(_Bool condition);\nvoid __spec_ensures(_Bool condition);\nvoid __spec_invariant(_Bool condition);\nvoid __spec_assert(_Bool condition);\n_Bool __spec_separated(const void *left, long left_len, const void *right, long right_len);\n# 2 \"examples/07_flag/kernel.c\" 2\n# 11 \"examples/07_flag/kernel.c\"\nlong next_x(long x, long move)\n{\n    __spec_requires((0 <= x && x < 4 && 0 <= move && move < 4));\n    __spec_ensures((0 <= RESULT && RESULT < 4));\n    if (move == 3) {\n        if (x + 1 < 4) {\n            return x + 1;\n        }\n        return x;\n    }\n    if (move == 2) {\n        if (0 < x) {\n            return x - 1;\n        }\n        return x;\n    }\n    return x;\n}\n\n\nlong next_y(long y, long move)\n{\n    __spec_requires((0 <= y && y < 5 && 0 <= move && move < 4));\n    __spec_ensures((0 <= RESULT && RESULT < 5));\n    if (move == 1) {\n        if (y + 1 < 5) {\n            return y + 1;\n        }\n        return y;\n    }\n    if (move == 0) {\n        if (0 < y) {\n            return y - 1;\n        }\n        return y;\n    }\n    return y;\n}\n\n\nlong play(const long moves[], long moves_len)\n{\n    __spec_requires((0 <= moves_len));\n    __spec_ensures((RESULT == 0));\n    long x = 0;\n    long y = 2;\n    long i = 0;\n    while (i < moves_len) {\n        __spec_invariant(((0 <= i) && (i <= moves_len) && (0 <= x) && (x < 4) && (0 <= y) && (y < 5)));\n        long move = moves[i];\n        if (0 <= move && move < 4) {\n            x = next_x(x, move);\n            y = next_y(y, move);\n        }\n        if (x == 6 && y == 2) {\n            return 1;\n        }\n        i = i + 1;\n    }\n    return 0;\n}\n",
+   "summary": {
+    "obligations": [
+     [
+      "overflow",
+      "reported",
+      16,
+      13,
+      "proved"
+     ],
+     [
+      "overflow",
+      "reported",
+      17,
+      20,
+      "proved"
+     ],
+     [
+      "postcondition",
+      "required",
+      17,
+      13,
+      "proved"
+     ],
+     [
+      "postcondition",
+      "required",
+      19,
+      9,
+      "proved"
+     ],
+     [
+      "overflow",
+      "reported",
+      23,
+      20,
+      "proved"
+     ],
+     [
+      "postcondition",
+      "required",
+      23,
+      13,
+      "proved"
+     ],
+     [
+      "postcondition",
+      "required",
+      25,
+      9,
+      "proved"
+     ],
+     [
+      "postcondition",
+      "required",
+      27,
+      5,
+      "proved"
+     ],
+     [
+      "overflow",
+      "reported",
+      36,
+      13,
+      "proved"
+     ],
+     [
+      "overflow",
+      "reported",
+      37,
+      20,
+      "proved"
+     ],
+     [
+      "postcondition",
+      "required",
+      37,
+      13,
+      "proved"
+     ],
+     [
+      "postcondition",
+      "required",
+      39,
+      9,
+      "proved"
+     ],
+     [
+      "overflow",
+      "reported",
+      43,
+      20,
+      "proved"
+     ],
+     [
+      "postcondition",
+      "required",
+      43,
+      13,
+      "proved"
+     ],
+     [
+      "postcondition",
+      "required",
+      45,
+      9,
+      "proved"
+     ],
+     [
+      "postcondition",
+      "required",
+      47,
+      5,
+      "proved"
+     ],
+     [
+      "entry",
+      "required",
+      59,
+      9,
+      "proved"
+     ],
+     [
+      "preservation",
+      "required",
+      59,
+      9,
+      "proved"
+     ],
+     [
+      "bounds",
+      "required",
+      60,
+      21,
+      "proved"
+     ],
+     [
+      "call-precondition",
+      "required",
+      62,
+      17,
+      "proved"
+     ],
+     [
+      "call-precondition",
+      "required",
+      63,
+      17,
+      "proved"
+     ],
+     [
+      "postcondition",
+      "required",
+      66,
+      13,
+      "proved"
+     ],
+     [
+      "postcondition",
+      "required",
+      66,
+      13,
+      "proved"
+     ],
+     [
+      "overflow",
+      "reported",
+      68,
+      13,
+      "proved"
+     ],
+     [
+      "overflow",
+      "reported",
+      68,
+      13,
+      "proved"
+     ],
+     [
+      "postcondition",
+      "required",
+      70,
+      5,
+      "proved"
+     ]
+    ],
+    "entry": [
+     [
+      "next_x",
+      "sat"
+     ],
+     [
+      "next_y",
+      "sat"
+     ],
+     [
+      "play",
+      "sat"
+     ]
+    ],
+    "required_passed": true,
+    "decisions": [
+     [
+      "bounds",
+      60,
+      21,
+      true
+     ]
+    ],
+    "overflow": [
+     [
+      "overflow",
+      16,
+      13,
+      true
+     ],
+     [
+      "overflow",
+      17,
+      20,
+      true
+     ],
+     [
+      "overflow",
+      23,
+      20,
+      true
+     ],
+     [
+      "overflow",
+      36,
+      13,
+      true
+     ],
+     [
+      "overflow",
+      37,
+      20,
+      true
+     ],
+     [
+      "overflow",
+      43,
+      20,
+      true
+     ],
+     [
+      "overflow",
+      68,
+      13,
+      true
+     ]
+    ],
+    "c": "\n\n#ifndef __clang__\n#error \"pfc output requires clang\"\n#endif\n_Static_assert(__CHAR_BIT__ == 8 && sizeof(int) * 8 == 32 && sizeof(long) * 8 == 64, \"pfc target widths mismatch\");\n_Static_assert(__INT_MAX__ == 2147483647 && __LONG_MAX__ == 9223372036854775807L, \"pfc target ranges mismatch\");\n\nlong next_x(long x, long move);\nlong next_y(long y, long move);\nlong play(const long moves[], long moves_len);\n\nlong next_x(long x, long move)\n{\n    (void)x;\n    (void)move;\n    "
+   }
+  },
+  {
+   "name": "kernels/binary_search/kernel.c",
+   "preprocessed": "# 0 \"<stdin>\"\n# 0 \"<built-in>\"\n# 0 \"<command-line>\"\n# 1 \"<stdin>\"\n# 1 \"kernels/binary_search/kernel.c\"\n# 1 \"include/spec.h\" 1\n# 12 \"include/spec.h\"\nvoid __spec_requires(_Bool condition);\nvoid __spec_ensures(_Bool condition);\nvoid __spec_invariant(_Bool condition);\nvoid __spec_assert(_Bool condition);\n_Bool __spec_separated(const void *left, long left_len, const void *right, long right_len);\n# 2 \"kernels/binary_search/kernel.c\" 2\n\nlong binary_search(const long a[], long a_len, long n, long needle)\n{\n    __spec_requires((0 <= n && n <= a_len));\n    long lo = 0;\n    long hi = n - 1;\n    while (lo <= hi) {\n        __spec_invariant((0 <= lo && lo <= hi + 1 && hi < n));\n        long mid = lo + (hi - lo) / 2;\n        long value = a[mid];\n        if (value < needle) {\n            lo = mid + 1;\n        } else {\n            if (needle < value) {\n                hi = mid - 1;\n            } else {\n                return mid;\n            }\n        }\n    }\n    return -1;\n}\n",
+   "summary": {
+    "obligations": [
+     [
+      "overflow",
+      "reported",
+      7,
+      15,
+      "proved"
+     ],
+     [
+      "entry",
+      "required",
+      9,
+      9,
+      "proved"
+     ],
+     [
+      "preservation",
+      "required",
+      9,
+      9,
+      "proved"
+     ],
+     [
+      "overflow",
+      "reported",
+      10,
+      26,
+      "proved"
+     ],
+     [
+      "division",
+      "required",
+      10,
+      26,
+      "proved"
+     ],
+     [
+      "overflow",
+      "reported",
+      10,
+      26,
+      "proved"
+     ],
+     [
+      "overflow",
+      "reported",
+      10,
+      20,
+      "proved"
+     ],
+     [
+      "bounds",
+      "required",
+      11,
+      22,
+      "proved"
+     ],
+     [
+      "overflow",
+      "reported",
+      13,
+      18,
+      "proved"
+     ],
+     [
+      "overflow",
+      "reported",
+      16,
+      22,
+      "proved"
+     ],
+     [
+      "overflow",
+      "reported",
+      22,
+      13,
+      "proved"
+     ]
+    ],
+    "entry": [
+     [
+      "binary_search",
+      "sat"
+     ]
+    ],
+    "required_passed": true,
+    "decisions": [
+     [
+      "division",
+      10,
+      26,
+      true
+     ],
+     [
+      "bounds",
+      11,
+      22,
+      true
+     ]
+    ],
+    "overflow": [
+     [
+      "overflow",
+      7,
+      15,
+      true
+     ],
+     [
+      "overflow",
+      10,
+      26,
+      true
+     ],
+     [
+      "overflow",
+      10,
+      20,
+      true
+     ],
+     [
+      "overflow",
+      13,
+      18,
+      true
+     ],
+     [
+      "overflow",
+      16,
+      22,
+      true
+     ]
+    ],
+    "c": "\n\n#ifndef __clang__\n#error \"pfc output requires clang\"\n#endif\n_Static_assert(__CHAR_BIT__ == 8 && sizeof(int) * 8 == 32 && sizeof(long) * 8 == 64, \"pfc target widths mismatch\");\n_Static_assert(__INT_MAX__ == 2147483647 && __LONG_MAX__ == 9223372036854775807L, \"pfc target ranges mismatch\");\n\nlong binary_search(const long a[], long a_len, long n, long needle)\n{\n    (void)a;\n    (void)a_len;\n    (void)n;\n    (void)needle;\n    "
+   }
+  },
+  {
+   "name": "kernels/dot/kernel.c",
+   "preprocessed": "# 0 \"<stdin>\"\n# 0 \"<built-in>\"\n# 0 \"<command-line>\"\n# 1 \"<stdin>\"\n# 1 \"kernels/dot/kernel.c\"\n# 1 \"include/spec.h\" 1\n# 12 \"include/spec.h\"\nvoid __spec_requires(_Bool condition);\nvoid __spec_ensures(_Bool condition);\nvoid __spec_invariant(_Bool condition);\nvoid __spec_assert(_Bool condition);\n_Bool __spec_separated(const void *left, long left_len, const void *right, long right_len);\n# 2 \"kernels/dot/kernel.c\" 2\n\nlong dot(const long a[], long a_len, const long b[], long b_len, long n)\n{\n    __spec_requires((0 <= n && n <= a_len && n <= b_len));\n    long s = 0;\n    long i = 0;\n    while (i < n) {\n        __spec_invariant((0 <= i && i <= n));\n        s = s + a[i] * b[i];\n        i = i + 1;\n    }\n    return s;\n}\n",
+   "summary": {
+    "obligations": [
+     [
+      "entry",
+      "required",
+      9,
+      9,
+      "proved"
+     ],
+     [
+      "preservation",
+      "required",
+      9,
+      9,
+      "proved"
+     ],
+     [
+      "bounds",
+      "required",
+      10,
+      17,
+      "proved"
+     ],
+     [
+      "bounds",
+      "required",
+      10,
+      24,
+      "proved"
+     ],
+     [
+      "overflow",
+      "reported",
+      10,
+      17,
+      "failed"
+     ],
+     [
+      "overflow",
+      "reported",
+      10,
+      13,
+      "failed"
+     ],
+     [
+      "overflow",
+      "reported",
+      11,
+      13,
+      "proved"
+     ]
+    ],
+    "entry": [
+     [
+      "dot",
+      "sat"
+     ]
+    ],
+    "required_passed": true,
+    "decisions": [
+     [
+      "bounds",
+      10,
+      17,
+      true
+     ],
+     [
+      "bounds",
+      10,
+      24,
+      true
+     ]
+    ],
+    "overflow": [
+     [
+      "overflow",
+      10,
+      17,
+      false
+     ],
+     [
+      "overflow",
+      10,
+      13,
+      false
+     ],
+     [
+      "overflow",
+      11,
+      13,
+      true
+     ]
+    ],
+    "c": "\n\n#ifndef __clang__\n#error \"pfc output requires clang\"\n#endif\n_Static_assert(__CHAR_BIT__ == 8 && sizeof(int) * 8 == 32 && sizeof(long) * 8 == 64, \"pfc target widths mismatch\");\n_Static_assert(__INT_MAX__ == 2147483647 && __LONG_MAX__ == 9223372036854775807L, \"pfc target ranges mismatch\");\n\nlong dot(const long a[], long a_len, const long b[], long b_len, long n)\n{\n    (void)a;\n    (void)a_len;\n    (void)b;\n    (void)b_len;\n    (void)n;\n    "
+   }
+  },
+  {
+   "name": "kernels/matvec/kernel.c",
+   "preprocessed": "# 0 \"<stdin>\"\n# 0 \"<built-in>\"\n# 0 \"<command-line>\"\n# 1 \"<stdin>\"\n# 1 \"kernels/matvec/kernel.c\"\n# 1 \"include/spec.h\" 1\n# 12 \"include/spec.h\"\nvoid __spec_requires(_Bool condition);\nvoid __spec_ensures(_Bool condition);\nvoid __spec_invariant(_Bool condition);\nvoid __spec_assert(_Bool condition);\n_Bool __spec_separated(const void *left, long left_len, const void *right, long right_len);\n# 2 \"kernels/matvec/kernel.c\" 2\n\nlong matvec(const long matrix[], long matrix_len, const long x[], long x_len,\n            long y[], long y_len, long rows, long cols)\n{\n    __spec_requires((0 <= rows && 0 < cols && 0 <= matrix_len && rows <= matrix_len / cols));\n    __spec_requires((cols <= x_len && rows <= y_len));\n    __spec_requires((__spec_separated((matrix), (matrix_len), (y), (y_len))));\n    __spec_requires((__spec_separated((x), (x_len), (y), (y_len))));\n    long i = 0;\n    while (i < rows) {\n        __spec_invariant((0 <= i && i <= rows));\n        long s = 0;\n        long j = 0;\n        while (j < cols) {\n            __spec_invariant((0 <= j && j <= cols));\n            s = s + matrix[i * cols + j] * x[j];\n            j = j + 1;\n        }\n        y[i] = s;\n        i = i + 1;\n    }\n    return rows;\n}\n",
+   "summary": {
+    "obligations": [
+     [
+      "division",
+      "required",
+      6,
+      74,
+      "proved"
+     ],
+     [
+      "entry",
+      "required",
+      12,
+      9,
+      "proved"
+     ],
+     [
+      "preservation",
+      "required",
+      12,
+      9,
+      "proved"
+     ],
+     [
+      "entry",
+      "required",
+      16,
+      13,
+      "proved"
+     ],
+     [
+      "preservation",
+      "required",
+      16,
+      13,
+      "proved"
+     ],
+     [
+      "overflow",
+      "reported",
+      17,
+      28,
+      "proved"
+     ],
+     [
+      "overflow",
+      "reported",
+      17,
+      28,
+      "proved"
+     ],
+     [
+      "bounds",
+      "required",
+      17,
+      21,
+      "proved"
+     ],
+     [
+      "bounds",
+      "required",
+      17,
+      44,
+      "proved"
+     ],
+     [
+      "overflow",
+      "reported",
+      17,
+      21,
+      "failed"
+     ],
+     [
+      "overflow",
+      "reported",
+      17,
+      17,
+      "failed"
+     ],
+     [
+      "overflow",
+      "reported",
+      18,
+      17,
+      "proved"
+     ],
+     [
+      "bounds",
+      "required",
+      20,
+      9,
+      "proved"
+     ],
+     [
+      "overflow",
+      "reported",
+      21,
+      13,
+      "proved"
+     ]
+    ],
+    "entry": [
+     [
+      "matvec",
+      "sat"
+     ]
+    ],
+    "required_passed": true,
+    "decisions": [
+     [
+      "bounds",
+      17,
+      21,
+      true
+     ],
+     [
+      "bounds",
+      17,
+      44,
+      true
+     ],
+     [
+      "bounds",
+      20,
+      9,
+      true
+     ]
+    ],
+    "overflow": [
+     [
+      "overflow",
+      17,
+      28,
+      true
+     ],
+     [
+      "overflow",
+      17,
+      28,
+      true
+     ],
+     [
+      "overflow",
+      17,
+      21,
+      false
+     ],
+     [
+      "overflow",
+      17,
+      17,
+      false
+     ],
+     [
+      "overflow",
+      18,
+      17,
+      true
+     ],
+     [
+      "overflow",
+      21,
+      13,
+      true
+     ]
+    ],
+    "c": "\n\n#ifndef __clang__\n#error \"pfc output requires clang\"\n#endif\n_Static_assert(__CHAR_BIT__ == 8 && sizeof(int) * 8 == 32 && sizeof(long) * 8 == 64, \"pfc target widths mismatch\");\n_Static_assert(__INT_MAX__ == 2147483647 && __LONG_MAX__ == 9223372036854775807L, \"pfc target ranges mismatch\");\n\nlong matvec(const long matrix[], long matrix_len, const long x[], long x_len, long y[], long y_len, long rows, long cols)\n{\n    (void)matrix;\n    (void)matrix_len;\n    (void)x;\n    (void)x_len;\n    (void)y;\n    (void)y_len;\n    (void)rows;\n    (void)cols;\n    "
+   }
+  },
+  {
+   "name": "kernels/prefix_sum/kernel.c",
+   "preprocessed": "# 0 \"<stdin>\"\n# 0 \"<built-in>\"\n# 0 \"<command-line>\"\n# 1 \"<stdin>\"\n# 1 \"kernels/prefix_sum/kernel.c\"\n# 1 \"include/spec.h\" 1\n# 12 \"include/spec.h\"\nvoid __spec_requires(_Bool condition);\nvoid __spec_ensures(_Bool condition);\nvoid __spec_invariant(_Bool condition);\nvoid __spec_assert(_Bool condition);\n_Bool __spec_separated(const void *left, long left_len, const void *right, long right_len);\n# 2 \"kernels/prefix_sum/kernel.c\" 2\n\nlong prefix_sum(long a[], long a_len, long n)\n{\n    __spec_requires((0 <= n && n <= a_len));\n    if (n == 0) {\n        return 0;\n    }\n    long i = 1;\n    while (i < n) {\n        __spec_invariant((1 <= i && i <= n));\n        a[i] = a[i] + a[i - 1];\n        i = i + 1;\n    }\n    return n;\n}\n",
+   "summary": {
+    "obligations": [
+     [
+      "entry",
+      "required",
+      11,
+      9,
+      "proved"
+     ],
+     [
+      "preservation",
+      "required",
+      11,
+      9,
+      "proved"
+     ],
+     [
+      "bounds",
+      "required",
+      12,
+      16,
+      "proved"
+     ],
+     [
+      "overflow",
+      "reported",
+      12,
+      25,
+      "proved"
+     ],
+     [
+      "bounds",
+      "required",
+      12,
+      23,
+      "proved"
+     ],
+     [
+      "overflow",
+      "reported",
+      12,
+      16,
+      "failed"
+     ],
+     [
+      "bounds",
+      "required",
+      12,
+      9,
+      "proved"
+     ],
+     [
+      "overflow",
+      "reported",
+      13,
+      13,
+      "proved"
+     ]
+    ],
+    "entry": [
+     [
+      "prefix_sum",
+      "sat"
+     ]
+    ],
+    "required_passed": true,
+    "decisions": [
+     [
+      "bounds",
+      12,
+      16,
+      true
+     ],
+     [
+      "bounds",
+      12,
+      23,
+      true
+     ],
+     [
+      "bounds",
+      12,
+      9,
+      true
+     ]
+    ],
+    "overflow": [
+     [
+      "overflow",
+      12,
+      25,
+      true
+     ],
+     [
+      "overflow",
+      12,
+      16,
+      false
+     ],
+     [
+      "overflow",
+      13,
+      13,
+      true
+     ]
+    ],
+    "c": "\n\n#ifndef __clang__\n#error \"pfc output requires clang\"\n#endif\n_Static_assert(__CHAR_BIT__ == 8 && sizeof(int) * 8 == 32 && sizeof(long) * 8 == 64, \"pfc target widths mismatch\");\n_Static_assert(__INT_MAX__ == 2147483647 && __LONG_MAX__ == 9223372036854775807L, \"pfc target ranges mismatch\");\n\nlong prefix_sum(long a[], long a_len, long n)\n{\n    (void)a;\n    (void)a_len;\n    (void)n;\n    "
+   }
+  },
+  {
+   "name": "kernels/saxpy/kernel.c",
+   "preprocessed": "# 0 \"<stdin>\"\n# 0 \"<built-in>\"\n# 0 \"<command-line>\"\n# 1 \"<stdin>\"\n# 1 \"kernels/saxpy/kernel.c\"\n# 1 \"include/spec.h\" 1\n# 12 \"include/spec.h\"\nvoid __spec_requires(_Bool condition);\nvoid __spec_ensures(_Bool condition);\nvoid __spec_invariant(_Bool condition);\nvoid __spec_assert(_Bool condition);\n_Bool __spec_separated(const void *left, long left_len, const void *right, long right_len);\n# 2 \"kernels/saxpy/kernel.c\" 2\n\nlong saxpy(long alpha, const long x[], long x_len, long y[], long y_len, long n)\n{\n    __spec_requires((0 <= n && n <= x_len && n <= y_len));\n    __spec_requires((__spec_separated((x), (x_len), (y), (y_len))));\n    long i = 0;\n    while (i < n) {\n        __spec_invariant((0 <= i && i <= n));\n        y[i] = alpha * x[i] + y[i];\n        i = i + 1;\n    }\n    return n;\n}\n",
+   "summary": {
+    "obligations": [
+     [
+      "entry",
+      "required",
+      9,
+      9,
+      "proved"
+     ],
+     [
+      "preservation",
+      "required",
+      9,
+      9,
+      "proved"
+     ],
+     [
+      "bounds",
+      "required",
+      10,
+      24,
+      "proved"
+     ],
+     [
+      "overflow",
+      "reported",
+      10,
+      16,
+      "failed"
+     ],
+     [
+      "bounds",
+      "required",
+      10,
+      31,
+      "proved"
+     ],
+     [
+      "overflow",
+      "reported",
+      10,
+      16,
+      "failed"
+     ],
+     [
+      "bounds",
+      "required",
+      10,
+      9,
+      "proved"
+     ],
+     [
+      "overflow",
+      "reported",
+      11,
+      13,
+      "proved"
+     ]
+    ],
+    "entry": [
+     [
+      "saxpy",
+      "sat"
+     ]
+    ],
+    "required_passed": true,
+    "decisions": [
+     [
+      "bounds",
+      10,
+      24,
+      true
+     ],
+     [
+      "bounds",
+      10,
+      31,
+      true
+     ],
+     [
+      "bounds",
+      10,
+      9,
+      true
+     ]
+    ],
+    "overflow": [
+     [
+      "overflow",
+      10,
+      16,
+      false
+     ],
+     [
+      "overflow",
+      10,
+      16,
+      false
+     ],
+     [
+      "overflow",
+      11,
+      13,
+      true
+     ]
+    ],
+    "c": "\n\n#ifndef __clang__\n#error \"pfc output requires clang\"\n#endif\n_Static_assert(__CHAR_BIT__ == 8 && sizeof(int) * 8 == 32 && sizeof(long) * 8 == 64, \"pfc target widths mismatch\");\n_Static_assert(__INT_MAX__ == 2147483647 && __LONG_MAX__ == 9223372036854775807L, \"pfc target ranges mismatch\");\n\nlong saxpy(long alpha, const long x[], long x_len, long y[], long y_len, long n)\n{\n    (void)alpha;\n    (void)x;\n    (void)x_len;\n    (void)y;\n    (void)y_len;\n    (void)n;\n    "
+   }
+  },
+  {
+   "name": "kernels/sum/kernel.c",
+   "preprocessed": "# 0 \"<stdin>\"\n# 0 \"<built-in>\"\n# 0 \"<command-line>\"\n# 1 \"<stdin>\"\n# 1 \"kernels/sum/kernel.c\"\n# 1 \"include/spec.h\" 1\n# 12 \"include/spec.h\"\nvoid __spec_requires(_Bool condition);\nvoid __spec_ensures(_Bool condition);\nvoid __spec_invariant(_Bool condition);\nvoid __spec_assert(_Bool condition);\n_Bool __spec_separated(const void *left, long left_len, const void *right, long right_len);\n# 2 \"kernels/sum/kernel.c\" 2\n# 1 \"kernels/sum/kernel.h\" 1\n\n\n\n\n\n\nlong sum(const long a[], long a_len, long n);\n# 3 \"kernels/sum/kernel.c\" 2\n\nlong sum(const long a[], long a_len, long n)\n{\n    __spec_requires((0 <= n && n <= a_len));\n    long s = 0;\n    long i = 0;\n\n    while (i < n) {\n        __spec_invariant((0 <= i && i <= n));\n        s = s + a[i];\n        i = i + 1;\n    }\n\n    return s;\n}\n",
+   "summary": {
+    "obligations": [
+     [
+      "entry",
+      "required",
+      11,
+      9,
+      "proved"
+     ],
+     [
+      "preservation",
+      "required",
+      11,
+      9,
+      "proved"
+     ],
+     [
+      "bounds",
+      "required",
+      12,
+      17,
+      "proved"
+     ],
+     [
+      "overflow",
+      "reported",
+      12,
+      13,
+      "failed"
+     ],
+     [
+      "overflow",
+      "reported",
+      13,
+      13,
+      "proved"
+     ]
+    ],
+    "entry": [
+     [
+      "sum",
+      "sat"
+     ]
+    ],
+    "required_passed": true,
+    "decisions": [
+     [
+      "bounds",
+      12,
+      17,
+      true
+     ]
+    ],
+    "overflow": [
+     [
+      "overflow",
+      12,
+      13,
+      false
+     ],
+     [
+      "overflow",
+      13,
+      13,
+      true
+     ]
+    ],
+    "c": "\n\n#ifndef __clang__\n#error \"pfc output requires clang\"\n#endif\n_Static_assert(__CHAR_BIT__ == 8 && sizeof(int) * 8 == 32 && sizeof(long) * 8 == 64, \"pfc target widths mismatch\");\n_Static_assert(__INT_MAX__ == 2147483647 && __LONG_MAX__ == 9223372036854775807L, \"pfc target ranges mismatch\");\n\nlong sum(const long a[], long a_len, long n)\n{\n    (void)a;\n    (void)a_len;\n    (void)n;\n    "
+   }
+  },
+  {
+   "name": "tests/fixtures/authorization/branch_one_proved.c",
+   "preprocessed": "# 0 \"<stdin>\"\n# 0 \"<built-in>\"\n# 0 \"<command-line>\"\n# 1 \"<stdin>\"\n# 1 \"tests/fixtures/authorization/branch_one_proved.c\"\n# 1 \"include/spec.h\" 1\n# 12 \"include/spec.h\"\nvoid __spec_requires(_Bool condition);\nvoid __spec_ensures(_Bool condition);\nvoid __spec_invariant(_Bool condition);\nvoid __spec_assert(_Bool condition);\n_Bool __spec_separated(const void *left, long left_len, const void *right, long right_len);\n# 2 \"tests/fixtures/authorization/branch_one_proved.c\" 2\n\nlong branch_one_proved(const long a[], long a_len, long n, long i, long j)\n{\n    __spec_requires((0 <= n && n <= a_len && 0 <= i && i < n));\n    long s = a[i];\n    if (j < n) {\n        s = a[j];\n    }\n    return s;\n}\n",
+   "summary": {
+    "obligations": [
+     [
+      "bounds",
+      "required",
+      6,
+      14,
+      "proved"
+     ],
+     [
+      "bounds",
+      "required",
+      8,
+      13,
+      "failed"
+     ]
+    ],
+    "entry": [
+     [
+      "branch_one_proved",
+      "sat"
+     ]
+    ],
+    "required_passed": false,
+    "decisions": [
+     [
+      "bounds",
+      6,
+      14,
+      true
+     ],
+     [
+      "bounds",
+      8,
+      13,
+      false
+     ]
+    ],
+    "overflow": [],
+    "c": "\n\n#ifndef __clang__\n#error \"pfc output requires clang\"\n#endif\n_Static_assert(__CHAR_BIT__ == 8 && sizeof(int) * 8 == 32 && sizeof(long) * 8 == 64, \"pfc target widths mismatch\");\n_Static_assert(__INT_MAX__ == 2147483647 && __LONG_MAX__ == 9223372036854775807L, \"pfc target ranges mismatch\");\n\nlong branch_one_proved(const long a[], long a_len, long n, long i, long j)\n{\n    (void)a;\n    (void)a_len;\n    (void)n;\n    (void)i;\n    (void)j;\n    "
+   }
+  },
+  {
+   "name": "tests/fixtures/authorization/index_through_memory.c",
+   "preprocessed": "# 0 \"<stdin>\"\n# 0 \"<built-in>\"\n# 0 \"<command-line>\"\n# 1 \"<stdin>\"\n# 1 \"tests/fixtures/authorization/index_through_memory.c\"\n# 1 \"include/spec.h\" 1\n# 12 \"include/spec.h\"\nvoid __spec_requires(_Bool condition);\nvoid __spec_ensures(_Bool condition);\nvoid __spec_invariant(_Bool condition);\nvoid __spec_assert(_Bool condition);\n_Bool __spec_separated(const void *left, long left_len, const void *right, long right_len);\n# 2 \"tests/fixtures/authorization/index_through_memory.c\" 2\n\nlong index_through_memory(const long a[], long a_len, const long b[], long b_len, long n, long i)\n{\n    __spec_requires((0 <= n && n <= a_len && n <= b_len && 0 <= i && i < n));\n    long k = a[i];\n    return b[k];\n}\n",
+   "summary": {
+    "obligations": [
+     [
+      "bounds",
+      "required",
+      6,
+      14,
+      "proved"
+     ],
+     [
+      "bounds",
+      "required",
+      7,
+      12,
+      "failed"
+     ]
+    ],
+    "entry": [
+     [
+      "index_through_memory",
+      "sat"
+     ]
+    ],
+    "required_passed": false,
+    "decisions": [
+     [
+      "bounds",
+      6,
+      14,
+      true
+     ],
+     [
+      "bounds",
+      7,
+      12,
+      false
+     ]
+    ],
+    "overflow": [],
+    "c": "\n\n#ifndef __clang__\n#error \"pfc output requires clang\"\n#endif\n_Static_assert(__CHAR_BIT__ == 8 && sizeof(int) * 8 == 32 && sizeof(long) * 8 == 64, \"pfc target widths mismatch\");\n_Static_assert(__INT_MAX__ == 2147483647 && __LONG_MAX__ == 9223372036854775807L, \"pfc target ranges mismatch\");\n\nlong index_through_memory(const long a[], long a_len, const long b[], long b_len, long n, long i)\n{\n    (void)a;\n    (void)a_len;\n    (void)b;\n    (void)b_len;\n    (void)n;\n    (void)i;\n    "
+   }
+  },
+  {
+   "name": "tests/fixtures/authorization/mixed_sites.c",
+   "preprocessed": "# 0 \"<stdin>\"\n# 0 \"<built-in>\"\n# 0 \"<command-line>\"\n# 1 \"<stdin>\"\n# 1 \"tests/fixtures/authorization/mixed_sites.c\"\n# 1 \"include/spec.h\" 1\n# 12 \"include/spec.h\"\nvoid __spec_requires(_Bool condition);\nvoid __spec_ensures(_Bool condition);\nvoid __spec_invariant(_Bool condition);\nvoid __spec_assert(_Bool condition);\n_Bool __spec_separated(const void *left, long left_len, const void *right, long right_len);\n# 2 \"tests/fixtures/authorization/mixed_sites.c\" 2\n\nlong mixed_sites(const long a[], long a_len, long n, long i)\n{\n    __spec_requires((0 <= n && n <= a_len && 0 <= i && i < n));\n    return a[a[i]];\n}\n",
+   "summary": {
+    "obligations": [
+     [
+      "bounds",
+      "required",
+      6,
+      14,
+      "proved"
+     ],
+     [
+      "bounds",
+      "required",
+      6,
+      12,
+      "failed"
+     ]
+    ],
+    "entry": [
+     [
+      "mixed_sites",
+      "sat"
+     ]
+    ],
+    "required_passed": false,
+    "decisions": [
+     [
+      "bounds",
+      6,
+      14,
+      true
+     ],
+     [
+      "bounds",
+      6,
+      12,
+      false
+     ]
+    ],
+    "overflow": [],
+    "c": "\n\n#ifndef __clang__\n#error \"pfc output requires clang\"\n#endif\n_Static_assert(__CHAR_BIT__ == 8 && sizeof(int) * 8 == 32 && sizeof(long) * 8 == 64, \"pfc target widths mismatch\");\n_Static_assert(__INT_MAX__ == 2147483647 && __LONG_MAX__ == 9223372036854775807L, \"pfc target ranges mismatch\");\n\nlong mixed_sites(const long a[], long a_len, long n, long i)\n{\n    (void)a;\n    (void)a_len;\n    (void)n;\n    (void)i;\n    "
+   }
+  },
+  {
+   "name": "tests/fixtures/authorization/overflow_add.c",
+   "preprocessed": "# 0 \"<stdin>\"\n# 0 \"<built-in>\"\n# 0 \"<command-line>\"\n# 1 \"<stdin>\"\n# 1 \"tests/fixtures/authorization/overflow_add.c\"\n# 1 \"include/spec.h\" 1\n# 12 \"include/spec.h\"\nvoid __spec_requires(_Bool condition);\nvoid __spec_ensures(_Bool condition);\nvoid __spec_invariant(_Bool condition);\nvoid __spec_assert(_Bool condition);\n_Bool __spec_separated(const void *left, long left_len, const void *right, long right_len);\n# 2 \"tests/fixtures/authorization/overflow_add.c\" 2\n\nlong overflow_add(long x, long y)\n{\n    __spec_requires((0 <= y));\n    return x + y;\n}\n",
+   "summary": {
+    "obligations": [
+     [
+      "overflow",
+      "reported",
+      6,
+      12,
+      "failed"
+     ]
+    ],
+    "entry": [
+     [
+      "overflow_add",
+      "sat"
+     ]
+    ],
+    "required_passed": true,
+    "decisions": [],
+    "overflow": [
+     [
+      "overflow",
+      6,
+      12,
+      false
+     ]
+    ],
+    "c": "\n\n#ifndef __clang__\n#error \"pfc output requires clang\"\n#endif\n_Static_assert(__CHAR_BIT__ == 8 && sizeof(int) * 8 == 32 && sizeof(long) * 8 == 64, \"pfc target widths mismatch\");\n_Static_assert(__INT_MAX__ == 2147483647 && __LONG_MAX__ == 9223372036854775807L, \"pfc target ranges mismatch\");\n\nlong overflow_add(long x, long y)\n{\n    (void)x;\n    (void)y;\n    "
+   }
+  },
+  {
+   "name": "tests/fixtures/authorization/overflow_mul.c",
+   "preprocessed": "# 0 \"<stdin>\"\n# 0 \"<built-in>\"\n# 0 \"<command-line>\"\n# 1 \"<stdin>\"\n# 1 \"tests/fixtures/authorization/overflow_mul.c\"\n# 1 \"include/spec.h\" 1\n# 12 \"include/spec.h\"\nvoid __spec_requires(_Bool condition);\nvoid __spec_ensures(_Bool condition);\nvoid __spec_invariant(_Bool condition);\nvoid __spec_assert(_Bool condition);\n_Bool __spec_separated(const void *left, long left_len, const void *right, long right_len);\n# 2 \"tests/fixtures/authorization/overflow_mul.c\" 2\n\nlong overflow_mul(long x, long y)\n{\n    __spec_requires((0 <= y));\n    return x * y;\n}\n",
+   "summary": {
+    "obligations": [
+     [
+      "overflow",
+      "reported",
+      6,
+      12,
+      "failed"
+     ]
+    ],
+    "entry": [
+     [
+      "overflow_mul",
+      "sat"
+     ]
+    ],
+    "required_passed": true,
+    "decisions": [],
+    "overflow": [
+     [
+      "overflow",
+      6,
+      12,
+      false
+     ]
+    ],
+    "c": "\n\n#ifndef __clang__\n#error \"pfc output requires clang\"\n#endif\n_Static_assert(__CHAR_BIT__ == 8 && sizeof(int) * 8 == 32 && sizeof(long) * 8 == 64, \"pfc target widths mismatch\");\n_Static_assert(__INT_MAX__ == 2147483647 && __LONG_MAX__ == 9223372036854775807L, \"pfc target ranges mismatch\");\n\nlong overflow_mul(long x, long y)\n{\n    (void)x;\n    (void)y;\n    "
+   }
+  },
+  {
+   "name": "tests/fixtures/authorization/overflow_neg_min.c",
+   "preprocessed": "# 0 \"<stdin>\"\n# 0 \"<built-in>\"\n# 0 \"<command-line>\"\n# 1 \"<stdin>\"\n# 1 \"tests/fixtures/authorization/overflow_neg_min.c\"\n# 1 \"include/spec.h\" 1\n# 12 \"include/spec.h\"\nvoid __spec_requires(_Bool condition);\nvoid __spec_ensures(_Bool condition);\nvoid __spec_invariant(_Bool condition);\nvoid __spec_assert(_Bool condition);\n_Bool __spec_separated(const void *left, long left_len, const void *right, long right_len);\n# 2 \"tests/fixtures/authorization/overflow_neg_min.c\" 2\n\nlong overflow_neg_min(long x)\n{\n    __spec_requires((x <= 0));\n    return -x;\n}\n",
+   "summary": {
+    "obligations": [
+     [
+      "overflow",
+      "reported",
+      6,
+      13,
+      "failed"
+     ]
+    ],
+    "entry": [
+     [
+      "overflow_neg_min",
+      "sat"
+     ]
+    ],
+    "required_passed": true,
+    "decisions": [],
+    "overflow": [
+     [
+      "overflow",
+      6,
+      13,
+      false
+     ]
+    ],
+    "c": "\n\n#ifndef __clang__\n#error \"pfc output requires clang\"\n#endif\n_Static_assert(__CHAR_BIT__ == 8 && sizeof(int) * 8 == 32 && sizeof(long) * 8 == 64, \"pfc target widths mismatch\");\n_Static_assert(__INT_MAX__ == 2147483647 && __LONG_MAX__ == 9223372036854775807L, \"pfc target ranges mismatch\");\n\nlong overflow_neg_min(long x)\n{\n    (void)x;\n    "
+   }
+  },
+  {
+   "name": "tests/fixtures/authorization/overflow_proved.c",
+   "preprocessed": "# 0 \"<stdin>\"\n# 0 \"<built-in>\"\n# 0 \"<command-line>\"\n# 1 \"<stdin>\"\n# 1 \"tests/fixtures/authorization/overflow_proved.c\"\n# 1 \"include/spec.h\" 1\n# 12 \"include/spec.h\"\nvoid __spec_requires(_Bool condition);\nvoid __spec_ensures(_Bool condition);\nvoid __spec_invariant(_Bool condition);\nvoid __spec_assert(_Bool condition);\n_Bool __spec_separated(const void *left, long left_len, const void *right, long right_len);\n# 2 \"tests/fixtures/authorization/overflow_proved.c\" 2\n\nlong overflow_proved(long x, long y)\n{\n    __spec_requires((0 <= x && x < 1000 && 0 <= y && y < 1000));\n    return x + y;\n}\n",
+   "summary": {
+    "obligations": [
+     [
+      "overflow",
+      "reported",
+      6,
+      12,
+      "proved"
+     ]
+    ],
+    "entry": [
+     [
+      "overflow_proved",
+      "sat"
+     ]
+    ],
+    "required_passed": true,
+    "decisions": [],
+    "overflow": [
+     [
+      "overflow",
+      6,
+      12,
+      true
+     ]
+    ],
+    "c": "\n\n#ifndef __clang__\n#error \"pfc output requires clang\"\n#endif\n_Static_assert(__CHAR_BIT__ == 8 && sizeof(int) * 8 == 32 && sizeof(long) * 8 == 64, \"pfc target widths mismatch\");\n_Static_assert(__INT_MAX__ == 2147483647 && __LONG_MAX__ == 9223372036854775807L, \"pfc target ranges mismatch\");\n\nlong overflow_proved(long x, long y)\n{\n    (void)x;\n    (void)y;\n    "
+   }
+  },
+  {
+   "name": "tests/fixtures/authorization/requires_division.c",
+   "preprocessed": "# 0 \"<stdin>\"\n# 0 \"<built-in>\"\n# 0 \"<command-line>\"\n# 1 \"<stdin>\"\n# 1 \"tests/fixtures/authorization/requires_division.c\"\n# 1 \"include/spec.h\" 1\n# 12 \"include/spec.h\"\nvoid __spec_requires(_Bool condition);\nvoid __spec_ensures(_Bool condition);\nvoid __spec_invariant(_Bool condition);\nvoid __spec_assert(_Bool condition);\n_Bool __spec_separated(const void *left, long left_len, const void *right, long right_len);\n# 2 \"tests/fixtures/authorization/requires_division.c\" 2\n\nlong requires_division(const long a[], long a_len, long rows, long cols)\n{\n    __spec_requires((0 < cols && rows <= a_len / cols && 0 <= rows));\n    return rows * cols;\n}\n",
+   "summary": {
+    "obligations": [
+     [
+      "division",
+      "required",
+      5,
+      42,
+      "proved"
+     ],
+     [
+      "overflow",
+      "reported",
+      6,
+      12,
+      "proved"
+     ]
+    ],
+    "entry": [
+     [
+      "requires_division",
+      "sat"
+     ]
+    ],
+    "required_passed": true,
+    "decisions": [],
+    "overflow": [
+     [
+      "overflow",
+      6,
+      12,
+      true
+     ]
+    ],
+    "c": "\n\n#ifndef __clang__\n#error \"pfc output requires clang\"\n#endif\n_Static_assert(__CHAR_BIT__ == 8 && sizeof(int) * 8 == 32 && sizeof(long) * 8 == 64, \"pfc target widths mismatch\");\n_Static_assert(__INT_MAX__ == 2147483647 && __LONG_MAX__ == 9223372036854775807L, \"pfc target ranges mismatch\");\n\nlong requires_division(const long a[], long a_len, long rows, long cols)\n{\n    (void)a;\n    (void)a_len;\n    (void)rows;\n    (void)cols;\n    "
+   }
+  },
+  {
+   "name": "tests/fixtures/authorization/short_circuit_and.c",
+   "preprocessed": "# 0 \"<stdin>\"\n# 0 \"<built-in>\"\n# 0 \"<command-line>\"\n# 1 \"<stdin>\"\n# 1 \"tests/fixtures/authorization/short_circuit_and.c\"\n# 1 \"include/spec.h\" 1\n# 12 \"include/spec.h\"\nvoid __spec_requires(_Bool condition);\nvoid __spec_ensures(_Bool condition);\nvoid __spec_invariant(_Bool condition);\nvoid __spec_assert(_Bool condition);\n_Bool __spec_separated(const void *left, long left_len, const void *right, long right_len);\n# 2 \"tests/fixtures/authorization/short_circuit_and.c\" 2\n\nlong short_circuit_and(const long a[], long a_len, long n, long i)\n{\n    __spec_requires((0 <= n && n <= a_len));\n    if (i < n && a[i] > 0) {\n        return 1;\n    }\n    return 0;\n}\n",
+   "summary": {
+    "obligations": [
+     [
+      "bounds",
+      "required",
+      6,
+      18,
+      "failed"
+     ]
+    ],
+    "entry": [
+     [
+      "short_circuit_and",
+      "sat"
+     ]
+    ],
+    "required_passed": false,
+    "decisions": [
+     [
+      "bounds",
+      6,
+      18,
+      false
+     ]
+    ],
+    "overflow": [],
+    "c": "\n\n#ifndef __clang__\n#error \"pfc output requires clang\"\n#endif\n_Static_assert(__CHAR_BIT__ == 8 && sizeof(int) * 8 == 32 && sizeof(long) * 8 == 64, \"pfc target widths mismatch\");\n_Static_assert(__INT_MAX__ == 2147483647 && __LONG_MAX__ == 9223372036854775807L, \"pfc target ranges mismatch\");\n\nlong short_circuit_and(const long a[], long a_len, long n, long i)\n{\n    (void)a;\n    (void)a_len;\n    (void)n;\n    (void)i;\n    "
+   }
+  },
+  {
+   "name": "tests/fixtures/authorization/short_circuit_or.c",
+   "preprocessed": "# 0 \"<stdin>\"\n# 0 \"<built-in>\"\n# 0 \"<command-line>\"\n# 1 \"<stdin>\"\n# 1 \"tests/fixtures/authorization/short_circuit_or.c\"\n# 1 \"include/spec.h\" 1\n# 12 \"include/spec.h\"\nvoid __spec_requires(_Bool condition);\nvoid __spec_ensures(_Bool condition);\nvoid __spec_invariant(_Bool condition);\nvoid __spec_assert(_Bool condition);\n_Bool __spec_separated(const void *left, long left_len, const void *right, long right_len);\n# 2 \"tests/fixtures/authorization/short_circuit_or.c\" 2\n\nlong short_circuit_or(const long a[], long a_len, long n, long i)\n{\n    __spec_requires((0 <= n && n <= a_len && 0 <= i));\n    if (i >= n || a[i] > 0) {\n        return 1;\n    }\n    return 0;\n}\n",
+   "summary": {
+    "obligations": [
+     [
+      "bounds",
+      "required",
+      6,
+      19,
+      "proved"
+     ]
+    ],
+    "entry": [
+     [
+      "short_circuit_or",
+      "sat"
+     ]
+    ],
+    "required_passed": true,
+    "decisions": [
+     [
+      "bounds",
+      6,
+      19,
+      true
+     ]
+    ],
+    "overflow": [],
+    "c": "\n\n#ifndef __clang__\n#error \"pfc output requires clang\"\n#endif\n_Static_assert(__CHAR_BIT__ == 8 && sizeof(int) * 8 == 32 && sizeof(long) * 8 == 64, \"pfc target widths mismatch\");\n_Static_assert(__INT_MAX__ == 2147483647 && __LONG_MAX__ == 9223372036854775807L, \"pfc target ranges mismatch\");\n\nlong short_circuit_or(const long a[], long a_len, long n, long i)\n{\n    (void)a;\n    (void)a_len;\n    (void)n;\n    (void)i;\n    "
+   }
+  },
+  {
+   "name": "tests/fixtures/authorization/write_then_trap.c",
+   "preprocessed": "# 0 \"<stdin>\"\n# 0 \"<built-in>\"\n# 0 \"<command-line>\"\n# 1 \"<stdin>\"\n# 1 \"tests/fixtures/authorization/write_then_trap.c\"\n# 1 \"include/spec.h\" 1\n# 12 \"include/spec.h\"\nvoid __spec_requires(_Bool condition);\nvoid __spec_ensures(_Bool condition);\nvoid __spec_invariant(_Bool condition);\nvoid __spec_assert(_Bool condition);\n_Bool __spec_separated(const void *left, long left_len, const void *right, long right_len);\n# 2 \"tests/fixtures/authorization/write_then_trap.c\" 2\n\nlong write_then_trap(long a[], long a_len, long x)\n{\n    __spec_requires((2 <= a_len));\n    a[0] = 7;\n    long y = x + 1;\n    a[1] = y;\n    return y;\n}\n",
+   "summary": {
+    "obligations": [
+     [
+      "bounds",
+      "required",
+      6,
+      5,
+      "proved"
+     ],
+     [
+      "overflow",
+      "reported",
+      7,
+      14,
+      "failed"
+     ],
+     [
+      "bounds",
+      "required",
+      8,
+      5,
+      "proved"
+     ]
+    ],
+    "entry": [
+     [
+      "write_then_trap",
+      "sat"
+     ]
+    ],
+    "required_passed": true,
+    "decisions": [
+     [
+      "bounds",
+      6,
+      5,
+      true
+     ],
+     [
+      "bounds",
+      8,
+      5,
+      true
+     ]
+    ],
+    "overflow": [
+     [
+      "overflow",
+      7,
+      14,
+      false
+     ]
+    ],
+    "c": "\n\n#ifndef __clang__\n#error \"pfc output requires clang\"\n#endif\n_Static_assert(__CHAR_BIT__ == 8 && sizeof(int) * 8 == 32 && sizeof(long) * 8 == 64, \"pfc target widths mismatch\");\n_Static_assert(__INT_MAX__ == 2147483647 && __LONG_MAX__ == 9223372036854775807L, \"pfc target ranges mismatch\");\n\nlong write_then_trap(long a[], long a_len, long x)\n{\n    (void)a;\n    (void)a_len;\n    (void)x;\n    "
+   }
+  },
+  {
+   "name": "tests/negative/assignment-expression.c",
+   "preprocessed": "# 0 \"<stdin>\"\n# 0 \"<built-in>\"\n# 0 \"<command-line>\"\n# 1 \"<stdin>\"\n# 1 \"tests/negative/assignment-expression.c\"\nlong f(long n) {\n    return (n = 1);\n}\n",
+   "summary": {
+    "refused": [
+     "ir-expression",
+     2,
+     13
+    ]
+   }
+  },
+  {
+   "name": "tests/negative/bitwise.c",
+   "preprocessed": "# 0 \"<stdin>\"\n# 0 \"<built-in>\"\n# 0 \"<command-line>\"\n# 1 \"<stdin>\"\n# 1 \"tests/negative/bitwise.c\"\nlong f(long n) {\n    return n & 1;\n}\n",
+   "summary": {
+    "refused": [
+     "subset-operator",
+     2,
+     12
+    ]
+   }
+  },
+  {
+   "name": "tests/negative/break.c",
+   "preprocessed": "# 0 \"<stdin>\"\n# 0 \"<built-in>\"\n# 0 \"<command-line>\"\n# 1 \"<stdin>\"\n# 1 \"tests/negative/break.c\"\nlong f(void) {\n    while (1) {\n        break;\n    }\n    return 0;\n}\n",
+   "summary": {
+    "refused": [
+     "subset-break",
+     3,
+     9
+    ]
+   }
+  },
+  {
+   "name": "tests/negative/cast.c",
+   "preprocessed": "# 0 \"<stdin>\"\n# 0 \"<built-in>\"\n# 0 \"<command-line>\"\n# 1 \"<stdin>\"\n# 1 \"tests/negative/cast.c\"\nlong f(long n) {\n    return (long)n;\n}\n",
+   "summary": {
+    "refused": [
+     "subset-cast",
+     2,
+     12
+    ]
+   }
+  },
+  {
+   "name": "tests/negative/const-write.c",
+   "preprocessed": "# 0 \"<stdin>\"\n# 0 \"<built-in>\"\n# 0 \"<command-line>\"\n# 1 \"<stdin>\"\n# 1 \"tests/negative/const-write.c\"\nlong f(const long a[], long a_len) {\n    a[0] = 1;\n    return 0;\n}\n",
+   "summary": {
+    "refused": [
+     "ir-const",
+     2,
+     5
+    ]
+   }
+  },
+  {
+   "name": "tests/negative/continue.c",
+   "preprocessed": "# 0 \"<stdin>\"\n# 0 \"<built-in>\"\n# 0 \"<command-line>\"\n# 1 \"<stdin>\"\n# 1 \"tests/negative/continue.c\"\nlong f(void) {\n    while (1) {\n        continue;\n    }\n    return 0;\n}\n",
+   "summary": {
+    "refused": [
+     "subset-continue",
+     3,
+     9
+    ]
+   }
+  },
+  {
+   "name": "tests/negative/float.c",
+   "preprocessed": "# 0 \"<stdin>\"\n# 0 \"<built-in>\"\n# 0 \"<command-line>\"\n# 1 \"<stdin>\"\n# 1 \"tests/negative/float.c\"\nlong f(void) {\n    float x = 0;\n    return 0;\n}\n",
+   "summary": {
+    "refused": [
+     "subset-type",
+     2,
+     5
+    ]
+   }
+  },
+  {
+   "name": "tests/negative/global-state.c",
+   "preprocessed": "# 0 \"<stdin>\"\n# 0 \"<built-in>\"\n# 0 \"<command-line>\"\n# 1 \"<stdin>\"\n# 1 \"tests/negative/global-state.c\"\nlong state;\nlong f(void) { return state; }\n",
+   "summary": {
+    "refused": [
+     "subset-global",
+     1,
+     6
+    ]
+   }
+  },
+  {
+   "name": "tests/negative/goto.c",
+   "preprocessed": "# 0 \"<stdin>\"\n# 0 \"<built-in>\"\n# 0 \"<command-line>\"\n# 1 \"<stdin>\"\n# 1 \"tests/negative/goto.c\"\nlong f(void) {\n    goto end;\nend: return 0;\n}\n",
+   "summary": {
+    "refused": [
+     "subset-goto",
+     2,
+     5
+    ]
+   }
+  },
+  {
+   "name": "tests/negative/heap.c",
+   "preprocessed": "# 0 \"<stdin>\"\n# 0 \"<built-in>\"\n# 0 \"<command-line>\"\n# 1 \"<stdin>\"\n# 1 \"tests/negative/heap.c\"\nlong f(void) {\n    return malloc(8);\n}\n",
+   "summary": {
+    "refused": [
+     "subset-heap",
+     2,
+     12
+    ]
+   }
+  },
+  {
+   "name": "tests/negative/increment.c",
+   "preprocessed": "# 0 \"<stdin>\"\n# 0 \"<built-in>\"\n# 0 \"<command-line>\"\n# 1 \"<stdin>\"\n# 1 \"tests/negative/increment.c\"\nlong f(long n) {\n    n++;\n    return n;\n}\n",
+   "summary": {
+    "refused": [
+     "subset-operator",
+     2,
+     5
+    ]
+   }
+  },
+  {
+   "name": "tests/negative/local-array.c",
+   "preprocessed": "# 0 \"<stdin>\"\n# 0 \"<built-in>\"\n# 0 \"<command-line>\"\n# 1 \"<stdin>\"\n# 1 \"tests/negative/local-array.c\"\nlong f(void) {\n    long a[2];\n    return 0;\n}\n",
+   "summary": {
+    "refused": [
+     "ir-local",
+     2,
+     10
+    ]
+   }
+  },
+  {
+   "name": "tests/negative/missing-length.c",
+   "preprocessed": "# 0 \"<stdin>\"\n# 0 \"<built-in>\"\n# 0 \"<command-line>\"\n# 1 \"<stdin>\"\n# 1 \"tests/negative/missing-length.c\"\nlong f(long a[]) { return 0; }\n",
+   "summary": {
+    "refused": [
+     "ir-array-length",
+     1,
+     6
+    ]
+   }
+  },
+  {
+   "name": "tests/negative/pointer-arith.c",
+   "preprocessed": "# 0 \"<stdin>\"\n# 0 \"<built-in>\"\n# 0 \"<command-line>\"\n# 1 \"<stdin>\"\n# 1 \"tests/negative/pointer-arith.c\"\nlong f(long a[], long a_len) {\n    return a + 1;\n}\n",
+   "summary": {
+    "refused": [
+     "subset-pointer-arith",
+     2,
+     12
+    ]
+   }
+  },
+  {
+   "name": "tests/negative/pointer.c",
+   "preprocessed": "# 0 \"<stdin>\"\n# 0 \"<built-in>\"\n# 0 \"<command-line>\"\n# 1 \"<stdin>\"\n# 1 \"tests/negative/pointer.c\"\nlong f(long *a) { return 0; }\n",
+   "summary": {
+    "refused": [
+     "subset-ptrdecl",
+     1,
+     13
+    ]
+   }
+  },
+  {
+   "name": "tests/negative/recursion.c",
+   "preprocessed": "# 0 \"<stdin>\"\n# 0 \"<built-in>\"\n# 0 \"<command-line>\"\n# 1 \"<stdin>\"\n# 1 \"tests/negative/recursion.c\"\nlong f(long n) {\n    return f(n);\n}\n",
+   "summary": {
+    "refused": [
+     "subset-recursion",
+     2,
+     12
+    ]
+   }
+  },
+  {
+   "name": "tests/negative/static.c",
+   "preprocessed": "# 0 \"<stdin>\"\n# 0 \"<built-in>\"\n# 0 \"<command-line>\"\n# 1 \"<stdin>\"\n# 1 \"tests/negative/static.c\"\nlong f(void) {\n    static long n = 0;\n    return n;\n}\n",
+   "summary": {
+    "refused": [
+     "subset-declaration",
+     2,
+     17
+    ]
+   }
+  },
+  {
+   "name": "tests/negative/struct.c",
+   "preprocessed": "# 0 \"<stdin>\"\n# 0 \"<built-in>\"\n# 0 \"<command-line>\"\n# 1 \"<stdin>\"\n# 1 \"tests/negative/struct.c\"\nlong f(void) {\n    struct S { long x; } s;\n    return 0;\n}\n",
+   "summary": {
+    "refused": [
+     "subset-struct",
+     2,
+     12
+    ]
+   }
+  },
+  {
+   "name": "tests/negative/switch.c",
+   "preprocessed": "# 0 \"<stdin>\"\n# 0 \"<built-in>\"\n# 0 \"<command-line>\"\n# 1 \"<stdin>\"\n# 1 \"tests/negative/switch.c\"\nlong f(long n) {\n    switch(n) { default: return 0; }\n}\n",
+   "summary": {
+    "refused": [
+     "subset-switch",
+     2,
+     5
+    ]
+   }
+  },
+  {
+   "name": "tests/negative/ternary.c",
+   "preprocessed": "# 0 \"<stdin>\"\n# 0 \"<built-in>\"\n# 0 \"<command-line>\"\n# 1 \"<stdin>\"\n# 1 \"tests/negative/ternary.c\"\nlong f(long n) {\n    return n ? 1 : 0;\n}\n",
+   "summary": {
+    "refused": [
+     "subset-ternaryop",
+     2,
+     12
+    ]
+   }
+  },
+  {
+   "name": "tests/negative/uninitialized.c",
+   "preprocessed": "# 0 \"<stdin>\"\n# 0 \"<built-in>\"\n# 0 \"<command-line>\"\n# 1 \"<stdin>\"\n# 1 \"tests/negative/uninitialized.c\"\nlong f(void) {\n    long n;\n    return n;\n}\n",
+   "summary": {
+    "refused": [
+     "ir-local",
+     2,
+     10
+    ]
+   }
+  },
+  {
+   "name": "tests/negative/unknown-call.c",
+   "preprocessed": "# 0 \"<stdin>\"\n# 0 \"<built-in>\"\n# 0 \"<command-line>\"\n# 1 \"<stdin>\"\n# 1 \"tests/negative/unknown-call.c\"\nlong f(long n) {\n    return external(n);\n}\n",
+   "summary": {
+    "refused": [
+     "subset-call",
+     2,
+     12
+    ]
+   }
+  },
+  {
+   "name": "tests/negative/unsigned.c",
+   "preprocessed": "# 0 \"<stdin>\"\n# 0 \"<built-in>\"\n# 0 \"<command-line>\"\n# 1 \"<stdin>\"\n# 1 \"tests/negative/unsigned.c\"\nlong f(void) {\n    unsigned long n = 0;\n    return 0;\n}\n",
+   "summary": {
+    "refused": [
+     "subset-type",
+     2,
+     5
+    ]
+   }
+  },
+  {
+   "name": "tests/negative/varargs.c",
+   "preprocessed": "# 0 \"<stdin>\"\n# 0 \"<built-in>\"\n# 0 \"<command-line>\"\n# 1 \"<stdin>\"\n# 1 \"tests/negative/varargs.c\"\nlong f(long n, ...) { return n; }\n",
+   "summary": {
+    "refused": [
+     "subset-ellipsisparam",
+     1,
+     16
+    ]
+   }
+  }
+ ]
+}

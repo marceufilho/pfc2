@@ -1,0 +1,12 @@
+{
+ "id": "verina_advanced_73",
+ "stated": "none",
+ "dropped": [
+  "precondition: l strictly increasing (quantifier over pairs)",
+  "result does not occur in l (quantifier)",
+  "every natural below result occurs in l (quantifier, membership)"
+ ],
+ "weakened": [],
+ "verdict": "certified at full",
+ "remarks": "Only a consequence is stated: 0 <= result <= length. The length parameters are named X_len, which the checker reads in the older spelling without assuming 0 <= X_len; requires(0 <= X_len) states it (a list length is a Nat)."
+}

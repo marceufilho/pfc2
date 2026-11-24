@@ -1,0 +1,1 @@
+{"id": "verina_advanced_55", "rules": ["P1", "P4"], "requires": [], "fixes": 0, "remarks": "No frequency table is kept (the description bounds neither the length nor the values): each element is counted by a scan."}

@@ -1,0 +1,143 @@
+{
+  "comment": "Generated from the task's test.json by corpus/verina-notes/interface.py: one case per test.",
+  "functions": {
+    "replaceChars": {
+      "result": "long",
+      "parameters": "long s_len, const char s[s_len], long oldChar, long newChar",
+      "call": "replaceChars(s_len, s, oldChar, newChar, 32, out)",
+      "locals": "char out[32] = {0};"
+    }
+  },
+  "cases": [
+    {
+      "name": "case_0",
+      "function": "replaceChars",
+      "inputs": {
+        "s_len": 13,
+        "s": [
+          104,
+          101,
+          108,
+          108,
+          111,
+          44,
+          32,
+          119,
+          111,
+          114,
+          108,
+          100,
+          33
+        ],
+        "oldChar": 44,
+        "newChar": 59
+      },
+      "expected": "found == 13 && out[0] == 104 && out[1] == 101 && out[2] == 108 && out[3] == 108 && out[4] == 111 && out[5] == 59 && out[6] == 32 && out[7] == 119 && out[8] == 111 && out[9] == 114 && out[10] == 108 && out[11] == 100 && out[12] == 33"
+    },
+    {
+      "name": "case_1",
+      "function": "replaceChars",
+      "inputs": {
+        "s_len": 5,
+        "s": [
+          97,
+          44,
+          98,
+          46,
+          99
+        ],
+        "oldChar": 44,
+        "newChar": 58
+      },
+      "expected": "found == 5 && out[0] == 97 && out[1] == 58 && out[2] == 98 && out[3] == 46 && out[4] == 99"
+    },
+    {
+      "name": "case_2",
+      "function": "replaceChars",
+      "inputs": {
+        "s_len": 13,
+        "s": [
+          104,
+          101,
+          108,
+          108,
+          111,
+          44,
+          32,
+          119,
+          111,
+          114,
+          108,
+          100,
+          33
+        ],
+        "oldChar": 111,
+        "newChar": 79
+      },
+      "expected": "found == 13 && out[0] == 104 && out[1] == 101 && out[2] == 108 && out[3] == 108 && out[4] == 79 && out[5] == 44 && out[6] == 32 && out[7] == 119 && out[8] == 79 && out[9] == 114 && out[10] == 108 && out[11] == 100 && out[12] == 33"
+    },
+    {
+      "name": "case_3",
+      "function": "replaceChars",
+      "inputs": {
+        "s_len": 0,
+        "s": [],
+        "oldChar": 120,
+        "newChar": 121
+      },
+      "expected": "found == 0"
+    },
+    {
+      "name": "case_4",
+      "function": "replaceChars",
+      "inputs": {
+        "s_len": 4,
+        "s": [
+          116,
+          101,
+          115,
+          116
+        ],
+        "oldChar": 120,
+        "newChar": 121
+      },
+      "expected": "found == 4 && out[0] == 116 && out[1] == 101 && out[2] == 115 && out[3] == 116"
+    },
+    {
+      "name": "case_5",
+      "function": "replaceChars",
+      "inputs": {
+        "s_len": 9,
+        "s": [
+          117,
+          110,
+          99,
+          104,
+          97,
+          110,
+          103,
+          101,
+          100
+        ],
+        "oldChar": 117,
+        "newChar": 117
+      },
+      "expected": "found == 9 && out[0] == 117 && out[1] == 110 && out[2] == 99 && out[3] == 104 && out[4] == 97 && out[5] == 110 && out[6] == 103 && out[7] == 101 && out[8] == 100"
+    },
+    {
+      "name": "case_6",
+      "function": "replaceChars",
+      "inputs": {
+        "s_len": 3,
+        "s": [
+          97,
+          97,
+          97
+        ],
+        "oldChar": 97,
+        "newChar": 98
+      },
+      "expected": "found == 3 && out[0] == 98 && out[1] == 98 && out[2] == 98"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "candidate": "pfc2-v2",
+  "files": 59,
+  "rule": "The 21 ports sealed in corpus/exercism-ports with contracts written from each exercise's prose and signature (AI-drafted), and the upstream assertions of the units that certified while the contracts were written, transcribed by hand into tests.json; frozen before any mutant or subsumption law was judged (DESIGN.md section 6, AMENDMENTS 6 to 8)",
+  "sealed": "2026-11-19T02:43:52+00:00"
+}

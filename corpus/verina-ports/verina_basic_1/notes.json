@@ -1,0 +1,1 @@
+{"id": "verina_basic_1", "rules": ["P1"], "requires": [], "fixes": 0, "remarks": "Written while the checking script was being tried; the description's product a*b is not used so that no overflow is introduced."}

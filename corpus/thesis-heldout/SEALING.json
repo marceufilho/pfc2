@@ -1,0 +1,6 @@
+{
+  "candidate": "pfc2-v3",
+  "files": 45,
+  "rule": "every program of the thesis repository's sealed held-out set (heldout/PROVENANCE.json, 43 entries), re-spelled by R1-R4 of corpus/thesis-heldout-notes/build.py; nothing excluded",
+  "sealed": "2026-11-20T21:44:47+00:00"
+}

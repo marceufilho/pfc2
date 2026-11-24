@@ -1,0 +1,6 @@
+{
+  "candidate": "pfc2-v3",
+  "files": 94,
+  "rule": "R1 spec.h include becomes pfc.h; R2 own-header include removed; R3 nothing else (corpus/thesis-derived-notes/build.py)",
+  "sealed": "2026-11-19T15:53:24+00:00"
+}

@@ -1,0 +1,50 @@
+{
+  "columns": [
+    {
+      "allowed": null,
+      "name": "program",
+      "nullable": false,
+      "type": "string"
+    },
+    {
+      "allowed": [
+        "certified",
+        "refused",
+        "rejected",
+        "not-judged"
+      ],
+      "name": "command_line",
+      "nullable": false,
+      "type": "string"
+    },
+    {
+      "allowed": null,
+      "name": "browser_same",
+      "nullable": false,
+      "type": "boolean"
+    },
+    {
+      "allowed": null,
+      "name": "editor_same",
+      "nullable": false,
+      "type": "boolean"
+    },
+    {
+      "allowed": null,
+      "name": "detail",
+      "nullable": true,
+      "type": "string"
+    }
+  ],
+  "provenance": [
+    "experiment",
+    "evidence_dir",
+    "tag",
+    "commit",
+    "seed",
+    "timestamp",
+    "vc_model",
+    "solver_version",
+    "clang"
+  ]
+}

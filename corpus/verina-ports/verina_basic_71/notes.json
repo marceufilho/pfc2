@@ -1,0 +1,1 @@
+{"id": "verina_basic_71", "rules": ["P2", "P3", "P4"], "requires": ["out_cap >= str1_len"], "fixes": 0, "remarks": ""}

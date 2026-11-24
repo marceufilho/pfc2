@@ -1,0 +1,11 @@
+{
+  "id": "verina_advanced_81",
+  "stated": "none",
+  "dropped": [
+    "the result is a permutation of arr without duplicates (permutation)",
+    "the result is sorted (Pairwise, quantifier)"
+  ],
+  "weakened": [],
+  "verdict": "certified at full",
+  "remarks": "Only the bound on the returned length is stated; it is not a conjunct of Verina's postcondition."
+}

@@ -1,0 +1,26 @@
+{
+  "commit": null,
+  "inventories": {
+    "baseline": {
+      "checked": 114,
+      "mismatched": [],
+      "verified": true
+    },
+    "protected": {
+      "checked": 45,
+      "mismatched": [],
+      "verified": true
+    }
+  },
+  "tag": null,
+  "toolchain": {
+    "char_signed": true,
+    "clang": "Ubuntu clang version 19.1.1 (1ubuntu1~24.04.2)",
+    "int_bits": 32,
+    "long_bits": 64,
+    "python": "3.12.3",
+    "triple": "x86_64-pc-linux-gnu",
+    "z3": "5.3.3.0"
+  },
+  "unlisted_protected_files": []
+}

@@ -1,0 +1,11 @@
+{
+ "id": "verina_advanced_62",
+ "stated": "part",
+ "dropped": [
+  "precondition: every height is non-negative (quantifier)",
+  "for three or more heights, result equals the sum of min(max to the left, max to the right) - height (recursive definitions, sum)"
+ ],
+ "weakened": [],
+ "verdict": "refused-failed",
+ "remarks": "Stated: result >= 0, and result == 0 for fewer than three heights. The second is true under Verina's precondition but not provable without it: for two heights, a negative first height makes the port add water. The first is proved without the precondition. Without the second ensures the unit would be certified at memory. The length parameters are named X_len, which the checker reads in the older spelling without assuming 0 <= X_len; requires(0 <= X_len) states it (a list length is a Nat)."
+}

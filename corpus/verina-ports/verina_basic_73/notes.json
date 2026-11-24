@@ -1,0 +1,1 @@
+{"id": "verina_basic_73", "rules": ["P2", "P4"], "requires": [], "fixes": 0, "remarks": "The description assumes equal lengths; the port returns 0 when they differ instead of requiring it."}

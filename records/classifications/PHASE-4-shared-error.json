@@ -1,0 +1,1120 @@
+{
+ "what": "A constructed demonstration, post hoc: the sealed unit queen-attack with a test-surviving, non-equivalent mutant's change made to the code and to the contract clauses that restate it. Not part of any sealed campaign; not evidence of one.",
+ "constructed_by": "AI assistant (Claude Code); author's review pending",
+ "command": "uv run --locked python corpus/shared-error-notes/run.py --write",
+ "measured_with": "pfc2_eval.corpus.measure and summarise (the functions of the sealed campaign), clang-19, budget 600 s per judgement, laws beside declarations",
+ "primary_variant": "m003",
+ "sealed_unit": {
+  "unit": "corpus/exercism/queen-attack",
+  "measured_here": {
+   "proof": "certified",
+   "level": "full",
+   "upstream_tests": 13,
+   "tests_on_port": "pass",
+   "tests_on_certified": "pass",
+   "code_lines": 13,
+   "clause_lines": 5,
+   "assertions": 13,
+   "assertions_subsumed": 13,
+   "assertions_not_subsumed": [],
+   "s3_assertions": {
+    "subsumed": 13
+   },
+   "mutants": 18,
+   "mutants_refused_by_proof": 18,
+   "mutants_killed_by_tests": 14,
+   "s4_mutants": {
+    "both": 14,
+    "proof": 4
+   },
+   "mutant_rows": [
+    {
+     "mutant": "m000",
+     "operator": "relational",
+     "line": 17,
+     "tests": "fail",
+     "proof": "refused-failed"
+    },
+    {
+     "mutant": "m001",
+     "operator": "relational",
+     "line": 17,
+     "tests": "fail",
+     "proof": "refused-failed"
+    },
+    {
+     "mutant": "m002",
+     "operator": "relational",
+     "line": 17,
+     "tests": "fail",
+     "proof": "refused-failed"
+    },
+    {
+     "mutant": "m003",
+     "operator": "relational",
+     "line": 17,
+     "tests": "pass",
+     "proof": "refused-failed"
+    },
+    {
+     "mutant": "m004",
+     "operator": "relational",
+     "line": 18,
+     "tests": "fail",
+     "proof": "refused-failed"
+    },
+    {
+     "mutant": "m005",
+     "operator": "relational",
+     "line": 18,
+     "tests": "pass",
+     "proof": "refused-failed"
+    },
+    {
+     "mutant": "m006",
+     "operator": "relational",
+     "line": 18,
+     "tests": "pass",
+     "proof": "refused-failed"
+    },
+    {
+     "mutant": "m007",
+     "operator": "relational",
+     "line": 18,
+     "tests": "fail",
+     "proof": "refused-failed"
+    },
+    {
+     "mutant": "m008",
+     "operator": "relational",
+     "line": 18,
+     "tests": "pass",
+     "proof": "refused-failed"
+    },
+    {
+     "mutant": "m009",
+     "operator": "relational",
+     "line": 18,
+     "tests": "fail",
+     "proof": "refused-failed"
+    },
+    {
+     "mutant": "m010",
+     "operator": "relational",
+     "line": 21,
+     "tests": "fail",
+     "proof": "refused-failed"
+    },
+    {
+     "mutant": "m011",
+     "operator": "relational",
+     "line": 21,
+     "tests": "fail",
+     "proof": "refused-failed"
+    },
+    {
+     "mutant": "m012",
+     "operator": "arithmetic",
+     "line": 22,
+     "tests": "fail",
+     "proof": "refused-failed"
+    },
+    {
+     "mutant": "m013",
+     "operator": "relational",
+     "line": 22,
+     "tests": "fail",
+     "proof": "refused-failed"
+    },
+    {
+     "mutant": "m014",
+     "operator": "arithmetic",
+     "line": 22,
+     "tests": "fail",
+     "proof": "refused-failed"
+    },
+    {
+     "mutant": "m015",
+     "operator": "arithmetic",
+     "line": 23,
+     "tests": "fail",
+     "proof": "refused-failed"
+    },
+    {
+     "mutant": "m016",
+     "operator": "relational",
+     "line": 23,
+     "tests": "fail",
+     "proof": "refused-failed"
+    },
+    {
+     "mutant": "m017",
+     "operator": "arithmetic",
+     "line": 23,
+     "tests": "fail",
+     "proof": "refused-failed"
+    }
+   ]
+  },
+  "recorded_in_sealed_campaign": {
+   "campaign": "bench/eval/corpus-exercism-v3-20261119",
+   "proof": "certified",
+   "level": "full",
+   "upstream_tests": 13,
+   "tests_on_port": "pass",
+   "tests_on_certified": "pass",
+   "code_lines": 13,
+   "clause_lines": 5,
+   "assertions": 13,
+   "assertions_subsumed": 13,
+   "assertions_not_subsumed": [],
+   "s3_assertions": {
+    "subsumed": 13
+   },
+   "mutants": 18,
+   "mutants_refused_by_proof": 18,
+   "mutants_killed_by_tests": 14,
+   "s4_mutants": {
+    "both": 14,
+    "proof": 4
+   },
+   "mutant_rows": [
+    {
+     "mutant": "m000",
+     "operator": "relational",
+     "line": 17,
+     "tests": "fail",
+     "proof": "refused-failed"
+    },
+    {
+     "mutant": "m001",
+     "operator": "relational",
+     "line": 17,
+     "tests": "fail",
+     "proof": "refused-failed"
+    },
+    {
+     "mutant": "m002",
+     "operator": "relational",
+     "line": 17,
+     "tests": "fail",
+     "proof": "refused-failed"
+    },
+    {
+     "mutant": "m003",
+     "operator": "relational",
+     "line": 17,
+     "tests": "pass",
+     "proof": "refused-failed"
+    },
+    {
+     "mutant": "m004",
+     "operator": "relational",
+     "line": 18,
+     "tests": "fail",
+     "proof": "refused-failed"
+    },
+    {
+     "mutant": "m005",
+     "operator": "relational",
+     "line": 18,
+     "tests": "pass",
+     "proof": "refused-failed"
+    },
+    {
+     "mutant": "m006",
+     "operator": "relational",
+     "line": 18,
+     "tests": "pass",
+     "proof": "refused-failed"
+    },
+    {
+     "mutant": "m007",
+     "operator": "relational",
+     "line": 18,
+     "tests": "fail",
+     "proof": "refused-failed"
+    },
+    {
+     "mutant": "m008",
+     "operator": "relational",
+     "line": 18,
+     "tests": "pass",
+     "proof": "refused-failed"
+    },
+    {
+     "mutant": "m009",
+     "operator": "relational",
+     "line": 18,
+     "tests": "fail",
+     "proof": "refused-failed"
+    },
+    {
+     "mutant": "m010",
+     "operator": "relational",
+     "line": 21,
+     "tests": "fail",
+     "proof": "refused-failed"
+    },
+    {
+     "mutant": "m011",
+     "operator": "relational",
+     "line": 21,
+     "tests": "fail",
+     "proof": "refused-failed"
+    },
+    {
+     "mutant": "m012",
+     "operator": "arithmetic",
+     "line": 22,
+     "tests": "fail",
+     "proof": "refused-failed"
+    },
+    {
+     "mutant": "m013",
+     "operator": "relational",
+     "line": 22,
+     "tests": "fail",
+     "proof": "refused-failed"
+    },
+    {
+     "mutant": "m014",
+     "operator": "arithmetic",
+     "line": 22,
+     "tests": "fail",
+     "proof": "refused-failed"
+    },
+    {
+     "mutant": "m015",
+     "operator": "arithmetic",
+     "line": 23,
+     "tests": "fail",
+     "proof": "refused-failed"
+    },
+    {
+     "mutant": "m016",
+     "operator": "relational",
+     "line": 23,
+     "tests": "fail",
+     "proof": "refused-failed"
+    },
+    {
+     "mutant": "m017",
+     "operator": "arithmetic",
+     "line": 23,
+     "tests": "fail",
+     "proof": "refused-failed"
+    }
+   ]
+  },
+  "probe_upstream_reference": {
+   "built": true,
+   "exit": 0,
+   "sanitizer_report": false,
+   "stdout": "2 2 2 2",
+   "by_input": {
+    "white (9,0) black (0,1)": "INVALID_POSITION",
+    "white (0,9) black (1,0)": "INVALID_POSITION",
+    "white (0,0) black (8,1)": "INVALID_POSITION",
+    "white (0,0) black (1,8)": "INVALID_POSITION"
+   }
+  },
+  "probe_sealed_port": {
+   "built": true,
+   "exit": 0,
+   "sanitizer_report": false,
+   "stdout": "2 2 2 2",
+   "by_input": {
+    "white (9,0) black (0,1)": "INVALID_POSITION",
+    "white (0,9) black (1,0)": "INVALID_POSITION",
+    "white (0,0) black (8,1)": "INVALID_POSITION",
+    "white (0,0) black (1,8)": "INVALID_POSITION"
+   }
+  }
+ },
+ "probe": {
+  "program": "corpus/exercism-notes/witnesses/queen-attack.c",
+  "inputs_in_order": [
+   "white (9,0) black (0,1)",
+   "white (0,9) black (1,0)",
+   "white (0,0) black (8,1)",
+   "white (0,0) black (1,8)"
+  ]
+ },
+ "constructed": {
+  "m003": {
+   "unit": "corpus/shared-error-notes/queen-attack-m003",
+   "sealed_mutant": "m003",
+   "change": {
+    "from": "white_row >= ROW_COUNT",
+    "to": "white_row == ROW_COUNT",
+    "made_in": "the code (1 place) and the ensures clauses (3 places)"
+   },
+   "sealed_classification_of_the_mutant": {
+    "unit": "queen-attack",
+    "mutant": "m003",
+    "operator": "relational",
+    "line": 17,
+    "proof": "refused-failed",
+    "equivalent_at_upstream_interface": false,
+    "reason": "a white queen on row 9 is accepted",
+    "probe": {
+     "original": "2 2 2 2",
+     "mutant": "0 2 2 2"
+    }
+   },
+   "construction_checks": {
+    "port_is_sealed_port_with_fragment_replaced": true,
+    "fragment_occurrences_in_code": 1,
+    "fragment_occurrences_in_clauses": 3,
+    "code_is_the_sealed_mutants_code": true,
+    "sealed_mutant_text_is_sealed_port_with_code_fragment_replaced": true,
+    "glue_identical_to_sealed": true,
+    "transcribed_tests_identical_to_sealed": true
+   },
+   "measured": {
+    "proof": "certified",
+    "level": "full",
+    "upstream_tests": 13,
+    "tests_on_port": "pass",
+    "tests_on_certified": "pass",
+    "code_lines": 13,
+    "clause_lines": 5,
+    "assertions": 13,
+    "assertions_subsumed": 13,
+    "assertions_not_subsumed": [],
+    "s3_assertions": {
+     "subsumed": 13
+    },
+    "mutants": 17,
+    "mutants_refused_by_proof": 17,
+    "mutants_killed_by_tests": 14,
+    "s4_mutants": {
+     "both": 14,
+     "proof": 3
+    },
+    "mutant_rows": [
+     {
+      "mutant": "m000",
+      "operator": "relational",
+      "line": 17,
+      "tests": "fail",
+      "proof": "refused-failed"
+     },
+     {
+      "mutant": "m001",
+      "operator": "relational",
+      "line": 17,
+      "tests": "fail",
+      "proof": "refused-failed"
+     },
+     {
+      "mutant": "m002",
+      "operator": "relational",
+      "line": 17,
+      "tests": "fail",
+      "proof": "refused-failed"
+     },
+     {
+      "mutant": "m003",
+      "operator": "relational",
+      "line": 18,
+      "tests": "fail",
+      "proof": "refused-failed"
+     },
+     {
+      "mutant": "m004",
+      "operator": "relational",
+      "line": 18,
+      "tests": "pass",
+      "proof": "refused-failed"
+     },
+     {
+      "mutant": "m005",
+      "operator": "relational",
+      "line": 18,
+      "tests": "pass",
+      "proof": "refused-failed"
+     },
+     {
+      "mutant": "m006",
+      "operator": "relational",
+      "line": 18,
+      "tests": "fail",
+      "proof": "refused-failed"
+     },
+     {
+      "mutant": "m007",
+      "operator": "relational",
+      "line": 18,
+      "tests": "pass",
+      "proof": "refused-failed"
+     },
+     {
+      "mutant": "m008",
+      "operator": "relational",
+      "line": 18,
+      "tests": "fail",
+      "proof": "refused-failed"
+     },
+     {
+      "mutant": "m009",
+      "operator": "relational",
+      "line": 21,
+      "tests": "fail",
+      "proof": "refused-failed"
+     },
+     {
+      "mutant": "m010",
+      "operator": "relational",
+      "line": 21,
+      "tests": "fail",
+      "proof": "refused-failed"
+     },
+     {
+      "mutant": "m011",
+      "operator": "arithmetic",
+      "line": 22,
+      "tests": "fail",
+      "proof": "refused-failed"
+     },
+     {
+      "mutant": "m012",
+      "operator": "relational",
+      "line": 22,
+      "tests": "fail",
+      "proof": "refused-failed"
+     },
+     {
+      "mutant": "m013",
+      "operator": "arithmetic",
+      "line": 22,
+      "tests": "fail",
+      "proof": "refused-failed"
+     },
+     {
+      "mutant": "m014",
+      "operator": "arithmetic",
+      "line": 23,
+      "tests": "fail",
+      "proof": "refused-failed"
+     },
+     {
+      "mutant": "m015",
+      "operator": "relational",
+      "line": 23,
+      "tests": "fail",
+      "proof": "refused-failed"
+     },
+     {
+      "mutant": "m016",
+      "operator": "arithmetic",
+      "line": 23,
+      "tests": "fail",
+      "proof": "refused-failed"
+     }
+    ]
+   },
+   "cross": {
+    "constructed_code_under_sealed_contract": "refused-failed",
+    "sealed_code_under_constructed_contract": "refused-failed"
+   },
+   "probe_constructed_port": {
+    "built": true,
+    "exit": 0,
+    "sanitizer_report": false,
+    "stdout": "0 2 2 2",
+    "by_input": {
+     "white (9,0) black (0,1)": "CAN_NOT_ATTACK",
+     "white (0,9) black (1,0)": "INVALID_POSITION",
+     "white (0,0) black (8,1)": "INVALID_POSITION",
+     "white (0,0) black (1,8)": "INVALID_POSITION"
+    }
+   }
+  },
+  "m005": {
+   "unit": "corpus/shared-error-notes/queen-attack-m005",
+   "sealed_mutant": "m005",
+   "change": {
+    "from": "white_column >= COLUMN_COUNT",
+    "to": "white_column == COLUMN_COUNT",
+    "made_in": "the code (1 place) and the ensures clauses (3 places)"
+   },
+   "sealed_classification_of_the_mutant": {
+    "unit": "queen-attack",
+    "mutant": "m005",
+    "operator": "relational",
+    "line": 18,
+    "proof": "refused-failed",
+    "equivalent_at_upstream_interface": false,
+    "reason": "a white queen on column 9 is accepted",
+    "probe": {
+     "original": "2 2 2 2",
+     "mutant": "2 0 2 2"
+    }
+   },
+   "construction_checks": {
+    "port_is_sealed_port_with_fragment_replaced": true,
+    "fragment_occurrences_in_code": 1,
+    "fragment_occurrences_in_clauses": 3,
+    "code_is_the_sealed_mutants_code": true,
+    "sealed_mutant_text_is_sealed_port_with_code_fragment_replaced": true,
+    "glue_identical_to_sealed": true,
+    "transcribed_tests_identical_to_sealed": true
+   },
+   "measured": {
+    "proof": "certified",
+    "level": "full",
+    "upstream_tests": 13,
+    "tests_on_port": "pass",
+    "tests_on_certified": "pass",
+    "code_lines": 13,
+    "clause_lines": 5,
+    "assertions": 13,
+    "assertions_subsumed": 13,
+    "assertions_not_subsumed": [],
+    "s3_assertions": {
+     "subsumed": 13
+    },
+    "mutants": 17,
+    "mutants_refused_by_proof": 17,
+    "mutants_killed_by_tests": 14,
+    "s4_mutants": {
+     "both": 14,
+     "proof": 3
+    },
+    "mutant_rows": [
+     {
+      "mutant": "m000",
+      "operator": "relational",
+      "line": 17,
+      "tests": "fail",
+      "proof": "refused-failed"
+     },
+     {
+      "mutant": "m001",
+      "operator": "relational",
+      "line": 17,
+      "tests": "fail",
+      "proof": "refused-failed"
+     },
+     {
+      "mutant": "m002",
+      "operator": "relational",
+      "line": 17,
+      "tests": "fail",
+      "proof": "refused-failed"
+     },
+     {
+      "mutant": "m003",
+      "operator": "relational",
+      "line": 17,
+      "tests": "pass",
+      "proof": "refused-failed"
+     },
+     {
+      "mutant": "m004",
+      "operator": "relational",
+      "line": 18,
+      "tests": "fail",
+      "proof": "refused-failed"
+     },
+     {
+      "mutant": "m005",
+      "operator": "relational",
+      "line": 18,
+      "tests": "pass",
+      "proof": "refused-failed"
+     },
+     {
+      "mutant": "m006",
+      "operator": "relational",
+      "line": 18,
+      "tests": "fail",
+      "proof": "refused-failed"
+     },
+     {
+      "mutant": "m007",
+      "operator": "relational",
+      "line": 18,
+      "tests": "pass",
+      "proof": "refused-failed"
+     },
+     {
+      "mutant": "m008",
+      "operator": "relational",
+      "line": 18,
+      "tests": "fail",
+      "proof": "refused-failed"
+     },
+     {
+      "mutant": "m009",
+      "operator": "relational",
+      "line": 21,
+      "tests": "fail",
+      "proof": "refused-failed"
+     },
+     {
+      "mutant": "m010",
+      "operator": "relational",
+      "line": 21,
+      "tests": "fail",
+      "proof": "refused-failed"
+     },
+     {
+      "mutant": "m011",
+      "operator": "arithmetic",
+      "line": 22,
+      "tests": "fail",
+      "proof": "refused-failed"
+     },
+     {
+      "mutant": "m012",
+      "operator": "relational",
+      "line": 22,
+      "tests": "fail",
+      "proof": "refused-failed"
+     },
+     {
+      "mutant": "m013",
+      "operator": "arithmetic",
+      "line": 22,
+      "tests": "fail",
+      "proof": "refused-failed"
+     },
+     {
+      "mutant": "m014",
+      "operator": "arithmetic",
+      "line": 23,
+      "tests": "fail",
+      "proof": "refused-failed"
+     },
+     {
+      "mutant": "m015",
+      "operator": "relational",
+      "line": 23,
+      "tests": "fail",
+      "proof": "refused-failed"
+     },
+     {
+      "mutant": "m016",
+      "operator": "arithmetic",
+      "line": 23,
+      "tests": "fail",
+      "proof": "refused-failed"
+     }
+    ]
+   },
+   "cross": {
+    "constructed_code_under_sealed_contract": "refused-failed",
+    "sealed_code_under_constructed_contract": "refused-failed"
+   },
+   "probe_constructed_port": {
+    "built": true,
+    "exit": 0,
+    "sanitizer_report": false,
+    "stdout": "2 0 2 2",
+    "by_input": {
+     "white (9,0) black (0,1)": "INVALID_POSITION",
+     "white (0,9) black (1,0)": "CAN_NOT_ATTACK",
+     "white (0,0) black (8,1)": "INVALID_POSITION",
+     "white (0,0) black (1,8)": "INVALID_POSITION"
+    }
+   }
+  },
+  "m006": {
+   "unit": "corpus/shared-error-notes/queen-attack-m006",
+   "sealed_mutant": "m006",
+   "change": {
+    "from": "black_row >= ROW_COUNT",
+    "to": "black_row > ROW_COUNT",
+    "made_in": "the code (1 place) and the ensures clauses (3 places)"
+   },
+   "sealed_classification_of_the_mutant": {
+    "unit": "queen-attack",
+    "mutant": "m006",
+    "operator": "relational",
+    "line": 18,
+    "proof": "refused-failed",
+    "equivalent_at_upstream_interface": false,
+    "reason": "a black queen on row 8 is accepted",
+    "probe": {
+     "original": "2 2 2 2",
+     "mutant": "2 2 0 2"
+    }
+   },
+   "construction_checks": {
+    "port_is_sealed_port_with_fragment_replaced": true,
+    "fragment_occurrences_in_code": 1,
+    "fragment_occurrences_in_clauses": 3,
+    "code_is_the_sealed_mutants_code": true,
+    "sealed_mutant_text_is_sealed_port_with_code_fragment_replaced": true,
+    "glue_identical_to_sealed": true,
+    "transcribed_tests_identical_to_sealed": true
+   },
+   "measured": {
+    "proof": "certified",
+    "level": "full",
+    "upstream_tests": 13,
+    "tests_on_port": "pass",
+    "tests_on_certified": "pass",
+    "code_lines": 13,
+    "clause_lines": 5,
+    "assertions": 13,
+    "assertions_subsumed": 13,
+    "assertions_not_subsumed": [],
+    "s3_assertions": {
+     "subsumed": 13
+    },
+    "mutants": 18,
+    "mutants_refused_by_proof": 18,
+    "mutants_killed_by_tests": 14,
+    "s4_mutants": {
+     "both": 14,
+     "proof": 4
+    },
+    "mutant_rows": [
+     {
+      "mutant": "m000",
+      "operator": "relational",
+      "line": 17,
+      "tests": "fail",
+      "proof": "refused-failed"
+     },
+     {
+      "mutant": "m001",
+      "operator": "relational",
+      "line": 17,
+      "tests": "fail",
+      "proof": "refused-failed"
+     },
+     {
+      "mutant": "m002",
+      "operator": "relational",
+      "line": 17,
+      "tests": "fail",
+      "proof": "refused-failed"
+     },
+     {
+      "mutant": "m003",
+      "operator": "relational",
+      "line": 17,
+      "tests": "pass",
+      "proof": "refused-failed"
+     },
+     {
+      "mutant": "m004",
+      "operator": "relational",
+      "line": 18,
+      "tests": "fail",
+      "proof": "refused-failed"
+     },
+     {
+      "mutant": "m005",
+      "operator": "relational",
+      "line": 18,
+      "tests": "pass",
+      "proof": "refused-failed"
+     },
+     {
+      "mutant": "m006",
+      "operator": "relational",
+      "line": 18,
+      "tests": "pass",
+      "proof": "refused-failed"
+     },
+     {
+      "mutant": "m007",
+      "operator": "relational",
+      "line": 18,
+      "tests": "fail",
+      "proof": "refused-failed"
+     },
+     {
+      "mutant": "m008",
+      "operator": "relational",
+      "line": 18,
+      "tests": "pass",
+      "proof": "refused-failed"
+     },
+     {
+      "mutant": "m009",
+      "operator": "relational",
+      "line": 18,
+      "tests": "fail",
+      "proof": "refused-failed"
+     },
+     {
+      "mutant": "m010",
+      "operator": "relational",
+      "line": 21,
+      "tests": "fail",
+      "proof": "refused-failed"
+     },
+     {
+      "mutant": "m011",
+      "operator": "relational",
+      "line": 21,
+      "tests": "fail",
+      "proof": "refused-failed"
+     },
+     {
+      "mutant": "m012",
+      "operator": "arithmetic",
+      "line": 22,
+      "tests": "fail",
+      "proof": "refused-failed"
+     },
+     {
+      "mutant": "m013",
+      "operator": "relational",
+      "line": 22,
+      "tests": "fail",
+      "proof": "refused-failed"
+     },
+     {
+      "mutant": "m014",
+      "operator": "arithmetic",
+      "line": 22,
+      "tests": "fail",
+      "proof": "refused-failed"
+     },
+     {
+      "mutant": "m015",
+      "operator": "arithmetic",
+      "line": 23,
+      "tests": "fail",
+      "proof": "refused-failed"
+     },
+     {
+      "mutant": "m016",
+      "operator": "relational",
+      "line": 23,
+      "tests": "fail",
+      "proof": "refused-failed"
+     },
+     {
+      "mutant": "m017",
+      "operator": "arithmetic",
+      "line": 23,
+      "tests": "fail",
+      "proof": "refused-failed"
+     }
+    ]
+   },
+   "cross": {
+    "constructed_code_under_sealed_contract": "refused-failed",
+    "sealed_code_under_constructed_contract": "refused-failed"
+   },
+   "probe_constructed_port": {
+    "built": true,
+    "exit": 0,
+    "sanitizer_report": false,
+    "stdout": "2 2 0 2",
+    "by_input": {
+     "white (9,0) black (0,1)": "INVALID_POSITION",
+     "white (0,9) black (1,0)": "INVALID_POSITION",
+     "white (0,0) black (8,1)": "CAN_NOT_ATTACK",
+     "white (0,0) black (1,8)": "INVALID_POSITION"
+    }
+   }
+  },
+  "m008": {
+   "unit": "corpus/shared-error-notes/queen-attack-m008",
+   "sealed_mutant": "m008",
+   "change": {
+    "from": "black_column >= COLUMN_COUNT",
+    "to": "black_column > COLUMN_COUNT",
+    "made_in": "the code (1 place) and the ensures clauses (3 places)"
+   },
+   "sealed_classification_of_the_mutant": {
+    "unit": "queen-attack",
+    "mutant": "m008",
+    "operator": "relational",
+    "line": 18,
+    "proof": "refused-failed",
+    "equivalent_at_upstream_interface": false,
+    "reason": "a black queen on column 8 is accepted",
+    "probe": {
+     "original": "2 2 2 2",
+     "mutant": "2 2 2 0"
+    }
+   },
+   "construction_checks": {
+    "port_is_sealed_port_with_fragment_replaced": true,
+    "fragment_occurrences_in_code": 1,
+    "fragment_occurrences_in_clauses": 3,
+    "code_is_the_sealed_mutants_code": true,
+    "sealed_mutant_text_is_sealed_port_with_code_fragment_replaced": true,
+    "glue_identical_to_sealed": true,
+    "transcribed_tests_identical_to_sealed": true
+   },
+   "measured": {
+    "proof": "certified",
+    "level": "full",
+    "upstream_tests": 13,
+    "tests_on_port": "pass",
+    "tests_on_certified": "pass",
+    "code_lines": 13,
+    "clause_lines": 5,
+    "assertions": 13,
+    "assertions_subsumed": 13,
+    "assertions_not_subsumed": [],
+    "s3_assertions": {
+     "subsumed": 13
+    },
+    "mutants": 18,
+    "mutants_refused_by_proof": 18,
+    "mutants_killed_by_tests": 14,
+    "s4_mutants": {
+     "both": 14,
+     "proof": 4
+    },
+    "mutant_rows": [
+     {
+      "mutant": "m000",
+      "operator": "relational",
+      "line": 17,
+      "tests": "fail",
+      "proof": "refused-failed"
+     },
+     {
+      "mutant": "m001",
+      "operator": "relational",
+      "line": 17,
+      "tests": "fail",
+      "proof": "refused-failed"
+     },
+     {
+      "mutant": "m002",
+      "operator": "relational",
+      "line": 17,
+      "tests": "fail",
+      "proof": "refused-failed"
+     },
+     {
+      "mutant": "m003",
+      "operator": "relational",
+      "line": 17,
+      "tests": "pass",
+      "proof": "refused-failed"
+     },
+     {
+      "mutant": "m004",
+      "operator": "relational",
+      "line": 18,
+      "tests": "fail",
+      "proof": "refused-failed"
+     },
+     {
+      "mutant": "m005",
+      "operator": "relational",
+      "line": 18,
+      "tests": "pass",
+      "proof": "refused-failed"
+     },
+     {
+      "mutant": "m006",
+      "operator": "relational",
+      "line": 18,
+      "tests": "pass",
+      "proof": "refused-failed"
+     },
+     {
+      "mutant": "m007",
+      "operator": "relational",
+      "line": 18,
+      "tests": "fail",
+      "proof": "refused-failed"
+     },
+     {
+      "mutant": "m008",
+      "operator": "relational",
+      "line": 18,
+      "tests": "pass",
+      "proof": "refused-failed"
+     },
+     {
+      "mutant": "m009",
+      "operator": "relational",
+      "line": 18,
+      "tests": "fail",
+      "proof": "refused-failed"
+     },
+     {
+      "mutant": "m010",
+      "operator": "relational",
+      "line": 21,
+      "tests": "fail",
+      "proof": "refused-failed"
+     },
+     {
+      "mutant": "m011",
+      "operator": "relational",
+      "line": 21,
+      "tests": "fail",
+      "proof": "refused-failed"
+     },
+     {
+      "mutant": "m012",
+      "operator": "arithmetic",
+      "line": 22,
+      "tests": "fail",
+      "proof": "refused-failed"
+     },
+     {
+      "mutant": "m013",
+      "operator": "relational",
+      "line": 22,
+      "tests": "fail",
+      "proof": "refused-failed"
+     },
+     {
+      "mutant": "m014",
+      "operator": "arithmetic",
+      "line": 22,
+      "tests": "fail",
+      "proof": "refused-failed"
+     },
+     {
+      "mutant": "m015",
+      "operator": "arithmetic",
+      "line": 23,
+      "tests": "fail",
+      "proof": "refused-failed"
+     },
+     {
+      "mutant": "m016",
+      "operator": "relational",
+      "line": 23,
+      "tests": "fail",
+      "proof": "refused-failed"
+     },
+     {
+      "mutant": "m017",
+      "operator": "arithmetic",
+      "line": 23,
+      "tests": "fail",
+      "proof": "refused-failed"
+     }
+    ]
+   },
+   "cross": {
+    "constructed_code_under_sealed_contract": "refused-failed",
+    "sealed_code_under_constructed_contract": "refused-failed"
+   },
+   "probe_constructed_port": {
+    "built": true,
+    "exit": 0,
+    "sanitizer_report": false,
+    "stdout": "2 2 2 0",
+    "by_input": {
+     "white (9,0) black (0,1)": "INVALID_POSITION",
+     "white (0,9) black (1,0)": "INVALID_POSITION",
+     "white (0,0) black (8,1)": "INVALID_POSITION",
+     "white (0,0) black (1,8)": "CAN_NOT_ATTACK"
+    }
+   }
+  }
+ }
+}

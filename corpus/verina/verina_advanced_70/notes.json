@@ -1,0 +1,12 @@
+{
+ "id": "verina_advanced_70",
+ "stated": "part",
+ "dropped": [
+  "precondition: no repeated element (quantifier over pairs)",
+  "precondition: every element is in 1..n (quantifier)",
+  "result relates to the first positions of 1 and of n (idxOf, a search): pos1 + n = result + 2 + posn or result + 1 + posn"
+ ],
+ "weakened": [],
+ "verdict": "certified at memory",
+ "remarks": "Stated: non-empty list, and the consequence result >= 0. first + (nums_len - 1 - last) can exceed LONG_MAX only for a length near LONG_MAX; no length bound is added, so its two traps stay."
+}

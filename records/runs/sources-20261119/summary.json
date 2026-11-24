@@ -1,0 +1,412 @@
+{
+  "by_family": {
+    "array-fpi": {
+      "B1": {
+        "clopper_pearson": [
+          0.0093,
+          0.1253
+        ],
+        "proportion": 0.0448,
+        "successes": 3,
+        "trials": 67,
+        "wilson": [
+          0.0153,
+          0.1236
+        ]
+      },
+      "B1 (50 rounds)": {
+        "clopper_pearson": [
+          0.9196,
+          0.9996
+        ],
+        "proportion": 0.9851,
+        "successes": 66,
+        "trials": 67,
+        "wilson": [
+          0.9202,
+          0.9974
+        ]
+      },
+      "B2": {
+        "clopper_pearson": [
+          0.9196,
+          0.9996
+        ],
+        "proportion": 0.9851,
+        "successes": 66,
+        "trials": 67,
+        "wilson": [
+          0.9202,
+          0.9974
+        ]
+      },
+      "B2 (50 rounds)": {
+        "clopper_pearson": [
+          0.9196,
+          0.9996
+        ],
+        "proportion": 0.9851,
+        "successes": 66,
+        "trials": 67,
+        "wilson": [
+          0.9202,
+          0.9974
+        ]
+      },
+      "I": {
+        "clopper_pearson": [
+          0.9196,
+          0.9996
+        ],
+        "proportion": 0.9851,
+        "successes": 66,
+        "trials": 67,
+        "wilson": [
+          0.9202,
+          0.9974
+        ]
+      },
+      "L1": {
+        "clopper_pearson": [
+          0.9655,
+          0.9951
+        ],
+        "proportion": 0.9851,
+        "successes": 330,
+        "trials": 335,
+        "wilson": [
+          0.9655,
+          0.9936
+        ]
+      },
+      "L2": {
+        "clopper_pearson": [
+          0.9655,
+          0.9951
+        ],
+        "proportion": 0.9851,
+        "successes": 330,
+        "trials": 335,
+        "wilson": [
+          0.9655,
+          0.9936
+        ]
+      },
+      "N": {
+        "clopper_pearson": [
+          0.0,
+          0.0536
+        ],
+        "proportion": 0.0,
+        "successes": 0,
+        "trials": 67,
+        "wilson": [
+          0.0,
+          0.0542
+        ]
+      }
+    },
+    "loop-invgen": {
+      "B1": {
+        "clopper_pearson": [
+          0.0051,
+          0.7164
+        ],
+        "proportion": 0.2,
+        "successes": 1,
+        "trials": 5,
+        "wilson": [
+          0.0362,
+          0.6245
+        ]
+      },
+      "B1 (50 rounds)": {
+        "clopper_pearson": [
+          0.0527,
+          0.8534
+        ],
+        "proportion": 0.4,
+        "successes": 2,
+        "trials": 5,
+        "wilson": [
+          0.1176,
+          0.7693
+        ]
+      },
+      "B2": {
+        "clopper_pearson": [
+          0.1466,
+          0.9473
+        ],
+        "proportion": 0.6,
+        "successes": 3,
+        "trials": 5,
+        "wilson": [
+          0.2307,
+          0.8824
+        ]
+      },
+      "B2 (50 rounds)": {
+        "clopper_pearson": [
+          0.1466,
+          0.9473
+        ],
+        "proportion": 0.6,
+        "successes": 3,
+        "trials": 5,
+        "wilson": [
+          0.2307,
+          0.8824
+        ]
+      },
+      "I": {
+        "clopper_pearson": [
+          0.0051,
+          0.7164
+        ],
+        "proportion": 0.2,
+        "successes": 1,
+        "trials": 5,
+        "wilson": [
+          0.0362,
+          0.6245
+        ]
+      },
+      "L1": {
+        "clopper_pearson": [
+          0.8628,
+          1.0
+        ],
+        "proportion": 1.0,
+        "successes": 25,
+        "trials": 25,
+        "wilson": [
+          0.8668,
+          1.0
+        ]
+      },
+      "L2": {
+        "clopper_pearson": [
+          0.8628,
+          1.0
+        ],
+        "proportion": 1.0,
+        "successes": 25,
+        "trials": 25,
+        "wilson": [
+          0.8668,
+          1.0
+        ]
+      },
+      "N": {
+        "clopper_pearson": [
+          0.0,
+          0.5218
+        ],
+        "proportion": 0.0,
+        "successes": 0,
+        "trials": 5,
+        "wilson": [
+          0.0,
+          0.4345
+        ]
+      }
+    }
+  },
+  "conditions": {
+    "B1": {
+      "clopper_pearson": [
+        0.0153,
+        0.1362
+      ],
+      "proportion": 0.0556,
+      "successes": 4,
+      "trials": 72,
+      "wilson": [
+        0.0218,
+        0.1343
+      ]
+    },
+    "B1 (50 rounds)": {
+      "clopper_pearson": [
+        0.8638,
+        0.9847
+      ],
+      "proportion": 0.9444,
+      "successes": 68,
+      "trials": 72,
+      "wilson": [
+        0.8657,
+        0.9782
+      ]
+    },
+    "B2": {
+      "clopper_pearson": [
+        0.883,
+        0.9913
+      ],
+      "proportion": 0.9583,
+      "successes": 69,
+      "trials": 72,
+      "wilson": [
+        0.8845,
+        0.9857
+      ]
+    },
+    "B2 (50 rounds)": {
+      "clopper_pearson": [
+        0.883,
+        0.9913
+      ],
+      "proportion": 0.9583,
+      "successes": 69,
+      "trials": 72,
+      "wilson": [
+        0.8845,
+        0.9857
+      ]
+    },
+    "I": {
+      "clopper_pearson": [
+        0.8453,
+        0.9771
+      ],
+      "proportion": 0.9306,
+      "successes": 67,
+      "trials": 72,
+      "wilson": [
+        0.8475,
+        0.97
+      ]
+    },
+    "L1": {
+      "clopper_pearson": [
+        0.9679,
+        0.9955
+      ],
+      "proportion": 0.9861,
+      "successes": 355,
+      "trials": 360,
+      "wilson": [
+        0.9679,
+        0.9941
+      ]
+    },
+    "L2": {
+      "clopper_pearson": [
+        0.9679,
+        0.9955
+      ],
+      "proportion": 0.9861,
+      "successes": 355,
+      "trials": 360,
+      "wilson": [
+        0.9679,
+        0.9941
+      ]
+    },
+    "N": {
+      "clopper_pearson": [
+        0.0,
+        0.0499
+      ],
+      "proportion": 0.0,
+      "successes": 0,
+      "trials": 72,
+      "wilson": [
+        0.0,
+        0.0507
+      ]
+    }
+  },
+  "exploratory": {
+    "L1 - L2": {
+      "difference": 0.0,
+      "interval": [
+        0.0,
+        0.0
+      ],
+      "programs": 72,
+      "sign_test": {
+        "negative": 0,
+        "p": 1.0,
+        "positive": 0,
+        "ties": 72
+      }
+    },
+    "L1 attempts when certified": {
+      "1": 350,
+      "2": 5
+    },
+    "certified at least once, by condition": {
+      "B1": 4,
+      "B2": 69,
+      "I": 67,
+      "L1": 71,
+      "L2": 71,
+      "N": 0
+    },
+    "certified under exactly one condition": {
+      "B1": [],
+      "B2": [],
+      "I": [],
+      "L1": [],
+      "L2": [],
+      "N": []
+    }
+  },
+  "model_ran": true,
+  "no_power_for_model_contrasts": true,
+  "passed": true,
+  "programs": 72,
+  "registered_contrasts": {
+    "I - N": {
+      "difference": 0.9306,
+      "interval": [
+        0.8611,
+        0.9861
+      ],
+      "p_holm": 4.0657581468206416e-20,
+      "programs": 72,
+      "sign_test": {
+        "negative": 0,
+        "p": 1.3552527156068805e-20,
+        "positive": 67,
+        "ties": 5
+      },
+      "supported": true
+    },
+    "L1 - B2": {
+      "difference": 0.0278,
+      "interval": [
+        0.0,
+        0.0694
+      ],
+      "p_holm": 0.5,
+      "programs": 72,
+      "sign_test": {
+        "negative": 0,
+        "p": 0.5,
+        "positive": 2,
+        "ties": 70
+      },
+      "supported": false
+    },
+    "L1 - I": {
+      "difference": 0.0556,
+      "interval": [
+        0.0139,
+        0.1111
+      ],
+      "p_holm": 0.25,
+      "programs": 72,
+      "sign_test": {
+        "negative": 0,
+        "p": 0.125,
+        "positive": 4,
+        "ties": 68
+      },
+      "supported": false
+    }
+  }
+}

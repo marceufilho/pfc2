@@ -1,0 +1,12 @@
+{
+  "id": "verina_basic_37",
+  "stated": "part",
+  "dropped": [
+    "precondition: arr sorted (Pairwise)",
+    "result >= 0 -> no earlier index holds target (quantifier)",
+    "result = -1 -> no index holds target (quantifier)"
+  ],
+  "weakened": [],
+  "verdict": "certified at full",
+  "remarks": "Stated: result = -1 or result >= 0; result >= 0 -> result < arr.size and arr[result] = target. requires(X_len >= 0) was added for the listed lengths: the `a[a_len]` spelling does not give the checker 0 <= length (a length is a Nat)."
+}

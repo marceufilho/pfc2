@@ -1,0 +1,11 @@
+{
+ "id": "verina_advanced_58",
+ "stated": "part",
+ "dropped": [
+  "isUgly result (recursive definition)",
+  "exactly n - 1 ugly numbers lie below result (count)"
+ ],
+ "weakened": [],
+ "verdict": "certified at memory",
+ "remarks": "Stated: n > 0, and result >= 1 as a consequence of isUgly (zero is not ugly). The trap at x++ stays: nothing statable bounds the nth ugly number."
+}

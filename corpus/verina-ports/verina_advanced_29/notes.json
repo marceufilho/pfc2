@@ -1,0 +1,1 @@
+{"id": "verina_advanced_29", "rules": ["P1", "P4"], "requires": [], "fixes": 0, "remarks": "Frequencies are recounted inside the window instead of kept in a map, which would need storage the description does not bound."}

@@ -1,0 +1,95 @@
+{
+  "comment": "Generated from the task's test.json by corpus/verina-notes/interface.py: one case per test.",
+  "functions": {
+    "findEvenNumbers": {
+      "result": "long",
+      "parameters": "long arr_len, const long arr[arr_len]",
+      "call": "findEvenNumbers(arr_len, arr, 16, out)",
+      "locals": "long out[16] = {0};"
+    }
+  },
+  "cases": [
+    {
+      "name": "case_0",
+      "function": "findEvenNumbers",
+      "inputs": {
+        "arr_len": 6,
+        "arr": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "expected": "found == 3 && out[0] == 2 && out[1] == 4 && out[2] == 6"
+    },
+    {
+      "name": "case_1",
+      "function": "findEvenNumbers",
+      "inputs": {
+        "arr_len": 5,
+        "arr": [
+          7,
+          8,
+          10,
+          13,
+          14
+        ]
+      },
+      "expected": "found == 3 && out[0] == 8 && out[1] == 10 && out[2] == 14"
+    },
+    {
+      "name": "case_2",
+      "function": "findEvenNumbers",
+      "inputs": {
+        "arr_len": 4,
+        "arr": [
+          1,
+          3,
+          5,
+          7
+        ]
+      },
+      "expected": "found == 0"
+    },
+    {
+      "name": "case_3",
+      "function": "findEvenNumbers",
+      "inputs": {
+        "arr_len": 0,
+        "arr": []
+      },
+      "expected": "found == 0"
+    },
+    {
+      "name": "case_4",
+      "function": "findEvenNumbers",
+      "inputs": {
+        "arr_len": 5,
+        "arr": [
+          0,
+          -2,
+          -3,
+          -4,
+          5
+        ]
+      },
+      "expected": "found == 3 && out[0] == 0 && out[1] == -2 && out[2] == -4"
+    },
+    {
+      "name": "case_5",
+      "function": "findEvenNumbers",
+      "inputs": {
+        "arr_len": 3,
+        "arr": [
+          2,
+          2,
+          3
+        ]
+      },
+      "expected": "found == 2 && out[0] == 2 && out[1] == 2"
+    }
+  ]
+}
